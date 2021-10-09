@@ -1,0 +1,39 @@
+/* scritte a sinistra */
+a {
+    color: #6c757d!important;
+    padding: 0 0 5px 0;
+  }
+  
+  /* elementi della lista (menu orizzontale) */
+  li {
+    background-color: #343a40!important;
+    justify-items: flex-start;
+    list-style-type: none;
+    display: inline;
+    float: left;
+    padding: 8px;
+    padding-inline: 15px;
+  }
+  
+  /* intero blocco footer */
+  footer {
+    margin: 0%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #343a40!important;
+    height: 45px;
+    vertical-align: middle;
+    align-items: center;
+  }
+  
+  /* scritta sulla destra */
+  #Company {
+    justify-items: right;
+    padding-top: 8px;
+    vertical-align: middle;
+    text-align: right;
+    margin-right: 35px;
+    margin-top: 10px;
+  }
+  

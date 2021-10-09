@@ -1,0 +1,26 @@
+<div class="container p-5" >
+    <h1 class="text-center mb-5">
+      Movies api dashboard
+    </h1>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Original language</th>
+          <th scope="col">Popularity</th>
+          <th scope="col">Release Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pointer" *ngFor="let entry of results">
+          <td> {{entry.title}}</td>
+          <td>{{entry.original_language}}</td>
+          <td>{{entry.popularity}}</td>
+          <td>{{entry.release_date | date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <app-loading-page *ngIf="results==null" ></app-loading-page>

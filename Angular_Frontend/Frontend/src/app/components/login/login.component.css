@@ -1,0 +1,53 @@
+/*etichetta credenziali*/
+label {
+    font-size: 18px;
+    font-family: "DK Lemon Yellow Sun";
+    width: 92px;
+    margin-left: 0%;
+  }
+  
+  /*lista*/
+  ul {
+    padding-top: 10px;
+    padding: 40px;
+    list-style: none;
+  }
+  
+  /*form username + psw + bottoni*/
+  .form-group {
+    width: max-content;
+    padding-bottom: 20px;
+    padding-right: 35px;
+    margin-top: 10px;
+    margin-bottom: 45px;
+    background-color: rgb(159, 199, 205, 0.4);
+    border-radius: 5px;
+    border-style: solid;
+    border-color:  rgb(159, 199, 205, 0.7);
+  }
+  
+  /*riga input*/
+  .input-line {
+    width: 190px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color:  rgb(159, 199, 205, 0.7);
+  }
+  
+  /*label + riga input*/
+  .credential-block {
+    justify-content: stretch;
+    padding-bottom: 30px;
+    vertical-align: auto;
+  }
+  
+  /*bottone submit*/
+  .submit {
+    float: right;
+    width: 70px;
+    margin-top: 10px;
+    font-family: "DK Lemon Yellow Sun";
+    border-radius: 5px;
+    box-sizing: content-box;
+    background-color: rgba(240, 197, 116, 0.4);
+  }

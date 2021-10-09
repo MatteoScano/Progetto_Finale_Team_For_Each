@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{C52BE6B6-A191-465C-B27C-7A621BE21273}|Default">
+  <MonoDevelop.Ide.ItemProperties.src.FilmComments.RestAPIs PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/FilmComments.RestAPIs/Startup.cs">
+    <Files>
+      <File FileName="src/FilmComments.RestAPIs/Model/CommentToSave.cs" Line="1" Column="1" />
+      <File FileName="src/FilmComments.Core/Model/Comment.cs" Line="6" Column="36" />
+      <File FileName="src/FilmComments.RestAPIs/Model/ErrorResponse.cs" Line="9" Column="26" />
+      <File FileName="src/FilmComments.RestAPIs/Controllers/CommentController.cs" Line="122" Column="37" />
+      <File FileName="src/FilmComments.Core/BL/CommentService.cs" Line="8" Column="18" />
+      <File FileName="src/FilmComments.RestAPIs/Startup.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="film-comments-service" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="FilmComments.Core" expanded="True">
+                <Node name="BL" expanded="True">
+                  <Node name="Impl" expanded="True" />
+                </Node>
+                <Node name="Model" expanded="True" />
+              </Node>
+              <Node name="FilmComments.RestAPIs" expanded="True">
+                <Node name="Controllers" expanded="True" />
+                <Node name="Startup.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,26 @@
+<div *ngIf="dataEntry != null " class="container">
+
+    <div class="row p-4 my-2 mx-1 border shadow">
+        <button class="btn btn-primary mr-5"[routerLink]="['/dashboard']">Back</button>
+        <h3>Details</h3>
+    </div>
+   
+    <div class="mt-5 p-4">
+        <ul class="list-group">
+            <li class="list-group-item">Id : {{ dataEntry.id }}</li>
+            <li class="list-group-item">Name : {{dataEntry.name}}</li>
+            <li class="list-group-item">Cast: {{dataEntry.cast}}</li>
+            <li class="list-group-item">Director : {{dataEntry.director}}</li>
+            <li class="list-group-item">Genre : {{dataEntry.genre}}</li>
+            <li class="list-group-item">Rated : {{ratedOption}}</li>
+            <li class="list-group-item">Reviews : {{dataEntry.reviews}}</li>
+            <li class="list-group-item">Evaluation : {{dataEntry.evaluation}}</li>
+            <li class="list-group-item">Release Date : {{dataEntry.releaseDate | date }}</li>
+          </ul>
+    </div>
+
+    <div class="row">
+        <button class="btn btn-danger ml-5" (click)='delete()'>Delete</button>
+        <button class="btn btn-primary ml-3" [routerLink]="['/edit/'+ dataEntry.id]">Edit</button>
+    </div>
+</div>

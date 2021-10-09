@@ -1,0 +1,32 @@
+<div class="form-group row">
+    <label for="genre" class="col-sm-2 col-form-label">Genere</label>
+    <div class="col-sm-10">
+        <!--  <input type="text" class="form-control" id="genre" required name="genre" [(ngModel)]="genre"> -->
+        <select class="form-control" id="genre" [(ngModel)]="genre">
+            <option *ngFor="let g of genresArray">
+                {{g}}
+            </option>
+        </select>
+    </div>
+
+    <!--<button (click)="consoleString()">Stampa</button> -->
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Genre</th>
+            <th scope="col">Name</th>
+            <th scope="col">Director</th>
+            <th scope="col">Release Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="pointer" *ngFor="let entry of movies | genrePipe : genre" (click)="goToDetails(entry.id)">
+            <th scope="row"> {{entry.genre}}</th>
+            <td>{{entry.name}}</td>
+            <td>{{entry.director}}</td>
+            <td>{{entry.releaseDate | date}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,52 @@
+<header>
+    <div class="bg-dark">
+      <div class="container">
+        <div id ="logo">
+          TheNet
+          <i class="fas fa-fish"></i>
+        </div>
+        <div>
+          <ul id="menuDX" class="nav col-lg-auto my-2 my-md-0 justify-content-end">
+            <li></li>
+            <li>
+              <a href="#" class="nav-link">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
+                Home
+              </a>
+            </li>
+            <li>
+              <a [routerLink]='["/moviesApi"]' class="nav-link">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
+                Movies
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
+                TV Series
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
+                Watchlist
+              </a>
+            </li>
+            <li>
+            <a [routerLink]="['/login']" class="nav-link">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
+              <i class="openButton fas fa-user fa-1.5x bi d-block mx-auto mb-1" width="24" height="24"></i>
+            </a>
+            </li>
+            <li>
+              <a [routerLink]="['/filterByGenre']" class="nav-link">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
+                <i class="fas fa-filter fa-1.5x bi d-block mx-auto mb-1" width="24" height="24"></i>
+              </a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  

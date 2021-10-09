@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Pomelo.EntityFrameworkCore.MySql" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Model\" />
+    <None Remove="Services\" />
+    <None Remove="Migrations\" />
+    <None Remove="Mapper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="BL\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Mappers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FilmComments.Core\FilmComments.Core.csproj" />
+  </ItemGroup>
+</Project>

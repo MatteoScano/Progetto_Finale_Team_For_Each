@@ -1,0 +1,128 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj": {}
+  },
+  "projects": {
+    "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj",
+        "projectName": "FilmComments.Core",
+        "projectPath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj",
+        "packagesPath": "/Users/stefano.fibbi/.nuget/packages/",
+        "outputPath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/stefano.fibbi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
+        "projectName": "FilmComments.DB",
+        "projectPath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
+        "packagesPath": "/Users/stefano.fibbi/.nuget/packages/",
+        "outputPath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.DB/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/stefano.fibbi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
+                "projectPath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

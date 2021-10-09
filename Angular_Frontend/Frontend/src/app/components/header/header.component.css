@@ -1,0 +1,61 @@
+/* proprietà generiche header */
+header {
+    width: 100%;
+    color: rgb(240, 197, 116);
+  }
+
+  @font-face {
+    font-family: "DK Lemon Yellow Sun";
+    src: local("DK Lemon Yellow Sun"), url(../../../assets/fonts/DKLemonYellowSun.otf) format("truetype");
+}
+  
+  /* logo sulla sinistra (scritta + icona) */
+  #logo {
+    width: 150px;
+    height: 40;
+    font-family: 'DK Lemon Yellow Sun';
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  
+  /*scritte + icona menu sulla destra*/
+  #menuDX {
+      font-family: 'DK Lemon Yellow Sun';
+    font-size: 20px;
+    position: absolute;
+  }
+  
+  /* classe delle scritte a destra */
+  .nav-link {
+      display: block;
+      color: rgb(240, 197, 116);
+      text-decoration: none;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  }
+  
+  /* fascia nera di sfondo */
+  .bg-dark{
+    height: 80px;
+    content: normal;
+    align-content: stretch;
+  }
+  
+  /* blocco fascia nera + scritte */
+  .container {
+    height: 140px;
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* elementi della lista (-> rapporto logo/menu)*/
+  ul {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  

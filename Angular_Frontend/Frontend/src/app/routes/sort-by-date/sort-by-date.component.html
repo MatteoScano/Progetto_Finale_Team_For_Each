@@ -1,0 +1,28 @@
+<form #formSort="ngForm">
+    <div class="form-group row">
+      <label for="sort"  class="col-sm-2 col-form-label">Sort by</label>
+          <div class="col-sm-10">
+            <select class="form-control" id="options" ngModel required name="optionSelected">
+              <option *ngFor="let option of sortOptions"> {{option}} </option>
+          </select>
+          </div>
+    </div> 
+  </form>
+  <button class="btn btn-primary mb-3" (click)="sortBy(formSort)">Sort by </button>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>          
+        <th scope="col">Release Date</th>
+        <th scope="col">Name</th>
+        <th scope="col">Director</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="pointer" *ngFor="let entry of moviesOrdered">
+        <td>{{entry.releaseDate | date}}</td>
+        <td>{{entry.name}}</td>
+        <td>{{entry.director}}</td>
+      </tr>
+    </tbody>
+  </table>
