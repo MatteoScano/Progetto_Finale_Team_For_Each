@@ -1,9 +1,12 @@
 package com.thenetvalue.utenti.model;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "user")
+@DynamicUpdate
 public class User {
 
     @Id

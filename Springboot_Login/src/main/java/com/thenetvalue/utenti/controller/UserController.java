@@ -21,6 +21,7 @@ public class UserController {
 
     @PostMapping("/")
     public String addUser(@RequestBody User user){  //RequestBody=tutto cio che mi passa dall'esterno va messo nell oggetto users
+
         return userService.addUser(user);
     }
 
@@ -40,6 +41,7 @@ public class UserController {
     }
 
     @GetMapping("/")
+    @CrossOrigin(origins = "*")
     public Iterable<User> allUsers(){
         return userService.allUsers();
     }

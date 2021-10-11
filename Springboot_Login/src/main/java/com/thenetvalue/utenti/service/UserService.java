@@ -2,6 +2,7 @@ package com.thenetvalue.utenti.service;
 
 import com.thenetvalue.utenti.dao.UserRepositoryDAO;
 import com.thenetvalue.utenti.model.User;
+import com.thenetvalue.utenti.security.SecurityConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -12,14 +13,22 @@ import java.util.Optional;
 @Service
 public class UserService {
     UserRepositoryDAO userDAO;    //interfaccia
+    SecurityConfiguration passwordEncoder;
 
     @Autowired
     public UserService(@Qualifier("dbUserDAO") UserRepositoryDAO userDAO) {
         this.userDAO = userDAO;
     }
 
-    public String addUser(User user){
-        User result = userDAO.save(user);
+    public String addUser(@Qualifier("SecurityConfiguration") User user){
+
+        //.withUser("user").password(passwordEncoder.encode("password")).roles("USER")
+
+        //user.setPassword(passwordEncoder.encript);
+        //prendere la password e decodificarla con il bean del security configuration
+
+
+        User result = userDAO.save(user);        // save(user.setPassword());   passwordencoder.encript
         if (result!=null && result.getId() != 0){
             return "Utente salvato correttamente";
         }else{
