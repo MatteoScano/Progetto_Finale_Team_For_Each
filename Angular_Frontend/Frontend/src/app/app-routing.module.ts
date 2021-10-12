@@ -1,3 +1,4 @@
+import { RatingStarsComponent } from './components/rating-stars/rating-stars.component';
 import { FilterByGenreComponent } from './routes/filter-by-genre/filter-by-genre.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: "login", component: LoginPageComponent },
   { path: "filterByGenre", component: FilterByGenreComponent },
   { path: "movie_ratings", component: MovieRatingComponent},
+  { path: "star_ratings", component: RatingStarsComponent }
 ];
 
 @NgModule({
