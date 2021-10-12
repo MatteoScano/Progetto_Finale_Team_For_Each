@@ -1,3 +1,5 @@
+import { SortByComponent } from './routes/sort-by/sort-by.component';
+import { DoubleFilterComponent } from './routes/double-filter/double-filter.component';
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
 import { LoadingPageComponent } from './components/loading-page/loading-page.component';
 import { FilterByGenreComponent } from './routes/filter-by-genre/filter-by-genre.component';
@@ -26,7 +28,9 @@ const routes: Routes = [
   { path: "movie_ratings", component: MovieRatingComponent},
   { path: "loading", component: LoadingPageComponent},
   { path: "moviesApi", component: MoviesApiComponent},
-  { path: "comments", component: CommentsComponent}
+  { path: "comments", component: CommentsComponent},
+  { path: "doublefilter", component: DoubleFilterComponent},
+  { path: "sortBy", component: SortByComponent}
 ];
 
 @NgModule({

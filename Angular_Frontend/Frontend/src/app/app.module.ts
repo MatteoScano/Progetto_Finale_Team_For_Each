@@ -22,11 +22,9 @@ import { GenrePipePipe } from './pipes/genrePipe/genre-pipe.pipe';
 import { WelcomePageComponent } from './routes/welcome-page/welcome-page.component';
 import { MovieRatingComponent } from './components/movie-ratings/movie-ratings.component';
 import { CommentsComponent } from './components/comments/comments.component';
-
-
-
-
-
+import { DoubleFilterComponent } from './routes/double-filter/double-filter.component';
+import { DoubleFilterPipe } from './pipes/double-filter/double-filter.pipe';
+import { SortByComponent } from './routes/sort-by/sort-by.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +43,10 @@ import { CommentsComponent } from './components/comments/comments.component';
     MovieRatingComponent,
     MoviesApiComponent,
     LoadingPageComponent,
-    CommentsComponent
+    CommentsComponent,
+    DoubleFilterComponent,
+    DoubleFilterPipe,
+    SortByComponent
    ],
 
   imports: [
