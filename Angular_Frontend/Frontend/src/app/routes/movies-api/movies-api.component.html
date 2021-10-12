@@ -17,10 +17,12 @@
           <td> {{entry.title}}</td>
           <td>{{entry.original_language}}</td>
           <td>{{entry.popularity}}</td>
-          <td>{{entry.release_date | date}}</td>
+          <td>{{entry.release_date}}</td>
         </tr>
       </tbody>
     </table>
   </div>
-  
-  <app-loading-page *ngIf="results==null" ></app-loading-page>
+
+ <app-loading-page *ngIf="!results" ></app-loading-page>
+
+

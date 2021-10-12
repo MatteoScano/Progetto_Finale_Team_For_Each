@@ -1,3 +1,5 @@
+import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
+import { LoadingPageComponent } from './components/loading-page/loading-page.component';
 import { FilterByGenreComponent } from './routes/filter-by-genre/filter-by-genre.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -21,6 +23,10 @@ const routes: Routes = [
   { path: "login", component: LoginPageComponent },
   { path: "filterByGenre", component: FilterByGenreComponent },
   { path: "movie_ratings", component: MovieRatingComponent},
+  { path: "loading", component: LoadingPageComponent},
+  { path: "moviesApi", component: MoviesApiComponent},
+
+
 ];
 
 @NgModule({

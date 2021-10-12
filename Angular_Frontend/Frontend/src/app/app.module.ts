@@ -1,3 +1,5 @@
+import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
+import { LoadingPageComponent } from './components/loading-page/loading-page.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -40,6 +42,8 @@ import { MovieRatingComponent } from './components/movie-ratings/movie-ratings.c
     GenrePipePipe,
     WelcomePageComponent,
     MovieRatingComponent,
+    MoviesApiComponent,
+    LoadingPageComponent
    ],
 
   imports: [
