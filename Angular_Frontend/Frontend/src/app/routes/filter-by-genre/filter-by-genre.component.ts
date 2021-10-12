@@ -1,3 +1,4 @@
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MovieData } from '../../models/data.model';
@@ -14,6 +15,7 @@ export class FilterByGenreComponent implements OnInit {
 
   constructor(private router : Router, private dataService : DataService) { }
 
+  showResult = false;
   genre:string;
   movies: MovieData [];
   genresArray = ['Horror','Adventure','Comedy','Fantasy','Crime','Romance'];
@@ -34,5 +36,12 @@ export class FilterByGenreComponent implements OnInit {
     this.dataService.getData().subscribe( (response : any) => {
       this.movies = response;
     })
+  }
+
+  filterBy(form: NgForm) {
+    this.genre = form.form.value.genre;
+    if (this.genre) {
+      this.showResult = true;
+    }
   }
 }
