@@ -1,0 +1,37 @@
+.pointer {
+  cursor: pointer;
+}
+
+.bck-gradient {
+  background: linear-gradient(
+    0deg,
+    rgba(10, 8, 37, 1) 0%,
+    rgba(83, 25, 19, 1) 44%,
+    rgba(19, 21, 22, 1) 95%,
+    rgb(68, 83, 87) 100%
+  );
+}
+
+.plus {
+  color: white;
+}
+
+.titlestyle {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  font-weight: 800px;
+}
+
+.titlestyle:hover {
+  color: rgba(83, 25, 19, 1);
+  transition: all 0.5s ease;
+}
+.addMovie {
+  color: white;
+}
+
+.addMovie:hover {
+  color: rgba(83, 25, 19, 1);
+  transition: all 0.5s ease;
+}

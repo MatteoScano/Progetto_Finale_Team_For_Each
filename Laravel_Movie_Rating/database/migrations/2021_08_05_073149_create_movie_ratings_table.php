@@ -18,6 +18,7 @@ class CreateMovieRatingsTable extends Migration
             $table->integer('movie_rating');
             $table->integer('user_id')->unsigned();
             $table->integer('movie_id')->unsigned();
+            $table->longText('name');
             $table->timestamps();
         });
     }

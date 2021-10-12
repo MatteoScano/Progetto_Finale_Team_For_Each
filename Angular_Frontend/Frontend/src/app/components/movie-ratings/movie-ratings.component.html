@@ -1,0 +1,27 @@
+<body class="bck-gradient">
+  <div class="container p-5">
+    <h1 class="text-center mb-5 titlestyle">MOVIE RATINGS</h1>
+
+    <table class="table plus">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Movie Rating</th>
+          <th scope="col">Movies id</th>
+          <th scope="col">User id</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="pointer" *ngFor="let entry of result">
+          <td>{{ entry.movie_rating }}</td>
+          <td>{{ entry.movie_id }}</td>
+          <td>{{ entry.user_id }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+<!--movie_rating: number,
+  movie_id: number,
+  user_id:number-->
