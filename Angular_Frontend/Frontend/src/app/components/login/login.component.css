@@ -5,14 +5,14 @@ label {
     width: 92px;
     margin-left: 0%;
   }
-  
+
   /*lista*/
   ul {
     padding-top: 10px;
     padding: 40px;
     list-style: none;
   }
-  
+
   /*form username + psw + bottoni*/
   .form-group {
     width: max-content;
@@ -25,7 +25,7 @@ label {
     border-style: solid;
     border-color:  rgb(159, 199, 205, 0.7);
   }
-  
+
   /*riga input*/
   .input-line {
     width: 190px;
@@ -33,14 +33,14 @@ label {
     border-style: solid;
     border-color:  rgb(159, 199, 205, 0.7);
   }
-  
+
   /*label + riga input*/
   .credential-block {
     justify-content: stretch;
     padding-bottom: 30px;
     vertical-align: auto;
   }
-  
+
   /*bottone submit*/
   .submit {
     float: right;
@@ -50,4 +50,11 @@ label {
     border-radius: 5px;
     box-sizing: content-box;
     background-color: rgba(240, 197, 116, 0.4);
+  }
+
+  .fa-backward {
+    margin-left: 20px;
+    margin-top: 20px;
+    color: rgb(159, 199, 205, .6);
+
   }

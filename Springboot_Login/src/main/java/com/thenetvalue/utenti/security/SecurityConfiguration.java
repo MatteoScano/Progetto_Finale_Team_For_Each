@@ -37,20 +37,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .usersByUsernameQuery("select username,password,enabled "   //Preleva gli utenti tramite query con le password criptate
                         + "from users "
                         + "where username = ?");
-
-        //per i ruoli -> .authoritiesByUsernameQuery("select username, authority"+"from authorities"+"where username = ?");
-
-        //.usersByUsernameQuery("select username,password,enabled from user where username =  "+"?"+" ")
-        //.authoritiesByUsernameQuery("select username, authority"+"from authorities"+"where username = ?");
-
-                //.withDefaultSchema()    //crea le tabelle e inserisce gli utenti di seguito
-                /* Questa funziona!!
-                auth.inMemoryAuthentication()  //crea lo schema ma non va bene con il nostro database, serve uno schema di default (scritto su phpmyadmin)
-
-                .withUser("user").password(passwordEncoder.encode("password")).roles("USER")
-                .and()
-                .withUser("admin").password(passwordEncoder.encode("admin")).roles("ADMIN");
-                */
     }
 
     @Override
@@ -74,7 +60,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder(){
         return this.passwordEncoder;
-        //return NoOpPasswordEncoder.getInstance();
+        //return NoOpPasswordEncoder.getInstance(); *test
     }
 @Bean
     public CorsFilter corsFilter() {

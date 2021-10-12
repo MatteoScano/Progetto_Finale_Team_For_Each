@@ -10,7 +10,7 @@
               name="usernameInput"
               class="input-line"
               required
-              [(ngModel)]="usernameInput"
+              [(ngModel)]="username"
             />
           </span>
         </li>
@@ -23,12 +23,12 @@
               name="passwordInput"
               class="input-line"
               required
-              [(ngModel)]="passwordInput"
+              [(ngModel)]="password"
             />
           </span>
         </li>
         <span>
-          <button type="submit" (click)="submitButton()" class="submit">
+          <button type="submit" (click)="doLogin()" class="submit">
             Let's go!
           </button>
         </span>

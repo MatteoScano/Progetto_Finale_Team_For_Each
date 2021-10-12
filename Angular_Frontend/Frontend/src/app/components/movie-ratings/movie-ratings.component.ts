@@ -1,12 +1,8 @@
+import { MovieRatingService } from './../../services/movieRatings/movie-ratings.service';
 import { DataInterface } from 'src/app/models/movie-ratings.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MovieRatingInterface } from 'src/app/models/movie-ratings.model';
-import { MovieRatingService } from '../../services/movie-ratings.service';
-
-
-
-
 
 //  - - - - -  - - - - -  - - - - -  - - - - -  - - - - -  - - - - -  - - - - -
 

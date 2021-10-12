@@ -1,11 +1,7 @@
+import { LoginService } from './../../services/login/login.service';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, NgForm } from '@angular/forms';
-
-export interface UserInterface{
-  username: string, 
-  password: string
-}
 
 @Component({
   selector: 'app-login',
@@ -14,28 +10,29 @@ export interface UserInterface{
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private loginService : LoginService, private router: Router) { }
 
   //variabili per l'input
-  usernameInput: string;
-  passwordInput: string;  
+  username: string;
+  password: string;
+  message:any;
 
-  //utenti
-  root: UserInterface={
-    username: "root",
-    password: "root"
-  }
-  pippo: UserInterface={
-    username: "pippo",
-    password: "pippo2"
+
+  ngOnInit(){
   }
 
-  //array di UserInterface
-  users: UserInterface[]=[this.root, this.pippo];
-
-  ngOnInit(): void {
+  doLogin(){
+    //this.router.navigate["http://localhost:8080/login"];
+    if(this.username != null && this.password !=null){
+    let resp = this.loginService.login(this.username, this.password);
+    resp.subscribe(data => {
+      this.message = data;
+      console.log(data);
+     //this.router.navigate(["/dashboard"])
+    });
   }
-
+}
+/*
   submitButton(){
     if(this.usernameInput != null && this.passwordInput !=null){
       let found = this.searchInsideArray(this.usernameInput, this.passwordInput);
@@ -53,5 +50,6 @@ export class LoginComponent implements OnInit {
     }
     return false;
   }
+  */
 
 }
