@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zz8nvzouKbZRx1xz3fN/O/e8KttTGgkXwxnrpD42e5BpnzsNdeFAmcHZzjvntL+MfD6UancZ/BQLQP7pYAHr7g==",
+  "dgSpecHash": "P7kNIZo8twjft81BCUG35RDn7X/5WD6buzHb7fLo91tKcfpXwZ4+2+tbmnPLVmx/uZIbe96GNgMdeDuyzsXyWw==",
   "success": true,
-  "projectFilePath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj",
+  "projectFilePath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -10,6 +10,7 @@ import { EditComponent } from './routes/edit/edit.component';
 import { LoginPageComponent } from './routes/login-page/login-page.component';
 import { WelcomePageComponent } from './routes/welcome-page/welcome-page.component';
 import { MovieRatingComponent } from './components/movie-ratings/movie-ratings.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 
 
@@ -25,8 +26,7 @@ const routes: Routes = [
   { path: "movie_ratings", component: MovieRatingComponent},
   { path: "loading", component: LoadingPageComponent},
   { path: "moviesApi", component: MoviesApiComponent},
-
-
+  { path: "comments", component: CommentsComponent}
 ];
 
 @NgModule({

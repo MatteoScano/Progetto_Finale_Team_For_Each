@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj": {}
+    "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.DB\\FilmComments.DB.csproj": {}
   },
   "projects": {
-    "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
+    "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj",
+        "projectUniqueName": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj",
         "projectName": "FilmComments.Core",
-        "projectPath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj",
-        "packagesPath": "/Users/stefano.fibbi/.nuget/packages/",
-        "outputPath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/obj/",
+        "projectPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj",
+        "packagesPath": "C:\\Users\\icaro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/stefano.fibbi/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\icaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,34 +54,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj": {
+    "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.DB\\FilmComments.DB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
+        "projectUniqueName": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.DB\\FilmComments.DB.csproj",
         "projectName": "FilmComments.DB",
-        "projectPath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
-        "packagesPath": "/Users/stefano.fibbi/.nuget/packages/",
-        "outputPath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.DB/obj/",
+        "projectPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.DB\\FilmComments.DB.csproj",
+        "packagesPath": "C:\\Users\\icaro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.DB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/stefano.fibbi/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\icaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
-                "projectPath": "/Users/stefano.fibbi/Documents/TheNetValue/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj"
+              "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj": {
+                "projectPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj"
               }
             }
           }
@@ -120,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

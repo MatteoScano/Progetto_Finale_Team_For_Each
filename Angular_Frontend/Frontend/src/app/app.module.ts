@@ -21,6 +21,7 @@ import { FilterByGenreComponent } from './routes/filter-by-genre/filter-by-genre
 import { GenrePipePipe } from './pipes/genrePipe/genre-pipe.pipe';
 import { WelcomePageComponent } from './routes/welcome-page/welcome-page.component';
 import { MovieRatingComponent } from './components/movie-ratings/movie-ratings.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 
 
@@ -43,7 +44,8 @@ import { MovieRatingComponent } from './components/movie-ratings/movie-ratings.c
     WelcomePageComponent,
     MovieRatingComponent,
     MoviesApiComponent,
-    LoadingPageComponent
+    LoadingPageComponent,
+    CommentsComponent
    ],
 
   imports: [

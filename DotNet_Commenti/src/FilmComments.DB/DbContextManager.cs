@@ -10,7 +10,7 @@ namespace FilmComments.DB
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=localhost;Port=8889;Database=film_comment_app;Uid=root;Pwd=root";
+            var connectionString = "Server=localhost;Port=3306;Database=film_comment_app;Uid=root;Pwd=root";
             var version = new MySqlServerVersion(new Version(5, 7, 24));
 
             optionsBuilder.UseMySql(connectionString, version);
