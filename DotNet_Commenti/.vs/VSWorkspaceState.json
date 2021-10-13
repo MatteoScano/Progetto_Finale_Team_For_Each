@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\FilmComments.Core",
+    "\\src\\FilmComments.Core\\Model",
+    "\\src\\FilmComments.DB",
+    "\\src\\FilmComments.DB\\Model",
+    "\\src\\FilmComments.RestAPIs"
+  ],
+  "SelectedNode": "\\src\\FilmComments.RestAPIs\\Startup.cs",
+  "PreviewInSolutionExplorer": false
+}

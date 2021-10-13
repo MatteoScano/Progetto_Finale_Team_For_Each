@@ -18,6 +18,8 @@ namespace FilmComments.RestAPIs
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,7 +33,13 @@ namespace FilmComments.RestAPIs
             services.AddSingleton<CommentService>();
             //services.AddSingleton<IStorageService, InMemoryStorageService>();
             services.AddSingleton<IStorageService, MySqlStorageService>();
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins, builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -50,6 +58,8 @@ namespace FilmComments.RestAPIs
             }
 
             app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 

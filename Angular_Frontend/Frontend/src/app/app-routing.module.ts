@@ -14,8 +14,6 @@ import { WelcomePageComponent } from './routes/welcome-page/welcome-page.compone
 import { MovieRatingComponent } from './components/movie-ratings/movie-ratings.component';
 import { CommentsComponent } from './components/comments/comments.component';
 
-
-
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
   { path: "welcome", component : WelcomePageComponent},
