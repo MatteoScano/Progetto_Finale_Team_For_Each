@@ -1,11 +1,10 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DataInterface } from '../../models/movie-ratings.model';
 
 
-
-
-
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 @Injectable({
@@ -13,25 +12,64 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MovieRatingService {
 
-  private api ="http://127.0.0.1:8000";
+
+  private laravelUrl ="http://127.0.0.1:8000";    // Variabile che contiene l indirizzo di chiamata principale chiamate http
 
 
+  constructor(private http: HttpClient) { }       // costruttore con parametro injectable
 
 
-  constructor(private HttpClient: HttpClient) { }
+  // GETTER
 
   getratings() {
-    return this.HttpClient.get<any>(this.api + "/api/movie_ratings"); //http://127.0.0.1:8000/api/movie_ratings
-  }
-
-  getratingsByUserId(user_id: number) {
-    return this.HttpClient.get<any>(this.api + "/api/movie_ratings/user_id/" + user_id); //http://127.0.0.1:8000/api/movie_ratings/
+    return this.http.get<any>(this.laravelUrl + "/api/movie_ratings");      //Funzione che chiama tutti i valori dei campi di interfaccia DataInterface in movie-ratings.model.ts
   }
 
 
-  getratingsByMovieId(movie_id: number) {
-    return this.HttpClient.get<any>(this.api + "/api/movie_ratings/movie_id/{movieId}" ); //http://127.0.0.1:8000/api/movie_ratings
+
+  getratingsByUserId(user_id: DataInterface) {
+    return this.http.get<any>(this.laravelUrl + "/api/movie_ratings/user_id/" + user_id);
   }
+
+
+  getratingsByMovieId(movie_id: DataInterface) {
+    return this.http.get<any>(this.laravelUrl + "/api/movie_ratings/movie_id/{movieId}" );
+  }
+
+
+
+  // ADDER
+
+  addRating = (rating: DataInterface) => {
+    return this.http.post<DataInterface>(this.laravelUrl, {
+      "rating": rating.movie_rating,
+      "movie_id": rating.movie_id,
+      "director": rating.user_id,
+
+    });
+  };
+
+
+  // REMOVER
+
+  deleteRating( movie_id ){
+    return this.http.delete(this.laravelUrl + "/" + movie_id)
+  }
+
+
+  // EDITOR
+
+  editRating = (rating: DataInterface) => {
+    return this.http.put(this.laravelUrl + '/' + rating.movie_id, {
+      "rating": rating.movie_rating,
+      "movie_id": rating.movie_id,
+      "director": rating.user_id,
+    });
+  };
+
+
+
+
 }
 
 // localhost:8000/api/movie_ratings/user_id/42

@@ -1,8 +1,9 @@
+import { DataInterface } from './../../models/movie-ratings.model';
 import { MovieRatingService } from './../../services/movieRatings/movie-ratings.service';
-import { DataInterface } from 'src/app/models/movie-ratings.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MovieRatingInterface } from 'src/app/models/movie-ratings.model';
+import { NgForm } from '@angular/forms';
 
 //  - - - - -  - - - - -  - - - - -  - - - - -  - - - - -  - - - - -  - - - - -
 
@@ -24,6 +25,7 @@ export class MovieRatingComponent implements OnInit {
 
   public ratings:MovieRatingInterface;
   public result: DataInterface [];
+  public ratingEntry : DataInterface
 
 
   constructor(private movieRatingsService: MovieRatingService, private router : Router) { }
@@ -51,6 +53,22 @@ export class MovieRatingComponent implements OnInit {
         },
         error => console.log(error)
       )
+  }
+
+  onSubmit(form : NgForm){
+    this.ratingEntry = form.form.value;
+    console.log(form)
+    console.log(this.ratingEntry);
+
+
+    this.movieRatingsService.addRating(this.ratingEntry).subscribe(response => {
+      console.log(response);
+      this.router.navigate(['/dashboard']);
+    },
+    (err) => {
+      //fai qualcosa
+    }
+    )
   }
 
 
