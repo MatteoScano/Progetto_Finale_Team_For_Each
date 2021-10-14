@@ -26,6 +26,7 @@ import { DoubleFilterComponent } from './routes/double-filter/double-filter.comp
 import { DoubleFilterPipe } from './pipes/double-filter/double-filter.pipe';
 import { SortByComponent } from './routes/sort-by/sort-by.component';
 import { LogoutComponent } from './routes/logout/logout.component';
+import { StarsComponent } from './components/stars/stars.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { LogoutComponent } from './routes/logout/logout.component';
     DoubleFilterComponent,
     DoubleFilterPipe,
     SortByComponent,
-    LogoutComponent
+    LogoutComponent,
+    StarsComponent
    ],
 
   imports: [

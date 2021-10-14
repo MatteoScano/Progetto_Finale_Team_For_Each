@@ -19,18 +19,18 @@ import { CommentsComponent } from './components/comments/comments.component';
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
   { path: "welcome", component : WelcomePageComponent},
-  { path: "dashboard", component : DashboardComponent , canActivate:[AuthGuardService] },
-  { path: "add", component : AddComponent, canActivate:[AuthGuardService] },
-  { path: "details/:id", component : DetailsComponent , canActivate:[AuthGuardService] },
-  { path: "edit/:id", component: EditComponent, canActivate:[AuthGuardService]  },
+  { path: "dashboard", component : DashboardComponent , /* canActivate:[AuthGuardService] */},
+  { path: "add", component : AddComponent, /* canActivate:[AuthGuardService] */},
+  { path: "details/:id", component : DetailsComponent /*, canActivate:[AuthGuardService]/ */},
+  { path: "edit/:id", component: EditComponent, /* canActivate:[AuthGuardService] */ },
   { path: "login", component: LoginPageComponent },
-  { path: "filterByGenre", component: FilterByGenreComponent, canActivate:[AuthGuardService]  },
-  { path: "movie_ratings", component: MovieRatingComponent, canActivate:[AuthGuardService] },
+  { path: "filterByGenre", component: FilterByGenreComponent, /*canActivate:[AuthGuardService] */ },
+  { path: "movie_ratings", component: MovieRatingComponent, /*canActivate:[AuthGuardService] */},
   { path: "loading", component: LoadingPageComponent},
-  { path: "moviesApi", component: MoviesApiComponent, canActivate:[AuthGuardService] },
-  { path: "comments", component: CommentsComponent, canActivate:[AuthGuardService] },
-  { path: "doublefilter", component: DoubleFilterComponent, canActivate:[AuthGuardService] },
-  { path: "sortBy", component: SortByComponent, canActivate:[AuthGuardService] },
+  { path: "moviesApi", component: MoviesApiComponent, /* canActivate:[AuthGuardService] */},
+  { path: "comments", component: CommentsComponent, /* canActivate:[AuthGuardService] */},
+  { path: "doublefilter", component: DoubleFilterComponent,/* canActivate:[AuthGuardService] */},
+  { path: "sortBy", component: SortByComponent, /* canActivate:[AuthGuardService] */},
   { path: "logout", component: LogoutComponent}
 ];
 
