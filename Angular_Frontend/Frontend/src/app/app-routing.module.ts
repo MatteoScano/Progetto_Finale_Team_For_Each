@@ -1,3 +1,5 @@
+import { AuthGuardService } from './services/authGuard/auth-guard.service';
+import { LogoutComponent } from './routes/logout/logout.component';
 import { SortByComponent } from './routes/sort-by/sort-by.component';
 import { DoubleFilterComponent } from './routes/double-filter/double-filter.component';
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
@@ -17,18 +19,19 @@ import { CommentsComponent } from './components/comments/comments.component';
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
   { path: "welcome", component : WelcomePageComponent},
-  { path: "dashboard", component : DashboardComponent },
-  { path: "add", component : AddComponent },
-  { path: "details/:id", component : DetailsComponent },
-  { path: "edit/:id", component: EditComponent },
+  { path: "dashboard", component : DashboardComponent , canActivate:[AuthGuardService] },
+  { path: "add", component : AddComponent, canActivate:[AuthGuardService] },
+  { path: "details/:id", component : DetailsComponent , canActivate:[AuthGuardService] },
+  { path: "edit/:id", component: EditComponent, canActivate:[AuthGuardService]  },
   { path: "login", component: LoginPageComponent },
-  { path: "filterByGenre", component: FilterByGenreComponent },
-  { path: "movie_ratings", component: MovieRatingComponent},
+  { path: "filterByGenre", component: FilterByGenreComponent, canActivate:[AuthGuardService]  },
+  { path: "movie_ratings", component: MovieRatingComponent, canActivate:[AuthGuardService] },
   { path: "loading", component: LoadingPageComponent},
-  { path: "moviesApi", component: MoviesApiComponent},
-  { path: "comments", component: CommentsComponent},
-  { path: "doublefilter", component: DoubleFilterComponent},
-  { path: "sortBy", component: SortByComponent}
+  { path: "moviesApi", component: MoviesApiComponent, canActivate:[AuthGuardService] },
+  { path: "comments", component: CommentsComponent, canActivate:[AuthGuardService] },
+  { path: "doublefilter", component: DoubleFilterComponent, canActivate:[AuthGuardService] },
+  { path: "sortBy", component: SortByComponent, canActivate:[AuthGuardService] },
+  { path: "logout", component: LogoutComponent}
 ];
 
 @NgModule({

@@ -1,37 +1,40 @@
-<div class="container form-group">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container p-5">
+  <h1 class="text-center mb-2">
+    The Net Fish
+  </h1>
+</div>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <br>
+      <i class="fas fa-user fa-5x"></i>
+      <!--<i class="fa fa-user fa-5x" aria-hidden="true"></i>-->
+    </div>
+    <br>
+
+    <!-- Login Form -->
     <form>
-      <ul>
-        <li class="credential-block">
-          <label for="name">Username</label>
-          <span>
-            <input
-              type="text"
-              id="username"
-              name="usernameInput"
-              class="input-line"
-              required
-              [(ngModel)]="username"
-            />
-          </span>
-        </li>
-        <li class="credential-block">
-          <label for="name">Password</label>
-          <span>
-            <input
-              type="password"
-              id="password"
-              name="passwordInput"
-              class="input-line"
-              required
-              [(ngModel)]="password"
-            />
-          </span>
-        </li>
-        <span>
-          <button type="submit" (click)="doLogin()" class="submit">
-            Let's go!
-          </button>
-        </span>
-      </ul>
+      <input type="text" id="username"  required [(ngModel)]="username" class="fadeIn second" name="login" placeholder="Username">
+      <input type="text" id="password" required [(ngModel)]="password" class="fadeIn third" name="login" placeholder="Password">
+      <input type="submit" (click)="doLogin()" class="fadeIn fourth" value="Login">
     </form>
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Prima volta su NetFish?</a><br>
+      <button class="btn btn-success"[routerLink]="['/registration']">Registrati</button>
+
+    </div>
   </div>
+
+</div>
+
+

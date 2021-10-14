@@ -33,20 +33,20 @@
               </a>
             </li>
             <li>
-            <a [routerLink]="['/login']" class="nav-link">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
-              <i class="openButton fas fa-user fa-1.5x bi d-block mx-auto mb-1" width="24" height="24"></i>
-            </a>
-            </li>
-            <li>
-              <a [routerLink]="['/filterByGenre']" class="nav-link">
+              <a *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']" class="nav-link">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
-                <i class="fas fa-filter fa-1.5x bi d-block mx-auto mb-1" width="24" height="24"></i>
+                <i class="openButton fas fa-user fa-1.5x bi d-block mx-auto mb-1" width="24" height="24"></i>
               </a>
               </li>
+              <li>
+                <a *ngIf="loginService.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['/logout']">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
+                  <i class="fas fa-sign-out-alt"></i>
+                </a>
+              </li>
+
           </ul>
         </div>
       </div>
     </div>
   </header>
-  

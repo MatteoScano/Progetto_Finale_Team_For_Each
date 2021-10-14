@@ -25,6 +25,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { DoubleFilterComponent } from './routes/double-filter/double-filter.component';
 import { DoubleFilterPipe } from './pipes/double-filter/double-filter.pipe';
 import { SortByComponent } from './routes/sort-by/sort-by.component';
+import { LogoutComponent } from './routes/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { SortByComponent } from './routes/sort-by/sort-by.component';
     CommentsComponent,
     DoubleFilterComponent,
     DoubleFilterPipe,
-    SortByComponent
+    SortByComponent,
+    LogoutComponent
    ],
 
   imports: [

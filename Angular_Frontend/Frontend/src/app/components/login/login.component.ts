@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   message:any;
-
+  invalidLogin = false;
 
   ngOnInit(){
   }
@@ -27,8 +27,14 @@ export class LoginComponent implements OnInit {
     let resp = this.loginService.login(this.username, this.password);
     resp.subscribe(data => {
       this.message = data;
-      console.log(data);
-     //this.router.navigate(["/dashboard"])
+      if(data){
+        console.log(data);//TEST
+        this.invalidLogin = false;
+        this.router.navigate(["/dashboard"])}
+      else{
+        this.invalidLogin = true;
+        console.log("error");
+      }
     });
   }
 }
@@ -51,5 +57,6 @@ export class LoginComponent implements OnInit {
     return false;
   }
   */
+
 
 }
