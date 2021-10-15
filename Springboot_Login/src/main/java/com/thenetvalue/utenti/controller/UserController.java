@@ -18,7 +18,7 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
+    @CrossOrigin(origins = "*")
     @PostMapping("/")
     public String addUser(@RequestBody User user){  //RequestBody=tutto cio che mi passa dall'esterno va messo nell oggetto users
 

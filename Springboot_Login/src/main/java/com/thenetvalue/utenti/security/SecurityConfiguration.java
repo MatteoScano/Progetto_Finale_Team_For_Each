@@ -35,7 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
                 .usersByUsernameQuery("select username,password,enabled "   //Preleva gli utenti tramite query con le password criptate
-                        + "from users "
+                        + "from user "
                         + "where username = ?");
     }
 
@@ -47,7 +47,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/utenti/*")
                 .hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.POST, "/utenti/")
-                .hasRole("ADMIN")
+                .hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.PUT, "/utenti/")
                 .hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE, "/utenti/")

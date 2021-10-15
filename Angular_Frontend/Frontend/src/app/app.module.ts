@@ -31,6 +31,8 @@ import { ApiMovieDetailsComponent } from './routes/api-movie-details/api-movie-d
 import { CommentsByMovieIdPipe } from './pipes/commentsByMovieId/commentsByMovieId.pipe';
 import { CommentsFilteredByMoviesIdComponent } from './routes/comments-filtered-by-movies-id/comments-filtered-by-movies-id.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { RegistrationComponent } from './routes/registration/registration.component';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { WeatherComponent } from './components/weather/weather.component';
     ApiMovieDetailsComponent,
     CommentsByMovieIdPipe,
     CommentsFilteredByMoviesIdComponent,
-    WeatherComponent
+    WeatherComponent,
+    RegistrationComponent
    ],
 
   imports: [
