@@ -30,6 +30,7 @@ import { StarsComponent } from './components/stars/stars.component';
 import { ApiMovieDetailsComponent } from './routes/api-movie-details/api-movie-details.component';
 import { CommentsByMovieIdPipe } from './pipes/commentsByMovieId/commentsByMovieId.pipe';
 import { CommentsFilteredByMoviesIdComponent } from './routes/comments-filtered-by-movies-id/comments-filtered-by-movies-id.component';
+import { RegistrationComponent } from './routes/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { CommentsFilteredByMoviesIdComponent } from './routes/comments-filtered-
     ApiMovieDetailsComponent,
     CommentsByMovieIdPipe,
     CommentsFilteredByMoviesIdComponent,
+    RegistrationComponent,
    ],
 
   imports: [

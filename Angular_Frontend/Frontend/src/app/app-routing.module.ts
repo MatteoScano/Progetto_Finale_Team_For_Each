@@ -1,3 +1,4 @@
+import { RegistrationComponent } from './routes/registration/registration.component';
 import { ApiMovieDetailsComponent } from './routes/api-movie-details/api-movie-details.component';
 import { AuthGuardService } from './services/authGuard/auth-guard.service';
 import { LogoutComponent } from './routes/logout/logout.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: "logout", component: LogoutComponent},
   { path: "movieApiDetails/:id", component: ApiMovieDetailsComponent},
   { path: "movieComments", component: CommentsFilteredByMoviesIdComponent},
+  { path: "registration", component: RegistrationComponent},
 ];
 
 @NgModule({
