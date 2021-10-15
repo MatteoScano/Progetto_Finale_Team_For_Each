@@ -11,14 +11,14 @@ export class CommentsComponent implements OnInit {
 
   comments : CommentsInterface;
 
-  constructor(private apiService:CommentsService) { }
+  constructor(private commentService:CommentsService) { }
 
   ngOnInit(): void {
     this.getCommentsOnComponent();
   }
 
   getCommentsOnComponent(){
-    this.apiService.getComments().subscribe(
+    this.commentService.getComments().subscribe(
       response => {
         //se è andato tutto bene, allora:
         console.log("ho ottenuto i dati!")

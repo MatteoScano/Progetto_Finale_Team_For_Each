@@ -19,8 +19,7 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.fetchEntry()
-    
+    this.fetchEntry();
   }
 
   fetchEntry(){
@@ -38,7 +37,9 @@ export class DetailsComponent implements OnInit {
       console.log(err);
       this.router.navigate(['/dashboard']);
     });
-    //this.router.navigate(['/dashboard']);
+  }
 
+  goToMovieComments(){
+    this.router.navigate(['/movieComments'], {state: {data: this.id}}); //invio dell'id alla pagina di destinazione
   }
 }

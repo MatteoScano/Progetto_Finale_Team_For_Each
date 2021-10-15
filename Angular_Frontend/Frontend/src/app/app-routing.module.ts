@@ -16,6 +16,7 @@ import { LoginPageComponent } from './routes/login-page/login-page.component';
 import { WelcomePageComponent } from './routes/welcome-page/welcome-page.component';
 import { MovieRatingComponent } from './components/movie-ratings/movie-ratings.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { CommentsFilteredByMoviesIdComponent } from './routes/comments-filtered-by-movies-id/comments-filtered-by-movies-id.component';
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: "doublefilter", component: DoubleFilterComponent,/* canActivate:[AuthGuardService] */},
   { path: "sortBy", component: SortByComponent, /* canActivate:[AuthGuardService] */},
   { path: "logout", component: LogoutComponent},
-  { path: "movieApiDetails/:id", component: ApiMovieDetailsComponent}
+  { path: "movieApiDetails/:id", component: ApiMovieDetailsComponent},
+  { path: "movieComments", component: CommentsFilteredByMoviesIdComponent},
 ];
 
 @NgModule({

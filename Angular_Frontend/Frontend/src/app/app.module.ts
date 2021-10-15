@@ -28,6 +28,8 @@ import { SortByComponent } from './routes/sort-by/sort-by.component';
 import { LogoutComponent } from './routes/logout/logout.component';
 import { StarsComponent } from './components/stars/stars.component';
 import { ApiMovieDetailsComponent } from './routes/api-movie-details/api-movie-details.component';
+import { CommentsByMovieIdPipe } from './pipes/commentsByMovieId/commentsByMovieId.pipe';
+import { CommentsFilteredByMoviesIdComponent } from './routes/comments-filtered-by-movies-id/comments-filtered-by-movies-id.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { ApiMovieDetailsComponent } from './routes/api-movie-details/api-movie-d
     SortByComponent,
     LogoutComponent,
     StarsComponent,
-    ApiMovieDetailsComponent
+    ApiMovieDetailsComponent,
+    CommentsByMovieIdPipe,
+    CommentsFilteredByMoviesIdComponent,
    ],
 
   imports: [

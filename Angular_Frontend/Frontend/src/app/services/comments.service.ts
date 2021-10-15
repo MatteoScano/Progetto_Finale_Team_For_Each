@@ -14,4 +14,8 @@ export class CommentsService {
   getComments(){
     return this.http.get<any>(this.baseURL);
   }
+
+  getComment(id){
+    return this.http.get<any>(this.baseURL + id)
+  }
 }

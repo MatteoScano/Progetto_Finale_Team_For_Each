@@ -13,17 +13,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer" *ngFor="let entry of comments"> 
-          <!-- trovare modo per trasformare gli id in titoli di film e nomi utenti, 
-          collegamento tra chiavi database? 
-          oppure scaricare tutti i database e trasformare i dati in component.ts? -->
+        <tr class="pointer" *ngFor="let entry of comments | commentsByMovieId : movieId">
           <td>{{entry.id}}</td>
           <td>{{entry.userId}}</td>
-          <td>{{entry.movieId}}</td>
+          <td>{{entry.movieId}}</td><!--<td>{{transformIdInMovie(entry.movieId)}}</td>-->
           <td>{{entry.body}}</td>
         </tr>
       </tbody>
     </table>
   </div>
 
- <app-loading-page *ngIf="!comments" ></app-loading-page>
+ <app-loading-page *ngIf="!comments"></app-loading-page>
