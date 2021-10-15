@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer" *ngFor="let entry of results">
+        <tr class="pointer" *ngFor="let entry of results; let i = index"(click)="goToDetails(entry.id)">
           <td> {{entry.title}}</td>
           <td>{{entry.original_language}}</td>
           <td>{{entry.popularity}}</td>

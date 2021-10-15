@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MoviesApiService } from '../../services/moviesapi.service';
 import { MovieApiInterface, ResultInterface } from '../../models/apiMovie.model';
@@ -12,7 +13,7 @@ export class MoviesApiComponent implements OnInit {
   movies : MovieApiInterface;
   results : ResultInterface[];
 
-  constructor(private apiService:MoviesApiService) { }
+  constructor(private apiService:MoviesApiService,  private router : Router) { }
 
   ngOnInit(): void {
     this.getMarvelListOnComponent();
@@ -31,6 +32,10 @@ export class MoviesApiComponent implements OnInit {
       },
       error => console.log(error)
     )
+  }
+
+  goToDetails(id){
+    this.router.navigateByUrl('/movieApiDetails/'+id);
   }
 
 }

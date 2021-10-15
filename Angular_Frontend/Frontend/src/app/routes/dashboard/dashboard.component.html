@@ -2,13 +2,7 @@
   <h1 class="text-center mb-5">The Net Fish</h1>
 
   <div class="text-right">
-    <button
-      type="button"
-      style="font-size: 30px"
-      class="btn btn-default"
-      aria-label="Left Align"
-      [routerLink]="['/add']"
-    >
+    <button type="button" style="font-size: 30px" class="btn btn-default" aria-label="Left Align" [routerLink]="['/add']">
       <span class="fas fa-plus" aria-hidden="true"></span>
     </button>
 
@@ -36,9 +30,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr
-        class="pointer" *ngFor="let entry of movies; let i = index" (click)="goToDetails(entry.id)"
-      >
+      <tr class="pointer" *ngFor="let entry of movies; let i = index" (click)="goToDetails(entry.id)">
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ entry.name }}</td>
         <td>{{ entry.director }}</td>

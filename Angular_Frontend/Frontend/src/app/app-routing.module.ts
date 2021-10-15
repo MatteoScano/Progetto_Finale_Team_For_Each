@@ -1,3 +1,4 @@
+import { ApiMovieDetailsComponent } from './routes/api-movie-details/api-movie-details.component';
 import { AuthGuardService } from './services/authGuard/auth-guard.service';
 import { LogoutComponent } from './routes/logout/logout.component';
 import { SortByComponent } from './routes/sort-by/sort-by.component';
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: "comments", component: CommentsComponent, /* canActivate:[AuthGuardService] */},
   { path: "doublefilter", component: DoubleFilterComponent,/* canActivate:[AuthGuardService] */},
   { path: "sortBy", component: SortByComponent, /* canActivate:[AuthGuardService] */},
-  { path: "logout", component: LogoutComponent}
+  { path: "logout", component: LogoutComponent},
+  { path: "movieApiDetails/:id", component: ApiMovieDetailsComponent}
 ];
 
 @NgModule({

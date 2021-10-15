@@ -27,6 +27,7 @@ import { DoubleFilterPipe } from './pipes/double-filter/double-filter.pipe';
 import { SortByComponent } from './routes/sort-by/sort-by.component';
 import { LogoutComponent } from './routes/logout/logout.component';
 import { StarsComponent } from './components/stars/stars.component';
+import { ApiMovieDetailsComponent } from './routes/api-movie-details/api-movie-details.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { StarsComponent } from './components/stars/stars.component';
     DoubleFilterPipe,
     SortByComponent,
     LogoutComponent,
-    StarsComponent
+    StarsComponent,
+    ApiMovieDetailsComponent
    ],
 
   imports: [
