@@ -1,4 +1,5 @@
 import { Component, OnInit, VERSION } from '@angular/core';
+import { MovieRatingInterface, DataInterface } from '../../models/movie-ratings.model';
 
 @Component({
   selector: 'app-stars',
@@ -10,12 +11,19 @@ export class StarsComponent implements OnInit {
 
   name = "Angular " + VERSION.major;
 
-  starRating = 0; // StarRating contiene il valore relativa alla stella che l´ utente clicca
-  currentRate = 3.14;
+  starRating : DataInterface; // StarRating contiene il valore relativa alla stella che l´ utente clicca
+  currentRate = 0;
 
   constructor() { }
 
   ngOnInit() {
+this.viewRatingOnStar();
   }
+
+  viewRatingOnStar(){
+    console.log(this.starRating)
+    console.log(this.currentRate)
+  }
+
 
 }

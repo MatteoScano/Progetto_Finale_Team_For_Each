@@ -1,7 +1,7 @@
 export interface MovieApiInterface{
     average_rating: number,
     backdrop_path : string,
-    description: string, 
+    description: string,
     id: number,
     name: string,
     results: ResultInterface []
@@ -19,4 +19,5 @@ export interface ResultInterface{
     release_date: string,
     title: string,
     video: boolean
+   
 }
