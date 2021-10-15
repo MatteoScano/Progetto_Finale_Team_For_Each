@@ -20,7 +20,7 @@ public class UserService {
         this.userDAO = userDAO;
     }
 
-    public String addUser(@Qualifier("SecurityConfiguration") User user){
+    public String addUser(User user){
 
         //.withUser("user").password(passwordEncoder.encode("password")).roles("USER")
 
