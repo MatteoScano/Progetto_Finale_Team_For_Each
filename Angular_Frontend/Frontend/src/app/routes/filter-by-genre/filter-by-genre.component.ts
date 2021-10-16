@@ -1,6 +1,6 @@
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MovieData } from '../../models/data.model';
 import { DataService } from '../../services/data.service';
 
@@ -11,6 +11,10 @@ import { DataService } from '../../services/data.service';
   templateUrl: './filter-by-genre.component.html',
   styleUrls: ['./filter-by-genre.component.css']
 })
+
+
+
+
 export class FilterByGenreComponent implements OnInit {
 
   constructor(private router : Router, private dataService : DataService) { }

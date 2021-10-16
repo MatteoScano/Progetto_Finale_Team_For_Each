@@ -1,3 +1,4 @@
+import { FilterByWeatherConditionsComponent } from './routes/filter-by-weather-conditions/filter-by-weather-conditions.component';
 
 import { WeatherComponent } from './components/weather/weather.component';
 import { RegistrationComponent } from './routes/registration/registration.component';
@@ -40,7 +41,8 @@ const routes: Routes = [
   { path: "movieApiDetails/:id", component: ApiMovieDetailsComponent},
   { path: "movieComments", component: CommentsFilteredByMoviesIdComponent},
   { path: "weather", component: WeatherComponent},
-  { path: "registration", component: RegistrationComponent}
+  { path: "registration", component: RegistrationComponent},
+  { path: "filterByWeather", component: FilterByWeatherConditionsComponent}
 
 ];
 

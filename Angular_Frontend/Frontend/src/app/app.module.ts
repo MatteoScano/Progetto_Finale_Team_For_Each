@@ -32,6 +32,7 @@ import { CommentsByMovieIdPipe } from './pipes/commentsByMovieId/commentsByMovie
 import { CommentsFilteredByMoviesIdComponent } from './routes/comments-filtered-by-movies-id/comments-filtered-by-movies-id.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { RegistrationComponent } from './routes/registration/registration.component';
+import { FilterByWeatherConditionsComponent } from './routes/filter-by-weather-conditions/filter-by-weather-conditions.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { RegistrationComponent } from './routes/registration/registration.compon
     CommentsByMovieIdPipe,
     CommentsFilteredByMoviesIdComponent,
     WeatherComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    FilterByWeatherConditionsComponent
    ],
 
   imports: [

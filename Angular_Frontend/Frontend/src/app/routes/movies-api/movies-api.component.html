@@ -1,28 +1,40 @@
-<div class="container p-5" >
-    <h1 class="text-center mb-5">
-      Movies api dashboard
-    </h1>
+<div class="container p-5">
+  <h1 class="text-center mb-5">Movies api dashboard</h1>
 
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">Original language</th>
-          <th scope="col">Popularity</th>
-          <th scope="col">Release Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="pointer" *ngFor="let entry of results; let i = index"(click)="goToDetails(entry.id)">
-          <td> {{entry.title}}</td>
-          <td>{{entry.original_language}}</td>
-          <td>{{entry.popularity}}</td>
-          <td>{{entry.release_date}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <!--PIPE WEATHER -->
+  <button
+    type="button"
+    style="font-size: 30px"
+    class="btn btn-default"
+    aria-label="Left Align"
+    [routerLink]="['/filterByGenre']"
+  >
+    <span class="fas fa-filter" aria-hidden="true"></span>
+  </button>
+  <!--------------------------------------->
 
- <app-loading-page *ngIf="!results" ></app-loading-page>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Original language</th>
+        <th scope="col">Popularity</th>
+        <th scope="col">Release Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="pointer"
+        *ngFor="let entry of results; let i = index"
+        (click)="goToDetails(entry.id)"
+      >
+        <td>{{ entry.title }}</td>
+        <td>{{ entry.original_language }}</td>
+        <td>{{ entry.popularity }}</td>
+        <td>{{ entry.release_date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-
+<app-loading-page *ngIf="!results"></app-loading-page>

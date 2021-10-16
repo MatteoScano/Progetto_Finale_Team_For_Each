@@ -17,4 +17,8 @@ export class GenrePipePipe implements PipeTransform {
     return myArray;
   }
 
+
+
+
+
 }

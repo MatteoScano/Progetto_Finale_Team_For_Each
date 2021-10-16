@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { currentWeatherFather } from './../../models/weather.model';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
@@ -18,7 +19,8 @@ export class WeatherComponent implements OnInit {
   constructor(private weatherService : WeatherSService, private Router: Router) { }
 
   ngOnInit(): void {
-    this.exGetterWeatherData();
+    //this.exGetterWeatherData();
+    this.getMovieByCurrentWeather(this.weatherArray);
   }
 
 
@@ -37,4 +39,26 @@ this.weatherService.getterWeatherData().subscribe((
 )
 
   }
+
+  getMovieByCurrentWeather(weather : CurrentWeather[]) {
+      switch(weather[0].conditions) {
+        case "clear": {
+        console.log("genereScelto: Clear");
+        break;
+        }
+        case "rain": {
+        console.log("genereScelto: Rain");
+        break;
+        }
+        case "Partially cloudy": {
+        console.log("genereScelto: Nuvoloso");
+        break;
+        }
+        default:{
+            console.log("default");
+        break;
+        }
+      }
+  }
+
 }

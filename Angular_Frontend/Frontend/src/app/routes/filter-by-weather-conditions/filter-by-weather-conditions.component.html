@@ -1,0 +1,74 @@
+<!--
+<div class="container p-5">
+  <h1 class="text-center mb-5">The Net Fish</h1>
+  <form class="pt-5" #form="ngForm">
+    <div class="form-group row">
+      <label for="giornata" class="col-sm-2 col-form-label"
+        >Selezione il genere</label
+      >
+
+      <div class="col-sm-10">
+        <select
+          class="form-control"
+          id="days"
+          required
+          ngModel
+          required
+          name="days"
+        >
+          <option *ngFor="let conditions of conditionsArray">
+            {{ days }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </form>
+
+  <div class="text-right">
+    <button
+      class="btn btn-primary mb-3 mb-3 float-left"
+      [routerLink]="['/dashboard']"
+    >
+      Back
+    </button>
+
+    <button
+      class="btn btn-primary mb-3 mb-3 float-right"
+      (click)="filterBy(form)"
+    >
+      Filtra
+    </button>
+    <button
+      type="button"
+      style="font-size: 30px"
+      class="btn btn-default"
+      aria-label="Right Align"
+      [routerLink]="['/add']"
+    >
+      <span class="fas fa-plus mb-3 float-right" aria-hidden="true"></span>
+    </button>
+  </div>
+  <table class="table" *ngIf="showResult">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Director</th>
+        <th scope="col">Release Date</th>
+      </tr>
+    </thead>
+    <!--
+    <tbody>
+      <tr
+        class="pointer"
+        *ngFor="let entry of conditions | weatherPipe: days; let i = index"
+      >
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ entry.days }}</td>
+        <td>{{ entry.sunset }}</td>
+        <td>{{ entry.sunrise }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+-->
