@@ -1,3 +1,4 @@
+import { UserComponent } from './routes/user/user.component';
 import { FilterByWeatherConditionsComponent } from './routes/filter-by-weather-conditions/filter-by-weather-conditions.component';
 
 import { WeatherComponent } from './components/weather/weather.component';
@@ -42,7 +43,8 @@ const routes: Routes = [
   { path: "movieComments", component: CommentsFilteredByMoviesIdComponent},
   { path: "weather", component: WeatherComponent},
   { path: "registration", component: RegistrationComponent},
-  { path: "filterByWeather", component: FilterByWeatherConditionsComponent}
+  { path: "filterByWeather", component: FilterByWeatherConditionsComponent},
+  { path: "users", component: UserComponent}
 
 ];
 

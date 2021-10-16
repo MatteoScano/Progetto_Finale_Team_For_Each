@@ -32,6 +32,7 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { RegistrationComponent } from './routes/registration/registration.component';
 import { FilterByWeatherConditionsComponent } from './routes/filter-by-weather-conditions/filter-by-weather-conditions.component';
 import { MovieRatingsComponent } from './components/movie-ratings/movie-ratings.component';
+import { UserComponent } from './routes/user/user.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { MovieRatingsComponent } from './components/movie-ratings/movie-ratings.
     WeatherComponent,
     RegistrationComponent,
     FilterByWeatherConditionsComponent,
-    MovieRatingsComponent
+    MovieRatingsComponent,
+    UserComponent
    ],
 
   imports: [

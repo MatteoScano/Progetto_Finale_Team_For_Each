@@ -1,3 +1,4 @@
+import { UserDataInterface } from './../../models/user.model';
 import { LoginService } from './../../services/login/login.service';
 
 import { Component, OnInit } from '@angular/core';
@@ -18,25 +19,35 @@ export class LoginComponent implements OnInit {
   message:any;
   invalidLogin = false;
 
+  userFound: UserDataInterface;
+
   ngOnInit(){
   }
 
   doLogin(){
-    //this.router.navigate["http://localhost:8080/login"];
     if(this.username != null && this.password !=null){
-    let resp = this.loginService.login(this.username, this.password);
-    resp.subscribe(data => {
-      this.message = data;
-      if(data){
-        console.log(data);//TEST
-        this.invalidLogin = false;
-        this.router.navigate(["/dashboard"])}
-      else{
-        this.invalidLogin = true;
-        console.log("error");
-      }
-    });
+      this.letsLogIn(this.username);
   }
+}
+
+letsLogIn(username : string){
+
+  this.loginService.getUserByUsername(username,"admin","admin").subscribe(
+    (response : any) => {
+      this.userFound = response;
+        console.log("L'utente ha i seguenti dati:");  //test
+        console.log(this.userFound);
+
+        if(this.userFound){
+
+          sessionStorage.setItem('username',this.username);
+          this.router.navigate(['/dashboard']);}
+
+        else{
+            console.log("autenticazione fallita");  //test
+        }
+    });
+
 }
 /*
   submitButton(){

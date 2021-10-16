@@ -22,13 +22,11 @@ export class LoginService {
       )
       );
   }
-
-
   //LOGOUT
 
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username')
-    //console.log(!(user === null))
+    console.log(!(user === null))
     return !(user === null)
   }
 
@@ -38,33 +36,74 @@ export class LoginService {
 
 //LOGOUT test FINISH
 
-
-  public getUsers(username:string, password:string){  //click on botton
+  public getUsers(username:string, password:string){
     const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
       Authorization : 'Basic '+ btoa(username+":"+password)});
     return this.http.get(this.baseURL + "/", {headers});
     }
 
-  public getUsersById(id: number, username:string, password:string){  //click on botton
+  public getUsersById(id: number, username:string, password:string){
     const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
       Authorization : 'Basic '+ btoa(username+":"+password)});
-
       return this.http.get(this.baseURL + "/" + id, {headers});
     }
 
-    public getUsersByUsername(username:string, password:string){  //click on botton
+    public getUserByUsername(username : string, usernameAuth:string, passwordAuth:string){
       const headers = new HttpHeaders({
-        Authorization : 'Basic '+ btoa(username+":"+password)});
-
-      return this.http.get(this.baseURL + + "/username/" + username, {headers});
+        'Content-Type':  'application/json',
+        Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
+      return this.http.get(this.baseURL + "/username/" + username, {headers});
     }
 
-  public getUsersByPartialUsername(partialUsername: string, username:string, password:string){  //click on botton
+  public getUsersByPartialUsername(partialUsername: string, username:string, password:string){
     const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
       Authorization : 'Basic '+ btoa(username+":"+password)});
-
-    return this.http.get(this.baseURL + + "/username/like/" + partialUsername, {headers});
+    return this.http.get(this.baseURL + "/username/like/" + partialUsername, {headers});
   }
 
+  /*In versione BETA*/
+  updateUser = (id: number, usernameAuth:string, passwordAuth:string) => {
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
 
+    return this.http.put(this.baseURL + + "/" +id, {headers});
+  }
+
+  deleteUser(id: number, usernameAuth:string, passwordAuth:string ){
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
+    return this.http.delete(this.baseURL + "/"+id, {headers});
+  }
 }
+
+
+
+/*
+  ***----Funzione login Springboot! data 16.10.21
+
+  doLogin(){
+
+    if(this.username != null && this.password !=null){
+
+    let resp = this.loginService.login(this.username, this.password);
+    resp.subscribe(data => {
+      this.message = data;
+      if(data){
+        console.log(data);//TEST
+        this.invalidLogin = false;
+        this.router.navigate(["/dashboard"])}
+      else{
+        this.invalidLogin = true;
+        console.log("error");
+      }
+    });
+
+  }
+  ***-----
+*/
+
