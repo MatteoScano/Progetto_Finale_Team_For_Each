@@ -1,21 +1,46 @@
-<p>movie-ratings works!</p>
-<div class="form-group row">
-  <label for="evaluation" class="col-sm-2 col-form-label">Movie Rating</label>
+<body class="bck-gradient">
+  <div class="container p-5">
+    <h1 class="text-center mb-5 titlestyle">MOVIE RATINGS</h1>
+
+    <table class="table plus">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Movie Rating</th>
+          <th scope="col">Movies id</th>
+          <th scope="col">User id</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="pointer" *ngFor="let entry of result">
+          <td>{{ entry.movie_rating }}</td>
+          <td>{{ entry.movie_id }}</td>
+          <td>{{ entry.user_id }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+<!--
+<div class="container">
+  <p class="position">Rate your movie</p>
+
+  <ngb-rating class="position st-star" [max]="5" [(rate)]="starRating">
+   </ngb-rating>
+  <p>Current Rate: {{ starRating.movie_rating }}</p>
+
+  Assegnare alla variabile star rating il rating da 1 a 5 dell utente
+  <hr />
+  <hr />
+</div> -->
+
+<form #form="ngForm">
+<div class="form-group row" >
+  <label for="movie_rating" class="col-sm-2 col-form-label">Evaluation</label>
   <div class="col-sm-10">
-    <input
-      type="number"
-      class="form-control"
-      id="evaluation"
-      required
-      number
-      [(ngModel)]="dataEntry.evaluation"
-      name="movie.entry"
-    />
+      <input type="number" class="form-control" id="movie_rating" required number
+      ngModel name="movie_rating">
   </div>
 </div>
-<p>movie ID: {{ movie_id }}</p>
-<p>User ID: {{ user_id }}</p>
-
-<button type="submit" [disabled]="!form.valid" class="btn btn-success">
-  Submit
-</button>
+<button type="submit" [disabled]="!form.valid" onclick="postMovieRating(form)"  class="btn btn-success">Submit</button>
+</form>

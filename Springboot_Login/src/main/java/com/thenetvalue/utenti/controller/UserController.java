@@ -31,6 +31,7 @@ public class UserController {
     }
 
     @GetMapping("/username/{username}")
+    @CrossOrigin(origins = "*")
     public User getUserByUsername(@PathVariable("username") String username){    //Cerca l'utente tramite l'username
         return userService.getUserByUsername(username);
     }
