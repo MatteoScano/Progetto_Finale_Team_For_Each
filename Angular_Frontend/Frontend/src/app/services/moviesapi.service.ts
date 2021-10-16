@@ -13,8 +13,8 @@ export class MoviesApiService {
     constructor( private http : HttpClient) { }
 
     getMarvelList(){
-        return this.http.get<MovieApiInterface>(this.baseURL+"/4/list/1?api_key="+this.apiKey);
-    }
+        return this.http.get<MovieApiInterface>(this.baseURL+"/4/list/4?api_key="+this.apiKey);
+    } // cambiando il numero di lista list/4 appaiono altre liste di film
 
     getMovieById(id:number){
       return this.http.get<MovieApiInterface>(this.baseURL+"/3/movie/"+id+"?api_key="+this.apiKey);

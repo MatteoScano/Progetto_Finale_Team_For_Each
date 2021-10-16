@@ -1,7 +1,8 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DataInterface } from '../../models/movie-ratings.model';
+import { MovieRatingsArrayInterface } from '../../models/movie-ratings.model';
+
 
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -27,21 +28,21 @@ export class MovieRatingService {
 
 
 
-  getratingsByUserId(user_id: DataInterface) {
+  getratingsByUserId(user_id:  MovieRatingsArrayInterface) {
     return this.http.get<any>(this.laravelUrl + "/api/movie_ratings/user_id/" + user_id);
   }
 
 
-  getratingsByMovieId(movie_id: DataInterface) {
-    return this.http.get<any>(this.laravelUrl + "/api/movie_ratings/movie_id/{movieId}" );
+  getratingsByMovieId(movie_id:  MovieRatingsArrayInterface) {
+    return this.http.get<any>(this.laravelUrl + "/api/movie_ratings/movie_id/" + movie_id );
   }
 
 
 
   // ADDER
 
-  addRating = (rating: DataInterface) => {
-    return this.http.post<DataInterface>(this.laravelUrl, {
+  addRating = (rating:  MovieRatingsArrayInterface) => {
+    return this.http.post< MovieRatingsArrayInterface>(this.laravelUrl, {
       "rating": rating.movie_rating,
       "movie_id": rating.movie_id,
       "director": rating.user_id,
@@ -59,11 +60,11 @@ export class MovieRatingService {
 
   // EDITOR
 
-  editRating = (rating: DataInterface) => {
+  editRating = (rating:  MovieRatingsArrayInterface) => {
     return this.http.put(this.laravelUrl + '/' + rating.movie_id, {
       "rating": rating.movie_rating,
       "movie_id": rating.movie_id,
-      "director": rating.user_id,
+      "user_id": rating.user_id
     });
   };
 
