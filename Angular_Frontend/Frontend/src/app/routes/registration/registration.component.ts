@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserDataInterface } from './../../models/user.model';
 import { NgForm } from '@angular/forms';
 import { RegistrationService } from './../../services/registration/registration.service';
@@ -12,23 +13,22 @@ export class RegistrationComponent implements OnInit {
 
   newUser : UserDataInterface;
 
-  constructor(private registrationService : RegistrationService,) { }
+  constructor(private registrationService : RegistrationService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
   createUser(form : NgForm): void {
     this.newUser = form.form.value;
-    console.log(form)
-    console.log(this.newUser);
     this.newUser.enabled=1;
-
     this.registrationService.addUser(this.newUser,"admin","admin").subscribe( results => {
           console.log(results);
+
         },
         error=>{
           console.log(error);
         });
+        this.router.navigate(['/login']);
   };
 
 }

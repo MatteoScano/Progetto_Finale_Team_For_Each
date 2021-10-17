@@ -23,16 +23,16 @@
 
     <!-- Login Form -->
     <form>
-      <input type="text" id="username"  required [(ngModel)]="username" class="fadeIn second" name="login" placeholder="Username">
-      <input type="text" id="password" required [(ngModel)]="password" class="fadeIn third" name="login" placeholder="Password">
-      <input type="submit" (click)="doLogin()" class="fadeIn fourth" value="Login">
+      <input type="text" id="username"  required [(ngModel)]="usernameInput" class="fadeIn second" name="login" placeholder="Username">
+      <input type="text" id="password" required [(ngModel)]="passwordInput" class="fadeIn third" name="login" placeholder="Password">
+      <input type="submit" (click)="submitButton()" class="fadeIn fourth" value="Login">
     </form>
     <!-- Remind Passowrd -->
     <div id="formFooter">
       <a class="underlineHover" href="#" [routerLink]="['/registration']">Prima volta su NetFish?</a><br>
       <button class="btn btn-success mt-2"[routerLink]="['/registration']">Registrati</button>
-
     </div>
+
   </div>
 
 </div>

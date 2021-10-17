@@ -16,3 +16,21 @@ C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.DB\obj\D
 C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\ref\FilmComments.DB.dll
 C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.pdb
 C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\bin\Debug\net5.0\FilmComments.DB.deps.json
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\bin\Debug\net5.0\FilmComments.DB.runtimeconfig.json
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\bin\Debug\net5.0\FilmComments.DB.runtimeconfig.dev.json
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\bin\Debug\net5.0\FilmComments.DB.dll
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\bin\Debug\net5.0\ref\FilmComments.DB.dll
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\bin\Debug\net5.0\FilmComments.DB.pdb
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\bin\Debug\net5.0\FilmComments.Core.dll
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\bin\Debug\net5.0\FilmComments.Core.pdb
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.dll
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\ref\FilmComments.DB.dll
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.pdb
+C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.DB\obj\Debug\net5.0\FilmComments.DB.genruntimeconfig.cache

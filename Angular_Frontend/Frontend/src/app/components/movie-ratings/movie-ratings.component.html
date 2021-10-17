@@ -42,5 +42,5 @@
       ngModel name="movie_rating">
   </div>
 </div>
-<button type="submit" [disabled]="!form.valid" onclick="postMovieRating(form)"  class="btn btn-success">Submit</button>
+<button type="submit" [disabled]="!form.valid" (click)="postMovieRating(form)"  class="btn btn-success">Submit</button>
 </form>

@@ -11,18 +11,17 @@ export class LoginService {
 
   constructor(private http : HttpClient) { }
 
-  public login(username:string, password:string){
+  public login(usernameAuth:string, passwordAuth:string){
     const headers=new HttpHeaders({
-      Authorization : 'Basic '+ btoa(username+":"+password)});  //btoa= binari to ask
+      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});  //btoa= binari to ask
     return this.http.get<any>(this.baseURL + "/", {headers, responseType:'text' as 'json'}).pipe(map(
         userData => {
-         sessionStorage.setItem('username',username);
+         sessionStorage.setItem('username',usernameAuth);
          return userData;
         }
       )
       );
   }
-  //LOGOUT
 
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username')
@@ -34,19 +33,17 @@ export class LoginService {
     sessionStorage.removeItem('username')
   }
 
-//LOGOUT test FINISH
-
-  public getUsers(username:string, password:string){
+  public getUsers(usernameAuth:string, passwordAuth:string){
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
-      Authorization : 'Basic '+ btoa(username+":"+password)});
+      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
     return this.http.get(this.baseURL + "/", {headers});
     }
 
-  public getUsersById(id: number, username:string, password:string){
+  public getUsersById(id: number, usernameAuth:string, passwordAuth:string){
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
-      Authorization : 'Basic '+ btoa(username+":"+password)});
+      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
       return this.http.get(this.baseURL + "/" + id, {headers});
     }
 
@@ -57,10 +54,10 @@ export class LoginService {
       return this.http.get(this.baseURL + "/username/" + username, {headers});
     }
 
-  public getUsersByPartialUsername(partialUsername: string, username:string, password:string){
+  public getUsersByPartialUsername(partialUsername: string, usernameAuth:string, passwordAuth:string){
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
-      Authorization : 'Basic '+ btoa(username+":"+password)});
+      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
     return this.http.get(this.baseURL + "/username/like/" + partialUsername, {headers});
   }
 

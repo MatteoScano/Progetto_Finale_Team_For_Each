@@ -30,6 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     DataSource dataSource;
 
+    /*Verifica gli utenti presenti nel database*/
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
@@ -39,6 +40,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         + "where username = ?");
     }
 
+    /*Configurazione security, autorizzazioni e ruoli*/
     @Override
     protected void configure(HttpSecurity http) throws  Exception{
         http.cors();
@@ -62,6 +64,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return this.passwordEncoder;
         //return NoOpPasswordEncoder.getInstance(); *test
     }
+
+    /*Personalizzazione delle proprietà Cors per l'accesso ai dati da chiamata esterna*/
 @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();

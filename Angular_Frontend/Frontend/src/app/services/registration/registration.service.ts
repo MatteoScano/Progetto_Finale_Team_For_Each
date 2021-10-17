@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserDataInterface } from './../../models/user.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -22,6 +23,7 @@ export class RegistrationService {
     "password": newUser.password,
     "enabled": newUser.enabled,
     }),{headers})
+
   }
 
 }

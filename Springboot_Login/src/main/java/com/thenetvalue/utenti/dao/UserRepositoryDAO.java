@@ -16,23 +16,4 @@ public interface UserRepositoryDAO extends CrudRepository<User,Integer> {
 
     public List<User> findAllByUsernameContaining(String partialUsername);
 
-    //metodi di userDao cancellata:
-    /*
-
-    //Aggiunge un utente
-    public int addUser(User user);
-
-    //Preleva un utente in base all'id passato
-    public User getUserById(int id);
-
-    //Preleva tutti gli utenti
-    public List<User> allUsers();
-
-    //Aggiorna un utente in base all'id passato
-    public int updateUser(int id, User user);
-
-    //cancella un utente in base all'id passato
-    public int deleteUser(int id);
-
-    */
 }

@@ -14,9 +14,9 @@ export class LoginComponent implements OnInit {
   constructor(private loginService : LoginService, private router: Router) { }
 
   //variabili per l'input
-  username: string;
-  password: string;
-  message:any;
+  usernameInput: string;
+  passwordInput: string;
+  //variabile per il logged in
   invalidLogin = false;
 
   userFound: UserDataInterface;
@@ -24,30 +24,27 @@ export class LoginComponent implements OnInit {
   ngOnInit(){
   }
 
-  doLogin(){
-    if(this.username != null && this.password !=null){
-      this.letsLogIn(this.username);
-  }
-}
+submitButton(){
+  if(this.usernameInput != null && this.passwordInput !=null){
 
-letsLogIn(username : string){
+    this.loginService.getUserByUsername(this.usernameInput,"admin","admin").subscribe(
+      (data : any)=> {
+        this.userFound = data;
 
-  this.loginService.getUserByUsername(username,"admin","admin").subscribe(
-    (response : any) => {
-      this.userFound = response;
-        console.log("L'utente ha i seguenti dati:");  //test
-        console.log(this.userFound);
+        if(this.passwordInput===this.userFound.password){
 
-        if(this.userFound){
+            sessionStorage.setItem('username',this.usernameInput);
+            this.invalidLogin = false;
+            this.router.navigate(['/dashboard']);
 
-          sessionStorage.setItem('username',this.username);
-          this.router.navigate(['/dashboard']);}
-
-        else{
-            console.log("autenticazione fallita");  //test
         }
-    });
-
+        else{
+            console.log("Autenticazione fallita");  //test
+        }
+      },
+      error => console.log(error)
+    );
+  }
 }
 /*
   submitButton(){

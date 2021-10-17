@@ -26,6 +26,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
+    @CrossOrigin(origins = "*")
     public User getUserById(@PathVariable("id") int id){    //PathVariable=Associare l'id del GetMapping all'id del nostro utente
         return userService.getUserById(id);
     }
@@ -35,7 +36,7 @@ public class UserController {
     public User getUserByUsername(@PathVariable("username") String username){    //Cerca l'utente tramite l'username
         return userService.getUserByUsername(username);
     }
-
+    
     @GetMapping("/username/like/{partialUsername}")
     public List<User> findAllByUsernameContaining(@PathVariable("partialUsername") String partialUsername){
         return userService.findAllByUsernameContaining(partialUsername);

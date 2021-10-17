@@ -15,26 +15,25 @@ export class UserComponent implements OnInit {
   data:any;
   userFound:any=[];
   username:string;
-
-
+  userId:number;
+  userFoundById:any=[];
 
   constructor( private userService : LoginService) { }
 
   ngOnInit() : void{
     this.getUsersList();
   }
-
+//Visualizza tutti gli utenti
   getUsersList(){
     this.userService.getUsers("admin","admin").subscribe(
       response => {
-        this.data = response;             //Tutto l'oggetto
-        console.log("I dati ottenuti sono:", this.data);
-       // console.log("I dati strinfy:" + JSON.stringify(this.movies));
+        this.data = response;
       },
       error => console.log(error)
     )
   }
 
+  //Visualizza l'utente con lo username passato
   getUserByUsername(form :NgForm){ //funziona
     this.username = form.form.value.username;
   this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
@@ -44,8 +43,17 @@ export class UserComponent implements OnInit {
         console.log(this.userFound);
     });
   }
-
-
+//visualizza l'utente con l'id passato
+  getUserById(form :NgForm){  //BETA, ancora non funzionante (da rivedere metodo nel backend-springboot)
+    this.userId = form.form.value.userId;
+    console.log("dato inserito:"+this.userId);
+  this.userService.getUsersById(this.userId,"admin","admin").subscribe(
+    (response : any) => {
+      this.userFoundById = response;
+        console.log("L'utente ha i seguenti dati:");  //test
+        console.log(this.userFoundById);
+    });
+  }
 
 }
 

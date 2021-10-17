@@ -1,4 +1,5 @@
-  <div class="container p-5">
+
+ <div class="container p-5">
   <section class="vh-100 bg-image">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
       <div class="container h-100">
@@ -24,8 +25,14 @@
                     <input type="password" method="POST" required ngModel class="form-control form-control-lg" name="password" id="password" placeholder="Password">
                   </div>
 
+                  <div class="col-12 mb-3">
+                    <div class="form-check">
+                      <input type="checkbox" name="terms" id="terms" required>  I Agree Terms & Coditions
+                    </div>
+                  </div>
+
                   <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" [disabled]="!form.valid">Register</button>
+                    <button type="submit" name="submit" id="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" [disabled]="!form.valid">Register</button>
                   </div>
 
                   <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body" [routerLink]="['/login']"><u>Login here</u></a></p>

@@ -1,18 +1,25 @@
 <div class="container p-5">
+
   <h1 class="text-center mb-5">
-    Users Details
+    Search User
   </h1>
+
 <form #form="ngForm">
   <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" method="POST" required ngModel class="form-control" name="username" id="username" placeholder="Username">
+    <label for="username">By Username</label>
+    <input type="text" method="GET" required ngModel class="form-control" name="username" id="username" placeholder="Username">
 
+    <button type="submit" class="btn btn-primary mb-4 mt-2" (click)=" getUserByUsername(form)">Search By Username</button>
+
+    <br>
+
+    <label for="id">By Id</label>
+    <input type="number" method="GET" required ngModel class="form-control" name="userId" id="userId" placeholder="User Id">
+
+    <button type="submit" class="btn btn-primary mb-4 mt-2" (click)="getUserById(form)">Search by ID</button>
   </div>
 
-
-  <button type="submit" class="btn btn-primary mb-4" (click)=" getUserByUsername(form)">Submit</button>
 </form>
-
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -30,5 +37,37 @@
         <td>{{userFound.email}}</td>
       </tr>
     </tbody>
+    <tbody>
+      <tr class="pointer">
+        <td>{{userFoundById.id}}</td>
+        <td>{{userFoundById.username}}</td>
+        <td>{{userFoundById.password}}</td>
+        <td>{{userFoundById.email}}</td>
+      </tr>
+    </tbody>
   </table>
-</div>
+
+  <h1 class="text-center mb-5">
+    Users Details
+  </h1>
+
+    <table class="table plus">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">User Id</th>
+          <th scope="col">Username</th>
+          <th scope="col">Password</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="pointer" *ngFor="let entry of data">
+          <td>{{ entry.id }}</td>
+          <td>{{ entry.username }}</td>
+          <td>{{ entry.password }}</td>
+          <td>{{ entry.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
