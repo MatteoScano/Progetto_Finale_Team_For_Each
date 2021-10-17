@@ -1,6 +1,5 @@
 import { UserComponent } from './routes/user/user.component';
 import { FilterByWeatherConditionsComponent } from './routes/filter-by-weather-conditions/filter-by-weather-conditions.component';
-
 import { WeatherComponent } from './components/weather/weather.component';
 import { RegistrationComponent } from './routes/registration/registration.component';
 import { ApiMovieDetailsComponent } from './routes/api-movie-details/api-movie-details.component';
@@ -22,6 +21,8 @@ import { WelcomePageComponent } from './routes/welcome-page/welcome-page.compone
 import { CommentsComponent } from './components/comments/comments.component';
 import { CommentsFilteredByMoviesIdComponent } from './routes/comments-filtered-by-movies-id/comments-filtered-by-movies-id.component';
 import { MovieRatingsComponent } from './components/movie-ratings/movie-ratings.component';
+import { CommentsByUserComponent } from './routes/comments-by-user/comments-by-user.component';
+import { AddCommentComponent } from './routes/add-comment/add-comment.component';
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -44,8 +45,9 @@ const routes: Routes = [
   { path: "weather", component: WeatherComponent},
   { path: "registration", component: RegistrationComponent},
   { path: "filterByWeather", component: FilterByWeatherConditionsComponent},
-  { path: "users", component: UserComponent}
-
+  { path: "users", component: UserComponent},
+  { path: "comments/user/:{sessionStorage.getItem('username')}", component: CommentsByUserComponent},
+  { path: "addComment", component : AddCommentComponent}
 ];
 
 @NgModule({

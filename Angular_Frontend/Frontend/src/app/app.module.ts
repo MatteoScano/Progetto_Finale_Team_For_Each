@@ -33,6 +33,8 @@ import { RegistrationComponent } from './routes/registration/registration.compon
 import { FilterByWeatherConditionsComponent } from './routes/filter-by-weather-conditions/filter-by-weather-conditions.component';
 import { MovieRatingsComponent } from './components/movie-ratings/movie-ratings.component';
 import { UserComponent } from './routes/user/user.component';
+import { CommentsByUserComponent } from './routes/comments-by-user/comments-by-user.component';
+import { AddCommentComponent } from './routes/add-comment/add-comment.component';
 
 
 @NgModule({
@@ -63,7 +65,9 @@ import { UserComponent } from './routes/user/user.component';
     RegistrationComponent,
     FilterByWeatherConditionsComponent,
     MovieRatingsComponent,
-    UserComponent
+    UserComponent,
+    CommentsByUserComponent,
+    AddCommentComponent,
    ],
 
   imports: [

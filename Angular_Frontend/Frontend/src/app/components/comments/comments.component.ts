@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentsService } from 'src/app/services/comments.service';
 import { CommentsInterface } from 'src/app/models/comments.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-comments',
@@ -11,7 +12,7 @@ export class CommentsComponent implements OnInit {
 
   comments : CommentsInterface;
 
-  constructor(private commentService:CommentsService) { }
+  constructor(private commentService:CommentsService, private router : Router) { }
 
   ngOnInit(): void {
     this.getCommentsOnComponent();
@@ -27,6 +28,11 @@ export class CommentsComponent implements OnInit {
       },
       error => console.log(error)
     )
+  }
+
+  goToUserComments(){
+    let user = sessionStorage.getItem('username');
+    this.router.navigate(['comments/user/'+ user]);
   }
 
 }

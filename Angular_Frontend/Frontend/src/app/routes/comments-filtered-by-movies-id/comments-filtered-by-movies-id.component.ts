@@ -30,9 +30,9 @@ export class CommentsFilteredByMoviesIdComponent implements OnInit {
     this.commentsService.getComments().subscribe(
       response => {
         //se è andato tutto bene, allora:
-        console.log("ho ottenuto i dati!")
+        console.log("ho ottenuto i dati!");
         this.comments = response;
-        console.log(this.comments)
+        console.log(this.comments);
       },
       error => console.log(error)
     )
@@ -48,4 +48,6 @@ export class CommentsFilteredByMoviesIdComponent implements OnInit {
   transformIdInMovie(id){
     return this.movies[id].name;
   }
+
+  
 }
