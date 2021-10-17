@@ -5,17 +5,14 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
-@DynamicUpdate
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String username;
     private String password;
     private String email;
-    private short enabled;      //aggiungendo una proprieta l'ide va a creare una colonna all'interno del DB utenti
+    private short enabled;
 
     public int getId() {
         return id;

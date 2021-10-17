@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class UserService {
     UserRepositoryDAO userDAO;    //interfaccia
-    SecurityConfiguration passwordEncoder;
+
 
     @Autowired
     public UserService(@Qualifier("dbUserDAO") UserRepositoryDAO userDAO) {
@@ -36,7 +36,7 @@ public class UserService {
         }
     }
 
-    public User getUserById(int id){
+    public User getUser(int id){
         Optional<User> optionalUser = userDAO.findById(id);
         return optionalUser.orElse(null); //optionalUser.get || se l'oggetto non è nullo lo retituisce altrimenti restituisci null
     }
@@ -46,7 +46,6 @@ public class UserService {
     }
 
     public String updateUser(int id, User user) {
-
         user.setId(id);
         User result= userDAO.save(user);
         if (result!=null && result.getId() != 0){

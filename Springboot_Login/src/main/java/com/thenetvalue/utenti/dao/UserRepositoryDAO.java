@@ -8,9 +8,6 @@ import java.util.List;
 
 @Repository("dbUserDAO")
 public interface UserRepositoryDAO extends CrudRepository<User,Integer> {
-    //convenzione
-    //ci consente di fare operazioni sul db senza scrivere codice
-
 
     public User findByUsername(String username);
 

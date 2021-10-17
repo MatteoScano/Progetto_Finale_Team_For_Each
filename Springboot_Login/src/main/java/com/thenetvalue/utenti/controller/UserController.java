@@ -28,7 +28,7 @@ public class UserController {
     @GetMapping("/{id}")
     @CrossOrigin(origins = "*")
     public User getUserById(@PathVariable("id") int id){    //PathVariable=Associare l'id del GetMapping all'id del nostro utente
-        return userService.getUserById(id);
+        return userService.getUser(id);
     }
 
     @GetMapping("/username/{username}")
