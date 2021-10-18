@@ -21,6 +21,9 @@ export class MoviesApiComponent implements OnInit {
   currentWeatherBis : ConditionsInterface[];
   data:any
 
+  todaysWeather : string
+
+
   public weatherFather: currentWeatherFather;
   public weatherArray: CurrentWeather[];
   public currentWeather : CurrentWeather;
@@ -28,12 +31,59 @@ export class MoviesApiComponent implements OnInit {
   constructor(private apiService:MoviesApiService, private weatherService:WeatherSService, private router : Router) { }
 
   ngOnInit(): void {
+    this.getMovieByCurrentWeather();
     this.exGetterWeatherData();
     this.getterWeatherDataOnComponent();
-    //this.getMovieByCurrentWeather(this.data.conditions);  //DA ULTIMARE IL PASSAGGIO PARAMETRO!
-    this.getMarvelListOnComponent();                    //Prende lista solo dei film marvel
+   //DA ULTIMARE IL PASSAGGIO PARAMETRO!
+    //this.getMarvelListOnComponent();                    //Prende lista solo dei film marvel
 
   }
+
+  // METEO FUNZIONI
+  getMovieByCurrentWeather() {
+    console.log("data conditions prima dello switch"+ this.todaysWeather);
+
+    this.weatherService.getWeatherData().subscribe((
+      response:any) => {
+        //se è andato tutto bene, allora:
+       this.weatherFatherBis = response;
+       console.log("weatherFatherBis: ", this.weatherFatherBis)
+       this.data= this.weatherFatherBis.currentConditions;
+       console.log("Data: ", this.data);
+       console.log("data conditions"+this.data.conditions);
+       this.todaysWeather = this.data.conditions;
+       console.log("  Dato Test" + this.todaysWeather)
+       switch(this.todaysWeather) {
+        case "Clear": {
+
+        this.getDramasMovieListOnComponent();
+        break;
+        }
+        case "Rain": {
+          this.getComedyMovieListOnComponent();
+        break;
+        }
+        case "Snow": {
+          this.getComedyMovieListOnComponent();
+        break;
+        }
+        case "Partially cloudy": {
+          this.getScienceFictionListOnComponent();
+        break;
+        }
+        default:{
+            console.log("default");
+        break;
+        }
+      }
+
+
+     },
+   error =>console.log(error)
+     )
+
+}
+
 
   getterWeatherDataOnComponent() {
     this.weatherService.getWeatherData().subscribe((
@@ -44,6 +94,8 @@ export class MoviesApiComponent implements OnInit {
       this.data= this.weatherFatherBis.currentConditions;
       console.log("Data: ", this.data);
       console.log("data conditions"+this.data.conditions);
+      this.todaysWeather = this.data.conditions;
+      console.log("  Dato Test" + this.todaysWeather)
     },
   error =>console.log(error)
     )
@@ -76,31 +128,7 @@ getMarvelListOnComponent(){
     error => console.log(error)
   )
 }
-  getMovieByCurrentWeather(condizioniMeteo: string) {
-    console.log("data conditions prima dello switch"+condizioniMeteo);
-    switch(condizioniMeteo) {
-      case "Clear": {
-      this.getDramasMovieListOnComponent();
-      break;
-      }
-      case "Rain": {
-        this.getComedyMovieListOnComponent();
-      break;
-      }
-      case "Snow": {
-        this.getComedyMovieListOnComponent();
-      break;
-      }
-      case "Partially cloudy": {
-        this.getScienceFictionListOnComponent();
-      break;
-      }
-      default:{
-          console.log("default");
-      break;
-      }
-    }
-}
+
 
 //visualizza i film Drama
   getDramasMovieListOnComponent(){
@@ -128,6 +156,7 @@ getMarvelListOnComponent(){
       response => {
         this.movies = response;
         this.results= this.movies.results;
+        console.log("Sci-fi Movies: " + this.results)
       },
       error => console.log(error)
     )
