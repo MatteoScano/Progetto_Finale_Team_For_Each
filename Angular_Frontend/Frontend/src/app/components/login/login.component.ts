@@ -35,7 +35,7 @@ submitButton(){
 
             sessionStorage.setItem('username',this.usernameInput);
             this.invalidLogin = false;
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/moviesApi']);
 
         }
         else{

@@ -30,8 +30,8 @@ export class MoviesApiComponent implements OnInit {
   ngOnInit(): void {
     this.exGetterWeatherData();
     this.getterWeatherDataOnComponent();
-    this.getMovieByCurrentWeather(this.data.conditions);  //DA ULTIMARE IL PASSAGGIO PARAMETRO!
-    //this.getMarvelListOnComponent();                    //Prende lista solo dei film marvel
+    //this.getMovieByCurrentWeather(this.data.conditions);  //DA ULTIMARE IL PASSAGGIO PARAMETRO!
+    this.getMarvelListOnComponent();                    //Prende lista solo dei film marvel
 
   }
 

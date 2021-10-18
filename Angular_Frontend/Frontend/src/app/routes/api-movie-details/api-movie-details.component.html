@@ -1,4 +1,85 @@
+<h1 class="text-center mt-3">The NetFish</h1>
+<img
+  src="{{ imagePath }}"
+  *ngIf="imagePath != null"
+  class="rounded mx-auto d-block"
+/>
+
 <div class="container" *ngIf="movieDetailsEntry != null">
+  <div class="mt-2 p-4">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <b>path: </b> {{ movieDetailsEntry.backdrop_path }}
+      </li>
+      <li class="list-group-item"><b>Id:</b> {{ movieDetailsEntry.id }}</li>
+
+      <li class="list-group-item">
+        <b>Title:</b> {{ movieDetailsEntry.title }}
+      </li>
+
+      <li class="list-group-item">
+        <b>Release Data:</b> {{ movieDetailsEntry.release_date | date }}
+      </li>
+
+      <li class="list-group-item">
+        <b>Overview:</b> {{ movieDetailsEntry.overview }}
+      </li>
+
+      <li class="list-group-item">
+        <b>Original Language:</b> {{ movieDetailsEntry.original_language }}
+      </li>
+    </ul>
+  </div>
+  <!--
+  <div class="form-group row">
+    <label for="movie_rating" class="col-sm-2 col-form-label"
+      >Movie Rating</label
+    >
+    <div class="col-sm-10">
+      <input
+        type="number"
+        class="form-control"
+        [(ngModel)]="movie_rating_id"
+        required
+        number
+        name="(movie_rating)"
+      />
+    </div>
+  </div>
+  <button (click)="postMovieRating()" class="btn btn-success">Submit</button> -->
+
+  <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div class="form-group row">
+      <label for="rated" class="col-sm-2 col-form-label">Movie Rated</label>
+      <div class="col-sm-10">
+        <select
+          class="form-control"
+          id="movie_rating"
+          required
+          ngModel
+          name="movie_rating"
+        >
+          <option [value]="rated" *ngFor="let rated of ratedOptions">
+            {{ rated }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" [disabled]="!form.valid" class="btn btn-success">
+      Submit
+    </button>
+  </form>
+
+  <button class="btn btn-primary mr-2 ml-4" [routerLink]="['/moviesApi']">
+    Back
+  </button>
+</div>
+<app-loading-page *ngIf="!movieDetailsEntry"></app-loading-page>
+
+<!--
+<div class="container" *ngIf="movieDetailsEntry != null">
+
+
   <h1 class="text-center mt-3">The NetFish</h1>
 
   <div class="mt-2 p-4">
@@ -28,3 +109,4 @@
   </button>
 </div>
 <app-loading-page *ngIf="!movieDetailsEntry"></app-loading-page>
+-->

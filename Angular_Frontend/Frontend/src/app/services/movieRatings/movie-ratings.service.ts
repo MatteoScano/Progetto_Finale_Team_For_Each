@@ -45,11 +45,20 @@ export class MovieRatingService {
     return this.http.post< MovieRatingsArrayInterface>(this.laravelUrl, {
       "rating": rating.movie_rating,
       "movie_id": rating.movie_id,
-      "director": rating.user_id,
+      "user_id": rating.user_id,
 
     });
   };
 
+
+  addMovieRating = (data: MovieRatingsArrayInterface) => {
+    return this.http.post<MovieRatingsArrayInterface>(this.laravelUrl + '/api/movie_ratings/', {
+      "movie_rating": data.movie_rating,
+      "movie_id": data.movie_id,
+      "user_id" : data.user_id
+
+    });
+  };
 
   // REMOVER
 

@@ -17,7 +17,7 @@ export class MovieRatingsComponent implements OnInit {
 
   ratings: MovieRatingsInterface
   result: MovieRatingsArrayInterface[]
-  ratingEntry: MovieRatingsArrayInterface
+  ratingEntry: MovieRatingsArrayInterface  = {movie_rating: 2, movie_id: 555, user_id: 332}
 
   newRating : MovieRatingsArrayInterface
   supportoApiId : ResultInterface
@@ -58,8 +58,8 @@ export class MovieRatingsComponent implements OnInit {
     this.newRating.movie_rating = form.form.value;
     console.log(this.starRating)
     console.log(this.newRating);
-    this.newRating.movie_id = this.supportoApiId.id //assegnazione Id Api a Id laravel
-    this.newRating.user_id = 50 //assegnazione user_id
+    //this.newRating.movie_id = this.supportoApiId.id //assegnazione Id Api a Id laravel
+    //this.newRating.user_id = 50 //assegnazione user_id
 
     this.movieRatingService.addRating(this.newRating).subscribe(response => {
       console.log(response);
