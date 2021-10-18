@@ -5,7 +5,6 @@ export interface MovieApiInterface{
     id: number,
     name: string,
     results: ResultInterface []
-
 }
 
 export interface ResultInterface{
@@ -19,5 +18,5 @@ export interface ResultInterface{
     release_date: string,
     title: string,
     video: boolean
-   
+
 }

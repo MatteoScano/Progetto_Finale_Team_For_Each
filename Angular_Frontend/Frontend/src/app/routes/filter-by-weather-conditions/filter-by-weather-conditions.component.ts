@@ -40,7 +40,7 @@ export class FilterByWeatherConditionsComponent implements OnInit {
   }
 
   getEntries(){
-    this.weatherService.getterWeatherData().subscribe( (response : any) => {
+    this.weatherService.getWeatherData().subscribe( (response : any) => {
       this.conditions = response;
     })
   }
