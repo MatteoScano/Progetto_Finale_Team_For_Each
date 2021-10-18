@@ -34,5 +34,5 @@ export class MoviesApiService {
     getRomanceFictionList(){
       return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=10749&sort_by=vote_average.desc&vote_count.gte=10");
     }
-      // /discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10
+
 }

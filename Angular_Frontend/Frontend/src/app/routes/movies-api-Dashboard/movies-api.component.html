@@ -22,6 +22,7 @@
         <th scope="col">Sunrise</th>
         <th scope="col">Windspeed</th>
         <th scope="col">Temp</th>
+        <th scope="col">Datetime</th>
       </tr>
     </thead>
     <tbody>
@@ -31,6 +32,7 @@
         <td>{{data.sunrise}}</td>
         <td>{{data.windspeed}}</td>
         <td>{{data.temp}}</td>
+        <td>{{data.datetime}}</td>
       </tr>
     </tbody>
   </table>
@@ -47,7 +49,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="pointer" *ngFor="let entry of weatherArray; let i = index">
+      <tr class="pointer" *ngFor="let entry of weatherArray ; let i = index">
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ entry.conditions }}</td>
         <td>{{ entry.sunset }}</td>
@@ -70,7 +72,7 @@
     <tbody>
       <tr
         class="pointer"
-        *ngFor="let entry of results; let i = index"
+        *ngFor="let entry of results | slice:0:4;"
         (click)="goToDetails(entry.id)"
       >
         <td>{{ entry.title }}</td>

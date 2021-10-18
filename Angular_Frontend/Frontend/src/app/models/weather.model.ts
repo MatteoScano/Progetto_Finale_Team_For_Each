@@ -9,7 +9,8 @@ export interface ConditionsInterface {
   humidity: number,
   windspeed: number,
   resolvedAddress: string,
-  temp: number
+  temp: number,
+  datetime:string
 }
 
 //DAYS

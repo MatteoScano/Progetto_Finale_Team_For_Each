@@ -23,10 +23,17 @@ export class MoviesApiComponent implements OnInit {
 
   todaysWeather : string
 
-
   public weatherFather: currentWeatherFather;
   public weatherArray: CurrentWeather[];
   public currentWeather : CurrentWeather;
+
+  orarioAttuale:number
+
+  mattina:boolean=false
+  pomeriggio:boolean=false
+  sera:boolean=false
+
+
 
   constructor(private apiService:MoviesApiService, private weatherService:WeatherSService, private router : Router) { }
 
@@ -34,10 +41,28 @@ export class MoviesApiComponent implements OnInit {
     this.getMovieByCurrentWeather();
     this.exGetterWeatherData();
     this.getterWeatherDataOnComponent();
-   //DA ULTIMARE IL PASSAGGIO PARAMETRO!
-    //this.getMarvelListOnComponent();                    //Prende lista solo dei film marvel
-
+    //this.getMarvelListOnComponent();           //Prende lista solo dei film marvel
+    this.assegnaMomentoGiornata();
   }
+
+  //ORARI GIORNATA: MATTINA,POMERIGGIO,SERA,NOTTE
+
+  /*
+  se orarioAttuale > 7 && orarioAttuale < 13
+        mattina = true
+
+  se orarioAttuale > 13 && orarioAttuale < 19
+        momentoGionata = pomeriggio
+
+  se orarioAttuale > 19 && orarioAttuale < 24
+        momentoGionata = sera
+
+  altrimenti
+        momentoGionata = notte
+  */
+assegnaMomentoGiornata(){
+
+}
 
   // METEO FUNZIONI
   getMovieByCurrentWeather() {
@@ -53,37 +78,68 @@ export class MoviesApiComponent implements OnInit {
        console.log("data conditions"+this.data.conditions);
        this.todaysWeather = this.data.conditions;
        console.log("  Dato Test" + this.todaysWeather)
-       switch(this.todaysWeather) {
-        case "Clear": {
 
-        this.getDramasMovieListOnComponent();
-        break;
-        }
-        case "Rain": {
-          this.getComedyMovieListOnComponent();
-        break;
-        }
-        case "Snow": {
-          this.getComedyMovieListOnComponent();
-        break;
-        }
-        case "Partially cloudy": {
-          this.getScienceFictionListOnComponent();
-        break;
-        }
-        default:{
-            console.log("default");
-        break;
-        }
+       this.orarioAttuale=parseInt(this.data.datetime);
+       console.log(" Stringa intera" + this.orarioAttuale)
+
+       //MATTINA
+      if(this.todaysWeather=="Clear" && this.orarioAttuale > 7 && this.orarioAttuale<13){
+          this.getDramasMovieListOnComponent();
+      }
+      if(this.todaysWeather=="Rain" && this.orarioAttuale > 7 && this.orarioAttuale<13){
+        this.getComedyMovieListOnComponent();
+      }
+      if(this.todaysWeather=="Snow" && this.orarioAttuale > 7 && this.orarioAttuale<13){
+        this.getRomanceFictionListOnComponent();
+      }
+      if(this.todaysWeather=="Partially cloudy" && this.orarioAttuale > 7 && this.orarioAttuale<13){
+        this.getScienceFictionListOnComponent();
       }
 
-
+    //POMERIGGIO
+      if(this.todaysWeather=="Clear" && this.orarioAttuale > 13 && this.orarioAttuale<19){
+        console.log("Valore mattina: "+this.mattina)
+        console.log("Orario attuale: "+this.orarioAttuale)
+        this.getDramasMovieListOnComponent();
+      }
+      if(this.todaysWeather=="Rain" && this.orarioAttuale > 13 && this.orarioAttuale<19){
+        console.log("Valore mattina: "+this.mattina)
+        console.log("Orario attuale: "+this.orarioAttuale)
+        this.getComedyMovieListOnComponent();
+      }
+      if(this.todaysWeather=="Snow" && this.orarioAttuale > 13 && this.orarioAttuale<19){
+        console.log("Valore mattina: "+this.mattina)
+        console.log("Orario attuale: "+this.orarioAttuale)
+        this.getRomanceFictionListOnComponent();
+      }
+      if(this.todaysWeather=="Partially cloudy" && this.orarioAttuale > 13 && this.orarioAttuale<19){
+        console.log("Valore mattina: "+this.mattina)
+        console.log("Orario attuale: "+this.orarioAttuale)
+        this.getScienceFictionListOnComponent();
+      }
+        //SERA
+      if(this.todaysWeather=="Clear" && this.orarioAttuale > 19 && this.orarioAttuale<24){
+          this.getDramasMovieListOnComponent();
+      }
+      if(this.todaysWeather=="Rain" && this.orarioAttuale > 19 && this.orarioAttuale<24){
+        this.getComedyMovieListOnComponent();
+      }
+      if(this.todaysWeather=="Snow" && this.orarioAttuale > 19 && this.orarioAttuale<24){
+        this.mattina=true;
+        console.log("Valore mattina: "+this.mattina)
+        console.log("Orario attuale: "+this.orarioAttuale)
+        this.getRomanceFictionListOnComponent();
+      }
+      if(this.todaysWeather=="Partially cloudy" && this.orarioAttuale > 19 && this.orarioAttuale<24){
+        this.mattina=true;
+        console.log("Valore mattina: "+this.mattina)
+        console.log("Orario attuale: "+this.orarioAttuale)
+        this.getScienceFictionListOnComponent();
+      }
      },
    error =>console.log(error)
      )
-
 }
-
 
   getterWeatherDataOnComponent() {
     this.weatherService.getWeatherData().subscribe((
@@ -129,13 +185,13 @@ getMarvelListOnComponent(){
   )
 }
 
-
 //visualizza i film Drama
   getDramasMovieListOnComponent(){
     this.apiService.getDramaMovieList().subscribe(
       response => {
         this.movies = response;
         this.results= this.movies.results;
+        console.log(this.results)
       },
       error => console.log(error)
     )
@@ -146,6 +202,7 @@ getMarvelListOnComponent(){
       response => {
         this.movies = response;
         this.results= this.movies.results;
+        console.log(this.results)
       },
       error => console.log(error)
     )
@@ -167,12 +224,11 @@ getMarvelListOnComponent(){
       response => {
         this.movies = response;
         this.results= this.movies.results;
+        console.log(this.results)
       },
       error => console.log(error)
     )
   }
-
-
 
   goToDetails(id){
     this.router.navigateByUrl('/movieApiDetails/'+id);
