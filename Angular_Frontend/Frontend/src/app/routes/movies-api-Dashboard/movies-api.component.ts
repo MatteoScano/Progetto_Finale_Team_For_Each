@@ -13,8 +13,8 @@ import { MovieApiInterface, ResultInterface } from '../../models/apiMovie.model'
 export class MoviesApiComponent implements OnInit {
 
   //variabili MOVIES api
-  movies : MovieApiInterface;
-  results : ResultInterface[];
+  movies : any;
+  results : any[];
 
   //variabili METEO api
   weatherFatherBis: currentWeatherInterface;
@@ -33,7 +33,7 @@ export class MoviesApiComponent implements OnInit {
   pomeriggio:boolean=false
   sera:boolean=false
 
-
+  basicImageUrl : string = "https://image.tmdb.org/t/p/w185"
 
   constructor(private apiService:MoviesApiService, private weatherService:WeatherSService, private router : Router) { }
 
@@ -184,7 +184,17 @@ getMarvelListOnComponent(){
     error => console.log(error)
   )
 }
-
+//Visualizza i film science fiction
+getScienceFictionListOnComponent(){
+  this.apiService.getScienceFictionList().subscribe(
+    response => {
+      this.movies = response;
+      this.results = this.movies.results;
+      console.log("Sci-fi Movies: ", this.results)
+    },
+    error => console.log(error)
+  )
+}
 //visualizza i film Drama
   getDramasMovieListOnComponent(){
     this.apiService.getDramaMovieList().subscribe(
@@ -203,17 +213,6 @@ getMarvelListOnComponent(){
         this.movies = response;
         this.results= this.movies.results;
         console.log(this.results)
-      },
-      error => console.log(error)
-    )
-  }
-  //Visualizza i film science fiction
-  getScienceFictionListOnComponent(){
-    this.apiService.getScienceFictionList().subscribe(
-      response => {
-        this.movies = response;
-        this.results= this.movies.results;
-        console.log("Sci-fi Movies: " + this.results)
       },
       error => console.log(error)
     )

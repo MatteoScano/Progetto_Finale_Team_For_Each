@@ -18,7 +18,7 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
   user : any;
   changeDetected : boolean = false;
   
-  constructor(private commentService:CommentsService, private userService:LoginService) { }
+  constructor(private commentService:CommentsService, private userService:LoginService, private router:Router) { }
 
   ngOnInit(): void {
     this.getUserIdByUsername();
@@ -52,5 +52,25 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
       },
       error => console.log(error)
     )
+  }
+
+  deleteCommentButton(id){
+    this.commentService.deleteComment(id)
+    .subscribe(data => {
+      this.router.navigate(['/dashboard']);
+    }, (err) => {
+      console.log(err);
+      this.router.navigate(['/dashboard']);
+    });
+  }
+
+  editCommentButton(id){
+    this.commentService.deleteComment(id)
+    .subscribe(data => {
+      this.router.navigate(['/dashboard']);
+    }, (err) => {
+      console.log(err);
+      this.router.navigate(['/dashboard']);
+    });
   }
 }

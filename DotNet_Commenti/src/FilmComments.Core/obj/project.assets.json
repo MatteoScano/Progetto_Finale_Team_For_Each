@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\icaro\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Progetto Finale TNV IV Ed. Team ForEach\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj",
+      "projectUniqueName": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj",
       "projectName": "FilmComments.Core",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\Progetto Finale TNV IV Ed. Team ForEach\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\Progetto Finale TNV IV Ed. Team ForEach\\DotNet_Commenti\\src\\FilmComments.Core\\obj\\",
+      "projectPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj",
+      "packagesPath": "C:\\Users\\icaro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\icaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -17,6 +17,10 @@ export class CommentsService {
     return this.http.get<any>(this.baseURL);
   }
 
+  getComment(id){
+    return this.http.get<any>(this.baseURL + "/" + id);
+  }
+
   getUserComments(id : number){
     return this.http.get<any>(this.baseURL+"?user-id="+id);
   }
@@ -27,5 +31,9 @@ export class CommentsService {
       "movieId": movieId,
       "body": data.body
     });
-  };
+  }
+
+  deleteComment(id){
+    return this.http.delete(this.baseURL + "/" + id);
+  }
 }

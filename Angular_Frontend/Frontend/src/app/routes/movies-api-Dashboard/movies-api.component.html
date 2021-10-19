@@ -37,6 +37,7 @@
     </tbody>
   </table>
 
+  <!--
   <h3 class="text-center">Forecast</h3>
 
   <table class="table">
@@ -57,7 +58,7 @@
       </tr>
     </tbody>
   </table>
-
+  -->
   <h3 class="text-center"> Suggest me movies</h3>
 
   <table class="table"  *ngIf="results != null">
@@ -77,7 +78,7 @@
       >
         <td>{{ entry.title }}</td>
         <td>{{ entry.original_language }}</td>
-        <td>{{ entry.popularity }}</td>
+        <td><img src = {{basicImageUrl}}{{entry.poster_path}}></td>
         <td>{{ entry.release_date }}</td>
       </tr>
     </tbody>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VHJM/tUe2+n00QRXjwpLVTBw6N8NaJBXjN60lVYiUlHdO9D1wdUSwLSlulGXP7DnaJJSeV1DZoUqAZiSZ+ir8w==",
+  "dgSpecHash": "P7kNIZo8twjft81BCUG35RDn7X/5WD6buzHb7fLo91tKcfpXwZ4+2+tbmnPLVmx/uZIbe96GNgMdeDuyzsXyWw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Progetto Finale TNV IV Ed. Team ForEach\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj",
+  "projectFilePath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

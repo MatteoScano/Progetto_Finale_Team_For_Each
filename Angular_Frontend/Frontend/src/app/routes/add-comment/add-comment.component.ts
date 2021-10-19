@@ -35,8 +35,7 @@ export class AddCommentComponent implements OnInit {
   }
 
   onSubmit(form : NgForm){
-        //let movie = 
-
+    
     this.dataEntry = form.form.value;
     console.log(form)
     console.log(this.dataEntry);
@@ -46,7 +45,7 @@ export class AddCommentComponent implements OnInit {
         console.log(response);
         this.router.navigate(["/dashboard"]);},
       error => 
-        console.log(error)
+        alert(error.error.message)
     )
   }
 
