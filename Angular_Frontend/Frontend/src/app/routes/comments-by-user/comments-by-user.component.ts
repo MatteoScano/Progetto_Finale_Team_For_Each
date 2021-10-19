@@ -63,14 +63,4 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
       this.router.navigate(['/dashboard']);
     });
   }
-
-  editCommentButton(id){
-    this.commentService.deleteComment(id)
-    .subscribe(data => {
-      this.router.navigate(['/dashboard']);
-    }, (err) => {
-      console.log(err);
-      this.router.navigate(['/dashboard']);
-    });
-  }
 }

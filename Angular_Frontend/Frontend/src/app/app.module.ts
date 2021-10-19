@@ -36,6 +36,7 @@ import { UserComponent } from './routes/user/user.component';
 import { CommentsByUserComponent } from './routes/comments-by-user/comments-by-user.component';
 import { AddCommentComponent } from './routes/add-comment/add-comment.component';
 import { MyAccountComponent } from './routes/my-account/my-account.component';
+import { EditCommentComponent } from './routes/edit-comment/edit-comment.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { MyAccountComponent } from './routes/my-account/my-account.component';
     CommentsByUserComponent,
     AddCommentComponent,
     MyAccountComponent,
+    EditCommentComponent,
    ],
 
   imports: [

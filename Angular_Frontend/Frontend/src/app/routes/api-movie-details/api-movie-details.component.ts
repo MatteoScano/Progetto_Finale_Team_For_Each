@@ -2,10 +2,10 @@ import { MovieRatingsArrayInterface } from './../../models/movie-ratings.model';
 import { ApiPictureService } from 'src/app/services/api-picture.service';
 import { ResultInterface } from './../../models/apiMovie.model';
 import { MoviesApiService } from './../../services/moviesapi.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { VERSION } from '@angular/core';
-import {  MovieRatingsInterface } from 'src/app/models/movie-ratings.model';
+import { MovieRatingsInterface } from 'src/app/models/movie-ratings.model';
 import { MovieRatingService } from '../../services/movieRatings/movie-ratings.service';
 import { NgForm } from '@angular/forms';
 import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
@@ -19,14 +19,11 @@ import { LoginService } from 'src/app/services/login/login.service';
   styleUrls: ['./api-movie-details.component.css']
 })
 
-
-
-
 export class ApiMovieDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private movieApiService: MoviesApiService,
     private pictureService: ApiPictureService, private movieRatingService : MovieRatingService,
-    private userService : LoginService) { }
+    private userService : LoginService, private router : Router) { }
 
 // RATINGS
   ratings: MovieRatingsInterface // ottiene dati in arrivo da getMovieRatingsOnComponent
@@ -93,7 +90,6 @@ export class ApiMovieDetailsComponent implements OnInit {
 
   combinePath(mainUrl : ApiPictureService, backdrop_path : string){
     return this.mainUrl + this.movieDetailsEntry.backdrop_path;
-
   }
 
   onSubmit(form : NgForm){
@@ -122,10 +118,14 @@ export class ApiMovieDetailsComponent implements OnInit {
       },
       error => console.log(error)
     )
-}
+  }
 
+  goToMovieComments(){
+    this.router.navigate(['/movieComments'], {state: {data: this.id}}); //invio dell'id alla pagina di destinazione
+  }
 
-
-
+  goToAddComment(){
+    this.router.navigate(['/addComment'], {state: {data: this.id}});
+  }
 
 }

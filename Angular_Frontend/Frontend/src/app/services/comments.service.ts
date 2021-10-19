@@ -1,6 +1,6 @@
+import { CommentsInterface } from 'src/app/models/comments.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CommentsInterface } from '../models/comments.model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,4 +36,13 @@ export class CommentsService {
   deleteComment(id){
     return this.http.delete(this.baseURL + "/" + id);
   }
+
+  editComment = (data: CommentsInterface) => {
+    return this.http.put(this.baseURL + '/' + data.id, {
+      "id": data.id,
+      "userId": data.userId,
+      "movieId": data.movieId,
+      "body": data.body
+    });
+  };
 }

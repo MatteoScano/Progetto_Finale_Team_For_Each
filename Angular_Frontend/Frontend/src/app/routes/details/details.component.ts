@@ -43,11 +43,6 @@ export class DetailsComponent implements OnInit {
     this.router.navigate(['/movieComments'], {state: {data: this.id}}); //invio dell'id alla pagina di destinazione
   }
 
-  goToUserComments(){
-    let user = sessionStorage.getItem('username');
-    this.router.navigate(['comments/user/'+ user]);
-  }
-
   goToAddComment(){
     this.router.navigate(['/addComment'], {state: {data: this.id}});
   }

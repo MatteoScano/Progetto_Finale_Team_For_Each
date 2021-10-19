@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoginService } from './../../services/login/login.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,7 +12,7 @@ export class MyAccountComponent implements OnInit {
   username : string = sessionStorage.getItem('username');
   user : any;
   userId : number;
-  constructor(private userService:LoginService) { }
+  constructor(private userService:LoginService, private router: Router) { }
 
   ngOnInit(): void {
     this.getUserIdByUsername();
@@ -29,4 +30,8 @@ export class MyAccountComponent implements OnInit {
     });
   }
 
+  goToUserComments(){
+    let user = sessionStorage.getItem('username');
+    this.router.navigate(['comments/user/'+ user]);
+  }
 }

@@ -24,6 +24,7 @@ import { CommentsFilteredByMoviesIdComponent } from './routes/comments-filtered-
 import { MovieRatingsComponent } from './components/movie-ratings/movie-ratings.component';
 import { CommentsByUserComponent } from './routes/comments-by-user/comments-by-user.component';
 import { AddCommentComponent } from './routes/add-comment/add-comment.component';
+import { EditCommentComponent } from './routes/edit-comment/edit-comment.component';
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: "comments/user/:{sessionStorage.getItem('username')}", component: CommentsByUserComponent},
   { path: "addComment", component : AddCommentComponent},
   { path: "my-account", component : MyAccountComponent},
+  { path: "editComment/:id", component : EditCommentComponent},
 ];
 
 @NgModule({
