@@ -1,3 +1,4 @@
+import { MyAccountComponent } from './routes/my-account/my-account.component';
 import { UserComponent } from './routes/user/user.component';
 import { FilterByWeatherConditionsComponent } from './routes/filter-by-weather-conditions/filter-by-weather-conditions.component';
 import { WeatherComponent } from './components/weather/weather.component';
@@ -47,7 +48,8 @@ const routes: Routes = [
   { path: "filterByWeather", component: FilterByWeatherConditionsComponent},
   { path: "users", component: UserComponent},
   { path: "comments/user/:{sessionStorage.getItem('username')}", component: CommentsByUserComponent},
-  { path: "addComment", component : AddCommentComponent}
+  { path: "addComment", component : AddCommentComponent},
+  { path: "my-account", component : MyAccountComponent},
 ];
 
 @NgModule({

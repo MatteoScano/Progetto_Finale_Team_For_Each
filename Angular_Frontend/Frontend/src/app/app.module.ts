@@ -35,6 +35,7 @@ import { MovieRatingsComponent } from './components/movie-ratings/movie-ratings.
 import { UserComponent } from './routes/user/user.component';
 import { CommentsByUserComponent } from './routes/comments-by-user/comments-by-user.component';
 import { AddCommentComponent } from './routes/add-comment/add-comment.component';
+import { MyAccountComponent } from './routes/my-account/my-account.component';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { AddCommentComponent } from './routes/add-comment/add-comment.component'
     UserComponent,
     CommentsByUserComponent,
     AddCommentComponent,
+    MyAccountComponent,
    ],
 
   imports: [

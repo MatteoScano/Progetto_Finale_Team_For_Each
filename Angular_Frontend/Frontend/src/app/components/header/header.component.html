@@ -33,6 +33,12 @@
               </a>
             </li>
             <li>
+              <a *ngIf="loginService.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['/my-account']">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
+                My Account
+              </a>
+            </li>
+            <li>
               <a *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']" class="nav-link">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
                 <i class="openButton fas fa-user fa-1.5x bi d-block mx-auto mb-1" width="24" height="24"></i>
