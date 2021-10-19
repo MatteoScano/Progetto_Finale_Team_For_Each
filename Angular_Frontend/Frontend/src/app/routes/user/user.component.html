@@ -24,6 +24,8 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
         <th scope="col">Username</th>
         <th scope="col">Password</th>
         <th scope="col">Email</th>
@@ -32,6 +34,8 @@
     <tbody>
       <tr class="pointer">
         <td>{{userFound.id}}</td>
+        <td>{{userFound.name}}</td>
+        <td>{{userFound.surname}}</td>
         <td>{{userFound.username}}</td>
         <td>{{userFound.password}}</td>
         <td>{{userFound.email}}</td>
@@ -40,6 +44,8 @@
     <tbody>
       <tr class="pointer">
         <td>{{userFoundById.id}}</td>
+        <td>{{userFoundById.name}}</td>
+        <td>{{userFoundById.surname}}</td>
         <td>{{userFoundById.username}}</td>
         <td>{{userFoundById.password}}</td>
         <td>{{userFoundById.email}}</td>
@@ -55,6 +61,8 @@
       <thead class="thead-dark">
         <tr>
           <th scope="col">User Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Surname</th>
           <th scope="col">Username</th>
           <th scope="col">Password</th>
           <th scope="col">Email</th>
@@ -64,6 +72,8 @@
       <tbody>
         <tr class="pointer" *ngFor="let entry of data">
           <td>{{ entry.id }}</td>
+          <td>{{entry.name}}</td>
+          <td>{{entry.surname}}</td>
           <td>{{ entry.username }}</td>
           <td>{{ entry.password }}</td>
           <td>{{ entry.email }}</td>

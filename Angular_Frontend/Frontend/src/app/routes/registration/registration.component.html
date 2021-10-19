@@ -7,9 +7,21 @@
           <div class="col-12 col-md-9 col-lg-7 col-xl-6">
             <div class="card" style="border-radius: 15px;">
               <div class="card-body p-5">
-                <h2 class="text-uppercase text-center mb-3">Create an account</h2>
+                <h3 class="text-uppercase text-center mb-3">Create an account</h3>
+
+                  <img src="\assets\img\createAccountIcon.png" alt="Crete an Account" class="center">
 
                 <form class="pt-5" (ngSubmit)="createUser(form)" #form="ngForm">
+                  <div class="form-group">
+                    <label for="username">First Name</label>
+                    <input type="text" method="POST" required ngModel class="form-control form-control-lg" name="name" id="name" placeholder="First Name">
+
+                  </div>
+                  <div class="form-group">
+                    <label for="username">Last Name</label>
+                    <input type="text" method="POST" required ngModel class="form-control form-control-lg" name="surname" id="surname" placeholder="Surname">
+                  </div>
+
                   <div class="form-group">
                     <label for="username">Email</label>
                     <input type="text" method="POST" required ngModel class="form-control form-control-lg" name="email" id="email" placeholder="Email">
