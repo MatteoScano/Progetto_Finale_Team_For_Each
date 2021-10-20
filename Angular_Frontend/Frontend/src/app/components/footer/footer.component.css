@@ -1,17 +1,17 @@
 /* scritte a sinistra */
 a {
-  color: #6c757d !important;
+  color: #6c757d!important;
   padding: 0 0 5px 0;
 }
 
 /* elementi della lista (menu orizzontale) */
 li {
-  background-color: #343a40 !important;
+  background-color: #343a40!important;
   justify-items: flex-start;
   list-style-type: none;
   display: inline;
   float: left;
-  padding: 15px;
+  padding: 8px;
   padding-inline: 15px;
 }
 
@@ -19,9 +19,8 @@ li {
 footer {
   margin: 0%;
   width: 100%;
-  position: sticky;
   bottom: 0;
-  background-color: #343a40 !important;
+  background-color: #343a40!important;
   height: 45px;
   vertical-align: middle;
   align-items: center;
@@ -30,7 +29,7 @@ footer {
 /* scritta sulla destra */
 #Company {
   justify-items: right;
-  padding-top: 15px;
+  padding-top: 8px;
   vertical-align: middle;
   text-align: right;
   margin-right: 35px;

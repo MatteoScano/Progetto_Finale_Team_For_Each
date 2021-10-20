@@ -73,7 +73,7 @@ export class ApiMovieDetailsComponent implements OnInit {
     this.movieApiService.getMovieById(this.id).subscribe( (res: any ) => {
       this.movieDetailsEntry = res;
       console.log("Id del film scelto");
-      this.imagePath = "https://image.tmdb.org/t/p/w500" + this.movieDetailsEntry.backdrop_path //Da rimettere original size
+      this.imagePath = "https://image.tmdb.org/t/p/w780" + this.movieDetailsEntry.backdrop_path //Da rimettere original size
     })
   }
 
