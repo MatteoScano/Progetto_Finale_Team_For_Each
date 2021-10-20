@@ -1,3 +1,4 @@
+import { TermsAndConditionsComponent } from './routes/terms-and-conditions/terms-and-conditions.component';
 import { MyAccountComponent } from './routes/my-account/my-account.component';
 import { UserComponent } from './routes/user/user.component';
 import { FilterByWeatherConditionsComponent } from './routes/filter-by-weather-conditions/filter-by-weather-conditions.component';
@@ -52,6 +53,10 @@ const routes: Routes = [
   { path: "addComment", component : AddCommentComponent},
   { path: "my-account", component : MyAccountComponent},
   { path: "editComment/:id", component : EditCommentComponent},
+
+
+
+  { path: "terms-and-conditions", component : TermsAndConditionsComponent},
 ];
 
 @NgModule({
