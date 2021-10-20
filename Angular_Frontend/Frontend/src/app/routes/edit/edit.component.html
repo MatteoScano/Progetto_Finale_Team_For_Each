@@ -25,7 +25,7 @@
         <div class="form-group row">
             <label for="director" class="col-sm-2 col-form-label">Director</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="director" required 
+                <input type="text" class="form-control" id="director" required
                 [(ngModel)]="dataEntry.director" name="director">
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="form-group row">
             <label for="continent" class="col-sm-2 col-form-label">Genre</label>
             <div class="col-sm-10">
-                <select class="form-control" id="genre" required 
+                <select class="form-control" id="genre" required
                 [(ngModel)]="dataEntry.genre" name="genre">
                     <option [value]="genre" *ngFor="let genre of genres">
                         {{genre}}
@@ -58,7 +58,7 @@
         <div class="form-group row">
             <label for="reviews" class="col-sm-2 col-form-label">Reviews</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="reviews" required 
+                <input type="text" class="form-control" id="reviews" required
                 [(ngModel)]="dataEntry.reviews" name="reviews">
             </div>
         </div>
@@ -66,7 +66,7 @@
         <div class="form-group row">
             <label for="evaluation" class="col-sm-2 col-form-label">Evaluation</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="evaluation" required number 
+                <input type="number" class="form-control" id="evaluation" required number
                 [(ngModel)]="dataEntry.evaluation" name="evaluation">
             </div>
         </div>
@@ -77,6 +77,17 @@
                 <input type="date" class="form-control" id="releaseDate" required [(ngModel)]="dataEntry.releaseDate" name="releaseDate">
             </div>
         </div>
+        <div class="form-group row">
+          <label for="seen" class="col-sm-2 col-form-label">Seen</label>
+          <div class="col-sm-10">
+              <select class="form-control" id="seen" required [(ngModel)]="seenOptionSelected"
+                  name="seen">
+                  <option [value]="seen" *ngFor="let seen of ratedOptions">
+                      {{seen}}
+                  </option>
+              </select>
+          </div>
+      </div>
         <button type="submit" [disabled]="!form.valid" class="btn btn-success">Submit</button>
 
     </form>

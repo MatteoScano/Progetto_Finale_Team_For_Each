@@ -18,6 +18,7 @@ export class EditComponent implements OnInit {
   genres = ['Horror','Adventure','Comedy','Fantasy','Crime','Romance'];
   ratedOptions = ['yes', 'no'];
   ratedOptionSelected: string;
+  seenOptionSelected: string;
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
@@ -27,22 +28,31 @@ export class EditComponent implements OnInit {
   fetchEntry(id){
     this.dataService.getEntry(id).subscribe( (res: any ) => {
       this.dataEntry = res;
-      
+
       console.log(this.dataEntry)
       if(this.dataEntry.rated){
         this.ratedOptionSelected="yes";
       }
-      else this.ratedOptionSelected="no"
+      else this.ratedOptionSelected="no";
+      if(this.dataEntry.seen){
+        this.seenOptionSelected="yes";
+      }
+      else this.seenOptionSelected="no"
     })
-    
+
   }
- 
+
   onSubmit(){
     console.log(this.dataEntry);
     if(this.ratedOptionSelected =='yes'){
       this.dataEntry.rated=true;
     }else{
       this.dataEntry.rated=false;
+    }
+    if(this.seenOptionSelected =='yes'){
+      this.dataEntry.seen=true;
+    }else{
+      this.dataEntry.seen=false;
     }
 
     this.dataService.editEntry(this.dataEntry)

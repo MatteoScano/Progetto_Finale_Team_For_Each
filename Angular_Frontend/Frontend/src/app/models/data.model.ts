@@ -1,4 +1,5 @@
 export interface MovieData {
+
     id: number;
     name: string;
     cast: string;
@@ -8,4 +9,8 @@ export interface MovieData {
     reviews: string;
     evaluation: number;
     releaseDate: Date;
+    user_id: number;
+    movie_id: number;
+    seen: boolean;
+    must_see: boolean;
 }

@@ -37,7 +37,11 @@ CREATE TABLE `data` (
   `rated` bit(1) NOT NULL,
   `reviews` varchar(200) NOT NULL,
   `evaluation` int(1) NOT NULL,
-  `releaseDate` date NOT NULL
+  `releaseDate` date NOT NULL,  
+  `user_id` int(1) NOT NULL,
+  `movie_id` int(1) NOT NULL,
+  `seen` bit(1) NOT NULL,
+  `must_see` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
