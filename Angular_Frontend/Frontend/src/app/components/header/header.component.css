@@ -2,7 +2,7 @@
 header {
   width: 100%;
   color: rgb(240, 197, 116);
-  position: fixed;
+  position:relative;
 }
 
 @font-face {
