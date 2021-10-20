@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { UserDataInterface } from './../../models/user.model';
 import { LoginService } from './../../services/login/login.service';
@@ -18,7 +19,7 @@ export class UserComponent implements OnInit {
   userId:number;
   userFoundById:any=[];
 
-  constructor( private userService : LoginService) { }
+  constructor( private userService : LoginService, private router : Router) { }
 
   ngOnInit() : void{
     this.getUsersList();
@@ -52,6 +53,18 @@ export class UserComponent implements OnInit {
       this.userFoundById = response;
         console.log("L'utente ha i seguenti dati:");  //test
         console.log(this.userFoundById);
+    });
+  }
+
+  deleteUserById(form :NgForm){
+    this.userId = form.form.value.userId;
+    console.log("dato inserito:"+this.userId);
+  this.userService.deleteUser(this.userId,"admin","admin").subscribe(
+    (response : any) => {
+      this.userFoundById = response;
+        console.log("L'utente ha i seguenti dati:");  //test
+        console.log(this.userFoundById);
+        this.router.navigate(['/users']);
     });
   }
 
