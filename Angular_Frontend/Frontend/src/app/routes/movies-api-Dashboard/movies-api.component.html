@@ -1,9 +1,13 @@
-
+<!-- TITOLI  DASHBOARD-->
 <div class="container p-5">
+
+
   <h1 class="text-center mb-5">Movies e Meteo api dashboard</h1>
   <h3 class="text-center">Current Weather</h3>
-  <!--PIPE WEATHER -->
-  <button
+
+
+
+<button
     type="button"
     style="font-size: 30px"
     class="btn btn-default"
@@ -12,7 +16,8 @@
   >
     <span class="fas fa-filter" aria-hidden="true"></span>
   </button>
-  <!--------------------------------------->
+
+
 
   <table class="table" *ngIf="data != null">
     <thead class="thead-dark">
@@ -38,26 +43,7 @@
   </table>
 
   <!--
-  <h3 class="text-center">Forecast</h3>
 
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Conditions</th>
-        <th scope="col">Sunset</th>
-        <th scope="col">Sunrise</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="pointer" *ngFor="let entry of weatherArray ; let i = index">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{ entry.conditions }}</td>
-        <td>{{ entry.sunset }}</td>
-        <td>{{ entry.sunrise }}</td>
-      </tr>
-    </tbody>
-  </table>
   -->
   <h3 class="text-center"> Suggest me movies</h3>
 
@@ -87,3 +73,6 @@
 </div>
 
 <app-loading-page *ngIf="!results"></app-loading-page>
+  <!--PIPE WEATHER
+
+  <!--------------------------------------->
