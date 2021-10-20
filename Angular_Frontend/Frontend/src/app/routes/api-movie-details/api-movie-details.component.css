@@ -34,7 +34,7 @@ justify-items: flex-end;
   flex: 1;
 }
 .boxImg {
-  margin-top: 7%;
+  margin-top: 30px;;
   margin-left: 5.5%;
   flex: 1;
 }
@@ -105,4 +105,17 @@ body {
 
 .aligner {
   margin-left: 0.5%;
+}
+
+
+.star-container {
+  margin-top: -20px;
+font-size: 25px;
+color: gold;
+padding: none;
+}
+
+.star-container:hover {
+  transform: scale(1.2);
+  transition: .2s;
 }

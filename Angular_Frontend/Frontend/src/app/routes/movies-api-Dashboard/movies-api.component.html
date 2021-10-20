@@ -3,11 +3,12 @@
   <div class="container">
 
 
-    <h1 class="text-center mb-5">Movies e Meteo api dashboard</h1>
-    <h3 class="text-center">Current Weather</h3>
+    <h1 class="text-center mb-5">SUGGESTIONS OF THE DAY</h1>
+
 
 
   <!--
+    <h3 class="text-center">Current Weather</h3>
   <button
       type="button"
       style="font-size: 30px"
@@ -44,9 +45,9 @@
     </table>
 
     <!--
-
-    -->
     <h3 class="text-center"> Suggest me movies</h3>
+    -->
+
 
     <table class="table"  *ngIf="results != null">
       <!--
@@ -67,7 +68,7 @@
           (click)="goToDetails(entry.id)"
         >
 
-          <div><img src = {{basicImageUrl}}{{entry.poster_path}}></div>
+          <div ><img src = {{basicImageUrl}}{{entry.poster_path}} class="hover-shadow imgClass"></div>
           <p>{{ entry.title }}</p>
           <!--
           <td>{{ entry.original_language }}</td>

@@ -21,7 +21,7 @@
       <img
         src="{{ imagePath }}"
         *ngIf="imagePath != null"
-        class="shadowx frame"
+        class="shadowx frame img-fluid"
       />
     </div>
 
@@ -44,8 +44,15 @@
     <!-- RATING FORM -->
     <div class="box2">
       <form class="" (ngSubmit)="onSubmit(form)" #form="ngForm">
-        <label for="rated" class="aligner">Movie rating</label>
-        <div class="">
+
+        <div>
+          <ngb-rating class="star-container" [max]="5" [(rate)]="currentRating"></ngb-rating>
+          <hr/>
+
+          <!--<pre>Rate: <b>{{currentRating}}</b></pre>    MOSTRA CURRENT RATING      -->
+
+          <!-- SELECT PRECEDENTE E FUNZIONANTE
+          <label for="rated" class="aligner">Movie rating</label>
           <select
             class="rating-field"
             id="movie_rating"
@@ -57,6 +64,7 @@
               {{ rated }}
             </option>
           </select>
+        -->
         </div>
       </form>
       <div>
