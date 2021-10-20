@@ -37,6 +37,8 @@ import { CommentsByUserComponent } from './routes/comments-by-user/comments-by-u
 import { AddCommentComponent } from './routes/add-comment/add-comment.component';
 import { MyAccountComponent } from './routes/my-account/my-account.component';
 import { EditCommentComponent } from './routes/edit-comment/edit-comment.component';
+import { BetaFooterComponent } from './components/beta-footer/beta-footer.component';
+import { TermsAndConditionsComponent } from './routes/terms-and-conditions/terms-and-conditions.component';
 
 
 @NgModule({
@@ -72,6 +74,8 @@ import { EditCommentComponent } from './routes/edit-comment/edit-comment.compone
     AddCommentComponent,
     MyAccountComponent,
     EditCommentComponent,
+    BetaFooterComponent,
+    TermsAndConditionsComponent,
    ],
 
   imports: [

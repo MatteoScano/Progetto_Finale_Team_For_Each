@@ -23,6 +23,7 @@
   <table class="table">
     <thead class="thead-dark">
       <tr>
+        <th scope="col">Action</th>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Surname</th>
@@ -33,6 +34,7 @@
     </thead>
     <tbody>
       <tr class="pointer">
+        <td><button type="button" class="btn btn-danger" (click)="deleteUserById(form)">Delete</button></td>
         <td>{{userFound.id}}</td>
         <td>{{userFound.name}}</td>
         <td>{{userFound.surname}}</td>
