@@ -1,0 +1,42 @@
+* {
+  font-family: "DK Lemon Yellow Sun";
+}
+
+/* BOX VIEWER
+ td {
+   list-style-type: none;
+   border: 1px dotted red;
+ }
+*/
+
+
+p {
+  display: flex;
+  flex-direction: row;
+  /*border: 1px dotted red;*/
+  text-align: center;
+   flex-wrap: wrap;
+   text-align: justify;
+   width: 200px;
+}
+
+
+tbody {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+   flex-wrap: wrap;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
