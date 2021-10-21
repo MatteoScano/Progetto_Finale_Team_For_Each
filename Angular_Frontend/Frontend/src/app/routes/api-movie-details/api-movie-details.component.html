@@ -45,37 +45,36 @@
     <div class="box2">
       <form class="" (ngSubmit)="onSubmit(form)" #form="ngForm">
 
-        <div>
-          <ngb-rating class="star-container" [max]="5" [(rate)]="currentRating"></ngb-rating>
-          <hr/>
 
-          <!--<pre>Rate: <b>{{currentRating}}</b></pre>    MOSTRA CURRENT RATING      -->
 
-          <!-- SELECT PRECEDENTE E FUNZIONANTE
           <label for="rated" class="aligner">Movie rating</label>
-          <select
-            class="rating-field"
-            id="movie_rating"
-            required
-            ngModel
-            name="movie_rating"
-          >
+
+          <div>
+            <ngb-rating class="star-container" [max]="5" ngModel name="movie_rating" id="movie_rating"  required></ngb-rating>
+            <hr/>
+          </div>
+
+
+          <!--
+            <pre>Rate: <b>{{movie_rating}}</b></pre>
+          <select class="rating-field" id="movie_rating" required ngModel name="movie_rating">
             <option [value]="rated" *ngFor="let rated of ratedOptions">
               {{ rated }}
             </option>
           </select>
-        -->
-        </div>
+          -->
+          <div>
+            <button
+              class="btn btn-primary ml-1 buttons" [disabled]="!form.valid"
+              class="btn btn-success buttons"
+            >
+              Submit Rating
+            </button>
+          </div>
+
+
       </form>
-      <div>
-        <button
-          class="btn btn-primary ml-1 buttons"
-          [disabled]="!form.valid"
-          class="btn btn-success buttons"
-        >
-          Submit Rating
-        </button>
-      </div>
+
     </div>
 
     <!-- COMMENT BUTTONS -->
@@ -96,6 +95,17 @@
 
 
 </body>
+
+
+
+<!--
+<div>
+  <ngb-rating class="star-container" [max]="5" [(rate)]="currentRating"></ngb-rating>
+  <hr/>
+</div>
+  <!--<pre>Rate: <b>{{currentRating}}</b></pre>    MOSTRA CURRENT RATING      -->
+
+
 
 <!--
 

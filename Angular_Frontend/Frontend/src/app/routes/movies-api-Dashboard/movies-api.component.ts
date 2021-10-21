@@ -13,29 +13,29 @@ import { MovieApiInterface, ResultInterface } from '../../models/apiMovie.model'
 export class MoviesApiComponent implements OnInit {
 
   //variabili MOVIES api
-  movies : any;
-  results : any[];
+  movies: any;
+  results: any[];
 
   //variabili METEO api
   weatherFatherBis: currentWeatherInterface;
-  currentWeatherBis : ConditionsInterface[];
-  data:any
+  currentWeatherBis: ConditionsInterface[];
+  data: any
 
-  todaysWeather : string
+  todaysWeather: string
 
   public weatherFather: currentWeatherFather;
   public weatherArray: CurrentWeather[];
-  public currentWeather : CurrentWeather;
+  public currentWeather: CurrentWeather;
 
-  orarioAttuale:number
+  orarioAttuale: number
 
-  mattina:boolean=false
-  pomeriggio:boolean=false
-  sera:boolean=false
+  mattina: boolean = false
+  pomeriggio: boolean = false
+  sera: boolean = false
 
-  basicImageUrl : string = "https://image.tmdb.org/t/p/w185"
+  basicImageUrl: string = "https://image.tmdb.org/t/p/w185"
 
-  constructor(private apiService:MoviesApiService, private weatherService:WeatherSService, private router : Router) { }
+  constructor(private apiService: MoviesApiService, private weatherService: WeatherSService, private router: Router) { }
 
   ngOnInit(): void {
     this.getMovieByCurrentWeather();
@@ -60,177 +60,180 @@ export class MoviesApiComponent implements OnInit {
   altrimenti
         momentoGionata = notte
   */
-assegnaMomentoGiornata(){
+  assegnaMomentoGiornata() {
 
-}
+  }
 
   // METEO FUNZIONI
   getMovieByCurrentWeather() {
-    console.log("data conditions prima dello switch"+ this.todaysWeather);
+    console.log("data conditions prima dello switch" + this.todaysWeather);
 
     this.weatherService.getWeatherData().subscribe((
-      response:any) => {
-        //se è andato tutto bene, allora:
-       this.weatherFatherBis = response;
-       console.log("weatherFatherBis: ", this.weatherFatherBis)
-       this.data= this.weatherFatherBis.currentConditions;
-       console.log("Data: ", this.data);
-       console.log("data conditions"+this.data.conditions);
-       this.todaysWeather = this.data.conditions;
-       console.log("  Dato Test" + this.todaysWeather)
+      response: any) => {
+      //se è andato tutto bene, allora:
+      this.weatherFatherBis = response;
+      console.log("weatherFatherBis: ", this.weatherFatherBis)
+      this.data = this.weatherFatherBis.currentConditions;
+      console.log("Data: ", this.data);
+      console.log("data conditions" + this.data.conditions);
+      this.todaysWeather = this.data.conditions;
+      console.log("  Dato Test" + this.todaysWeather)
 
-       this.orarioAttuale=parseInt(this.data.datetime);
-       console.log(" Stringa intera" + this.orarioAttuale)
+      this.orarioAttuale = parseInt(this.data.datetime);
+      console.log(" Stringa intera" + this.orarioAttuale)
 
-       //MATTINA
-      if(this.todaysWeather=="Clear" && this.orarioAttuale > 7 && this.orarioAttuale<13){
-          this.getDramasMovieListOnComponent();
-      }
-      if(this.todaysWeather=="Rain" && this.orarioAttuale > 7 && this.orarioAttuale<13){
-        this.getComedyMovieListOnComponent();
-      }
-      if(this.todaysWeather=="Snow" && this.orarioAttuale > 7 && this.orarioAttuale<13){
-        this.getRomanceFictionListOnComponent();
-      }
-      if(this.todaysWeather=="Partially cloudy" && this.orarioAttuale > 7 && this.orarioAttuale<13){
-        this.getScienceFictionListOnComponent();
-      }
 
-    //POMERIGGIO
-      if(this.todaysWeather=="Clear" && this.orarioAttuale > 13 && this.orarioAttuale<19){
-        console.log("Valore mattina: "+this.mattina)
-        console.log("Orario attuale: "+this.orarioAttuale)
+
+      // COSTRUTTI CONDIZIONALI SUGGERIMENTI FILM:
+      //MATTINA
+      if (this.todaysWeather == "Clear" && this.orarioAttuale > 7 && this.orarioAttuale < 13) {
         this.getDramasMovieListOnComponent();
       }
-      if(this.todaysWeather=="Rain" && this.orarioAttuale > 13 && this.orarioAttuale<19){
-        console.log("Valore mattina: "+this.mattina)
-        console.log("Orario attuale: "+this.orarioAttuale)
+      if (this.todaysWeather == "Rain" && this.orarioAttuale > 7 && this.orarioAttuale < 13) {
         this.getComedyMovieListOnComponent();
       }
-      if(this.todaysWeather=="Snow" && this.orarioAttuale > 13 && this.orarioAttuale<19){
-        console.log("Valore mattina: "+this.mattina)
-        console.log("Orario attuale: "+this.orarioAttuale)
+      if (this.todaysWeather == "Snow" && this.orarioAttuale > 7 && this.orarioAttuale < 13) {
         this.getRomanceFictionListOnComponent();
       }
-      if(this.todaysWeather=="Partially cloudy" && this.orarioAttuale > 13 && this.orarioAttuale<19){
-        console.log("Valore mattina: "+this.mattina)
-        console.log("Orario attuale: "+this.orarioAttuale)
+      if (this.todaysWeather == "Partially cloudy" && this.orarioAttuale > 7 && this.orarioAttuale < 13) {
         this.getScienceFictionListOnComponent();
       }
-        //SERA
-      if(this.todaysWeather=="Clear" && this.orarioAttuale > 19 && this.orarioAttuale<24){
-          this.getDramasMovieListOnComponent();
+
+      //POMERIGGIO
+      if (this.todaysWeather == "Clear" && this.orarioAttuale > 13 && this.orarioAttuale < 19) {
+        console.log("Valore mattina: " + this.mattina)
+        console.log("Orario attuale: " + this.orarioAttuale)
+        this.getDramasMovieListOnComponent();
       }
-      if(this.todaysWeather=="Rain" && this.orarioAttuale > 19 && this.orarioAttuale<24){
+      if (this.todaysWeather == "Rain" && this.orarioAttuale > 13 && this.orarioAttuale < 19) {
+        console.log("Valore mattina: " + this.mattina)
+        console.log("Orario attuale: " + this.orarioAttuale)
         this.getComedyMovieListOnComponent();
       }
-      if(this.todaysWeather=="Snow" && this.orarioAttuale > 19 && this.orarioAttuale<24){
-        this.mattina=true;
-        console.log("Valore mattina: "+this.mattina)
-        console.log("Orario attuale: "+this.orarioAttuale)
+      if (this.todaysWeather == "Snow" && this.orarioAttuale > 13 && this.orarioAttuale < 19) {
+        console.log("Valore mattina: " + this.mattina)
+        console.log("Orario attuale: " + this.orarioAttuale)
         this.getRomanceFictionListOnComponent();
       }
-      if(this.todaysWeather=="Partially cloudy" && this.orarioAttuale > 19 && this.orarioAttuale<24){
-        this.mattina=true;
-        console.log("Valore mattina: "+this.mattina)
-        console.log("Orario attuale: "+this.orarioAttuale)
+      if (this.todaysWeather == "Partially cloudy" && this.orarioAttuale > 13 && this.orarioAttuale < 19) {
+        console.log("Valore mattina: " + this.mattina)
+        console.log("Orario attuale: " + this.orarioAttuale)
         this.getScienceFictionListOnComponent();
       }
-     },
-   error =>console.log(error)
-     )
-}
+      //SERA
+      if (this.todaysWeather == "Clear" && this.orarioAttuale > 19 && this.orarioAttuale < 24) {
+        this.getDramasMovieListOnComponent();
+      }
+      if (this.todaysWeather == "Rain" && this.orarioAttuale > 19 && this.orarioAttuale < 24) {
+        this.getComedyMovieListOnComponent();
+      }
+      if (this.todaysWeather == "Snow" && this.orarioAttuale > 19 && this.orarioAttuale < 24) {
+        this.mattina = true;
+        console.log("Valore mattina: " + this.mattina)
+        console.log("Orario attuale: " + this.orarioAttuale)
+        this.getRomanceFictionListOnComponent();
+      }
+      if (this.todaysWeather == "Partially cloudy" && this.orarioAttuale > 19 && this.orarioAttuale < 24) {
+        this.mattina = true;
+        console.log("Valore mattina: " + this.mattina)
+        console.log("Orario attuale: " + this.orarioAttuale)
+        this.getScienceFictionListOnComponent();
+      }
+    },
+      error => console.log(error)
+    )
+  }
 
   getterWeatherDataOnComponent() {
     this.weatherService.getWeatherData().subscribe((
-     response:any) => {
-       //se è andato tutto bene, allora:
+      response: any) => {
+      //se è andato tutto bene, allora:
       this.weatherFatherBis = response;
       console.log("weatherFatherBis: ", this.weatherFatherBis)
-      this.data= this.weatherFatherBis.currentConditions;
+      this.data = this.weatherFatherBis.currentConditions;
       console.log("Data: ", this.data);
-      console.log("data conditions"+this.data.conditions);
+      console.log("data conditions" + this.data.conditions);
       this.todaysWeather = this.data.conditions;
       console.log("  Dato Test" + this.todaysWeather)
     },
-  error =>console.log(error)
+      error => console.log(error)
     )
-}
+  }
 
-exGetterWeatherData() {
-  this.weatherService.getWeatherData().subscribe((
-    response:any)=> {
-    console.log("Previsioni meteo: ")
-    this.weatherFather = response;
-    console.log(this.weatherFather)
-    this.weatherArray = this.weatherFather.days;
-    console.log(this.weatherFather.days)
+  exGetterWeatherData() {
+    this.weatherService.getWeatherData().subscribe((
+      response: any) => {
+      console.log("Previsioni meteo: ")
+      this.weatherFather = response;
+      console.log(this.weatherFather)
+      this.weatherArray = this.weatherFather.days;
+      console.log(this.weatherFather.days)
     },
-    error =>console.log(error)
-  )
+      error => console.log(error)
+    )
 
-    }
-//visualizza la lista dei film Marvel
-getMarvelListOnComponent(){
-  this.apiService.getMarvelList().subscribe(
-    response => {
-      //se è andato tutto bene, allora:
-      this.movies = response;
-      console.log("Dati dei film: ", this.movies);
-      this.results= this.movies.results;
-      console.log("Results: ", this.results)
-      //console.log("I dati stringify: " + JSON.stringify(this.movies))
-    },
-    error => console.log(error)
-  )
-}
-//Visualizza i film science fiction
-getScienceFictionListOnComponent(){
-  this.apiService.getScienceFictionList().subscribe(
-    response => {
-      this.movies = response;
-      this.results = this.movies.results;
-      console.log("Sci-fi Movies: ", this.results)
-    },
-    error => console.log(error)
-  )
-}
-//visualizza i film Drama
-  getDramasMovieListOnComponent(){
+  }
+  //visualizza la lista dei film Marvel
+  getMarvelListOnComponent() {
+    this.apiService.getMarvelList().subscribe(
+      response => {
+        //se è andato tutto bene, allora:
+        this.movies = response;
+        console.log("Dati dei film: ", this.movies);
+        this.results = this.movies.results;
+        console.log("Results: ", this.results)
+        //console.log("I dati stringify: " + JSON.stringify(this.movies))
+      },
+      error => console.log(error)
+    )
+  }
+  //Visualizza i film science fiction
+  getScienceFictionListOnComponent() {
+    this.apiService.getScienceFictionList().subscribe(
+      response => {
+        this.movies = response;
+        this.results = this.movies.results;
+        console.log("Sci-fi Movies: ", this.results)
+      },
+      error => console.log(error)
+    )
+  }
+  //visualizza i film Drama
+  getDramasMovieListOnComponent() {
     this.apiService.getDramaMovieList().subscribe(
       response => {
         this.movies = response;
-        this.results= this.movies.results;
+        this.results = this.movies.results;
         console.log(this.results)
       },
       error => console.log(error)
     )
   }
   //Visualizza i film comedy
-  getComedyMovieListOnComponent(){
+  getComedyMovieListOnComponent() {
     this.apiService.getComedyMovieList().subscribe(
       response => {
         this.movies = response;
-        this.results= this.movies.results;
+        this.results = this.movies.results;
         console.log(this.results)
       },
       error => console.log(error)
     )
   }
- //Visualizza i film romantici
-  getRomanceFictionListOnComponent(){
+  //Visualizza i film romantici
+  getRomanceFictionListOnComponent() {
     this.apiService.getRomanceFictionList().subscribe(
       response => {
         this.movies = response;
-        this.results= this.movies.results;
+        this.results = this.movies.results;
         console.log(this.results)
       },
       error => console.log(error)
     )
   }
 
-  goToDetails(id){
-    this.router.navigateByUrl('/movieApiDetails/'+id);
+  goToDetails(id) {
+    this.router.navigateByUrl('/movieApiDetails/' + id);
   }
 
 }
