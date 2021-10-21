@@ -1,80 +1,119 @@
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\appsettings.json
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.exe
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.deps.json
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.runtimeconfig.json
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.runtimeconfig.dev.json
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\ref\FilmComments.RestAPIs.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.pdb
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\MySqlConnector.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.Core.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.DB.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.Core.pdb
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.DB.pdb
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.csproj.AssemblyReference.cache
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.AssemblyInfoInputs.cache
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.AssemblyInfo.cs
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.csproj.CoreCompileInputs.cache
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\staticwebassets\FilmComments.RestAPIs.StaticWebAssets.Manifest.cache
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\staticwebassets\FilmComments.RestAPIs.StaticWebAssets.xml
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\scopedcss\bundle\FilmComments.RestAPIs.styles.css
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.RazorTargetAssemblyInfo.cache
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.csproj.CopyComplete
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\ref\FilmComments.RestAPIs.dll
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.pdb
-C:\Users\icaro\Desktop\CS50\TheNetFish\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.genruntimeconfig.cache
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\appsettings.json
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.exe
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.deps.json
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.runtimeconfig.json
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.runtimeconfig.dev.json
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\ref\FilmComments.RestAPIs.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.RestAPIs.pdb
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\MySqlConnector.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.Core.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.DB.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.Core.pdb
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\bin\Debug\net5.0\FilmComments.DB.pdb
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.csproj.AssemblyReference.cache
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.AssemblyInfoInputs.cache
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.AssemblyInfo.cs
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\staticwebassets\FilmComments.RestAPIs.StaticWebAssets.Manifest.cache
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\staticwebassets\FilmComments.RestAPIs.StaticWebAssets.xml
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\scopedcss\bundle\FilmComments.RestAPIs.styles.css
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.RazorTargetAssemblyInfo.cache
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.csproj.CopyComplete
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\ref\FilmComments.RestAPIs.dll
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.pdb
-C:\Users\Administrator\Desktop\Progetto Finale TNV IV Ed. Team ForEach\DotNet_Commenti\src\FilmComments.RestAPIs\obj\Debug\net5.0\FilmComments.RestAPIs.genruntimeconfig.cache
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/appsettings.Development.json
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/appsettings.json
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.exe
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.deps.json
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.runtimeconfig.json
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.runtimeconfig.dev.json
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/ref/FilmComments.RestAPIs.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.pdb
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.OpenApi.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/MySqlConnector.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Pomelo.EntityFrameworkCore.MySql.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.Core.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.DB.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.Core.pdb
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.DB.pdb
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.csproj.AssemblyReference.cache
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.AssemblyInfoInputs.cache
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.AssemblyInfo.cs
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.csproj.CoreCompileInputs.cache
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/staticwebassets/FilmComments.RestAPIs.StaticWebAssets.Manifest.cache
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/staticwebassets/FilmComments.RestAPIs.StaticWebAssets.xml
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/scopedcss/bundle/FilmComments.RestAPIs.styles.css
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.RazorTargetAssemblyInfo.cache
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.csproj.CopyComplete
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/ref/FilmComments.RestAPIs.dll
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.pdb
+C:/Users/icaro/Desktop/CS50/TheNetFish/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.genruntimeconfig.cache
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/appsettings.Development.json
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/appsettings.json
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.exe
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.deps.json
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.runtimeconfig.json
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.runtimeconfig.dev.json
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/ref/FilmComments.RestAPIs.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.pdb
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.OpenApi.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/MySqlConnector.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Pomelo.EntityFrameworkCore.MySql.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.Core.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.DB.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.Core.pdb
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.DB.pdb
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.csproj.AssemblyReference.cache
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.AssemblyInfoInputs.cache
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.AssemblyInfo.cs
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.csproj.CoreCompileInputs.cache
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/staticwebassets/FilmComments.RestAPIs.StaticWebAssets.Manifest.cache
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/staticwebassets/FilmComments.RestAPIs.StaticWebAssets.xml
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/scopedcss/bundle/FilmComments.RestAPIs.styles.css
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.RazorTargetAssemblyInfo.cache
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.csproj.CopyComplete
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/ref/FilmComments.RestAPIs.dll
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.pdb
+C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.genruntimeconfig.cache
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/appsettings.Development.json
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/appsettings.json
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.deps.json
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.runtimeconfig.json
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.runtimeconfig.dev.json
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/ref/FilmComments.RestAPIs.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.RestAPIs.pdb
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Microsoft.OpenApi.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/MySqlConnector.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.Core.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.DB.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.Core.pdb
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/bin/Debug/net5.0/FilmComments.DB.pdb
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.csproj.AssemblyReference.cache
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.GeneratedMSBuildEditorConfig.editorconfig
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.AssemblyInfoInputs.cache
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.AssemblyInfo.cs
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.csproj.CoreCompileInputs.cache
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.MvcApplicationPartsAssemblyInfo.cs
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.MvcApplicationPartsAssemblyInfo.cache
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/staticwebassets/FilmComments.RestAPIs.StaticWebAssets.Manifest.cache
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/staticwebassets/FilmComments.RestAPIs.StaticWebAssets.xml
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/scopedcss/bundle/FilmComments.RestAPIs.styles.css
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.RazorTargetAssemblyInfo.cache
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.csproj.CopyComplete
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/ref/FilmComments.RestAPIs.dll
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.pdb
+/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/Debug/net5.0/FilmComments.RestAPIs.genruntimeconfig.cache

@@ -871,37 +871,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\icaro\\.nuget\\packages\\": {}
+    "/Users/finster/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.RestAPIs\\FilmComments.RestAPIs.csproj",
+      "projectUniqueName": "/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/FilmComments.RestAPIs.csproj",
       "projectName": "FilmComments.RestAPIs",
-      "projectPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.RestAPIs\\FilmComments.RestAPIs.csproj",
-      "packagesPath": "C:\\Users\\icaro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.RestAPIs\\obj\\",
+      "projectPath": "/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/FilmComments.RestAPIs.csproj",
+      "packagesPath": "/Users/finster/.nuget/packages/",
+      "outputPath": "/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.RestAPIs/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\icaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/finster/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj": {
-              "projectPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj"
+            "/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.Core/FilmComments.Core.csproj": {
+              "projectPath": "/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.Core/FilmComments.Core.csproj"
             },
-            "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.DB\\FilmComments.DB.csproj": {
-              "projectPath": "C:\\Users\\icaro\\Desktop\\CS50\\TheNetFish\\DotNet_Commenti\\src\\FilmComments.DB\\FilmComments.DB.csproj"
+            "/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.DB/FilmComments.DB.csproj": {
+              "projectPath": "/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.DB/FilmComments.DB.csproj"
             }
           }
         }
@@ -939,7 +937,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
       }
     }
   }
