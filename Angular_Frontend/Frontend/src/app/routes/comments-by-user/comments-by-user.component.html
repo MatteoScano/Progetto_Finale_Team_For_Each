@@ -3,6 +3,8 @@
       Movies api dashboard
     </h1>
 
+
+
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -14,9 +16,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer" *ngFor="let entry of comments"> 
-          <!-- trovare modo per trasformare gli id in titoli di film e nomi utenti, 
-          collegamento tra chiavi database? 
+        <tr class="pointer" *ngFor="let entry of comments">
+          <!-- trovare modo per trasformare gli id in titoli di film e nomi utenti,
+          collegamento tra chiavi database?
           oppure scaricare tutti i database e trasformare i dati in component.ts? -->
           <td>{{entry.id}}</td>
           <td>{{entry.movieId}}</td>

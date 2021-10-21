@@ -7,7 +7,9 @@
 <div class="box-back">
 <button class="btn btn-primary mr-2 ml-4 buttons" [routerLink]="['/moviesApi']">Back</button>
   </div>
-<!-- BUTTON BACK-->
+ BUTTON BACK-->
+
+
 
 <body class="page-wrapper grid">
   <!-- BUTTON BACK-->
@@ -25,6 +27,8 @@
       />
     </div>
 
+
+
     <!-- TITOLO-->
     <div class="box1">
       <div class="title" *ngIf="movieDetailsEntry != null">
@@ -40,6 +44,23 @@
         <p>{{ movieDetailsEntry.overview }}</p>
       </div>
     </div>
+
+       <!-- ICONA AGGIUNGI ALLA LISTA -->
+    <a href="" class="me-4 text-reset m-2 mt-5">
+      <i class="fas fa-plus fa-2x"></i>
+
+    </a>
+
+
+    <a href="" class="me-4 text-reset m-2 mt-5">
+    <i class="fas fa-plus-circle fa-2x"></i>
+    </a>
+    <a href="" class="me-4 text-reset m-2 mt-5">
+      <i class="fas fa-plus-circle"></i>
+      </a>
+      <a href="" class="me-4 text-reset m-2 mt-5">
+        <i class="far fa-check-circle"></i>
+        </a>
 
     <!-- RATING FORM -->
     <div class="box2">
@@ -97,13 +118,12 @@
 </body>
 
 
-
 <!--
 <div>
   <ngb-rating class="star-container" [max]="5" [(rate)]="currentRating"></ngb-rating>
   <hr/>
 </div>
-  <!--<pre>Rate: <b>{{currentRating}}</b></pre>    MOSTRA CURRENT RATING      -->
+  <pre>Rate: <b>{{currentRating}}</b></pre>    MOSTRA CURRENT RATING      -->
 
 
 
@@ -142,7 +162,7 @@
 </div>
 <app-loading-page *ngIf="!movieDetailsEntry"></app-loading-page>
 
-<!--
+
   <div class="form-group row">
     <label for="movie_rating" class="col-sm-2 col-form-label"
       >Movie Rating</label

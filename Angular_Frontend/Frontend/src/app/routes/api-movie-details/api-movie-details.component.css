@@ -1,7 +1,7 @@
-* {
+/** {
   font-family: "DK Lemon Yellow Sun";
 }
-
+*/
 .container1 {
   display: flex;
   flex-direction: column;
