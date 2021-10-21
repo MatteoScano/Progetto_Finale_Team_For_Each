@@ -1,0 +1,28 @@
+
+.container-1{
+  margin-left:5%;
+}
+
+
+button {
+  width: 10%;
+  background-color: #f8f9fa;
+  border: none;
+  -webkit-appearance: none;
+  -ms-progress-appearance: none;
+  appearance: none;
+  background: #b1afaf;
+  padding: 11px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  font-family: "DK Lemon Yellow Sun";
+  color: white;
+
+}
+
+.style-text-area {
+  width: 800px;
+  height: 80px;
+  background: #d1d0d0;
+}
+

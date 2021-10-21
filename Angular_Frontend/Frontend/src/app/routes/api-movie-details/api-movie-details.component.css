@@ -14,14 +14,14 @@
 }
 
 .box-back {
-  margin-top: 5%;
+margin-top: 5%;
 justify-items: flex-end;
 }
 .box1 {
   font-size: 20px;
   margin-left: 5%;
   flex: 1;
-  margin-right: 50%;;
+  margin-right: 50%;
 }
 .box2 {
   margin-left: 5%;
@@ -34,9 +34,35 @@ justify-items: flex-end;
   flex: 1;
 }
 .boxImg {
-  margin-top: 30px;;
+  margin-top: 130px;
   margin-left: 5.5%;
   flex: 1;
+}
+
+
+.addButtons-container  {
+  -webkit-appearance: none;
+  -ms-progress-appearance: none;
+  appearance: none;
+}
+
+.box-buttonAdd {
+  margin-left: 5%;
+  flex: 1;
+  color: #b1afaf;
+
+}
+.box-buttonAdd:hover {
+  transform:rotateX('90');
+  transition: .2s;
+
+}
+
+
+.box-buttonSeen {
+  margin-left: 37%;
+  flex: 1;
+  color: #b1afaf;
 }
 /*FINE CONTAINER1*/
 
@@ -61,10 +87,18 @@ justify-items: flex-end;
 
 .elements {
 text-align: justify;
-
-
+width:800px;
 }
 
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-weight: 7;
+}
+
+.font {
+font-family:"DK Lemon Yellow Sun";
+
+}
 .info-list {
   padding: 1em;
   display: grid;
@@ -101,21 +135,33 @@ body {
   border-radius: 3px;
   letter-spacing: 1px;
   font-family: "DK Lemon Yellow Sun";
+  margin-bottom: 70px;
 }
 
 .aligner {
+  margin-top: 20px;
   margin-left: 0.5%;
+  padding-bottom: 5px;
+  font-family: "DK Lemon Yellow Sun";
+  font-size: 20px;
 }
 
 
 .star-container {
-  margin-top: -20px;
+margin-top: -20px;
 font-size: 25px;
 color: gold;
 padding: none;
 }
 
 .star-container:hover {
-  transform: scale(1.2);
+  background-color: #f8f9fa;
+  -webkit-appearance: none;
+  -ms-progress-appearance: none;
+  appearance: none;
+  transform: scale(1.1);
   transition: .2s;
+
 }
+
+

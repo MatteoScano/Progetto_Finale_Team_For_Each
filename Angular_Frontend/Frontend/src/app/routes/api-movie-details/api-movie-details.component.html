@@ -31,37 +31,40 @@
 
     <!-- TITOLO-->
     <div class="box1">
-      <div class="title" *ngIf="movieDetailsEntry != null">
+      <div class="title font" *ngIf="movieDetailsEntry != null">
         <h1>{{ movieDetailsEntry.title }}</h1>
       </div>
 
-      <div class="elements" *ngIf="movieDetailsEntry != null">
+      <div class="elements font" *ngIf="movieDetailsEntry != null">
         <p><b>Release Date: </b> {{ movieDetailsEntry.release_date | date }}</p>
       </div>
 
-      <div class="elements" *ngIf="movieDetailsEntry != null">
+      <div class="elements poppins" *ngIf="movieDetailsEntry != null">
         <!-- <b>Overview:</b>  -->
         <p>{{ movieDetailsEntry.overview }}</p>
       </div>
     </div>
 
        <!-- ICONA AGGIUNGI ALLA LISTA -->
-    <a href="" class="me-4 text-reset m-2 mt-5">
-      <i class="fas fa-plus fa-2x"></i>
 
+       <div class="addButtons-container">
+    <a href="" class="me-4 text-reset m-2 mt-5 ">
+      <i class="fas fa-plus fa-2x box-buttonAdd"> </i>
     </a>
 
-
+<!--
     <a href="" class="me-4 text-reset m-2 mt-5">
     <i class="fas fa-plus-circle fa-2x"></i>
     </a>
     <a href="" class="me-4 text-reset m-2 mt-5">
       <i class="fas fa-plus-circle"></i>
       </a>
+      -->
       <a href="" class="me-4 text-reset m-2 mt-5">
-        <i class="far fa-check-circle"></i>
+        <i class="far fa-check-circle fa-2x box-buttonSeen"></i>
         </a>
 
+      </div>
     <!-- RATING FORM -->
     <div class="box2">
       <form class="" (ngSubmit)="onSubmit(form)" #form="ngForm">
@@ -72,18 +75,8 @@
 
           <div>
             <ngb-rating class="star-container" [max]="5" ngModel name="movie_rating" id="movie_rating"  required></ngb-rating>
-            <hr/>
+
           </div>
-
-
-          <!--
-            <pre>Rate: <b>{{movie_rating}}</b></pre>
-          <select class="rating-field" id="movie_rating" required ngModel name="movie_rating">
-            <option [value]="rated" *ngFor="let rated of ratedOptions">
-              {{ rated }}
-            </option>
-          </select>
-          -->
           <div>
             <button
               class="btn btn-primary ml-1 buttons" [disabled]="!form.valid"
@@ -92,29 +85,43 @@
               Submit Rating
             </button>
           </div>
-
-
+          <hr>
+          <!--
+            <pre>Rate: <b>{{movie_rating}}</b></pre>
+          <select class="rating-field" id="movie_rating" required ngModel name="movie_rating">
+            <option [value]="rated" *ngFor="let rated of ratedOptions">
+              {{ rated }}
+            </option>
+          </select>
+          -->
       </form>
-
     </div>
 
+    <div class="comment-wrapper">
+      <p class="comment-wrapper">COMMENTS</p>
+    <app-add-comment></app-add-comment>
     <!-- COMMENT BUTTONS -->
     <div class="box3">
+      <!--
       <button
         class="btn btn-primary ml-1 buttons"
         (click)="goToMovieComments()"
       >
         Movie Comments
       </button>
+
       <button class="btn btn-primary ml-1 buttons" (click)="goToAddComment()">
         Make a Comment
       </button>
+      -->
     </div>
+    </div>
+
     <app-loading-page *ngIf="!movieDetailsEntry"></app-loading-page>
   </div>
   <!-- FINE CONTAINER-->
+  <app-comments-filtered-by-movies-id></app-comments-filtered-by-movies-id>
 
-<app-add-comment></app-add-comment>
 </body>
 
 
