@@ -13,7 +13,7 @@ import { Injectable } from '@angular/core';
 export class WeatherSService {
 
   private baseURL = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Cagliari%2C%2088%2C%20IT?unitGroup=us"; // URL Statico
-  private apiKey = "JE9U4T8QHBQ5XDRM8DVVBWB6B" //Chiave di accesso
+  private apiKey = "Y5CPR3UAMP4G8NEG8BZXVEK6E" //Chiave di accesso
   private currentWeather = "&include=current" // Opzione per meteo attuale
 
 
@@ -21,7 +21,7 @@ export class WeatherSService {
 
 
 
-  getWeatherData(){ // funzione che richiama indirizzo meteo
+  getWeatherData() { // funzione che richiama indirizzo meteo
     return this.http.get<any>(this.baseURL + "&key=" + this.apiKey + this.currentWeather);
-}
+  }
 }

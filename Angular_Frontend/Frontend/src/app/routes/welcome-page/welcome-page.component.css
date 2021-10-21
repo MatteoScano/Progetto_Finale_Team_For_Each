@@ -5,6 +5,7 @@
     align-items: center;
     font-family: "DK Lemon Yellow Sun";
     font-weight: bold;
+    margin-bottom: 10%;
   }
 
   .fishball {
@@ -13,7 +14,7 @@
     height: 50%;
     z-index: 2;
     margin-top: 10px;
-    margin-bottom: 200px;
+
   }
 
   h1 {

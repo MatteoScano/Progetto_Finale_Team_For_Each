@@ -1,8 +1,14 @@
 
 /* BASIC */
 
+
+.fas{
+  color:rgb(126, 109, 109);
+
+}
+
 html {
-  background-color: #56baed;
+  background-color: #b1afaf;
 }
 
 body {
@@ -11,7 +17,7 @@ body {
 }
 
 a {
-  color: #92badd;
+  color: #b1afaf;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -70,26 +76,25 @@ h2.inactive {
 
 h2.active {
   color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #7d7e80;
 }
 
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
+  font-family:"DK Lemon Yellow Sun";
+  background-color: #b1afaf;
   border: none;
   color: white;
-  padding: 15px 80px;
+  padding: 10px 80px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
-  font-size: 13px;
-  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  font-size: 20px;
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
-  margin: 5px 20px 40px 20px;
+  margin: 15px 20px 30px 20px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -98,7 +103,8 @@ input[type=button], input[type=submit], input[type=reset]  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #39ace7;
+  background-color: #7d7e80;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -107,20 +113,21 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   -o-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
+
 }
 
 input[type=text] {
   background-color: #f6f6f6;
   border: none;
-  color: #0d0d0d;
+
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 5px;
+  margin: 10px;
   width: 85%;
-  border: 2px solid #f6f6f6;
+  border: 2px solid #b1afaf;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -131,12 +138,12 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  background-color: #dee2e6;
+  border-bottom: 2px solid #b1afaf;
 }
 
 input[type=text]:placeholder {
-  color: #cccccc;
+  color: #dee2e6;
 }
 
 /* ANIMATIONS */
@@ -221,20 +228,20 @@ input[type=text]:placeholder {
   animation-delay: 1s;
 }
 
-/* Simple CSS3 Fade-in Animation */
+/* Simple CSS3 Fade-in Animation
 .underlineHover:after {
   display: block;
   left: 0;
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: #7d7e80;
   content: "";
-  transition: width 0.2s;
+  transition: width 0.1s;
 }
-
-.underlineHover:hover {
-  color: #0d0d0d;
+*/
+.underlineHover {
+  color: #7d7e80;
 }
 
 .underlineHover:hover:after{
@@ -249,4 +256,29 @@ input[type=text]:placeholder {
 
 #icon {
   width:40%;
+}
+
+
+.btn {
+  font-family:"DK Lemon Yellow Sun";
+  background-color: #b1afaf;
+  border: none;
+  padding: 8px 25px;;
+}
+
+.btn:hover {
+  border-radius: 3px;
+  transition: .2s;
+  background-color: #7d7e80; /**/
+  transform: scale(1.1);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.btn-success {
+  font-family:"DK Lemon Yellow Sun";
+  background-color: #b1afaf;
+  border: none;
+  padding: 8px 25px;;
+
 }
