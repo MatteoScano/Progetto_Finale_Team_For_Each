@@ -2,5 +2,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-
+}
+.inputError{
+  color: rgb(218, 56, 56);
 }
