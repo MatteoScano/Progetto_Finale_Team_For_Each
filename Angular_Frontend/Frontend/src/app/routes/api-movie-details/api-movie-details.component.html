@@ -71,13 +71,13 @@
 
 
 
-          <label for="rated" class="aligner">Movie rating</label>
-
-          <div>
+          <!--<label for="rated" class="aligner">Movie rating</label> -->
+        <div class="container-rating">
+          <div class="box-1a">
             <ngb-rating class="star-container" [max]="5" ngModel name="movie_rating" id="movie_rating"  required></ngb-rating>
 
           </div>
-          <div>
+          <div class="box-2a">
             <button
               class="btn btn-primary ml-1 buttons" [disabled]="!form.valid"
               class="btn btn-success buttons"
@@ -85,6 +85,7 @@
               Submit Rating
             </button>
           </div>
+        </div>
           <hr>
           <!--
             <pre>Rate: <b>{{movie_rating}}</b></pre>
@@ -98,7 +99,7 @@
     </div>
 
     <div class="comment-wrapper">
-      <p class="comment-wrapper">COMMENTS</p>
+      <p class="com">COMMENT MOVIE</p>
     <app-add-comment></app-add-comment>
     <!-- COMMENT BUTTONS -->
     <div class="box3">

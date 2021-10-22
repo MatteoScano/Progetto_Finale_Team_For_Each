@@ -6,7 +6,9 @@
   display: flex;
   flex-direction: column;
 }
-
+h1 {
+  font-size: 50px;
+}
 
 .container1 div {
   /*border: 1px #ccc solid;LINEE GUIDA*/
@@ -44,7 +46,10 @@ justify-items: flex-end;
   -webkit-appearance: none;
   -ms-progress-appearance: none;
   appearance: none;
+
+
 }
+
 
 .box-buttonAdd {
   margin-left: 5%;
@@ -52,8 +57,10 @@ justify-items: flex-end;
   color: #b1afaf;
 
 }
+
+
 .box-buttonAdd:hover {
-  transform:rotateX('90');
+  color:rgba(0, 0, 0, 0.4);
   transition: .2s;
 
 }
@@ -63,6 +70,12 @@ justify-items: flex-end;
   margin-left: 37%;
   flex: 1;
   color: #b1afaf;
+}
+
+.box-buttonSeen:hover {
+  color:rgba(0, 0, 0, 0.4);
+  transition: .2s;
+
 }
 /*FINE CONTAINER1*/
 
@@ -88,11 +101,13 @@ justify-items: flex-end;
 .elements {
 text-align: justify;
 width:800px;
+color: #343a40;
 }
 
 .poppins {
   font-family: "Poppins", sans-serif;
-  font-weight: 7;
+  font-weight: 80;
+  color:#343a40;
 }
 
 .font {
@@ -118,31 +133,27 @@ body {
   /*text-shadow: ????*/
   margin-top: 1%;
   text-transform: uppercase;
-  padding-top: 40px;
-
+  padding-top: 50px;
+  color: #343a40;
   font-weight: 500;
 }
 
 .buttons {
-  width: 10%;
+
   background-color: #f8f9fa;
   border: none;
-  -webkit-appearance: none;
-  -ms-progress-appearance: none;
-  appearance: none;
   background: #b1afaf;
-  padding: 11px;
   border-radius: 3px;
   letter-spacing: 1px;
   font-family: "DK Lemon Yellow Sun";
-  margin-bottom: 70px;
+
+
 }
 
 .buttons:hover {
-
     border-radius: 3px;
     transition: .1s;
-    transform: scale(1.0.4);
+    transform: scale(1.1);
     border: none;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
@@ -158,9 +169,8 @@ body {
 
 
 .star-container {
-margin-top: -20px;
 font-size: 25px;
-color: gold;
+color: rgb(218, 192, 47);
 padding: none;
 }
 
@@ -174,4 +184,16 @@ padding: none;
 
 }
 
+.container-rating {
+  display: flex;
 
+}
+
+
+.com {
+  font-family: "DK Lemon Yellow Sun";
+  font-size: 30px;
+  color: #343a40;
+  margin-left: 5%;
+  margin-bottom: 5px;
+}

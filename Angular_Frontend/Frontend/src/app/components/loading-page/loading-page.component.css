@@ -7,7 +7,7 @@
     font-family: "DK Lemon Yellow Sun";
     align-content: center;
   }
-  
+
   .fishball {
     content: url("../../../assets/img/welcomeFishball.gif");
     height: 250px;
@@ -16,7 +16,7 @@
     z-index: 1;
     align-items: justify;
   }
-  
+
   #fountainTextG{
     text-align: justify;
     padding-top: 40px;
@@ -24,15 +24,15 @@
       margin:auto;
     z-index: 2;
   }
-  
+
   .fountainTextG{
       color:rgb(0,0,0);
       font-family:"DK Lemon Yellow Sun";
-      font-size: 120px;
+      font-size: 80px;
       text-decoration:none;
       font-weight:normal;
       font-style:normal;
-      float:left;
+    float: left;
     justify-content: center;
       animation-name:bounce_fountainTextG;
           -o-animation-name:bounce_fountainTextG;
@@ -127,61 +127,61 @@
           -webkit-animation-delay:2.09s;
           -moz-animation-delay:2.09s;
   }
-  
+
   @keyframes bounce_fountainTextG{
       0%{
           transform:scale(1);
           color:rgb(0,0,0);
       }
-  
+
       100%{
           transform:scale(.5);
           color:rgb(255,255,255);
       }
   }
-  
+
   @-o-keyframes bounce_fountainTextG{
       0%{
           -o-transform:scale(1);
           color:rgb(0,0,0);
       }
-  
+
       100%{
           -o-transform:scale(.5);
           color:rgb(255,255,255);
       }
   }
-  
+
   @-ms-keyframes bounce_fountainTextG{
       0%{
           -ms-transform:scale(1);
           color:rgb(0,0,0);
       }
-  
+
       100%{
           -ms-transform:scale(.5);
           color:rgb(255,255,255);
       }
   }
-  
+
   @-webkit-keyframes bounce_fountainTextG{
       0%{
           -webkit-transform:scale(1);
           color:rgb(0,0,0);
       }
-  
+
       100%{
           -webkit-transform:scale(.5);
           color:rgb(255,255,255);
       }
   }
-  
+
   @-moz-keyframes bounce_fountainTextG{
       0%{
           -moz-transform:scale(1);
           color:rgb(0,0,0);
       }
-  
+
       100%{
           -moz-transform:scale(.5);
           color:rgb(255,255,255);
