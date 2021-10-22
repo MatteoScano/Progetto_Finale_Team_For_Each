@@ -65,15 +65,20 @@
         </a>
 
       </div>
-    <!-- RATING FORM -->
+    <!-- RATING FORM 
     <div class="box2">
       <form class="" (ngSubmit)="onSubmit(form)" #form="ngForm">
 
 
 
-          <!--<label for="rated" class="aligner">Movie rating</label> -->
+
+          
         <div class="container-rating">
-          <div class="box-1a">
+          <div class="box-1a"> 
+
+          <label for="rated" class="aligner">Movie rating</label> 
+
+          <div>
             <ngb-rating class="star-container" [max]="5" ngModel name="movie_rating" id="movie_rating"  required></ngb-rating>
 
           </div>
@@ -94,16 +99,49 @@
               {{ rated }}
             </option>
           </select>
-          -->
+          
       </form>
-    </div>
+    </div>-->
 
+    STELLINE RATING 2 WAY
+    <form class="pt-5" (submitRating)="submitRating()">
+      
+      <div>
+        <ngb-rating class="star-container" id="movie_rating" [max]="5" 
+        [(ngModel)]="ratingEntry.movie_rating" name="movie_rating"></ngb-rating>
+      </div>
+
+      <button class="btn btn-danger ml-3" (click)="submitRating()">Submit</button>
+
+    </form>
+    
+    
     <div class="comment-wrapper">
-      <p class="com">COMMENT MOVIE</p>
-    <app-add-comment></app-add-comment>
-    <!-- COMMENT BUTTONS -->
+
+      <p class="comment-wrapper">COMMENTS</p>
+      <div class="container-1">
+        
+          <div class="row">
+              <h3 class="text-center">New Comment</h3>
+          </div>
+    
+          <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm">
+      
+              <div class="form-group row">
+                  <div class="col-sm-10">
+                      <textarea  class="form-control style-text-area" id="body" required ngModel name="body">
+                        </textarea>
+                  </div>
+              </div>
+      
+              <button type="submit" >Submit Comment</button>
+      
+          </form>
+      </div> 
+    <!-- COMMENT BUTTONS 
+>>>>>>> Stashed changes
     <div class="box3">
-      <!--
+      
       <button
         class="btn btn-primary ml-1 buttons"
         (click)="goToMovieComments()"
@@ -114,14 +152,41 @@
       <button class="btn btn-primary ml-1 buttons" (click)="goToAddComment()">
         Make a Comment
       </button>
-      -->
+      
     </div>
     </div>
 
+    <div class="container p-5" > -->
+      <h1 class="text-center mb-5"> 
+        Movie Comments
+      </h1>
+  
+      <table class="table">
+        <!--<thead class="thead-dark">
+          <tr>
+            <th scope="col">Comment id</th>
+            <th scope="col">User id</th>
+            <th scope="col">Movie id</th>
+            <th scope="col">Comment</th>
+          </tr>
+        </thead>-->
+        <tbody>
+          <tr class="pointer" *ngFor="let entry of comments | commentsByMovieId : id">
+            <!--<td>{{entry.id}}</td>
+            <td>{{entry.userId}}</td><td>
+            <td>{{entry.movieId}}</td>-->
+            <td>{{entry.body}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <app-loading-page *ngIf="!movieDetailsEntry"></app-loading-page>
   </div>
   <!-- FINE CONTAINER-->
-  <app-comments-filtered-by-movies-id></app-comments-filtered-by-movies-id>
+  <div>
+    <button class="btn btn-danger ml-3" (click)="onSeen()">Seen</button>
+  </div>
+  
 
 </body>
 

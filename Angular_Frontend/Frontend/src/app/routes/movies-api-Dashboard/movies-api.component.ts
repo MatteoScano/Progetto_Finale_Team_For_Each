@@ -139,6 +139,9 @@ export class MoviesApiComponent implements OnInit {
         console.log("Orario attuale: " + this.orarioAttuale)
         this.getScienceFictionListOnComponent();
       }
+      else {
+        this.getScienceFictionListOnComponent();
+      }
     },
       error => console.log(error)
     )

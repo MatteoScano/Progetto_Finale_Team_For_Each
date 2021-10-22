@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MovieRatingsArrayInterface } from '../../models/movie-ratings.model';
+import { MovieRatingsInterface } from '../../models/movie-ratings.model';
 
 
 
@@ -33,7 +34,7 @@ export class MovieRatingService {
   }
 
 
-  getratingsByMovieId(movie_id:  MovieRatingsArrayInterface) {
+  getratingsByMovieId(movie_id: number) {
     return this.http.get<any>(this.laravelUrl + "/api/movie_ratings/movie_id/" + movie_id );
   }
 
@@ -69,11 +70,11 @@ export class MovieRatingService {
 
   // EDITOR
 
-  editRating = (rating:  MovieRatingsArrayInterface) => {
-    return this.http.put(this.laravelUrl + '/' + rating.movie_id, {
-      "rating": rating.movie_rating,
-      "movie_id": rating.movie_id,
-      "user_id": rating.user_id
+  editRating = (movie_id : number, user_id : number, rating:  MovieRatingsArrayInterface) => {
+    return this.http.put(this.laravelUrl + '/' + rating.id, {
+      "movie_id": movie_id,
+      "user_id": user_id,
+      "movie_rating": rating.movie_rating,
     });
   };
 

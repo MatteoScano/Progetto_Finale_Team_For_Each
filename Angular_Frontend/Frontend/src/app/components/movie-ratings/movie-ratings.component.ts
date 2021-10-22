@@ -17,7 +17,7 @@ export class MovieRatingsComponent implements OnInit {
 
   ratings: MovieRatingsInterface
   result: MovieRatingsArrayInterface[]
-  ratingEntry: MovieRatingsArrayInterface  = {movie_rating: 2, movie_id: 555, user_id: 332}
+  //ratingEntry: MovieRatingsArrayInterface  = {movie_rating: 2, movie_id: 555, user_id: 332}
 
   newRating : MovieRatingsArrayInterface
   supportoApiId : ResultInterface
