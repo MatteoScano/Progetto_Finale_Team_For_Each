@@ -1,8 +1,78 @@
+
+
+.card {
+  margin-top: 15%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  margin-bottom: 30%;
+
+}
+
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
+
 }
 .inputError{
-  color: rgb(218, 56, 56);
+  background-color: rgb(218, 56, 56);
 }
+
+h3 {
+  font-family: "DK Lemon Yellow Sun";
+}
+
+.form-control {
+  font-family: "DK Lemon Yellow Sun";
+  background-color: #f6f6f6 ;
+  border: solid 2px#b1afaf
+}
+
+.form-control-lg {
+  font-family: "Poppins", sans-serif;
+}
+
+input {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  padding: 26px 32px;
+  background: none;;
+}
+
+.text-reset {
+  font-family: "Poppins", sans-serif;
+}
+
+
+.btn {
+  font-family:"DK Lemon Yellow Sun";
+  background-color: #b1afaf;
+  border: none;
+  padding: 14px 25px;;
+}
+
+.btn:hover {
+  border-radius: 3px;
+  transition: .2s;
+  background-color: #7d7e80; /**/
+  transform: scale(1.1);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.text-body{
+  color: white;
+}
+
+a{
+  color:#7d7e80;
+}
+.inputError{
+  font-size: 12px;
+  color:rgb(244, 134, 17);
+  font-family: "Poppins", sans-serif;
+  background: none;
+}
+
+
