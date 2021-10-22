@@ -39,6 +39,7 @@ import { MyAccountComponent } from './routes/my-account/my-account.component';
 import { EditCommentComponent } from './routes/edit-comment/edit-comment.component';
 import { BetaFooterComponent } from './components/beta-footer/beta-footer.component';
 import { TermsAndConditionsComponent } from './routes/terms-and-conditions/terms-and-conditions.component';
+import { SearchMovieComponent } from './routes/search-movie/search-movie.component';
 
 
 @NgModule({
@@ -76,6 +77,7 @@ import { TermsAndConditionsComponent } from './routes/terms-and-conditions/terms
     EditCommentComponent,
     BetaFooterComponent,
     TermsAndConditionsComponent,
+    SearchMovieComponent,
    ],
 
   imports: [

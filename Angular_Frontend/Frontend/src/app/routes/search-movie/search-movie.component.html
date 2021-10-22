@@ -1,0 +1,35 @@
+<body>
+  <div class="container">
+
+    <form #form="ngForm">
+      <h1 class="mt-5">Search movie</h1>
+      <div class="form-group">
+
+        <label for="username">Title:</label>
+
+        <input type="text" method="GET" required ngModel class="form-control mt-5" name="title" id="title" placeholder="Title">
+        <button type="submit" class="btn btn-primary  mt-5" (click)="getMovieListOnComponent(form)">Search Movie</button>
+
+      </div>
+    </form>
+
+      <table class="table"  *ngIf="results != null">
+
+        <tbody>
+          <tr class="pointer" *ngFor="let entry of results | slice:0:20;" (click)="goToDetails(entry.id)">
+
+            <div>
+              <img src = {{basicImageUrl}}{{entry.poster_path}} class="hover-shadow imgClass">
+            </div>
+
+            <p>{{ entry.title }}</p>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+
+</body>
+
+
+

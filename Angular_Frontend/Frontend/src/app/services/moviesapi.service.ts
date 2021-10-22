@@ -35,4 +35,10 @@ export class MoviesApiService {
       return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=10749&sort_by=vote_average.desc&vote_count.gte=10");
     }
 
+    //Restituisce i film in base al titolo o a una porzione di titolo passato come parametro
+    getMovieByTitle(ricercaTitolo:string){
+      return this.http.get<MovieApiInterface>(this.baseURL+"/3/search/movie?api_key="+this.apiKey+"&query="+ricercaTitolo);
+    }
+    //https://api.themoviedb.org/3/search/movie?api_key=d5ac4153b7b34b3ef31b49edd9731e04&query='title'
+
 }

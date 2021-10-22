@@ -1,3 +1,4 @@
+import { SearchMovieComponent } from './routes/search-movie/search-movie.component';
 import { TermsAndConditionsComponent } from './routes/terms-and-conditions/terms-and-conditions.component';
 import { MyAccountComponent } from './routes/my-account/my-account.component';
 import { UserComponent } from './routes/user/user.component';
@@ -55,7 +56,7 @@ const routes: Routes = [
   { path: "editComment/:id", component : EditCommentComponent},
 
 
-
+  { path: "search-movie", component : SearchMovieComponent},
   { path: "terms-and-conditions", component : TermsAndConditionsComponent},
 ];
 
