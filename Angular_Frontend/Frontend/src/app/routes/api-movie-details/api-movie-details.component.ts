@@ -240,4 +240,8 @@ export class ApiMovieDetailsComponent implements OnInit {
   goToAddComment() {
     this.router.navigate(['/addComment'], { state: { data: this.id } });
   }
+
+  exit() {
+    window.location.reload();
+  }
 }

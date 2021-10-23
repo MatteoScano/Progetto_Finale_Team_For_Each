@@ -100,7 +100,7 @@
                   </div>
               </div>
 
-              <button type="submit">Submit Comment</button>
+              <button type="submit" (click)="exit()">Submit Comment</button>
 
           </form>
       </div>
@@ -133,12 +133,6 @@
     </tbody>
   </table>
 </div>
-
-<br>
-      <button class="btn btn-primary ml-1 buttons" (click)="goToAddComment()" class="btn btn-success buttons">
-      COMMENTA
-    </button>
-    <br>
 
     <app-loading-page *ngIf="!movieDetailsEntry"></app-loading-page>
   </div>

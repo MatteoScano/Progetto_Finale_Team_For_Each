@@ -24,6 +24,13 @@ export class UserComponent implements OnInit {
   ngOnInit() : void{
     this.getUsersList();
   }
+
+  //aggiorna pagina
+
+  exit() {
+    window.location.reload();
+  }
+
 //Visualizza tutti gli utenti
   getUsersList(){
     this.userService.getUsers("admin","admin").subscribe(

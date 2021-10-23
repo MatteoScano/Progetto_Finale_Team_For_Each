@@ -34,7 +34,7 @@
     </thead>
     <tbody>
       <tr class="pointer">
-        <td><button type="button" class="btn btn-danger" (click)="deleteUserById(form)">Delete</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="deleteUserById(form)" (click)="exit()">Delete</button></td>
         <td>{{userFound.id}}</td>
         <td>{{userFound.name}}</td>
         <td>{{userFound.surname}}</td>
