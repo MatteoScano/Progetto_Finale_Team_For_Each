@@ -40,6 +40,11 @@ import { EditCommentComponent } from './routes/edit-comment/edit-comment.compone
 import { BetaFooterComponent } from './components/beta-footer/beta-footer.component';
 import { TermsAndConditionsComponent } from './routes/terms-and-conditions/terms-and-conditions.component';
 import { SearchMovieComponent } from './routes/search-movie/search-movie.component';
+import { ListeComponent } from './routes/liste/liste.component';
+import { ListFilteredByUserIdPipe } from './pipes/listFilteredByUserId/listFilteredByUserId.pipe';
+import { ListFilteredByMustSeeComponent } from './routes/list-filtered-by-must-see/list-filtered-by-must-see.component';
+import { ListFilteredByMustSeePipe } from './pipes/listFilteredByMustSee/listFilteredByMustSee.pipe';
+
 
 
 @NgModule({
@@ -78,6 +83,10 @@ import { SearchMovieComponent } from './routes/search-movie/search-movie.compone
     BetaFooterComponent,
     TermsAndConditionsComponent,
     SearchMovieComponent,
+    ListeComponent,
+    ListFilteredByMustSeeComponent,
+    ListFilteredByUserIdPipe,
+    ListFilteredByMustSeePipe
    ],
 
   imports: [

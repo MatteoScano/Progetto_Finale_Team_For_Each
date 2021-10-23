@@ -27,6 +27,10 @@ import { MovieRatingsComponent } from './components/movie-ratings/movie-ratings.
 import { CommentsByUserComponent } from './routes/comments-by-user/comments-by-user.component';
 import { AddCommentComponent } from './routes/add-comment/add-comment.component';
 import { EditCommentComponent } from './routes/edit-comment/edit-comment.component';
+import { ListeComponent } from './routes/liste/liste.component';
+import { ListFilteredByMustSeePipe } from './pipes/listFilteredByMustSee/listFilteredByMustSee.pipe';
+import { ListFilteredByMustSeeComponent } from './routes/list-filtered-by-must-see/list-filtered-by-must-see.component';
+
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -54,7 +58,8 @@ const routes: Routes = [
   { path: "addComment", component : AddCommentComponent},
   { path: "my-account", component : MyAccountComponent},
   { path: "editComment/:id", component : EditCommentComponent},
-
+  { path: "seenList", component: ListeComponent},
+  { path: "mustSeeList", component: ListFilteredByMustSeeComponent},
 
   { path: "search-movie", component : SearchMovieComponent},
   { path: "terms-and-conditions", component : TermsAndConditionsComponent},
