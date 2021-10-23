@@ -34,3 +34,15 @@ C:/Users/Administrator/Desktop/Progetto Finale TNV IV Ed. Team ForEach/DotNet_Co
 /Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.dll
 /Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.Core/obj/Debug/net5.0/ref/FilmComments.Core.dll
 /Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.pdb
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\bin\Debug\net5.0\FilmComments.Core.deps.json
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\bin\Debug\net5.0\FilmComments.Core.dll
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\bin\Debug\net5.0\ref\FilmComments.Core.dll
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\bin\Debug\net5.0\FilmComments.Core.pdb
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\obj\Debug\net5.0\FilmComments.Core.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\obj\Debug\net5.0\FilmComments.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\obj\Debug\net5.0\FilmComments.Core.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\obj\Debug\net5.0\FilmComments.Core.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\obj\Debug\net5.0\FilmComments.Core.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\obj\Debug\net5.0\FilmComments.Core.dll
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\obj\Debug\net5.0\ref\FilmComments.Core.dll
+C:\Users\Administrator\Desktop\TNV Progetto Finale ForEachTeam\DotNet_Commenti\src\FilmComments.Core\obj\Debug\net5.0\FilmComments.Core.pdb

@@ -30,6 +30,8 @@
                   <div class="form-group">
                     <label for="username"></label>
                     <input type="text" method="POST" required ngModel class="form-control form-control-lg" name="username" id="username" placeholder="Username">
+                    <div class="inputError ml-2"> <p *ngIf="!usernameOk">Admin username not available </p></div>
+                    <div class="inputError ml-2"> <p *ngIf="!usernameExist">Username already in use </p></div>
 
                   </div>
                   <div class="form-group">

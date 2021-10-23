@@ -1,3 +1,4 @@
+import { LoginService } from './../../services/login/login.service';
 import { Router } from '@angular/router';
 import { UserDataInterface } from './../../models/user.model';
 import { NgForm } from '@angular/forms';
@@ -13,6 +14,12 @@ export class RegistrationComponent implements OnInit {
 
   newUser : UserDataInterface;
 
+  username:string;
+  usernameOk=true;
+  usernameExist=true;
+
+  found:any=[];
+  userFound:any=[];
   //variabili per il controllo password "uguale"
   password:string;
   confirmPassword:string;
@@ -26,7 +33,7 @@ export class RegistrationComponent implements OnInit {
    terms:string;
    termsOk=true;
 
-  constructor(private registrationService : RegistrationService, private router:Router) { }
+  constructor(private registrationService : RegistrationService, private router:Router, private userService: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -70,32 +77,71 @@ export class RegistrationComponent implements OnInit {
     }
   }
 
+     //Visualizza l'utente con lo username passato
+   getUserByUsername(form :NgForm):any{ //funziona
+    this.username = form.form.value.username;
+    this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
+    (response : any) => {
+      this.userFound = response;
+        console.log("L'utente ha i seguenti dati:");  //test
+        console.log(this.userFound);
+        return this.userFound;
+    });
+
+  }
+
   //Crea un nuovo utente in base ai dati inseriti in input
   createUser(form : NgForm): void {
-    let metched = this.checkPassword(form);
+    let passMatched = this.checkPassword(form);
     let emailChecked = this.checkEmail(form);
+
+    this.username = form.form.value.username;
+    this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
+    (response : any) => {
+      this.userFound = response;
+        console.log("USER FOUND");  //test
+        console.log(this.userFound);
+    });
 
    if(emailChecked){
 
-     if(metched){
+     if(this.username!= "admin" && this.username!= "Admin"){
 
-        this.newUser = form.form.value;
-        this.newUser.enabled=1;
-        this.registrationService.addUser(this.newUser,"admin","admin").subscribe( results => {
-          console.log("Password valida",results);
-          console.log("terms",this.terms);              //test
-          console.log("terms boolean ok",this.termsOk); //test
-          },
-          error=>{
-            console.log(error);
-          });
-          this.router.navigate(['/login']);
-     }
-     else{
+       if(this.userFound==null){
+
+        if(passMatched){
+
+          this.newUser = form.form.value;
+          this.newUser.enabled=1;
+          this.registrationService.addUser(this.newUser,"admin","admin").subscribe( results => {
+            console.log("Password valida",results);
+            console.log("terms",this.terms);              //test
+            console.log("terms boolean ok",this.termsOk); //test
+            },
+            error=>{
+              console.log(error);
+            });
+            this.router.navigate(['/login']);
+        }
+        else{ //pass metched
+          this.emailOk=true;
+          this.passwordOk=false;
+          this.usernameOk=true;
+          this.usernameExist=true;
+          console.log("password errata, Riprova");
+        }
+
+      }else{  //username gia in uso
+        this.emailOk=true;
+        this.usernameExist=false
+        console.log("Username gia' in uso. Riprova!")
+      }
+
+    }else{  //username admin
       this.emailOk=true;
-      this.passwordOk=false;
-      console.log("password errata, Riprova");
-     }
+      this.usernameOk=false;
+      console.log("lo username non puo contenere il termine 'admin'")
+    }
    }
    else{
     this.emailOk=false;
