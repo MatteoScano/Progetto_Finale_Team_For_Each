@@ -1,22 +1,14 @@
-<!-- FONT PER DETAILS -->
+
+
 <link
   href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
   rel="stylesheet"
 />
-<!--
-<div class="box-back">
-<button class="btn btn-primary mr-2 ml-4 buttons" [routerLink]="['/moviesApi']">Back</button>
-  </div>
- BUTTON BACK-->
 
 
 
+<!--IMMAGINE PRINCIPALE-->
 <body class="page-wrapper grid">
-  <!-- BUTTON BACK-->
-
-
-
-
   <div class="container1">
     <!--IMMAGINE FILM -->
     <div class="boxImg">
@@ -29,7 +21,8 @@
 
 
 
-    <!-- TITOLO-->
+
+    <!-- TITOLO E DATI-->
     <div class="box1">
       <div class="title font" *ngIf="movieDetailsEntry != null">
         <h1>{{ movieDetailsEntry.title }}</h1>
@@ -45,6 +38,10 @@
       </div>
     </div>
 
+
+
+
+
        <!-- ICONA AGGIUNGI ALLA LISTA -->
 
        <div class="addButtons-container">
@@ -52,203 +49,101 @@
       <i class="fas fa-plus fa-2x box-buttonAdd"> </i>
     </a>
 
-<!--
-    <a href="" class="me-4 text-reset m-2 mt-5">
-    <i class="fas fa-plus-circle fa-2x"></i>
-    </a>
-    <a href="" class="me-4 text-reset m-2 mt-5">
-      <i class="fas fa-plus-circle"></i>
-      </a>
-      -->
       <a href="" class="me-4 text-reset m-2 mt-5">
         <i class="far fa-check-circle fa-2x box-buttonSeen"></i>
         </a>
 
       </div>
-    <!-- RATING FORM 
+    <!-- RATING FORM -->
     <div class="box2">
       <form class="" (ngSubmit)="onSubmit(form)" #form="ngForm">
 
 
 
-
-          
+<!-- MOVIE RATINGS-->
         <div class="container-rating">
-          <div class="box-1a"> 
-
-          <label for="rated" class="aligner">Movie rating</label> 
-
-          <div>
+          <div class="box-1a">
             <ngb-rating class="star-container" [max]="5" ngModel name="movie_rating" id="movie_rating"  required></ngb-rating>
 
           </div>
           <div class="box-2a">
             <button
               class="btn btn-primary ml-1 buttons" [disabled]="!form.valid"
-              class="btn btn-success buttons"
-            >
-              Submit Rating
-            </button>
+              class="btn btn-success buttons">Submit Rating</button>
           </div>
         </div>
+
+
           <hr>
-          <!--
-            <pre>Rate: <b>{{movie_rating}}</b></pre>
-          <select class="rating-field" id="movie_rating" required ngModel name="movie_rating">
-            <option [value]="rated" *ngFor="let rated of ratedOptions">
-              {{ rated }}
-            </option>
-          </select>
-          
+
       </form>
-    </div>-->
+    </div>
 
-    STELLINE RATING 2 WAY
-    <form class="pt-5" (submitRating)="submitRating()">
-      
-      <div>
-        <ngb-rating class="star-container" id="movie_rating" [max]="5" 
-        [(ngModel)]="ratingEntry.movie_rating" name="movie_rating"></ngb-rating>
-      </div>
+    <!--FINE RATINGS-->
 
-      <button class="btn btn-danger ml-3" (click)="submitRating()">Submit</button>
-
-    </form>
-    
-    
+    <!-- INIZIO COMMENTO UTENTE-->
     <div class="comment-wrapper">
 
       <p class="comment-wrapper">COMMENTS</p>
       <div class="container-1">
-        
+
           <div class="row">
               <h3 class="text-center">New Comment</h3>
           </div>
-    
-          <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm">
-      
+
+          <form class="pt-5" (ngSubmit)="onSubmit(formDue)" #formDue="ngForm">
+
               <div class="form-group row">
                   <div class="col-sm-10">
                       <textarea  class="form-control style-text-area" id="body" required ngModel name="body">
                         </textarea>
                   </div>
               </div>
-      
-              <button type="submit" >Submit Comment</button>
-      
+
+              <button type="submit">Submit Comment</button>
+
           </form>
-      </div> 
-    <!-- COMMENT BUTTONS 
->>>>>>> Stashed changes
-    <div class="box3">
-      
-      <button
-        class="btn btn-primary ml-1 buttons"
-        (click)="goToMovieComments()"
-      >
-        Movie Comments
-      </button>
+      </div>
+</div>
+<!-- FINE COMMENTO UTENTE-->
 
-      <button class="btn btn-primary ml-1 buttons" (click)="goToAddComment()">
-        Make a Comment
-      </button>
-      
-    </div>
-    </div>
 
-    <div class="container p-5" > -->
-      <h1 class="text-center mb-5"> 
-        Movie Comments
-      </h1>
-  
-      <table class="table">
-        <!--<thead class="thead-dark">
-          <tr>
-            <th scope="col">Comment id</th>
-            <th scope="col">User id</th>
-            <th scope="col">Movie id</th>
-            <th scope="col">Comment</th>
-          </tr>
-        </thead>-->
-        <tbody>
-          <tr class="pointer" *ngFor="let entry of comments | commentsByMovieId : id">
-            <!--<td>{{entry.id}}</td>
-            <td>{{entry.userId}}</td><td>
-            <td>{{entry.movieId}}</td>-->
-            <td>{{entry.body}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<!-- INIZIO TUTTI COMMENTI -->
+<div class="container p-5" >
+  <h1 class=" mb-5">
+    Movie Comments
+  </h1>
+
+  <table class="table">
+    <!--<thead class="thead-dark">
+      <tr>
+        <th scope="col">Comment id</th>
+        <th scope="col">User id</th>
+        <th scope="col">Movie id</th>
+        <th scope="col">Comment</th>
+      </tr>
+    </thead>-->
+    <tbody>
+      <tr class="pointer" *ngFor="let entry of comments | commentsByMovieId : id">
+        <!--<td>{{entry.id}}</td>
+        <td>{{entry.userId}}</td><td>
+        <td>{{entry.movieId}}</td>-->
+        <td>{{entry.body}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+      <button class="btn btn-primary ml-1 buttons" (click)="goToAddComment()" class="btn btn-success buttons">
+      COMMENTA
+    </button>
+    <br>
+
     <app-loading-page *ngIf="!movieDetailsEntry"></app-loading-page>
   </div>
   <!-- FINE CONTAINER-->
-  <div>
-    <button class="btn btn-danger ml-3" (click)="onSeen()">Seen</button>
-  </div>
-  
+
 
 </body>
 
-
-<!--
-<div>
-  <ngb-rating class="star-container" [max]="5" [(rate)]="currentRating"></ngb-rating>
-  <hr/>
-</div>
-  <pre>Rate: <b>{{currentRating}}</b></pre>    MOSTRA CURRENT RATING      -->
-
-
-
-<!--
-
-  <div class="container" *ngIf="movieDetailsEntry != null">
-
-
-  <h1 class="text-center mt-3">The NetFish</h1>
-
-  <div class="mt-2 p-4">
-    <ul class="list-group">
-      <li class="list-group-item"><b>Id:</b> {{ movieDetailsEntry.id }}</li>
-
-      <li class="list-group-item">
-        <b>Title:</b> {{ movieDetailsEntry.title }}
-      </li>
-
-      <li class="list-group-item">
-        <b>Release Data:</b> {{ movieDetailsEntry.release_date | date }}
-      </li>
-
-      <li class="list-group-item">
-        <b>Overview:</b> {{ movieDetailsEntry.overview }}
-      </li>
-
-      <li class="list-group-item">
-        <b>Original Language:</b> {{ movieDetailsEntry.original_language }}
-      </li>
-    </ul>
-  </div>
-
-  <button class="btn btn-primary mr-2 ml-4" [routerLink]="['/moviesApi']">
-    Back
-  </button>
-</div>
-<app-loading-page *ngIf="!movieDetailsEntry"></app-loading-page>
-
-
-  <div class="form-group row">
-    <label for="movie_rating" class="col-sm-2 col-form-label"
-      >Movie Rating</label
-    >
-    <div class="col-sm-10">
-      <input
-        type="number"
-        class="form-control"
-        [(ngModel)]="movie_rating_id"
-        required
-        number
-        name="(movie_rating)"
-      />
-    </div>
-  </div>
-  <button (click)="postMovieRating()" class="btn btn-success">Submit</button> -->

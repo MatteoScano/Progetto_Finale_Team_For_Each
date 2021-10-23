@@ -42,27 +42,9 @@ export class MoviesApiComponent implements OnInit {
     this.exGetterWeatherData();
     this.getterWeatherDataOnComponent();
     //this.getMarvelListOnComponent();           //Prende lista solo dei film marvel
-    this.assegnaMomentoGiornata();
   }
 
-  //ORARI GIORNATA: MATTINA,POMERIGGIO,SERA,NOTTE
 
-  /*
-  se orarioAttuale > 7 && orarioAttuale < 13
-        mattina = true
-
-  se orarioAttuale > 13 && orarioAttuale < 19
-        momentoGionata = pomeriggio
-
-  se orarioAttuale > 19 && orarioAttuale < 24
-        momentoGionata = sera
-
-  altrimenti
-        momentoGionata = notte
-  */
-  assegnaMomentoGiornata() {
-
-  }
 
   // METEO FUNZIONI
   getMovieByCurrentWeather() {

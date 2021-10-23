@@ -27,8 +27,8 @@ export class ApiMovieDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private movieApiService: MoviesApiService,
     private pictureService: ApiPictureService, private movieRatingService: MovieRatingService,
-    private userService: LoginService, private router: Router, 
-    private commentsService : CommentsService, private dataService: DataService) { }
+    private userService: LoginService, private router: Router,
+    private commentsService: CommentsService, private dataService: DataService) { }
 
   // RATINGS
   ratings: MovieRatingsInterface; // ottiene dati in arrivo da getMovieRatingsOnComponent
@@ -55,12 +55,12 @@ export class ApiMovieDetailsComponent implements OnInit {
   user: any;
 
   // COMMENTI
-  dataEntry : CommentsInterface;
-  comments : CommentsInterface [];
-  movies : MovieData [];
+  dataEntry: CommentsInterface;
+  comments: CommentsInterface[];
+  movies: MovieData[];
 
   // LISTE
-  dataEntryList : MovieData;
+  dataEntryList: MovieData;
 
   // FUNZIONI
   ngOnInit(): void {
@@ -74,7 +74,7 @@ export class ApiMovieDetailsComponent implements OnInit {
   }
 
   // FUNZIONI
-  onSeen(){
+  onSeen() {
     this.dataEntryList.movie_id = this.id;
     this.dataEntryList.user_id = this.userId;
     this.dataEntryList.seen = true;
@@ -83,9 +83,9 @@ export class ApiMovieDetailsComponent implements OnInit {
     this.dataService.addEntry(this.dataEntryList).subscribe(response => {
       console.log(response);
     },
-    (err) => {
-      //fai qualcosa
-    }
+      (err) => {
+        //fai qualcosa
+      }
     )
   }
 
@@ -152,7 +152,7 @@ export class ApiMovieDetailsComponent implements OnInit {
     )
   }*/
 
-  /*nella consolelog della pagina ci sono tutti i rating, devo solo caricarli come fa il fetch di edit e 
+  /*nella consolelog della pagina ci sono tutti i rating, devo solo caricarli come fa il fetch di edit e
   modificarli con submitrating come in edit, se non c'e` gia` un rating, con un if impostarlo a 0 */
 
   getMovieRating() {
@@ -165,23 +165,23 @@ export class ApiMovieDetailsComponent implements OnInit {
     )
   }
 
-  submitRating(){
+  submitRating() {
     console.log("id user:", this.userId);
     console.log("id movie:", this.id);
     console.log("rating di questo film:", this.ratingEntry.movie_rating);
 
     this.movieRatingService.editRating(this.userId, this.id, this.ratingEntry)
-    .subscribe(response => {
-      console.log(response);
-      //this.router.navigate(['/details', this.dataEntry.id])
-    }), err => {
-      console.log(err);
-    }
+      .subscribe(response => {
+        console.log(response);
+        //this.router.navigate(['/details', this.dataEntry.id])
+      }), err => {
+        console.log(err);
+      }
     //this.router.navigate(['/details', this.dataEntry.id])
   }
 
   //-----------------------COMMENTS--------------------------//
-  getEntries(){
+  getEntries() {
     this.commentsService.getComments().subscribe(
       response => {
         //se è andato tutto bene, allora:
@@ -193,27 +193,33 @@ export class ApiMovieDetailsComponent implements OnInit {
     )
   }
 
-  getMovies(){
-    this.dataService.getData().subscribe( (response : any) => {
+  getMovies() {
+    this.dataService.getData().subscribe((response: any) => {
       this.movies = response;
       //console.log(this.movies);
     })
   }
 
-  onSubmit(form : NgForm){
+  onSubmit(form: NgForm) {
 
     this.dataEntry = form.form.value;
-    //console.log(form);
-    //console.log(this.dataEntry);
-    //console.log(this.userId);
-    //console.log(this.id);
+    console.log(form);
+    console.log(this.dataEntry);
+    console.log(this.userId);
+    console.log(this.id);
 
     this.commentsService.addComment(this.userId, this.id, this.dataEntry).subscribe(
       response => {
-        //console.log(response);
-        this.router.navigate(["/dashboard"]);},
-      error => 
+        console.log(response);
+        this.router.navigate(["/movieApiDetails/791373"]);
+      },
+      error =>
         alert(error.error.message)
     )
+  }
+
+
+  goToAddComment() {
+    this.router.navigate(['/addComment'], { state: { data: this.id } });
   }
 }
