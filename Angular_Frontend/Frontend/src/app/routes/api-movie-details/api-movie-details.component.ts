@@ -165,6 +165,7 @@ export class ApiMovieDetailsComponent implements OnInit {
     )
   }
 
+  /*
   submitRating() {
     console.log("id user:", this.userId);
     console.log("id movie:", this.id);
@@ -179,7 +180,24 @@ export class ApiMovieDetailsComponent implements OnInit {
       }
     //this.router.navigate(['/details', this.dataEntry.id])
   }
+*/
 
+  onSubmitRating(form: NgForm) {
+    form.form.value.movie_id = this.movieDetailsEntry.id,
+      form.form.value.user_id = this.user.id
+    //form.form.value.currentRating = parseInt(form.form.value.currentRating);
+    form.form.value.movie_rating = parseInt(form.form.value.movie_rating);
+    this.ratingSubmit = form.form.value;
+    console.log("RISULTATI RATING", this.ratingSubmit);
+    this.movieRatingService.addMovieRating(this.ratingSubmit).subscribe(response => {
+
+    },
+      (err) => {
+        //fai qualcosa
+        console.log(err)
+      }
+    )
+  }
   //-----------------------COMMENTS--------------------------//
   getEntries() {
     this.commentsService.getComments().subscribe(
