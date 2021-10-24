@@ -34,6 +34,24 @@ export class MoviesApiService {
     getRomanceFictionList(){
       return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=10749&sort_by=vote_average.desc&vote_count.gte=1000");
     }
+    getAdventuresMovieList(){
+      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=12&sort_by=vote_average.desc&vote_count.gte=1000");
+    }
+    getThrillerMovieList(){
+      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=53&sort_by=vote_average.desc&vote_count.gte=1000");
+    }
+    getAnimationMovieList(){
+      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=16&sort_by=vote_average.desc&vote_count.gte=1000");
+    }
+    getFamilyMovieList(){
+      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=10751&sort_by=vote_average.desc&vote_count.gte=1000");
+    }
+    getHorrorMovieList(){
+      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=27&sort_by=vote_average.desc&vote_count.gte=1000");
+    }
+    getWesternMovieList(){
+      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=37&sort_by=vote_average.desc&vote_count.gte=1000");
+    }
 
     //Restituisce i film in base al titolo o a una porzione di titolo passato come parametro
     getMovieByTitle(ricercaTitolo:string){

@@ -89,7 +89,7 @@ export class ApiMovieDetailsComponent implements OnInit {
     this.movieFilm.user_id=this.user.id
     this.movieFilm.name =this.movieDetailsEntry.title;
 
-    if(form.form.value.seen==='Add to my watched movies'){
+    if(form.form.value.seen==='my watched movies'){
       this.movieFilm.seen=true;
       this.movieFilm.must_see=false
 
