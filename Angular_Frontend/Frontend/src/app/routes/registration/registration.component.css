@@ -1,12 +1,14 @@
 body {
   margin:0;
+  margin-bottom: 10%;
 }
 
 .card {
+
   margin-top: 15%;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  margin-bottom: 30%;
+  margin-bottom: 50%;
 
 }
 

@@ -17,7 +17,7 @@ class MovieRatingCollection extends ResourceCollection
         //return parent::toArray($request);
         return [
             'data' => $this->collection,
-            'Author' => 'Alessandro Tola',
+            'Author' => '4 Each',
             'Version' => '1.0'
         ];
     }
