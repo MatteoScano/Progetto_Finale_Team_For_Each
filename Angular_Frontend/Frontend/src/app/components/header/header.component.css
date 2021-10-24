@@ -2,7 +2,8 @@
 header {
   width: 100%;
   color: rgb(240, 197, 116);
-  position:absolute;
+  position:fixed;
+  z-index: 99;
 }
 
 @font-face {
@@ -41,7 +42,7 @@ header {
 
 /* fascia nera di sfondo */
 .bg-dark {
-  height: 90px;
+  height: 80px;
   content: normal;
   align-content: stretch;
 }
@@ -54,12 +55,14 @@ header {
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
+
 }
 
 /* elementi della lista (-> rapporto logo/menu)*/
 ul {
   width: 100%;
   box-sizing: border-box;
+
 }
 
 
@@ -73,15 +76,18 @@ ul {
     width: 100%;
     display: block;
     text-align: center;
+
   }
 
   nav ul li {
     margin: 40px 0;
+
   }
 
   nav ul li a {
     font-size: 20px;
     display: block;
+
   }
   nav ul li a:hover,
   nav ul li a:active {

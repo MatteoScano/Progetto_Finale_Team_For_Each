@@ -34,56 +34,11 @@ export class MoviesApiService {
     getRomanceFictionList(){
       return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=10749&sort_by=vote_average.desc&vote_count.gte=1000");
     }
-    getAdventuresMovieList(){
-      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=12&sort_by=vote_average.desc&vote_count.gte=1000");
-    }
-    getThrillerMovieList(){
-      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=53&sort_by=vote_average.desc&vote_count.gte=1000");
-    }
-    getAnimationMovieList(){
-      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=16&sort_by=vote_average.desc&vote_count.gte=1000");
-    }
-    getFamilyMovieList(){
-      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=10751&sort_by=vote_average.desc&vote_count.gte=1000");
-    }
-    getHorrorMovieList(){
-      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=27&sort_by=vote_average.desc&vote_count.gte=1000");
-    }
-    getWesternMovieList(){
-      return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=37&sort_by=vote_average.desc&vote_count.gte=1000");
-    }
 
     //Restituisce i film in base al titolo o a una porzione di titolo passato come parametro
     getMovieByTitle(ricercaTitolo:string){
       return this.http.get<MovieApiInterface>(this.baseURL+"/3/search/movie?api_key="+this.apiKey+"&query="+ricercaTitolo);
     }
-
-
-
     //https://api.themoviedb.org/3/search/movie?api_key=d5ac4153b7b34b3ef31b49edd9731e04&query='title'
 
-
-    /*  GENERI
-
-    Action          28
-Adventure       12
-Animation       16
-Comedy          35
-Crime           80
-Documentary     99
-Drama           18
-Family          10751
-Fantasy         14
-History         36
-Horror          27
-Music           10402
-Mystery         9648
-Romance         10749
-Science Fiction 878
-TV Movie        10770
-Thriller        53
-War             10752
-Western         37
-
-    */
 }

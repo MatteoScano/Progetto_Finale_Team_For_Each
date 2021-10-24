@@ -61,7 +61,7 @@ export class ApiMovieDetailsComponent implements OnInit {
 
   //LISTA VISTO/DA VEDERE
   movieFilm = <MovieData>{};
-  seenOption = ['Add to my watched movies', 'Add to my Must See movies']
+  seenOption = ['my watched movies', 'my Must See movies']
   seenSubmit: MovieData
   flag;
 
@@ -80,44 +80,43 @@ export class ApiMovieDetailsComponent implements OnInit {
   }
 
   // FUNZIONI
-  onSeen(form : NgForm){
+  onSeen(form: NgForm) {
     this.movieFilm = form.form.value;
-    console.log("form.form.value ",form.form.value);
-    this.movieFilm.movie_id=this.id
-    this.movieFilm.user_id=this.user.id
-    this.movieFilm.name =this.movieDetailsEntry.title
+    console.log("form.form.value ", form.form.value);
+    this.movieFilm.movie_id = this.id
+    this.movieFilm.user_id = this.user.id
+    this.movieFilm.name = this.movieDetailsEntry.title
 
-    if(form.form.value.seen==='Add to my watched movies'){
-      this.movieFilm.seen=true;
-      this.movieFilm.must_see=false
+    if (form.form.value.seen === 'my watched movies') {
+      this.movieFilm.seen = true;
+      this.movieFilm.must_see = false
     };
-    if(form.form.value.seen==='Add to my Must See movies'){
-      this.movieFilm.must_see=true;
-      this.movieFilm.seen=false;
+    if (form.form.value.seen === 'my Must See movies') {
+      this.movieFilm.must_see = true;
+      this.movieFilm.seen = false;
     };
 
-    for(let i=0; i<this.movies.length; i++ ){
-      if(this.movies[i].movie_id ==this.id){
-        this.flag=true;
+    for (let i = 0; i < this.movies.length; i++) {
+      if (this.movies[i].movie_id == this.id) {
+        this.flag = true;
       }
     }
-    if(this.flag==true){
+    if (this.flag == true) {
       this.dataService.editEntry(this.movieFilm).subscribe(response => {
       },
-         (err) => {
-        console.log("mah");
-      }
-      )
-    }
-    else
-     {
-         this.dataService.addEntry(this.movieFilm).subscribe(response => {
-        },
-           (err) => {
+        (err) => {
           console.log("mah");
         }
-        )
-   }
+      )
+    }
+    else {
+      this.dataService.addEntry(this.movieFilm).subscribe(response => {
+      },
+        (err) => {
+          console.log("mah");
+        }
+      )
+    }
 
   }
 
