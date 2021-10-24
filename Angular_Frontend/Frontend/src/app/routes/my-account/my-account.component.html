@@ -6,6 +6,8 @@
           <div class="ml-3">
               <h4 class="name">{{user.username}}</h4>
               <p class="mail">{{user.email}}</p>
+              <p class="mail">{{user.name}} {{user.surname}}</p>
+
           </div>
       </div>
 <hr>
@@ -29,9 +31,9 @@
 
       </div>
     -->
-      <div class="wishlist-border mt-2">
-        <span class="wishlist">Movies Wishlist</span> </div>
-      <div class="wishlist-border pt-2"> <span class="wishlist">Movies Watchlist</span> </div>
+
+      <div class="wishlist-border pt-2"> <span class="wishlist"> <a href="#" [routerLink]="['/seenList']">Watched Movies</a></span> </div>
+      <div class="wishlist-border pt-2"> <span class="wishlist"> <a href="#" [routerLink]="['/mustSeeList']">Movies to see</a></span> </div>
       <div class="wishlist-border pt-2" (click)="goToUserComments()"> <span class="wishlist">My Comments</span> </div>
       <button class="btn btn-dark mt-4"[routerLink]="['/moviesApi']">Back to Movies</button>
   </div>

@@ -71,6 +71,7 @@ export class ApiMovieDetailsComponent implements OnInit {
   // FUNZIONI
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    //const id = this.route.snapshot.params['id'];
     this.getUserIdByUsername();
     this.getMovieApiDetails();
     //this.getMovieRatingsOnComponent();
@@ -82,41 +83,83 @@ export class ApiMovieDetailsComponent implements OnInit {
   // FUNZIONI
   onSeen(form: NgForm) {
     this.movieFilm = form.form.value;
-    console.log("form.form.value ", form.form.value);
-    this.movieFilm.movie_id = this.id
-    this.movieFilm.user_id = this.user.id
-    this.movieFilm.name = this.movieDetailsEntry.title
 
-    if (form.form.value.seen === 'my watched movies') {
-      this.movieFilm.seen = true;
-      this.movieFilm.must_see = false
+    console.log("form.form.value ",form.form.value);
+    this.movieFilm.movie_id=this.id
+    this.movieFilm.user_id=this.user.id
+    this.movieFilm.name =this.movieDetailsEntry.title;
+
+    if(form.form.value.seen==='Add to my watched movies'){
+      this.movieFilm.seen=true;
+      this.movieFilm.must_see=false
+
     };
     if (form.form.value.seen === 'my Must See movies') {
       this.movieFilm.must_see = true;
       this.movieFilm.seen = false;
     };
 
-    for (let i = 0; i < this.movies.length; i++) {
-      if (this.movies[i].movie_id == this.id) {
-        this.flag = true;
+
+    for(let i=0; i<this.movies.length; i++ ){
+      if(this.movies[i].movie_id ==this.id){
+        console.log("INIZIA IL FOR");
+
+        this.flag=true;
+        this.movieFilm.id=this.movies[i].id
+        this.movieFilm.name=this.movies[i].name;
+        console.log("this.flag ciclo for ",this.flag);
+        console.log("this.id ",this.id)
+        console.log("this.movieFilm.id casa ",this.movieFilm.id)
+        console.log("this.movieFilm.id 1 ",this.movies[i].id)
+        console.log("this.movies[i].movie_id ",this.movies[i].movie_id)
+        console.log("break");
+        console.log("FINISCE IL FOR");
+
+        break;
+
+      }else{      this.flag=false;
+
       }
-    }
-    if (this.flag == true) {
+    };
+
+
+    console.log("this.flag before if",this.flag);
+    if(this.flag==true){
+      console.log("INIZIA LA EDIT");
+      console.log("this.flag after if",this.flag);
+      console.log("this.movieFilm.id after if",this.movieFilm);
+      console.log("this.movieFilm.id after if ",this.movieFilm.id);
+
+
+
       this.dataService.editEntry(this.movieFilm).subscribe(response => {
       },
         (err) => {
           console.log("mah");
         }
       )
+         console.log("FINISCE LA EDIT");
+
     }
-    else {
-      this.dataService.addEntry(this.movieFilm).subscribe(response => {
-      },
-        (err) => {
-          console.log("mah");
+
+    else
+     {
+      console.log("INIZIA LA ADD");
+
+         this.dataService.addEntry(this.movieFilm).subscribe(response => {
+        },
+
+           (err) => {
+          console.log("mah2");
         }
-      )
-    }
+        )
+        console.log("this.movieFilm.id addEntry",this.movieFilm)
+        console.log("this.movieFilm.id addEntry ",this.movieFilm.id);
+        this.flag==true;
+        console.log("FINISCE LA ADD");
+
+   }
+
 
   }
 
@@ -278,4 +321,6 @@ export class ApiMovieDetailsComponent implements OnInit {
   exit() {
     window.location.reload();
   }
+
+
 }

@@ -21,8 +21,8 @@ export class ListFilteredByMustSeeComponent implements OnInit {
   constructor(private dataService  : DataService, private router : Router, private userService: LoginService) { }
 
   ngOnInit(): void {
-    this.getEntries();
-    this.getUserIdByUsername()
+      this.getEntries();
+      this.getUserIdByUsername()
   }
 
   public movies: MovieData[];
@@ -32,7 +32,7 @@ export class ListFilteredByMustSeeComponent implements OnInit {
     this.dataService.getData().subscribe( (response : any) => {
       this.movies = response;
       this.moviesDataLoader=true;
-      console.log(this.userId )
+      console.log("this.userId ",this.userId )
 
     })
   }
@@ -45,8 +45,9 @@ export class ListFilteredByMustSeeComponent implements OnInit {
     this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
     (response : any) => {
       this.user = response;
+      console.log(this.user);
       this.userId = this.user.id;
-      console.log("L'utente ha il seguente Id:");
+      console.log("L'utente ha il seguente Id:",this.userId);
       console.log(this.userId);
     });
   }

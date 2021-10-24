@@ -56,7 +56,7 @@ export class DataService {
       "user_id": data.user_id,
       "movie_id": data.movie_id,
       "seen": data.seen,
-      "must_see": data.must_see,
+      "must_see": data.must_see
     });
   };
 
