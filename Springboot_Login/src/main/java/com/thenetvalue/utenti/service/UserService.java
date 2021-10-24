@@ -21,13 +21,6 @@ public class UserService {
     }
 
     public String addUser(User user){
-
-        //.withUser("user").password(passwordEncoder.encode("password")).roles("USER")
-
-        //user.setPassword(passwordEncoder.encript);
-        //prendere la password e decodificarla con il bean del security configuration
-
-
         User result = userDAO.save(user);        // save(user.setPassword());   passwordencoder.encript
         if (result!=null && result.getId() != 0){
             return "Utente salvato correttamente";

@@ -18,6 +18,8 @@ export class RegistrationComponent implements OnInit {
   usernameOk=true;
   usernameExist=true;
 
+  result:UserDataInterface;
+
   found:any=[];
   userFound:any=[];
   //variabili per il controllo password "uguale"
@@ -33,6 +35,8 @@ export class RegistrationComponent implements OnInit {
    terms:string;
    termsOk=true;
 
+   flag=false;
+   entraNegliIf=false;
   constructor(private registrationService : RegistrationService, private router:Router, private userService: LoginService) { }
 
   ngOnInit(): void {
@@ -82,36 +86,37 @@ export class RegistrationComponent implements OnInit {
     this.username = form.form.value.username;
     this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
     (response : any) => {
-      this.userFound = response;
+      this.result = response;
+
         console.log("L'utente ha i seguenti dati:");  //test
-        console.log(this.userFound);
-        return this.userFound;
+        console.log(this.result);
+        console.log("result username");  //test
+        console.log(this.result.username);
+
+        if(this.result.username!=null){
+          this.flag=true;
+          console.log("flag nell'if:", this.flag)
+        }
+        console.log("flag dopo l'if:", this.flag)
     });
 
   }
 
   //Crea un nuovo utente in base ai dati inseriti in input
   createUser(form : NgForm): void {
+
     let passMatched = this.checkPassword(form);
     let emailChecked = this.checkEmail(form);
 
+    this.newUser = form.form.value;
     this.username = form.form.value.username;
-    this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
-    (response : any) => {
-      this.userFound = response;
-        console.log("USER FOUND");  //test
-        console.log(this.userFound);
-    });
 
    if(emailChecked){
 
      if(this.username!= "admin" && this.username!= "Admin"){
 
-       if(this.userFound==null){
-
         if(passMatched){
 
-          this.newUser = form.form.value;
           this.newUser.enabled=1;
           this.registrationService.addUser(this.newUser,"admin","admin").subscribe( results => {
             console.log("Password valida",results);
@@ -124,30 +129,24 @@ export class RegistrationComponent implements OnInit {
             this.router.navigate(['/login']);
         }
         else{ //pass metched
-          this.emailOk=true;
           this.passwordOk=false;
           this.usernameOk=true;
           this.usernameExist=true;
+          this.emailOk=true;
           console.log("password errata, Riprova");
         }
-
-      }else{  //username gia in uso
-        this.emailOk=true;
-        this.usernameExist=false
-        console.log("Username gia' in uso. Riprova!")
       }
-
+      else{
+          this.usernameOk=true;
+          this.emailOk=true;
+          this.usernameExist=false;
+          console.log("Username esistente, riprova");
+      }
     }else{  //username admin
       this.emailOk=true;
       this.usernameOk=false;
       console.log("lo username non puo contenere il termine 'admin'")
     }
-   }
-   else{
-    this.emailOk=false;
-    console.log("Email Errata, Riprova!");
-   }
 }
-
 
 }
