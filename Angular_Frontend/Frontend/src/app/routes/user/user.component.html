@@ -1,7 +1,7 @@
-<div class="container p-5">
+<div class="container p-5" *ngIf="usernameIsAdmin=='admin'">
 
-  <h1 class="text-center mb-5">
-    Search User
+  <h1 class="text-center margin-top">
+    Users Management
   </h1>
 
 <form #form="ngForm">
@@ -18,7 +18,9 @@
 
     <button type="submit" class="btn btn-primary mb-4 mt-2" (click)="getUserById(form)">Search by ID</button>
   </div>
-
+  <h5 class="text-left mb-2">
+    User Details
+  </h5>
 </form>
   <table class="table">
     <thead class="thead-dark">
@@ -34,7 +36,9 @@
     </thead>
     <tbody>
       <tr class="pointer">
-        <td><button type="button" class="btn btn-danger" (click)="deleteUserById(form)" (click)="exit()">Delete</button></td>
+        <td><button type="button" class="btn btn-danger mr-2" (click)="deleteUserById(form)" (click)="reloadPage()">Delete</button>
+            <button type="submit" class="btn btn-info" (click)="goToUpdate()">Update</button>
+        </td>
         <td>{{userFound.id}}</td>
         <td>{{userFound.name}}</td>
         <td>{{userFound.surname}}</td>
@@ -55,9 +59,64 @@
     </tbody>
   </table>
 
-  <h1 class="text-center mb-5">
+  <div *ngIf="letsUpdate == true">
+    <section class="mb-4 container-update">
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+
+                  <h6 class="text-center">Update User</h6>
+
+                  <form class="pt-1" #formUpdate="ngForm">
+                    <div class="form-group">
+                      <label for="username"></label>
+                      <input type="text" method="PUT" required ngModel class="form-control form-control-lg" name="name" id="name" placeholder="{{userFoundById.name}}">
+
+                    </div>
+                    <div class="form-group">
+                      <label for="username"></label>
+                      <input type="text" method="PUT" required ngModel class="form-control form-control-lg" name="surname" id="surname" placeholder="{{userFoundById.surname}}">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="username"></label>
+                      <input type="text" method="PUT" required ngModel class="form-control form-control-lg" name="email" id="email" placeholder="{{userFoundById.email}}">
+
+                    </div>
+                    <div class="form-group">
+                      <label for="username"></label>
+                      <input type="text" method="PUT" required ngModel class="form-control form-control-lg" name="username" id="username" placeholder="{{userFoundById.username}}">
+
+                    </div>
+                    <div class="form-group">
+                      <label for="password"></label>
+                      <input type="password" method="PUT" required ngModel class="form-control form-control-lg" name="password" id="password" placeholder="Password">
+                      <div class="inputError ml-2"> <p *ngIf="!passwordOk" >Entered Password is not matching! Try Again</p></div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="confirmPassword"></label>
+                      <input type="password" method="PUT" required ngModel class="form-control form-control-lg" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+                      <span id='message'></span>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                      <button type="button" name="submit" id="submit" (click)="updateUser(formUpdate,form)" class="btn btn-success btn-block btn-lg gradient-custom-4">Update User</button>
+                    </div>
+
+                  </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <h3 class="text-center mb-2">
     Users Details
-  </h1>
+  </h3>
 
     <table class="table plus">
       <thead class="thead-dark">
@@ -82,4 +141,16 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- SE ENTRA UN UTENTE NON AUTORIZZATO VISUALIZZA QUESTO-->
+  <div class="container p-5  font" *ngIf="usernameIsAdmin!='admin'" >
+
+    <h1 class="text-center mt-5 footerGiu margin-top">
+      you don't have permissions!
+    </h1>
+    <a [routerLink]="['/moviesApi']">
+    <p class="font back-home">BACK TO HOME</p></a>
+
+
   </div>

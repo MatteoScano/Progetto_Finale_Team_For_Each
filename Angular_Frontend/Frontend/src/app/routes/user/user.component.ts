@@ -11,23 +11,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
+   //Prende lo username della sessione, nell'html visualizza la pagina solo se l'utente è amministratore
+   usernameIsAdmin : string = sessionStorage.getItem('username');
 
   users : UserDataInterface[];
-  data:any;
-  userFound:any=[];
-  username:string;
-  userId:number;
-  userFoundById:any=[];
+  data:any;                     //per il salvataggio di tutti gli utenti
+  userFound:any=[];             //per il salvataggio dell'utente trovato
+  username:string;              //Username passato nel form
+  userId:number;                //Contiene l'id dell'utente
+  userFoundById:any=[];         //per il salvataggio dell'utente trovato per Id
+
+    //VARIABILI PER L'UPDATE USER
+  letsUpdate=false
+  newUser : UserDataInterface;
+
+  //variabili per il controllo password "uguale"
+  password:string;
+  confirmPassword:string;
+  passwordOk=true;
 
   constructor( private userService : LoginService, private router : Router) { }
 
   ngOnInit() : void{
-    this.getUsersList();
+    this.getUsersList();  //Preleva in la lista degli utenti dal database
   }
 
-  //aggiorna pagina
-
-  exit() {
+  //Metodo che aggiorna la pagina
+  reloadPage() {
     window.location.reload();
   }
 
@@ -63,6 +73,7 @@ export class UserComponent implements OnInit {
     });
   }
 
+//Cancella l'utente con l'id passato
   deleteUserById(form :NgForm){
     this.userId = form.form.value.userId;
     console.log("dato inserito:"+this.userId);
@@ -74,6 +85,45 @@ export class UserComponent implements OnInit {
         this.router.navigate(['/users']);
     });
   }
+
+  //Al click visualizza il form di inserimento dati utente
+  goToUpdate(){
+    this.letsUpdate=true
+  }
+
+   //verifica se le password inserite dall'utente sono uguali
+   checkPassword(form : NgForm):boolean{
+    this.password=form.form.value.password;
+    this.confirmPassword=form.form.value.confirmPassword;
+    if(this.password !== this.confirmPassword){
+      return false
+      }
+    else{
+      return true
+    }
+  }
+
+  //Aggiorna i dati dell'utente
+  updateUser(form : NgForm, formId: NgForm): void {
+    let passMatched = this.checkPassword(form);
+    if(passMatched){
+    this.userId = formId.form.value.userId;  //NON PASSA L'ID DEL VECCHIO USER
+    this.newUser = form.form.value;
+    this.newUser.enabled=1;
+      this.userService.updateUser( this.userId,this.newUser,"admin","admin").subscribe( results => {
+            console.log("Password valida",results);
+            },
+            error=>{
+              console.log(error);
+      });
+      this.reloadPage();
+    }
+    else{ //pass metched
+      this.passwordOk=false;
+      console.log("password errata, Riprova");
+    }
+  }
+
 
 }
 
