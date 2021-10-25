@@ -1,3 +1,4 @@
+import { HeaderBetaComponent } from './components/header-beta/header-beta.component';
 import { SearchMovieComponent } from './routes/search-movie/search-movie.component';
 import { TermsAndConditionsComponent } from './routes/terms-and-conditions/terms-and-conditions.component';
 import { MyAccountComponent } from './routes/my-account/my-account.component';
@@ -63,6 +64,7 @@ const routes: Routes = [
 
   { path: "search-movie", component : SearchMovieComponent},
   { path: "terms-and-conditions", component : TermsAndConditionsComponent},
+  { path: "header-beta", component : HeaderBetaComponent},
 ];
 
 @NgModule({

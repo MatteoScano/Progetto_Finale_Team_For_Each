@@ -33,7 +33,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="pointer" *ngFor="let entry of movies | listFilteredByUserId : userId ; let i = index" (click)="goToDetails(entry.id)">
+      <tr class="pointer" *ngFor="let entry of movies | listFilteredByUserId : userId ; let i = index" (click)="goToDetails(entry.movie_id)">
         <th scope="row">{{ entry.id }}</th>
         <td>{{ entry.name }}</td>
         <td>{{ entry.user_id }}</td>

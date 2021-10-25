@@ -263,12 +263,13 @@ font-family:"DK Lemon Yellow Sun";
 }
 
 .body-user {
-  font-family:"DK Lemon Yellow Sun";
-  color: rgb(255, 186, 59);
-  font-size: 20px;
+  font-family:"Poppins", sans-serif;
+  color: rgba(216, 145, 13, 0.4);
+  font-size: 18px;
   padding-bottom: 20px;
   text-decoration: none;
   border-right: 1px solid rgba(0, 0, 0, 0.4);
+  max-width: 40px;
 }
 
 
@@ -282,4 +283,8 @@ font-family:"DK Lemon Yellow Sun";
 
 .style-text-area {
   background-color: rgba(109, 95, 95, 0.24);
+}
+
+.fas{
+  color:rgba(131, 128, 128, 0.22);
 }

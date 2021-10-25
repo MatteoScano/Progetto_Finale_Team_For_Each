@@ -44,6 +44,7 @@ import { ListeComponent } from './routes/liste/liste.component';
 import { ListFilteredByUserIdPipe } from './pipes/listFilteredByUserId/listFilteredByUserId.pipe';
 import { ListFilteredByMustSeeComponent } from './routes/list-filtered-by-must-see/list-filtered-by-must-see.component';
 import { ListFilteredByMustSeePipe } from './pipes/listFilteredByMustSee/listFilteredByMustSee.pipe';
+import { HeaderBetaComponent } from './components/header-beta/header-beta.component';
 
 
 
@@ -86,7 +87,8 @@ import { ListFilteredByMustSeePipe } from './pipes/listFilteredByMustSee/listFil
     ListeComponent,
     ListFilteredByMustSeeComponent,
     ListFilteredByUserIdPipe,
-    ListFilteredByMustSeePipe
+    ListFilteredByMustSeePipe,
+    HeaderBetaComponent
    ],
 
   imports: [

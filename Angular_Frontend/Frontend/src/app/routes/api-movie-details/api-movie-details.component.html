@@ -43,8 +43,6 @@
 
 
 
-
-
        <!--  AGGIUNGI ALLA LISTA -->
     <form class="pt-2 " (ngSubmit)="onSeen(formOnSeen)"  id="form1" #formOnSeen="ngForm" >
 
@@ -61,7 +59,9 @@
             </select>
 
         </div>
-        <button type="submit" class="btn btn-primary ml-1 buttons aligner-5" (click)="exit()">+</button>
+        <button style="font-size: 30px" type="submit" class="btn btn-default " (click)="exit()">
+          <span class="fas fa-plus" aria-hidden="true"></span>
+        </button>
     </div>
 
   </form>
@@ -110,7 +110,7 @@
 
               </div>
 
-              <button type="submit" (click)="exit()" class="buttons btn-primary btn-cmt" required>Submit Comment</button>
+              <button type="submit" (click)="exit()" class="btn buttons btn-primary btn-cmt ml-3" required>Submit Comment</button>
 
           </form>
           <br>
@@ -143,7 +143,7 @@
         <!--<td>{{entry.id}}</td>
         <td>{{entry.userId}}</td><td>
         <td>{{entry.movieId}}</td>-->
-        <td class="body-user">{{user.name}} </td>
+        <td class="body-user"><i class="fas fa-user-edit mr-2"></i>{{entry.userId}} </td>
         <td class="body-comments"> {{entry.body}}</td>
       </tr>
     </tbody>
