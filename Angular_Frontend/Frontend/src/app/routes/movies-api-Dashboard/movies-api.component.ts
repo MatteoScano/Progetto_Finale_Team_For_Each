@@ -44,8 +44,6 @@ export class MoviesApiComponent implements OnInit {
     //this.getMarvelListOnComponent();           //Prende lista solo dei film marvel
   }
 
-
-
   // METEO FUNZIONI
   getMovieByCurrentWeather() {
     console.log("data conditions prima dello switch" + this.todaysWeather);
@@ -64,11 +62,9 @@ export class MoviesApiComponent implements OnInit {
       this.orarioAttuale = parseInt(this.data.datetime);
       console.log(" Stringa intera" + this.orarioAttuale)
 
-
-
       // COSTRUTTI CONDIZIONALI SUGGERIMENTI FILM IN BASE AL METEO E ALLìORARIO DELLA GIORNATA:
-      //MATTINA
-      if(this.orarioAttuale > 7 && this.orarioAttuale < 13){
+      //se MATTINA
+    if(this.orarioAttuale > 7 && this.orarioAttuale < 13){
         if (this.todaysWeather == "Clear") {
           this.getAnimationMovieListOnComponent();
         }
@@ -85,8 +81,8 @@ export class MoviesApiComponent implements OnInit {
           this.getScienceFictionListOnComponent();
         }
     }
-      //POMERIGGIO
-      if(this.orarioAttuale > 13 && this.orarioAttuale < 19){
+      //se POMERIGGIO
+    if(this.orarioAttuale > 13 && this.orarioAttuale < 19){
         if (this.todaysWeather == "Clear") {
           console.log("Valore mattina: " + this.mattina)
           console.log("Orario attuale: " + this.orarioAttuale)
@@ -111,8 +107,8 @@ export class MoviesApiComponent implements OnInit {
           this.getWesternMovieListOnComponent();
         }
     }
-      //SERA
-      if(this.orarioAttuale > 19 && this.orarioAttuale < 24){
+      //se SERA
+    if(this.orarioAttuale > 19 && this.orarioAttuale < 24){
         if (this.todaysWeather == "Clear") {
           this.getAdventuresMovieListOnComponent();
         }
@@ -133,8 +129,8 @@ export class MoviesApiComponent implements OnInit {
           this.getDramasMovieListOnComponent();
         }
     }
-       //NOTTE
-      if(this.orarioAttuale > 0 && this.orarioAttuale < 7){
+       //se NOTTE
+    if(this.orarioAttuale > 0 && this.orarioAttuale < 7){
         if (this.todaysWeather == "Clear") {
           this.getScienceFictionListOnComponent();
         }
@@ -158,6 +154,7 @@ export class MoviesApiComponent implements OnInit {
     )
   }
 
+  //Prende i dati meteo dall'api
   getterWeatherDataOnComponent() {
     this.weatherService.getWeatherData().subscribe((
       response: any) => {
@@ -312,56 +309,10 @@ export class MoviesApiComponent implements OnInit {
       error => console.log(error)
     )
   }
-
+//Al click visualizza i dettagli del film
   goToDetails(id) {
     this.router.navigateByUrl('/movieApiDetails/' + id);
   }
 
 }
 
-//lista totale delle condizioni meteo
-/*
-type_1	Blowing Or Drifting Snow
-type_2	Drizzle
-type_3	Heavy Drizzle
-type_4	Light Drizzle
-type_5	Heavy Drizzle/Rain
-type_6	Light Drizzle/Rain
-type_7	Duststorm
-type_8	Fog
-type_9	Freezing Drizzle/Freezing Rain
-type_10	Heavy Freezing Drizzle/Freezing Rain
-type_11	Light Freezing Drizzle/Freezing Rain
-type_12	Freezing Fog
-type_13	Heavy Freezing Rain
-type_14	Light Freezing Rain
-type_15	Funnel Cloud/Tornado
-type_16	Hail Showers
-type_17	Ice
-type_18	Lightning Without Thunder
-type_19	Mist
-type_20	Precipitation In Vicinity
-type_21	Rain
-type_22	Heavy Rain And Snow
-type_23	Light Rain And Snow
-type_24	Rain Showers
-type_25	Heavy Rain
-type_26	Light Rain
-type_27	Sky Coverage Decreasing
-type_28	Sky Coverage Increasing
-type_29	Sky Unchanged
-type_30	Smoke Or Haze
-type_31	Snow
-type_32	Snow And Rain Showers
-type_33	Snow Showers
-type_34	Heavy Snow
-type_35	Light Snow
-type_36	Squalls
-type_37	Thunderstorm
-type_38	Thunderstorm Without Precipitation
-type_39	Diamond Dust
-type_40	Hail
-type_41	Overcast
-type_42	Partially cloudy
-type_43	Clear
-*/

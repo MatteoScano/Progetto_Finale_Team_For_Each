@@ -202,11 +202,9 @@ padding: none;
 
 .aligner-5 {
   margin-left: 5%;
-  font-weight: 2000;
 }
 
 .btn-primary {
-  font-weight: 2000;
   margin-top: 2%;
  height: 38px;
  border-radius:2px;
@@ -237,48 +235,6 @@ padding: none;
 .form-group {
 height: 150px;
   max-width: 800px;
-}
-
-
-.container-AllComments{
-  margin-bottom: 5%;
-  margin-top: 30px;
-  margin-left: 5.5%;
-  max-width: 775px;
-  background-color: rgba(131, 128, 128, 0.22);
-    border-radius: 3px;
-  border: 1px solid rgba(95, 93, 93, 0.22);
-
-}
-
-.mb-2 {
-  margin-left: 5.5%;
-margin-top: 20px;
-font-family:"DK Lemon Yellow Sun";
-  font-size: 35px;
-  padding-bottom: 10px;
-}
-
-.body-comments {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 100;
-  color:rgba(0, 0, 0, 0.63);
-  padding-left: 0;
-}
-
-.body-user {
-  font-family:"DK Lemon Yellow Sun";
-  color: rgb(255, 186, 59);
-  font-size: 20px;
-  padding-bottom: 20px;
-
-  text-decoration: none;
-
-}
-
-.body-user tbody {
-  border: 1px solid rgb(255, 186, 59);
 }
 
 

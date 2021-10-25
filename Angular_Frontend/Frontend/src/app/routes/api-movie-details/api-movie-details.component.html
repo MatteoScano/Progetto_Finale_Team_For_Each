@@ -113,21 +113,16 @@
               <button type="submit" (click)="exit()" class="buttons btn-primary" required>Submit Comment</button>
 
           </form>
-          <br>
-          <hr>
+
 </div>
 <!-- FINE COMMENTO UTENTE-->
 
 
 <!-- INIZIO TUTTI COMMENTI -->
-
-<h1 class=" mb-2">
-  Movie Comments
-</h1>
-<div class="container-AllComments p-2" >
-
-
-
+<div class="container p-2" >
+  <h1 class=" mb-2">
+    Movie Comments
+  </h1>
 
   <table class="table">
     <!--<thead class="thead-dark">
@@ -143,8 +138,7 @@
         <!--<td>{{entry.id}}</td>
         <td>{{entry.userId}}</td><td>
         <td>{{entry.movieId}}</td>-->
-        <td class="body-user">{{user.name}}  </td>
-        <td class="body-comments"> - {{entry.body}}</td>
+        <td>{{entry.body}}</td>
       </tr>
     </tbody>
   </table>
