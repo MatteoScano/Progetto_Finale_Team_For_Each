@@ -1,6 +1,6 @@
 body {
   background-color: #eee;
-
+  padding-bottom: 5%;
 
 }
 .container {
@@ -9,12 +9,13 @@ body {
   margin-left: 5%;
 }
 
+
+
 .card {
   justify-content: space-around;
   padding: 20px;
   margin-top: 15%;
   margin-bottom: 6%;
-
   background-color: #f8f9fa;
   width: 400px;
   height: 500px;
@@ -133,6 +134,7 @@ body {
 }
 
 .wishlist {
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #272727
@@ -140,7 +142,6 @@ body {
 
 .wishlist-border:hover {
   cursor: pointer;
-
 }
 
 .fashion-studio {
@@ -166,4 +167,19 @@ body {
   transform: scale(1.0.4);
   border: none;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+
+.wishlist-new a{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: none;
+  color:rgba(0, 0, 0, 0.603);
+}
+
+
+.wishlist-new a:hover{
+font-weight: 600;
+transition: .2s;
 }

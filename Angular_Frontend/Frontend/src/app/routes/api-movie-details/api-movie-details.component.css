@@ -19,6 +19,7 @@ h1 {
 
 
 .box1 {
+  max-width: 800px;
   font-size: 20px;
   margin-left: 5%;
   flex: 1;
@@ -162,15 +163,7 @@ color: rgb(218, 192, 47);
 padding: none;
 }
 
-.star-container:hover {
-  background-color: #f8f9fa;
-  -webkit-appearance: none;
-  -ms-progress-appearance: none;
-  appearance: none;
-  transform: scale(1.1);
-  transition: .2s;
 
-}
 
 .container-rating {
   display: flex;
@@ -202,9 +195,11 @@ padding: none;
 
 .aligner-5 {
   margin-left: 5%;
+  font-weight: 2000;
 }
 
 .btn-primary {
+  font-weight: 2000;
   margin-top: 2%;
  height: 38px;
  border-radius:2px;
@@ -227,7 +222,7 @@ padding: none;
 
 .comment-wrapper{
   margin-left: 5%;
-
+overflow: hidden;
 }
 
 
@@ -238,3 +233,53 @@ height: 150px;
 }
 
 
+
+.container-AllComments{
+  margin-bottom: 5%;
+  margin-top: 30px;
+  margin-left: 5.5%;
+  max-width: 775px;
+  background-color: rgba(131, 128, 128, 0.22);
+    border-radius: 3px;
+  border: 1px solid rgba(95, 93, 93, 0.22);
+
+}
+
+.mb-2 {
+  margin-left: 5.5%;
+margin-top: 20px;
+font-family:"DK Lemon Yellow Sun";
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+.body-comments {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  color:rgba(0, 0, 0, 0.63);
+  padding-left: 15px;
+
+}
+
+.body-user {
+  font-family:"DK Lemon Yellow Sun";
+  color: rgb(255, 186, 59);
+  font-size: 20px;
+  padding-bottom: 20px;
+  text-decoration: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+.btn-cmt {
+  margin-top: 3px;
+
+}
+
+
+.style-text-area {
+  background-color: rgba(109, 95, 95, 0.24);
+}
