@@ -64,11 +64,13 @@ tbody {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-   flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 body {
   background-color: #f8f9fa;
+  padding-bottom: 10%;
+
 }
 
 

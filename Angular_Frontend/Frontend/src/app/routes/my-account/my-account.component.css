@@ -1,20 +1,27 @@
 body {
   background-color: #eee;
   padding-bottom: 5%;
+  display: flex;
+
 
 }
 .container {
   display: flex;
-
   margin-left: 5%;
+
 }
 
+.container-comments {
+  margin-right: 30%;
+  margin-top: 8%;
+
+}
 
 
 .card {
   justify-content: space-around;
   padding: 20px;
-  margin-top: 15%;
+  margin-top: 25%;
   margin-bottom: 6%;
   background-color: #f8f9fa;
   width: 400px;
@@ -56,7 +63,7 @@ body {
 
 
 .mail {
-  font-size: 12px;
+  font-size: 14px;
   color: grey;
   position: relative;
   top: 2px

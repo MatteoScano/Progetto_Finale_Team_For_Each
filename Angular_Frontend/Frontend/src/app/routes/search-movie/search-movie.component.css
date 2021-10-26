@@ -10,10 +10,7 @@
    border: 1px dotted red;
  }
 */
-
-
 label {
-
   margin-top: 10%;
   font-family: "DK Lemon Yellow Sun";
   font-size: 30px;
@@ -24,17 +21,15 @@ p {
   margin-top: 10px;;
   display: flex;
   flex-direction: row;
-
   text-align: center;
-   flex-wrap: wrap;
-   text-align: justify;
-   width: 200px;
-   font-size: 16px;
-   font-family:  "DK Lemon Yellow Sun";
+  flex-wrap: wrap;
+  text-align: justify;
+  width: 200px;
+  font-size: 16px;
+  font-family:  "DK Lemon Yellow Sun";
 }
 
 h1 {
-
   margin-top: 170px;
 }
 
@@ -54,13 +49,11 @@ tbody {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-
 }
 
 .hover-shadow:hover {
   transform: scale(1.1);
   transition: .2s;
-
 }
 
 
@@ -68,8 +61,7 @@ tbody {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-   flex-wrap: wrap;
-
+  flex-wrap: wrap;
   padding-bottom: 25%;
 }
 
@@ -77,16 +69,13 @@ tbody {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
   padding-left: 10px;
-
 }
 
 .box-input {
   width: 500px;
   display:flex;
-
   justify-content: space-around;
   padding-bottom: 100px;
-
 }
 
 
@@ -110,14 +99,12 @@ body {
 
 
 .btn:hover {
-
   background-color:#8a8888;
   border-radius: 3px;
   transition: .1s;
   transform: scale(1.1);
   border: none;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-
 }
 
 

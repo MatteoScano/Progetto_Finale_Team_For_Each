@@ -1,33 +1,37 @@
 <div class="container p-5" >
-    <h1 class="text-center mb-5">
-      Movies api dashboard
-    </h1>
-
-
 
     <table class="table">
-      <thead class="thead-dark">
+      <thead class="testa">
         <tr>
-          <th scope="col">Comment id</th>
-          <th scope="col">Movie id</th>
+         <!-- <th scope="col">Comment id</th> -->
+          <th class="p-r-c"scope="col">Movie id</th>
           <th scope="col">Comment</th>
           <th scope="col"></th>
           <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer" *ngFor="let entry of comments">
+        <tr class="pointer" *ngFor="let entry of comments" (click)="goToDetails(entry.movieId)">
           <!-- trovare modo per trasformare gli id in titoli di film e nomi utenti,
           collegamento tra chiavi database?
           oppure scaricare tutti i database e trasformare i dati in component.ts? -->
-          <td>{{entry.id}}</td>
-          <td>{{entry.movieId}}</td>
+          <!--<td>{{entry.id}}</td> -->
+          <td class="bold">{{entry.movieId}}</td>
           <td>{{entry.body}}</td>
-          <td><button class="btn btn-danger ml-3" (click)="deleteCommentButton(entry.id)">Delete</button></td>
+          <td><button type="button" class="btn" (click)="deleteCommentButton(entry.id)" (click)="reloadPage()">
+            <span class="far fa-trash-alt"></span>
+          </button><td>
+          <!--
           <td><button class="btn btn-primary ml-3" [routerLink]="['/editComment/'+ entry.id]">Edit</button></td>
+          -->
         </tr>
       </tbody>
     </table>
   </div>
 
  <app-loading-page *ngIf="!comments" ></app-loading-page>
+
+
+ <!-- <button style="font-size: 30px" type="submit" class="btn btn-default " (click)="exit()">
+          <span class="fas fa-plus" aria-hidden="true"></span>
+        </button>-->
