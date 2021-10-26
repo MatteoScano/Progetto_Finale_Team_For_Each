@@ -33,8 +33,6 @@ h1 {
   font-weight: 600;
 }
 
-
-
 .list-container {
   background-color: rgba(109, 95, 95, 0.116);
 opacity: 0.9;
@@ -42,7 +40,7 @@ opacity: 0.9;
 }
 
 .container {
-  width: 600px;
+  max-width: 600px;
 
   padding: 0;
   border-radius: 30px;

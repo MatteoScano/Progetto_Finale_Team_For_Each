@@ -9,23 +9,23 @@
     <label for="username">By Username</label>
     <input type="text" method="GET" required ngModel class="form-control" name="username" id="username" placeholder="Username">
 
-    <button type="submit" class="btn btn-primary mb-4 mt-2" (click)=" getUserByUsername(form)">Search By Username</button>
+    <button type="submit" class="btn btn-dark mb-4 mt-2" (click)=" getUserByUsername(form)">Search By Username</button>
 
     <br>
 
     <label for="id">By Id</label>
     <input type="number" method="GET" required ngModel class="form-control" name="userId" id="userId" placeholder="User Id">
 
-    <button type="submit" class="btn btn-primary mb-4 mt-2" (click)="getUserById(form)">Search by ID</button>
+    <button type="submit" class="btn btn-dark mb-4 mt-2" (click)="getUserById(form)">Search by ID</button>
   </div>
   <h5 class="text-left mb-2">
     User Details
   </h5>
 </form>
   <table class="table">
-    <thead class="thead-dark">
+    <thead class="table-secondary">
       <tr>
-        <th scope="col">Action</th>
+        <th scope="col">Delete | Update</th>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Surname</th>
@@ -36,8 +36,12 @@
     </thead>
     <tbody>
       <tr class="pointer">
-        <td><button type="button" class="btn btn-danger mr-2" (click)="deleteUserById(form)" (click)="reloadPage()">Delete</button>
-            <button type="submit" class="btn btn-info" (click)="goToUpdate()">Update</button>
+        <td><button type="button" class="btn mr-2" (click)="deleteUserById(form)" (click)="reloadPage()">
+          <span class="far fa-trash-alt" *ngIf="visualizzaBottoniUsername==true"></span>
+        </button>
+            <button type="submit" class="btn" (click)="goToUpdate()">
+              <span class="fas fa-edit ml-4" *ngIf="visualizzaBottoniUsername==true"></span>
+            </button>
         </td>
         <td>{{userFound.id}}</td>
         <td>{{userFound.name}}</td>
@@ -49,6 +53,13 @@
     </tbody>
     <tbody>
       <tr class="pointer">
+        <td><button type="button" class="btn mr-2" (click)="deleteUserById(form)" (click)="reloadPage()">
+          <span class="far fa-trash-alt" *ngIf="visualizzaBottoniId==true"></span>
+        </button>
+            <button type="submit" class="btn" (click)="goToUpdate()">
+              <span class="fas fa-edit ml-4" *ngIf="visualizzaBottoniId==true" ></span>
+            </button>
+        </td>
         <td>{{userFoundById.id}}</td>
         <td>{{userFoundById.name}}</td>
         <td>{{userFoundById.surname}}</td>
@@ -119,7 +130,7 @@
   </h3>
 
     <table class="table plus">
-      <thead class="thead-dark">
+      <thead class="table-info">
         <tr>
           <th scope="col">User Id</th>
           <th scope="col">Name</th>
@@ -132,7 +143,7 @@
 
       <tbody>
         <tr class="pointer" *ngFor="let entry of data">
-          <td>{{ entry.id }}</td>
+          <td><i class="fas fa-user-alt mr-2" aria-label="Left Align"></i> {{ entry.id }}</td>
           <td>{{entry.name}}</td>
           <td>{{entry.surname}}</td>
           <td>{{ entry.username }}</td>

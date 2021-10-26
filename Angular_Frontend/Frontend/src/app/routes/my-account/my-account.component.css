@@ -192,3 +192,12 @@ transition: .2s;
 color: gold;
 
 }
+.opacity{
+opacity: 0.8;
+
+}
+.opacity:hover{
+  opacity: 1;
+  transition: 0.2s;
+}
+

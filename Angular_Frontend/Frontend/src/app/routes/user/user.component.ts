@@ -30,6 +30,9 @@ export class UserComponent implements OnInit {
   confirmPassword:string;
   passwordOk=true;
 
+  visualizzaBottoniUsername=false;
+  visualizzaBottoniId=false;
+
   constructor( private userService : LoginService, private router : Router) { }
 
   ngOnInit() : void{
@@ -60,6 +63,7 @@ export class UserComponent implements OnInit {
         console.log("L'utente ha i seguenti dati:");  //test
         console.log(this.userFound);
     });
+    this.visualizzaBottoniUsername=true;
   }
 //visualizza l'utente con l'id passato
   getUserById(form :NgForm){  //BETA, ancora non funzionante (da rivedere metodo nel backend-springboot)
@@ -71,6 +75,7 @@ export class UserComponent implements OnInit {
         console.log("L'utente ha i seguenti dati:");  //test
         console.log(this.userFoundById);
     });
+    this.visualizzaBottoniId=true;
   }
 
 //Cancella l'utente con l'id passato
