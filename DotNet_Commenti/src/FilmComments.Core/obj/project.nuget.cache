@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VRe5SkRGUYWtPRMAwptHqCjaCdBqKUTZNEY3ypxmkzwwlL+juq4rnzeFxFduyR/yWZM6ALeTpyWO4VEfc7wkwA==",
+  "dgSpecHash": "SFqBpCVBncRys1tBZxi4BovH7DhxpZ1Y4pUTBkpPVdmPjxZo7rh52CWEfJDNu0nZPuwjB755jWIDIck9upgUJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Team ForEach\\DotNet_Commenti\\src\\FilmComments.Core\\FilmComments.Core.csproj",
+  "projectFilePath": "/Users/finster/Documents/Progetto Finale /Progetto_Finale_Team_For_Each/DotNet_Commenti/src/FilmComments.Core/FilmComments.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

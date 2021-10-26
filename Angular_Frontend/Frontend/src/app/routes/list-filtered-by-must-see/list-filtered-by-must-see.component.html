@@ -1,6 +1,7 @@
-<div class="container p-5" *ngIf= "!null">
-  <h1 class="text-center mb-5">The Net Fish</h1>
 
+<div class="container p-5" *ngIf= "!null">
+  <h1 class="text-center mb-5"> My next movies</h1>
+<!--
   <div class="text-right">
     <button type="button" style="font-size: 30px" class="btn btn-default" aria-label="Left Align" [routerLink]="['/add']">
       <span class="fas fa-plus" aria-hidden="true"></span>
@@ -19,30 +20,55 @@
     </button>
 
   </div>
-
+-->
+<div class="my-container">
+  <div class="list-container">
   <table class="table">
-    <thead class="thead-dark">
+    <thead class="testa">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">User Id</th>
-        <th scope="col">Movie Id</th>
-        <th scope="col">Seen</th>
-        <th scope="col">Must See</th>
-
+  <!--  <th scope="col">#</th>  -->
+        <th scope="col">Title</th>
+    <!--<th scope="col">User Id</th> -->
+        <th scope="col">Movie ID</th>
+  <!--  <th scope="col">Seen</th> -->
+  <!--  <th scope="col">Must See</th> -->
       </tr>
     </thead>
+
     <tbody>
       <tr class="pointer" *ngFor="let entry of movies | listFilteredByMustSee : userId ; let i = index" (click)="goToDetails(entry.id)">
-        <th scope="row">{{ entry.id }}</th>
-        <td>{{ entry.name }}</td>
-        <td>{{ entry.user_id }}</td>
+        <!--<th scope="row">{{ entry.id }}</th>-->
+        <td class="bold">{{ entry.name }}</td>
+  <!--  <td>{{ entry.user_id }}</td> -->
         <td>{{ entry.movie_id}}</td>
-        <td>{{ entry.seen}}</td>
-        <td>{{ entry.must_see}}</td>
-
+<!--    <td>{{ entry.seen}}</td>  -->
+   <!-- <td>{{ entry.must_see}}</td>  -->
       </tr>
     </tbody>
+
   </table>
 </div>
+</div>
+</div>
+
 <app-loading-page *ngIf="!movies"></app-loading-page>
+
+
+
+
+<!--
+
+<h3>Using NgIf with strings</h3>
+
+<div>
+  <input type="checkbox" name="rad2" [checked]="valueDue === 'Health'" (click)="valueDue = 'Health'"> Health
+  <input type="checkbox" name="rad3" [checked]="value === 'Trust'" (click)="value = 'Trust'"> Trust
+</div>
+
+<div *ngIf="valueDue === 'Health'">
+   <b>Health is checked.</b>
+</div>
+<div *ngIf="value === 'Trust'">
+   <b>Trust is checked.</b>
+</div>
+-->
