@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataService } from 'src/app/services/data.service';
-import { MovieData } from 'src/app/models/data.model';
 import { NgForm } from '@angular/forms';
+import { CommentsService } from '../../services/comments.service';
+import { CommentsInterface } from 'src/app/models/comments.model';
 
 @Component({
   selector: 'app-edit-comment',
@@ -11,48 +11,36 @@ import { NgForm } from '@angular/forms';
 })
 export class EditCommentComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private dataService: DataService, private router : Router) { }
+  constructor(private route: ActivatedRoute, private dataService: CommentsService, private router : Router) { }
 
-  dataEntry: MovieData;
-
-  genres = ['Horror','Adventure','Comedy','Fantasy','Crime','Romance'];
-  ratedOptions = ['yes', 'no'];
-  ratedOptionSelected: string;
+  dataEntry: CommentsInterface;
+  id: number;
 
   ngOnInit(): void {
-    const id = this.route.snapshot.params['id'];
-    this.fetchEntry(id);
+    this.id = this.route.snapshot.params['id'];
+    this.fetchEntry();
   }
 
-  fetchEntry(id){
-    this.dataService.getEntry(id).subscribe( (res: any ) => {
+  fetchEntry(){
+    this.dataService.getComment(this.id).subscribe( (res: any ) => {
       this.dataEntry = res;
-      
-      console.log(this.dataEntry)
-      if(this.dataEntry.rated){
-        this.ratedOptionSelected="yes";
-      }
-      else this.ratedOptionSelected="no"
+      console.log(this.dataEntry);
     })
     
   }
  
   onSubmit(){
     console.log(this.dataEntry);
-    if(this.ratedOptionSelected =='yes'){
-      this.dataEntry.rated=true;
-    }else{
-      this.dataEntry.rated=false;
-    }
+   
 
-    this.dataService.editEntry(this.dataEntry)
+    this.dataService.editComment(this.dataEntry)
     .subscribe(response => {
       console.log(response);
-      this.router.navigate(['/details', this.dataEntry.id])
+      this.router.navigate(['/my-account'])
     }), err => {
       console.log(err);
     }
-    this.router.navigate(['/details', this.dataEntry.id])
+    this.router.navigate(['/my-account'])
   }
 
 }
