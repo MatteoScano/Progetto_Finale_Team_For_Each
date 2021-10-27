@@ -1,6 +1,10 @@
-<body class="body-wrapper">
 
-  <div class="container d-flex justify-content-left">
+
+
+    <div class="main-container">
+      <div class="container-elements">
+        <div class="row">
+          <div class="col-sm">
     <div class="card">
         <div class="top-container"> <img src="https://i.imgur.com/G1pXs7D.jpg" class="img-fluid profile-image" width="70">
             <div class="ml-3">
@@ -36,12 +40,19 @@
 
         <div class="wishlist-new pt-2"> <span class="wishlist"> <i class="fas fa-check mr-2 opacity"></i><a href="#" [routerLink]="['/mustSeeList']">Movies to see</a></span> </div>
 
-        <div class="wishlist-new pt-2" (click)="goToUserComments()"> <a class="wishlist">My Comments</a> </div>
+        <!--<div class="wishlist-new pt-2" (click)="goToUserComments()"> <a class="wishlist">My Comments</a> </div>-->
 
         <button class="btn btn-dark mt-4"[routerLink]="['/moviesApi']">Back to Movies</button>
     </div>
   </div>
-  <app-comments-by-user class="container-comments"></app-comments-by-user>
+  <div class="col-sm comments-container">
+    <app-comments-by-user></app-comments-by-user>
+  </div>
+</div>
+</div>
+  </div>
+
+
   <!--
   <div class="container p-5">
   <table class="table mt-5">
@@ -69,4 +80,4 @@
 
   </div>
   -->
-  </body>
+

@@ -1,48 +1,48 @@
-body {
-  background-color: #eee;
-  padding-bottom: 5%;
-  display: flex;
-
-
-}
-.container {
-  display: flex;
+.container-elements {
+  max-width: auto;
+  padding-top: 20%;
   margin-left: 5%;
 
 }
 
-.container-comments {
-  margin-right: 30%;
-  margin-top: 8%;
+.main-container {
+  padding-bottom: 10%;
 
 }
-
 
 .card {
-  justify-content: space-around;
-  padding: 20px;
-  margin-top: 25%;
-  margin-bottom: 6%;
-  background-color: #f8f9fa;
-  width: 400px;
+z-index: 1;
+  max-width: 400px;
   height: 500px;
-  border-radius: 10px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /*padding: 2rem !important;*/
+  justify-content: space-around;
+
 }
 
+.comments-container {
+  max-width: 800px;
+  z-index: auto;
+  margin-left: -60%;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0,0, 0.19);
+  width: 800px;
+  box-sizing: border-box;
+  display: block;
 
+}
 
 .top-container {
   display: flex;
-  align-items: center
+  align-items: center;
 }
 
 .profile-image {
   border-radius: 50%;
   border: 2px solid #7d7e80;
 }
-
 
 .profile-image:hover {
   border-radius: 3px;
@@ -61,7 +61,6 @@ body {
   top: 8px
 }
 
-
 .mail {
   font-size: 14px;
   color: grey;
@@ -71,7 +70,8 @@ body {
 
 .middle-container {
   background-color: #eee;
-  border-radius: 12px
+  border-radius: 12px;
+  border: 4px solid red;
 }
 
 .middle-container:hover {
@@ -201,3 +201,10 @@ opacity: 0.8;
   transition: 0.2s;
 }
 
+@media all and (max-width: 500px) {
+.comments-container{
+  max-width:auto;
+  display: block;
+}
+
+}

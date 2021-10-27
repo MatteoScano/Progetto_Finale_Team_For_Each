@@ -1,12 +1,9 @@
 .testa{
-  width: 700px;
   border-radius: 5px;
   background-color: rgba(109, 95, 95, 0.363);
   border-radius: 5px;
   font-family: "DK Lemon Yellow Sun";
   font-size: 20px;
-
-
 }
 
 .table {
@@ -35,23 +32,17 @@ h1 {
 
 .list-container {
   background-color: rgba(109, 95, 95, 0.116);
-opacity: 0.9;
+  opacity: 0.9;
   border-radius: 5px;
 }
 
-.container {
-  max-width: 600px;
-
-  padding: 0;
-  border-radius: 30px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .p-r-c{
-  width: 100px;
+  width: 200px;
 }
 
 .far {
   padding-bottom: 2px;
   opacity: 0.8;
 }
+
+

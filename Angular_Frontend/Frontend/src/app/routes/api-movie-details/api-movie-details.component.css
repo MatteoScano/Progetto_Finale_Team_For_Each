@@ -2,11 +2,13 @@
   font-family: "DK Lemon Yellow Sun";
 }
 */
+
+
 .container1 {
   display: flex;
   flex-direction: column;
-
 }
+
 
 h1 {
   font-size: 50px;
@@ -288,3 +290,5 @@ font-family:"DK Lemon Yellow Sun";
 .fas{
   color:rgba(131, 128, 128, 0.22);
 }
+
+

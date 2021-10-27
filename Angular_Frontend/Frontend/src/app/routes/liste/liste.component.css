@@ -19,7 +19,7 @@
 }
 
 .p-5{
-  margin-bottom: 10%;
+  margin-bottom: 20%;
 }
 
 .my-container {
@@ -36,6 +36,8 @@ h1 {
 
 .list-container {
   background-color: rgba(109, 95, 95, 0.116);
-opacity: 0.9;
+  opacity: 0.9;
   border-radius: 5px;
 }
+
+
