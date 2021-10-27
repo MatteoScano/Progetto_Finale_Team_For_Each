@@ -13,7 +13,10 @@ export class MyAccountComponent implements OnInit {
 
   user : any;
   userId : number;
-  isAdmin=false;
+  isAdmin=false;  //verifica se l'utente è admin
+
+  userFoundById:any=[]; //contiene l'utente trovato tramite id
+
   constructor(private userService:LoginService, private router: Router) { }
 
   ngOnInit(): void {
@@ -37,6 +40,18 @@ export class MyAccountComponent implements OnInit {
     });
   }
 
+   //Cancella l'utente con l'id passato
+   deleteUserById(){
+    console.log("dato inserito:"+this.userId);
+  this.userService.deleteUser(this.userId,"admin","admin").subscribe(
+
+    (response : any) => {
+      this.userFoundById = response;
+        console.log("L'utente ha i seguenti dati:");  //test
+        console.log(this.userFoundById);
+    });
+  }
+//rimanda alla pagina commenti dell'utente
   goToUserComments(){
     let user = sessionStorage.getItem('username');
     this.router.navigate(['comments/user/'+ user]);
