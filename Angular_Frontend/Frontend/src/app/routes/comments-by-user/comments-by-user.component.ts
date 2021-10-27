@@ -8,12 +8,12 @@ import { MovieCommentInterface } from '../../models/movieComment';
 import { MovieApiInterface, ResultInterface } from '../../models/apiMovie.model';
 import { MoviesApiService } from '../../services/moviesapi.service';
 
-
 @Component({
   selector: 'app-comments-by-user',
   templateUrl: './comments-by-user.component.html',
   styleUrls: ['./comments-by-user.component.css']
 })
+
 export class CommentsByUserComponent implements OnInit, AfterContentChecked {
 
   comments: CommentsInterface[];
@@ -32,21 +32,7 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
     this.getUserIdByUsername();
   }
 
-  /*
-  GetCurrentUserInformation(): Promise<any>{
-    return this.loginService.GetCurrentUserData().toPromise()
-  }
-  async ngAfterViewInit() {    
-    this.responseData = await this.GetCurrentUserInformation();
-    if (this.responseData.code != responseCodes.success) {
-        this.googleInit();
-    }
-  }
-  */
-
   ngAfterContentChecked(): void {
-    //Called after every check of the component's or directive's content.
-    //Add 'implements AfterContentChecked' to the class.
     if (this.userId !== undefined && this.changeDetected === false) {
       this.changeDetected = true;
       this.getUserComments();
@@ -74,7 +60,8 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
           let movieComment : MovieCommentInterface = {
               title:"title", 
               comment:"comment",
-              movieId: this.comments[i].movieId
+              movieId: this.comments[i].movieId,
+              commentId: this.comments[i].id
           };
           this.movieService.getMovieById(this.comments[i].movieId).subscribe((res: any) => {
             this.movie = res;
@@ -93,12 +80,11 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
   deleteCommentButton(id) {
     this.commentService.deleteComment(id)
       .subscribe(data => {
-
       }, (err) => {
         console.log(err);
-
       });
   }
+  
   goToDetails(id) {
     this.router.navigateByUrl('/movieApiDetails/' + id);
   }
