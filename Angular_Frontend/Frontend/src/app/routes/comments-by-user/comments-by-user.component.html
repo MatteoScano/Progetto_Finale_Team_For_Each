@@ -11,13 +11,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer" *ngFor="let entry of comments" (click)="goToDetails(entry.movieId)">
+        <tr class="pointer" *ngFor="let entry of movieComments" (click)="goToDetails(entry.movieId)">
           <!-- trovare modo per trasformare gli id in titoli di film e nomi utenti,
           collegamento tra chiavi database?
           oppure scaricare tutti i database e trasformare i dati in component.ts? -->
           <!--<td>{{entry.id}}</td> -->
-          <td class="bold">{{entry.movieId}}</td>
-          <td>{{entry.body}}</td>
+          <td class="bold">{{entry.title}}</td>
+          <td>{{entry.comment}}</td>
           <td><button type="button" class="btn" (click)="deleteCommentButton(entry.id)" (click)="reloadPage()">
             <span class="far fa-trash-alt"></span>
           </button><td>

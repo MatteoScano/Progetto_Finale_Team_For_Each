@@ -4,6 +4,10 @@ import { CommentsInterface } from 'src/app/models/comments.model';
 import { CommentsService } from 'src/app/services/comments.service';
 import { LoginService } from '../../services/login/login.service';
 import { UserDataInterface } from './../../models/user.model';
+import { MovieCommentInterface } from '../../models/movieComment';
+import { MovieApiInterface, ResultInterface } from '../../models/apiMovie.model';
+import { MoviesApiService } from '../../services/moviesapi.service';
+
 
 @Component({
   selector: 'app-comments-by-user',
@@ -12,17 +16,33 @@ import { UserDataInterface } from './../../models/user.model';
 })
 export class CommentsByUserComponent implements OnInit, AfterContentChecked {
 
-  comments: CommentsInterface;
+  comments: CommentsInterface[];
+  movies: MovieApiInterface[];
+  movie: ResultInterface;
+  movieComments : MovieCommentInterface[] = [];
   username: string = sessionStorage.getItem('username');
   userId: number;
   user: any;
   changeDetected: boolean = false;
 
-  constructor(private commentService: CommentsService, private userService: LoginService, private router: Router) { }
+  constructor(private commentService: CommentsService, private userService: LoginService, 
+    private router: Router, private movieService: MoviesApiService) { }
 
   ngOnInit(): void {
     this.getUserIdByUsername();
   }
+
+  /*
+  GetCurrentUserInformation(): Promise<any>{
+    return this.loginService.GetCurrentUserData().toPromise()
+  }
+  async ngAfterViewInit() {    
+    this.responseData = await this.GetCurrentUserInformation();
+    if (this.responseData.code != responseCodes.success) {
+        this.googleInit();
+    }
+  }
+  */
 
   ngAfterContentChecked(): void {
     //Called after every check of the component's or directive's content.
@@ -30,6 +50,7 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
     if (this.userId !== undefined && this.changeDetected === false) {
       this.changeDetected = true;
       this.getUserComments();
+      console.log("ho ottenuto i dati:", this.comments);
     }
   }
 
@@ -38,8 +59,7 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
       (response: any) => {
         this.user = response;
         this.userId = this.user.id;
-        console.log("L'utente ha il seguente Id:");
-        console.log(this.userId);
+        console.log("L'utente ha il seguente Id:", this.userId);
       });
   }
 
@@ -47,8 +67,23 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
     this.commentService.getUserComments(this.userId).subscribe(
       response => {
         this.comments = response;
-        console.log("ho ottenuto i dati:");
-        console.log(this.comments);
+        console.log("ho ottenuto i commenti:", this.comments);
+        
+        
+        for (let i=0; i<this.comments.length; i++){
+          let movieComment : MovieCommentInterface = {
+              title:"Tom", 
+              comment:"Hanks"
+          };
+          this.movieService.getMovieById(this.comments[i].movieId).subscribe((res: any) => {
+            this.movie = res;
+            console.log('titolo film:', this.movie.title);
+            movieComment.title = this.movie.title;
+          });
+          movieComment.comment = this.comments[i].body;
+          this.movieComments.push(movieComment);
+        }
+        console.log("movie comments:", this.movieComments);
       },
       error => console.log(error)
     )
