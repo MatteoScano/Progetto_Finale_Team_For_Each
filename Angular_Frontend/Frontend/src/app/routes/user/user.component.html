@@ -1,22 +1,22 @@
 <div class="container p-5" *ngIf="usernameIsAdmin=='admin'">
 
   <h1 class="text-center margin-top">
-    Users Management
+    <i class="fas fa-user-cog mr-3"></i> <br>Users Management
   </h1>
 
 <form #form="ngForm">
   <div class="form-group">
-    <label for="username">By Username</label>
+    <label for="username"> <i class="fas fa-spell-check mr-1"></i> By Username</label>
     <input type="text" method="GET" required ngModel class="form-control" name="username" id="username" placeholder="Username">
 
-    <button type="submit" class="btn btn-dark mb-4 mt-2" (click)=" getUserByUsername(form)">Search By Username</button>
+    <button type="submit" class="btn btn-dark mb-4 mt-2" (click)=" getUserByUsername(form)">Search</button>
 
     <br>
 
-    <label for="id">By Id</label>
+    <label for="id"> <i class="far fa-id-card mr-1"></i> By Id</label>
     <input type="number" method="GET" required ngModel class="form-control" name="userId" id="userId" placeholder="User Id">
 
-    <button type="submit" class="btn btn-dark mb-4 mt-2" (click)="getUserById(form)">Search by ID</button>
+    <button type="submit" class="btn btn-dark mb-4 mt-2" (click)="getUserById(form)">Search</button>
   </div>
   <h5 class="text-left mb-2">
     User Details

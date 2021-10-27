@@ -10,14 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class MyAccountComponent implements OnInit {
 
   username : string = sessionStorage.getItem('username');
+
   user : any;
   userId : number;
+  isAdmin=false;
   constructor(private userService:LoginService, private router: Router) { }
 
   ngOnInit(): void {
     this.getUserIdByUsername();
+    this.getUserAdmin(this.username);
   }
-
+   //Metodo che aggiorna la pagina
+   reloadPage() {
+    window.location.reload();
+  }
+//prende lo userId con lo username
   getUserIdByUsername(){
     this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
     (response : any) => {
@@ -33,5 +40,17 @@ export class MyAccountComponent implements OnInit {
   goToUserComments(){
     let user = sessionStorage.getItem('username');
     this.router.navigate(['comments/user/'+ user]);
+  }
+
+  //verifica se lo user della sessione è admin
+  getUserAdmin(user:string){
+    if(user=="admin" || user=="Admin"){
+      this.isAdmin=true;
+    }
+    console.log("isNotadmin: ", this.isAdmin);
+  }
+  //Rotta alla pagina per la gestione degli utenti
+  goToUsersManagement(){
+    this.router.navigate(['/users']);
   }
 }
