@@ -1,12 +1,14 @@
 .container-elements {
   max-width: auto;
-  padding-top: 20%;
+  padding-top: 10%;
   margin-left: 5%;
 
 }
 
 .main-container {
+
   padding-bottom: 10%;
+
 
 }
 
@@ -71,7 +73,7 @@ z-index: 1;
 .middle-container {
   background-color: #eee;
   border-radius: 12px;
-  border: 4px solid red;
+
 }
 
 .middle-container:hover {
@@ -198,12 +200,12 @@ opacity: 0.8;
 }
 .opacity:hover{
   opacity: 1;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 @media (max-width: 900px) {
   .card{
-    margin-top: 15%;
+    margin-top: 30%;
     margin-left: 5%;
     transition: 0.2s;
   }
