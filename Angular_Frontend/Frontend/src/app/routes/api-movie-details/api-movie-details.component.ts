@@ -58,6 +58,7 @@ export class ApiMovieDetailsComponent implements OnInit {
   dataEntry: CommentsInterface;
   comments: CommentsInterface[];
   movies: MovieData[];
+  casa: number;
 
   //LISTA VISTO/DA VEDERE
   movieFilm = <MovieData>{};
@@ -321,6 +322,17 @@ export class ApiMovieDetailsComponent implements OnInit {
   exit() {
     window.location.reload();
   }
+
+  delete(){
+    for(let i=0; i<this.movies.length; i++ ){
+       if(this.movies[i].movie_id ==this.id){
+          this.casa=this.movies[i].id; console.log("ID DEL FILM ", this.casa)}};
+           this.dataService.deleteEntry(this.casa).subscribe(data => {
+              console.log("prova",this.casa); this.router.navigate(['/userList']); },
+              (err) =>
+              {
+                console.log(err);
+              }); }
 
 
 }
