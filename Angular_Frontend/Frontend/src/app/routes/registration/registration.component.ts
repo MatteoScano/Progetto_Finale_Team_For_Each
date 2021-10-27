@@ -32,12 +32,23 @@ export class RegistrationComponent implements OnInit {
    //ccontrollo spunta termini e condizioni
    terms:string;
    termsOk=true;
+   isChecked=false;
 
   constructor(private registrationService : RegistrationService, private router:Router, private userService: LoginService) { }
 
   ngOnInit(): void {
   }
-
+  //metodo di verifica click checkbox termini e condizioni
+  click(ev){
+    console.log(ev.target.defaultValue);
+    if(ev.target.defaultValue == "b"){
+      this.isChecked=true;
+      console.log("Is Checked: ", this.isChecked)
+    }
+    else{
+      console.log("non è entrato nell'IF")
+    }
+ }
   //verifica se le password inserite dall'utente sono uguali
   checkPassword(form : NgForm):boolean{
     this.password=form.form.value.password;
@@ -94,22 +105,15 @@ export class RegistrationComponent implements OnInit {
   createUser(form : NgForm): void {
     let passMatched = this.checkPassword(form);
     let emailChecked = this.checkEmail(form);
-
     this.username = form.form.value.username;
-    this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
-    (response : any) => {
-      this.userFound = response;
-        console.log("USER FOUND");  //test
-        console.log(this.userFound);
-    });
 
-   if(emailChecked){
+  if(this.isChecked){ //se i termini e le condizioni sono spuntate(accettate)
 
-     if(this.username!= "admin" && this.username!= "Admin"){
+   if(emailChecked){  //se l'email è controllata
 
-       if(this.userFound==null){
+     if(this.username!= "admin" && this.username!= "Admin"){    //se lo username è controllato
 
-        if(passMatched){
+        if(passMatched){  //se le password inserite corrispondono
 
           this.newUser = form.form.value;
           this.newUser.enabled=1;
@@ -127,26 +131,29 @@ export class RegistrationComponent implements OnInit {
           this.emailOk=true;
           this.passwordOk=false;
           this.usernameOk=true;
-          this.usernameExist=true;
+          this.termsOk=true;
           console.log("password errata, Riprova");
         }
 
-      }else{  //username gia in uso
-        this.emailOk=true;
-        this.usernameExist=false
-        console.log("Username gia' in uso. Riprova!")
-      }
 
     }else{  //username admin
       this.emailOk=true;
+      this.termsOk=true;
       this.usernameOk=false;
       console.log("lo username non puo contenere il termine 'admin'")
     }
    }
    else{
+    this.termsOk=true;
     this.emailOk=false;
     console.log("Email Errata, Riprova!");
    }
+
+}else{
+    this.termsOk=false;
+
+    console.log("Devi accettare i termini e le condizioni");
+    }
 }
 
 
