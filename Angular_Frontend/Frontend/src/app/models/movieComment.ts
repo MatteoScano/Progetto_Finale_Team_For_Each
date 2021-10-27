@@ -1,4 +1,5 @@
 export interface MovieCommentInterface{
     title: string,
-    comment: string
+    comment: string,
+    movieId: number
   }

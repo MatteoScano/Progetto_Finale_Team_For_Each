@@ -72,8 +72,9 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
         
         for (let i=0; i<this.comments.length; i++){
           let movieComment : MovieCommentInterface = {
-              title:"Tom", 
-              comment:"Hanks"
+              title:"title", 
+              comment:"comment",
+              movieId: this.comments[i].movieId
           };
           this.movieService.getMovieById(this.comments[i].movieId).subscribe((res: any) => {
             this.movie = res;
