@@ -14,10 +14,10 @@
           <td class="bold">{{entry.title}}</td>
           <td>{{entry.comment}}</td>
 
-          <td><button class="btn" [routerLink]="['/editComment/'+ entry.id]">
+          <td><button class="btn" [routerLink]="['/editComment/'+ entry.commentId]">
             <span class="fas fa-edit ml-4"></span>
           </button></td>
-          <td><button type="button" class="btn" (click)="deleteCommentButton(entry.id)" (click)="reloadPage()">
+          <td><button type="button" class="btn" (click)="deleteCommentButton(entry.commentId)" (click)="reloadPage()">
             <span class="far fa-trash-alt"></span>
           </button><td>
         </tr>
