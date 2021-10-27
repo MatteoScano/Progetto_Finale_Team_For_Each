@@ -13,10 +13,13 @@
         <tr class="pointer" *ngFor="let entry of movieComments" (click)="goToDetails(entry.movieId)">
           <td class="bold">{{entry.title}}</td>
           <td>{{entry.comment}}</td>
-          <td><button type="button" class="btn" (click)="deleteCommentButton(entry.commentId)" (click)="reloadPage()">
+
+          <td><button class="btn" [routerLink]="['/editComment/'+ entry.id]">
+            <span class="fas fa-edit ml-4"></span>
+          </button></td>
+          <td><button type="button" class="btn" (click)="deleteCommentButton(entry.id)" (click)="reloadPage()">
             <span class="far fa-trash-alt"></span>
-          </button><td>  
-          <td><button class="btn btn-primary ml-3" [routerLink]="['/editComment/'+ entry.commentId]">Edit</button></td>
+          </button><td>
         </tr>
       </tbody>
     </table>
