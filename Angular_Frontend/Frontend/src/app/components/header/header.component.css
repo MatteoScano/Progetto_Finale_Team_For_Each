@@ -62,11 +62,11 @@ header {
 ul {
   width: 100%;
   box-sizing: border-box;
-
 }
 
 
-@media (max-width: 400px) {
+
+@media (max-width: 900px) {
   nav ul {
     position: fixed;
     top: 80px;
@@ -77,12 +77,13 @@ ul {
     display: block;
     text-align: center;
 
+
+
   }
 
 
   nav ul li {
-    margin: 40px 0;
-
+    margin: 60px 0;
   }
 
   nav ul li a {
@@ -94,5 +95,24 @@ ul {
   nav ul li a:active {
     color: rgb(132, 148, 148);
     background: none;
+  }
+
+  .bg-dark {
+    height: 120px;
+    transition: 0.2s;
+  }
+
+  #logo {
+    margin-left: 35%;
+    transition: 0.2s;
+
+
+  }
+
+  #menuDX{
+    padding-top: 40px;
+    padding-right: 11%;
+    justify-content: space-between;
+
   }
 }

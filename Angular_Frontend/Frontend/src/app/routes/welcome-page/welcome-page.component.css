@@ -32,3 +32,9 @@
   a{
     color: black;
   }
+
+  @media (max-width: 900px) {
+    p {
+      margin-top: 15%;
+    }
+  }

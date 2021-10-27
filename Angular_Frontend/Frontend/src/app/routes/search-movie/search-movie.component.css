@@ -108,3 +108,16 @@ body {
 }
 
 
+@media (max-width: 900px) {
+  label {
+    margin-left: 22%;
+  }
+
+  input {
+    max-width:300px;
+    margin-left:10%;
+  }
+  .btn {
+    margin-right: 10%;
+  }
+}

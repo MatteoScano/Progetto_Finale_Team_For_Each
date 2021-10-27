@@ -292,3 +292,24 @@ font-family:"DK Lemon Yellow Sun";
 }
 
 
+@media (max-width: 900px) {
+  .poppins {
+    font-size: 16px;
+    transition: .3s;
+  }
+
+  .container1{
+    margin-right: 5%;
+    transition: .3s;
+  }
+
+  .form-groupList {
+    transition: .3s;
+    max-width: 50%;
+  }
+
+  .container-AllComments {
+    transition: .3s;
+    margin-bottom: 20%;
+  }
+  }

@@ -5,11 +5,9 @@
   border-radius: 5px;
   font-family: "DK Lemon Yellow Sun";
   font-size: 25px;
-
 }
 
 .table {
-
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   border-radius: 5px;
@@ -24,6 +22,7 @@
 
 .my-container {
   margin-top: 5%;
+
 }
 
 h1 {
@@ -41,3 +40,10 @@ h1 {
 }
 
 
+@media (max-width: 900px) {
+  h1 {
+    margin-top: 25%;
+    transition: .2s;
+  }
+
+}
