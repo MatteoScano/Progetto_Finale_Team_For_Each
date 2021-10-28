@@ -45,15 +45,17 @@
         <div class="wishlist-new pt-2" (click)="goToUsersManagement()" *ngIf="isAdmin==true"> <i class="fas fa-user-cog mr-2"></i> <a class="wishlist">Go to Users Management </a> </div>
 
         <button type="button" class="btn mr-2" (click)="goToDelete()">Delete your Account</button>
-
+<div class="alert-cntnr">
         <div class="alert alert-danger mt-1" role="alert" *ngIf="deleteAccountYes==true">
-          Attention! Your account will be permanently deleted, Do you want to continue?
+          Attention! Your account will be permanently deleted. <br>Do you want to continue?
           <br>
-          <button type="button" class="btn-outline-danger mr-3"(click)="deleteUserById()" [routerLink]="['/logout']">Yes</button>
-          <button type="button" class="btn-outline-primary"(click)="reloadPage()">No</button>
+          <div class="btn-cntr">
+          <button type="button" class="btn-outline-danger mr-3"(click)="deleteUserById()" [routerLink]="['/logout']">YES</button>
+          <button type="button" class="btn-outline-primary"(click)="reloadPage()">NO</button>
         </div>
-
+        </div>
       </div>
+    </div>
   </div>
   <div class="col-sm comments-container">
     <app-comments-by-user></app-comments-by-user>

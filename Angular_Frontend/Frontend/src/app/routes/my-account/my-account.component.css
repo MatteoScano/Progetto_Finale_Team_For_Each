@@ -169,6 +169,7 @@ z-index: 1;
   border: none;
   padding: 11px;
 
+
 }
 
 .btn:hover {
@@ -204,6 +205,31 @@ opacity: 0.8;
   transition: 0.3s;
 }
 
+
+.alert {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  max-width: 350px;
+  transition: .3s;
+}
+
+.btn-cntr {
+  margin-left: 30%;
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+
+}
+.btn-outline-danger {
+  border-radius:3px;
+}
+
+.btn-outline-primary {
+  border-radius:3px;
+}
+
+
+
+
 @media (max-width: 900px) {
   .card{
     margin-top: 30%;
@@ -216,8 +242,9 @@ opacity: 0.8;
     margin-top: 5%;
     transition: 0.2s;
   }
-
-
+.alert {
+  margin-top: 5%;
+}
 
 }
 
