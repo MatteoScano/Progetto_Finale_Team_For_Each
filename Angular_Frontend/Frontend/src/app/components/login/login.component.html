@@ -24,39 +24,25 @@
 
     <!-- Login Form -->
     <form>
-      <input
-        type="text"
-        id="username"
-        required
-        [(ngModel)]="usernameInput"
-        class="fadeIn second"
-        name="login"
-        placeholder="Username"
-      />
-      <input
-        type="password"
-        id="password"
-        required
-        [(ngModel)]="passwordInput"
-        class="fadeIn third"
-        name="login"
-        placeholder="Password"
-      />
-      <input
-        type="submit"
-        (click)="submitButton()"
-        class="fadeIn fourth"
-        value="Login"
-      />
+      <input type="text" id="username" required [(ngModel)]="usernameInput" class="fadeIn second" name="login" placeholder="Username"/>
+      <input type="password" id="password" required [(ngModel)]="passwordInput" class="fadeIn third" name="login" placeholder="Password"/>
+
+      <div class="alert alert-danger mt-1 mb-1 p-2 wrong" role="alert" *ngIf="passwordErrata==true">
+        Wrong Password!
+      </div>
+
+      <input type="submit" (click)="submitButton()" class="fadeIn fourth" value="Login"/>
+
     </form>
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#" [routerLink]="['/registration']"
-        >first time on NetFish?</a
-      ><br />
+      <a class="underlineHover" href="#" [routerLink]="['/registration']">
+        first time on NetFish?
+      </a><br />
       <button class="btn btn-success mt-2" [routerLink]="['/registration']">
         Sign Up
       </button>
+
     </div>
   </div>
 </div>

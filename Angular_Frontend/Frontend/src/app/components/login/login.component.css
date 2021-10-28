@@ -289,3 +289,8 @@ input[type=text]:placeholder {
     margin-top:15%;
   }
 }
+.wrong{
+  max-width: 200px;
+  align-items: center;
+}
+

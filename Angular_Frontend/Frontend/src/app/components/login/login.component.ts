@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
   passwordInput: string;
   //variabile per il logged in
   invalidLogin = false;
+  //variabile per l'alert password errata
+  passwordErrata=false;
 
   userFound: UserDataInterface;
 
@@ -32,14 +34,13 @@ submitButton(){
         this.userFound = data;
 
         if(this.passwordInput===this.userFound.password){
-
             sessionStorage.setItem('username',this.usernameInput);
             this.invalidLogin = false;
             this.router.navigate(['/moviesApi']);
-
         }
         else{
             console.log("Autenticazione fallita");  //test
+            this.passwordErrata=true;
         }
       },
       error => console.log(error)
