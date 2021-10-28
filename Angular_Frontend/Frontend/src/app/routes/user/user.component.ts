@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { UserDataInterface } from './../../models/user.model';
 import { LoginService } from './../../services/login/login.service';
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-user',
@@ -33,7 +34,7 @@ export class UserComponent implements OnInit {
   visualizzaBottoniUsername=false;
   visualizzaBottoniId=false;
 
-  constructor( private userService : LoginService, private router : Router) { }
+  constructor( private userService : LoginService, private router : Router, private dataService: DataService) { }
 
   ngOnInit() : void{
     this.getUsersList();  //Preleva in la lista degli utenti dal database
@@ -129,6 +130,18 @@ export class UserComponent implements OnInit {
     }
   }
 
+  delete(id){
+    this.userService.deleteUser(id,"admin","admin").subscribe(data => {
+            console.log("prova",id);
+            this.router.navigate(['/userList']); },
+            (err) =>
+            {
+              console.log(err);
+            });
+          }
 
+   exit() {
+     window.location.reload();
+    }
 }
 

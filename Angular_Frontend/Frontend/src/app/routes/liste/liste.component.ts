@@ -16,6 +16,7 @@ export class ListeComponent implements OnInit {
   username : string = sessionStorage.getItem('username');
   userId : number;
   user : any
+  casa: number;
 
   constructor(private dataService: DataService, private router : Router, private userService: LoginService) { }
 
@@ -38,6 +39,7 @@ export class ListeComponent implements OnInit {
 
   goToDetails(id){
     this.router.navigateByUrl('/movieApiDetails/' + id);
+    console.log("L'utente ha", id);
   }
 
   getUserIdByUsername(){
@@ -51,5 +53,20 @@ export class ListeComponent implements OnInit {
   }
 
 
+  delete(id){
+      this.dataService.deleteEntry(id).subscribe(data => {
+              console.log("prova",id);
+              this.router.navigate(['/userList']); },
+              (err) =>
+              {
+                console.log(err);
+              });
+            }
+
+
+ exit()
+ {
+     window.location.reload();
+ }
 
 }

@@ -149,6 +149,10 @@
           <td>{{ entry.username }}</td>
           <td>{{ entry.password }}</td>
           <td>{{ entry.email }}</td>
+
+        <button style="font-size: 30px" type="submit" class="btn btn-default " (click)="delete(entry.id); exit()">
+          <span class="fas fa-plus" aria-hidden="true">DELETE</span>
+         </button>
         </tr>
       </tbody>
     </table>

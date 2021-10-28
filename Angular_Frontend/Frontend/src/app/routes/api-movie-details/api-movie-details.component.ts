@@ -81,7 +81,7 @@ export class ApiMovieDetailsComponent implements OnInit {
     this.getMovies();
   }
 
-  // FUNZIONI
+  // Funzione che prende il campo scelto nel form Film da vedere e lo aggiunge al database The Net Fish
   onSeen(form: NgForm) {
     this.movieFilm = form.form.value;
 
@@ -94,8 +94,7 @@ export class ApiMovieDetailsComponent implements OnInit {
       this.movieFilm.seen=true;
       this.movieFilm.must_see=false
 
-    };
-    if (form.form.value.seen === 'my Must See movies') {
+    } else if (form.form.value.seen === 'my Must See movies') {
       this.movieFilm.must_see = true;
       this.movieFilm.seen = false;
     };
@@ -104,16 +103,10 @@ export class ApiMovieDetailsComponent implements OnInit {
     for(let i=0; i<this.movies.length; i++ ){
       if(this.movies[i].movie_id ==this.id){
         console.log("INIZIA IL FOR");
-
         this.flag=true;
         this.movieFilm.id=this.movies[i].id
         this.movieFilm.name=this.movies[i].name;
-        console.log("this.flag ciclo for ",this.flag);
-        console.log("this.id ",this.id)
-        console.log("this.movieFilm.id casa ",this.movieFilm.id)
-        console.log("this.movieFilm.id 1 ",this.movies[i].id)
-        console.log("this.movies[i].movie_id ",this.movies[i].movie_id)
-        console.log("break");
+        console.log("this.movieFilm.id  ",this.movieFilm.id)
         console.log("FINISCE IL FOR");
 
         break;
@@ -123,24 +116,15 @@ export class ApiMovieDetailsComponent implements OnInit {
       }
     };
 
-
-    console.log("this.flag before if",this.flag);
-    if(this.flag==true){
-      console.log("INIZIA LA EDIT");
-      console.log("this.flag after if",this.flag);
-      console.log("this.movieFilm.id after if",this.movieFilm);
-      console.log("this.movieFilm.id after if ",this.movieFilm.id);
-
-
-
-      this.dataService.editEntry(this.movieFilm).subscribe(response => {
+    //costrutto che permette di fare la Add o la PUT a seconda se il film è già presente nel BD o meno
+     if(this.flag==true){
+        this.dataService.editEntry(this.movieFilm).subscribe(response => {
       },
         (err) => {
           console.log("mah");
         }
       )
          console.log("FINISCE LA EDIT");
-
     }
 
     else
@@ -149,19 +133,33 @@ export class ApiMovieDetailsComponent implements OnInit {
 
          this.dataService.addEntry(this.movieFilm).subscribe(response => {
         },
-
            (err) => {
           console.log("mah2");
         }
         )
-        console.log("this.movieFilm.id addEntry",this.movieFilm)
-        console.log("this.movieFilm.id addEntry ",this.movieFilm.id);
         this.flag==true;
         console.log("FINISCE LA ADD");
-
    }
+  }
 
 
+
+
+  onSubmitRating(form: NgForm) {
+    form.form.value.movie_id = this.movieDetailsEntry.id,
+      form.form.value.user_id = this.user.id
+    //form.form.value.currentRating = parseInt(form.form.value.currentRating);
+    form.form.value.movie_rating = parseInt(form.form.value.movie_rating);
+    this.ratingSubmit = form.form.value;
+    console.log("RISULTATI RATING", this.ratingSubmit);
+    this.movieRatingService.addMovieRating(this.ratingSubmit).subscribe(response => {
+
+    },
+      (err) => {
+        //fai qualcosa
+        console.log(err)
+      }
+    )
   }
 
 
@@ -260,22 +258,7 @@ export class ApiMovieDetailsComponent implements OnInit {
   }
 */
 
-  onSubmitRating(form: NgForm) {
-    form.form.value.movie_id = this.movieDetailsEntry.id,
-      form.form.value.user_id = this.user.id
-    //form.form.value.currentRating = parseInt(form.form.value.currentRating);
-    form.form.value.movie_rating = parseInt(form.form.value.movie_rating);
-    this.ratingSubmit = form.form.value;
-    console.log("RISULTATI RATING", this.ratingSubmit);
-    this.movieRatingService.addMovieRating(this.ratingSubmit).subscribe(response => {
 
-    },
-      (err) => {
-        //fai qualcosa
-        console.log(err)
-      }
-    )
-  }
   //-----------------------COMMENTS--------------------------//
   getEntries() {
     this.commentsService.getComments().subscribe(
@@ -332,7 +315,8 @@ export class ApiMovieDetailsComponent implements OnInit {
               (err) =>
               {
                 console.log(err);
-              }); }
+              });
+            }
 
 
 }
