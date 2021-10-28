@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer" *ngFor="let entry of movieComments" (click)="goToDetails(entry.movieId)">
+        <tr class="pointer cursor" *ngFor="let entry of movieComments" (click)="goToDetails(entry.movieId)">
           <td class="bold">{{entry.title}}</td>
           <td>{{entry.comment}}</td>
 

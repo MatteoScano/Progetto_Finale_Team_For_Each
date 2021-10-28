@@ -11,7 +11,7 @@ import { CommentsInterface } from 'src/app/models/comments.model';
 })
 export class EditCommentComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private dataService: CommentsService, private router : Router) { }
+  constructor(private route: ActivatedRoute, private dataService: CommentsService, private router: Router) { }
 
   dataEntry: CommentsInterface;
   id: number;
@@ -21,26 +21,28 @@ export class EditCommentComponent implements OnInit {
     this.fetchEntry();
   }
 
-  fetchEntry(){
-    this.dataService.getComment(this.id).subscribe( (res: any ) => {
+  fetchEntry() {
+    this.dataService.getComment(this.id).subscribe((res: any) => {
       this.dataEntry = res;
       console.log(this.dataEntry);
     })
-    
+
   }
- 
-  onSubmit(){
+
+  onSubmit() {
     console.log(this.dataEntry);
-   
+
 
     this.dataService.editComment(this.dataEntry)
-    .subscribe(response => {
-      console.log(response);
-      this.router.navigate(['/my-account'])
-    }), err => {
-      console.log(err);
-    }
+      .subscribe(response => {
+        console.log(response);
+        this.router.navigate(['/my-account'])
+      }), err => {
+        console.log(err);
+      }
     this.router.navigate(['/my-account'])
   }
+
+
 
 }

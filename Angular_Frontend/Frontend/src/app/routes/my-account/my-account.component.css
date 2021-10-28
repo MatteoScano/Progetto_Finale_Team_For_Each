@@ -165,9 +165,10 @@ z-index: 1;
 
 .btn {
   font-family: "DK Lemon Yellow Sun";
-  background-color: #b1afaf;
+  background-color: #c57d7d;
   border: none;
   padding: 11px;
+
 }
 
 .btn:hover {
