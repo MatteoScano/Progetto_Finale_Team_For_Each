@@ -17,6 +17,8 @@ export class MyAccountComponent implements OnInit {
 
   userFoundById:any=[]; //contiene l'utente trovato tramite id
 
+  deleteAccountYes=false;
+
   constructor(private userService:LoginService, private router: Router) { }
 
   ngOnInit(): void {
@@ -67,5 +69,9 @@ export class MyAccountComponent implements OnInit {
   //Rotta alla pagina per la gestione degli utenti
   goToUsersManagement(){
     this.router.navigate(['/users']);
+  }
+
+  goToDelete(){
+    this.deleteAccountYes=true;
   }
 }
