@@ -233,12 +233,12 @@ opacity: 0.8;
 @media (max-width: 900px) {
   .card{
     margin-top: 30%;
-    margin-left: 5%;
+    margin-left: 7%;
     transition: 0.2s;
   }
   .comments-container {
     max-width: 400px;
-    margin-left: 8%;
+    margin-left: 10%;
     margin-top: 5%;
     transition: 0.2s;
   }

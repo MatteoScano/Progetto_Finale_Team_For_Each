@@ -2,6 +2,7 @@
   background-color: rgba(109, 95, 95, 0.363);
   font-family: "DK Lemon Yellow Sun";
   font-size: 20px;
+  width: 670px;
   border-radius: 5px;
 }
 
@@ -9,34 +10,37 @@
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   border-radius: 5px;
+
 }
 .bold {
   font-weight: 400;
   opacity: 0.8;
 }
 
-.p-5{
-  margin-bottom: 10%;
-}
-
 .my-container {
   margin-top: 5%;
+  background-color: #f8f9fa;
+  border: 4px solid green;
 }
 
 h1 {
-  margin-top: 10%;
+  margin-top: 2%;
   font-family: "DK Lemon Yellow Sun";
   font-weight: 600;
+  margin-left: 35%;
+  margin-bottom: 5%;
 }
 
 .list-container {
   background-color: rgba(109, 95, 95, 0.116);
   opacity: 0.9;
   border-radius: 5px;
+  background-color: #f8f9fa;
 }
 
 .p-r-c{
-  width: 200px;
+  width: 220px;
+
 }
 
 .far {
@@ -44,7 +48,24 @@ h1 {
   opacity: 0.8;
 }
 
-
 .cursor {
   cursor: pointer;
+}
+
+.media-resizer{
+
+}
+
+@media (max-width: 900px) {
+.media-resizer {
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-trash-alt {
+  padding-left: 20px;
+  transition: .3s;
+}
+
+
 }
