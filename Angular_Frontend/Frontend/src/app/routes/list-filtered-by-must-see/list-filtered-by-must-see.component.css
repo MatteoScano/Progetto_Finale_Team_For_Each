@@ -40,6 +40,14 @@ opacity: 0.9;
   border-radius: 5px;
 }
 
+.fa-trash-alt{
+  opacity: .8;
+}
+
+.fa-trash-alt:hover{
+  opacity: 1;
+  transition: .2s;
+}
 
 @media (max-width: 900px) {
   h1 {

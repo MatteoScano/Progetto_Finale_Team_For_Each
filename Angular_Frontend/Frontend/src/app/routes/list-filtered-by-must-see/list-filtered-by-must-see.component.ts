@@ -14,41 +14,54 @@ import { NgForm } from '@angular/forms';
 })
 export class ListFilteredByMustSeeComponent implements OnInit {
 
-  username : string = sessionStorage.getItem('username');
-  userId : number;
-  user : any
+  username: string = sessionStorage.getItem('username');
+  userId: number;
+  user: any
 
-  constructor(private dataService  : DataService, private router : Router, private userService: LoginService) { }
+  constructor(private dataService: DataService, private router: Router, private userService: LoginService) { }
 
   ngOnInit(): void {
-      this.getEntries();
-      this.getUserIdByUsername()
+    this.getEntries();
+    this.getUserIdByUsername()
   }
 
   public movies: MovieData[];
-  moviesDataLoader=false;
+  moviesDataLoader = false;
 
-  getEntries(){
-    this.dataService.getData().subscribe( (response : any) => {
+  getEntries() {
+    this.dataService.getData().subscribe((response: any) => {
       this.movies = response;
-      this.moviesDataLoader=true;
-      console.log("this.userId ",this.userId )
+      this.moviesDataLoader = true;
+      console.log("this.userId ", this.userId)
 
     })
   }
 
-  goToDetails(id){
+  goToDetails(id) {
     this.router.navigateByUrl('/movieApiDetails/' + id);
   }
 
-  getUserIdByUsername(){
-    this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
-    (response : any) => {
-      this.user = response;
-      console.log(this.user);
-      this.userId = this.user.id;
-      console.log("L'utente ha il seguente Id:",this.userId);
-      console.log(this.userId);
-    });
+  getUserIdByUsername() {
+    this.userService.getUserByUsername(this.username, "admin", "admin").subscribe(
+      (response: any) => {
+        this.user = response;
+        console.log(this.user);
+        this.userId = this.user.id;
+        console.log("L'utente ha il seguente Id:", this.userId);
+        console.log(this.userId);
+      });
+  }
+  delete(id) {
+    this.dataService.deleteEntry(id).subscribe(data => {
+      console.log("prova", id);
+      this.router.navigate(['/userList']);
+    },
+      (err) => {
+        console.log(err);
+      });
+  }
+
+  exit() {
+    window.location.reload();
   }
 }

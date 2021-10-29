@@ -1,10 +1,12 @@
 .testa{
   height: 40px;
+  max-width: 600px;
   border-radius: 5px;
   background-color: rgba(109, 95, 95, 0.363);
   border-radius: 5px;
   font-family: "DK Lemon Yellow Sun";
   font-size: 25px;
+
 }
 
 .table {
@@ -31,14 +33,24 @@ h1 {
   font-weight: 600;
 }
 
-
-
 .list-container {
   background-color: rgba(109, 95, 95, 0.116);
   opacity: 0.9;
   border-radius: 5px;
 }
 
+.fa-trash-alt {
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.fa-trash-alt:hover {
+  opacity: 1;
+}
+
+thead {
+  background-color: rgba(109, 95, 95, 0.363);
+}
 
 @media (max-width: 900px) {
   h1 {

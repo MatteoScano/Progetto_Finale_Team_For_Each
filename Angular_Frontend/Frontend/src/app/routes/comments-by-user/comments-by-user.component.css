@@ -23,6 +23,9 @@
   border: 4px solid green;
 }
 
+td {
+  padding: 10px;
+}
 h1 {
   margin-top: 2%;
   font-family: "DK Lemon Yellow Sun";
@@ -48,13 +51,24 @@ h1 {
   opacity: 0.8;
 }
 
+.far:hover {
+opacity: 1;
+transition: .2s;
+}
+
 .cursor {
   cursor: pointer;
 }
 
-.media-resizer{
-
+.fas {
+  opacity: 0.8;
 }
+
+.fas:hover {
+  opacity: 1;
+  transition: .2s;
+}
+
 
 @media (max-width: 900px) {
 .media-resizer {
@@ -67,5 +81,7 @@ h1 {
   transition: .3s;
 }
 
-
+h1 {
+  margin-right: 5%;
+}
 }
