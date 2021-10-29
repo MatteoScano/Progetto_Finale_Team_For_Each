@@ -35,11 +35,13 @@ export class RegistrationComponent implements OnInit {
    terms:string;
    termsOk=true;
    isChecked=false;
+   getUserFlag=false;
 
   constructor(private registrationService : RegistrationService, private router:Router, private userService: LoginService) { }
 
   ngOnInit(): void {
     this.getUsersList();
+    console.log("stampa Utenti:", this.users);
   }
     //Visualizza tutti gli utenti
     getUsersList(){
@@ -47,6 +49,7 @@ export class RegistrationComponent implements OnInit {
         response => {
           this.users = response;
           console.log("stampa Utenti: ",this.users)
+          this.getUserFlag=true;
         },
         error => console.log(error)
       )
@@ -90,28 +93,43 @@ export class RegistrationComponent implements OnInit {
 
     //Controllo sullo username doppio
   checkUsername(form :NgForm):any{ //funziona
+    if(this.getUserFlag){
     this.username = form.form.value.username;
       for(let i=0; i<this.users.length;i++){
+
         if(this.username===this.users[i].username){
+          console.log("this.users[i].username ", this.users[i].username);
           this.usernameAlreadyExist=true;
-          console.log("username esiste: ", this.usernameExist);
-        }
-        else{
-          console.log("User non esistente");
         }
       }
-    }
+      console.log("stampa Utenti: ",this.users)
+      console.log("this.username ", this.username);
+      console.log("this.username ", this.usernameAlreadyExist);
+    }}
 
   //Crea un nuovo utente in base ai dati inseriti in input
   createUser(form : NgForm): void {
+    this.usernameExist=true;
     let passMatched = this.checkPassword(form);
     let emailChecked = this.checkEmail(form);
-    this.username = form.form.value.username;
+    //this.username = form.form.value.username;
     this.checkUsername(form);
+     console.log("stampa Utenti2: ",this.users)
+     console.log("this.username ", this.username);
+     console.log("this.users[i].username ", this.username);
+     console.log("username usernameAlreadyExist: ", this.usernameAlreadyExist);
+     console.log("username usernameExist: ", this.usernameExist);
+
+
 
   if(this.isChecked){ //se i termini e le condizioni sono spuntate(accettate)
+    this.usernameExist=true;
+
 
    if(emailChecked){  //se l'email è controllata
+
+    if(this.usernameAlreadyExist==false){
+      this.usernameExist=true;
 
      if(this.username!= "admin" && this.username!= "Admin"){    //se lo username è controllato
 
@@ -134,6 +152,9 @@ export class RegistrationComponent implements OnInit {
           this.passwordOk=false;
           this.usernameOk=true;
           this.termsOk=true;
+          this.usernameExist=true;
+          this.usernameAlreadyExist=false;
+
           console.log("password errata, Riprova");
         }
 
@@ -142,12 +163,26 @@ export class RegistrationComponent implements OnInit {
       this.emailOk=true;
       this.termsOk=true;
       this.usernameOk=false;
+      this.usernameExist=true;
+
       console.log("lo username non puo contenere il termine 'admin'")
+    }
+  }
+    else{
+      this.termsOk=true;
+     // window.alert("User non valido");
+      this.usernameExist=false;
+      this.emailOk=true;
+      this.usernameAlreadyExist=false;
+      console.log("  this.usernameExist=false",   this.usernameExist);
+
     }
    }
    else{
     this.termsOk=true;
     this.emailOk=false;
+    this.usernameExist=true;
+
     console.log("Email Errata, Riprova!");
    }
 
@@ -157,6 +192,6 @@ export class RegistrationComponent implements OnInit {
     console.log("Devi accettare i termini e le condizioni");
     }
 }
-
-
 }
+
+
