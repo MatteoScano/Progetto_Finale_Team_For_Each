@@ -1,8 +1,6 @@
 <div class="container-commenti p-5" >
   <h1>My comments</h1>
-
     <table class="table">
-
       <thead class="testa">
         <tr>
           <th class="p-r-c"scope="col">Movie</th>
@@ -10,7 +8,6 @@
           <th scope="col"></th>
         </tr>
       </thead>
-
       <tbody>
         <tr class="pointer cursor" *ngFor="let entry of movieComments" (click)="goToDetails(entry.movieId)">
           <td class="bold">{{entry.title}}</td>
@@ -28,10 +25,5 @@
       </tbody>
     </table>
   </div>
-
  <app-loading-page *ngIf="!comments" ></app-loading-page>
 
-
- <!-- <button style="font-size: 30px" type="submit" class="btn btn-default " (click)="exit()">
-          <span class="fas fa-plus" aria-hidden="true"></span>
-        </button>-->

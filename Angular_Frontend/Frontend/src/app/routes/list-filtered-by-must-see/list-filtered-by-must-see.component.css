@@ -32,7 +32,9 @@ h1 {
   font-weight: 600;
 }
 
-
+.pointer {
+  cursor: pointer;
+}
 
 .list-container {
   background-color: rgba(109, 95, 95, 0.116);

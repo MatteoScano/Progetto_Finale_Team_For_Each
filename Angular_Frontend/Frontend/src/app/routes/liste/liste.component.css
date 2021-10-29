@@ -6,7 +6,6 @@
   border-radius: 5px;
   font-family: "DK Lemon Yellow Sun";
   font-size: 25px;
-
 }
 
 .table {
@@ -20,6 +19,10 @@
 
 .p-5{
   margin-bottom: 20%;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .my-container {

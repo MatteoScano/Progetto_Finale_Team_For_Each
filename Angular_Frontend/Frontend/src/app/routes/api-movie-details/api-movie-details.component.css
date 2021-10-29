@@ -288,7 +288,12 @@ font-family:"DK Lemon Yellow Sun";
 }
 
 .fas{
-  color:rgba(131, 128, 128, 0.22);
+  color:rgba(85, 83, 83, 0.308);
+}
+.fas:hover{
+  color:rgba(102, 99, 99, 0.514);
+  transition: .2s;
+
 }
 
 

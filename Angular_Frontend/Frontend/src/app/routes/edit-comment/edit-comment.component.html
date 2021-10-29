@@ -1,27 +1,11 @@
 <div class="row p-3 ">
-
-
   <div class="editor-cntr">
-    <!--
-    <button class="btn btn-primary mr-5" [routerLink]="['/dashboard']">Back</button>
-    -->
     <div class="row-middle">
     <h3 class="text-center">Comment Editor</h3>
-
-
-<form class="pt-5" (ngSubmit)="onSubmit()" #form="ngForm">
-
-
-
-            <textarea type="text" class="form-control style-text-area" id="body" required
-                [(ngModel)]="dataEntry.body" name="body">
-                </textarea>
-
-
-
-    <button type="submit" [disabled]="!form.valid" class="btn btn-success">save</button>
-
-</form>
-</div>
-</div>
+      <form class="pt-5" (ngSubmit)="onSubmit()" #form="ngForm">
+        <textarea type="text" class="form-control style-text-area" id="body" required [(ngModel)]="dataEntry.body" name="body"></textarea>
+          <button type="submit" [disabled]="!form.valid" class="btn btn-success">save</button>
+      </form>
+    </div>
+  </div>
 </div>
