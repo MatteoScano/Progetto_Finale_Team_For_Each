@@ -38,28 +38,28 @@ export class LoginService {
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
       Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
-    return this.http.get(this.baseURL + "/", {headers});
+    return this.http.get<Array<UserDataInterface>>(this.baseURL + "/", {headers});
     }
 //Preleva l'utente con l'id passato
   public getUsersById(id: number, usernameAuth:string, passwordAuth:string){
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
       Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
-      return this.http.get(this.baseURL + "/" + id, {headers});
+      return this.http.get<UserDataInterface>(this.baseURL + "/" + id, {headers});
     }
 //Preleva l'utente con lo username passato come parametro
     public getUserByUsername(username : string, usernameAuth:string, passwordAuth:string){
       const headers = new HttpHeaders({
         'Content-Type':  'application/json',
         Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
-      return this.http.get(this.baseURL + "/username/" + username, {headers});
+      return this.http.get<UserDataInterface>(this.baseURL + "/username/" + username, {headers});
     }
 //Preleva gli utenti che contendono nello username la stringa passata
   public getUsersByPartialUsername(partialUsername: string, usernameAuth:string, passwordAuth:string){
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
       Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
-    return this.http.get(this.baseURL + "/username/like/" + partialUsername, {headers});
+    return this.http.get<UserDataInterface>(this.baseURL + "/username/like/" + partialUsername, {headers});
   }
 //Aggiorna tutti i dati dell'utente
   updateUser =(userId:number, newUser : UserDataInterface, username:string, password:string) => {

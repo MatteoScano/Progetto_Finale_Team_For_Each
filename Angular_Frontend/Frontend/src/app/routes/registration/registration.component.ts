@@ -13,13 +13,15 @@ import { Component, OnInit } from '@angular/core';
 export class RegistrationComponent implements OnInit {
 
   newUser : UserDataInterface;
-
+  users: UserDataInterface[]; //utti gli utenti
   username:string;
+
   usernameOk=true;
   usernameExist=true;
+  usernameAlreadyExist=false;
 
-  found:any=[];
-  userFound:any=[];
+  found:UserDataInterface[];
+  userFound:UserDataInterface[];
   //variabili per il controllo password "uguale"
   password:string;
   confirmPassword:string;
@@ -37,7 +39,18 @@ export class RegistrationComponent implements OnInit {
   constructor(private registrationService : RegistrationService, private router:Router, private userService: LoginService) { }
 
   ngOnInit(): void {
+    this.getUsersList();
   }
+    //Visualizza tutti gli utenti
+    getUsersList(){
+      this.userService.getUsers("admin","admin").subscribe(
+        response => {
+          this.users = response;
+          console.log("stampa Utenti: ",this.users)
+        },
+        error => console.log(error)
+      )
+    }
   //metodo di verifica click checkbox termini e condizioni
   click(ev){
     console.log(ev.target.defaultValue);
@@ -74,38 +87,27 @@ export class RegistrationComponent implements OnInit {
         return false;
     } // true
   }
-  //controllo spunta termini e condizioni
-  checkTerms(form : NgForm):boolean{
-    this.terms=form.form.value.terms;
-    console.log("terms dentro il check", this.terms)
-    if(this.terms){
-      this.termsOk=true;
-      return true;
-    }
-    else{
-      this.termsOk=false;
-      return false;
-    }
-  }
 
-     //Visualizza l'utente con lo username passato
-   getUserByUsername(form :NgForm):any{ //funziona
+    //Controllo sullo username doppio
+  checkUsername(form :NgForm):any{ //funziona
     this.username = form.form.value.username;
-    this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
-    (response : any) => {
-      this.userFound = response;
-        console.log("L'utente ha i seguenti dati:");  //test
-        console.log(this.userFound);
-        return this.userFound;
-    });
-
-  }
+      for(let i=0; i<this.users.length;i++){
+        if(this.username===this.users[i].username){
+          this.usernameAlreadyExist=true;
+          console.log("username esiste: ", this.usernameExist);
+        }
+        else{
+          console.log("User non esistente");
+        }
+      }
+    }
 
   //Crea un nuovo utente in base ai dati inseriti in input
   createUser(form : NgForm): void {
     let passMatched = this.checkPassword(form);
     let emailChecked = this.checkEmail(form);
     this.username = form.form.value.username;
+    this.checkUsername(form);
 
   if(this.isChecked){ //se i termini e le condizioni sono spuntate(accettate)
 

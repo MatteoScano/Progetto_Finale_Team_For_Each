@@ -16,11 +16,11 @@ export class UserComponent implements OnInit {
    usernameIsAdmin : string = sessionStorage.getItem('username');
 
   users : UserDataInterface[];
-  data:any;                     //per il salvataggio di tutti gli utenti
-  userFound:any=[];             //per il salvataggio dell'utente trovato
+                      //per il salvataggio di tutti gli utenti
+  userFound:any=[];               //per il salvataggio dell'utente trovato
   username:string;              //Username passato nel form
   userId:number;                //Contiene l'id dell'utente
-  userFoundById:any=[];         //per il salvataggio dell'utente trovato per Id
+  userFoundById:any=[];        //per il salvataggio dell'utente trovato per Id
 
     //VARIABILI PER L'UPDATE USER
   letsUpdate=false
@@ -49,7 +49,8 @@ export class UserComponent implements OnInit {
   getUsersList(){
     this.userService.getUsers("admin","admin").subscribe(
       response => {
-        this.data = response;
+        this.users = response;
+        console.log("lista utenti:", this.users)
       },
       error => console.log(error)
     )

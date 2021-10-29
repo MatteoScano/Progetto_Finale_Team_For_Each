@@ -1,3 +1,4 @@
+import { UserDataInterface } from './../../models/user.model';
 import { Router } from '@angular/router';
 import { LoginService } from './../../services/login/login.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,11 +12,11 @@ export class MyAccountComponent implements OnInit {
 
   username : string = sessionStorage.getItem('username');
 
-  user : any;
+  user : UserDataInterface;
   userId : number;
   isAdmin=false;  //verifica se l'utente è admin
 
-  userFoundById:any=[]; //contiene l'utente trovato tramite id
+  userFoundById:UserDataInterface[]; //contiene l'utente trovato tramite id
 
   deleteAccountYes=false;
 
