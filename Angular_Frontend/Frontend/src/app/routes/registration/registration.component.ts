@@ -20,6 +20,10 @@ export class RegistrationComponent implements OnInit {
   usernameExist=true;
   usernameAlreadyExist=false;
 
+  //variabile verifica mail
+  emailExist=true;
+  emailAlreadyExist=false;
+
   found:UserDataInterface[];
   userFound:UserDataInterface[];
   //variabili per il controllo password "uguale"
@@ -78,6 +82,7 @@ export class RegistrationComponent implements OnInit {
   }
   //verifica se l'email inserita è in un formato valido
   checkEmail(form : NgForm):boolean{
+
     this.email=form.form.value.email;
     const at = "@";
     const dotNet = ".";
@@ -90,6 +95,7 @@ export class RegistrationComponent implements OnInit {
         return false;
     } // true
   }
+
 
     //Controllo sullo username doppio
   checkUsername(form :NgForm):any{ //funziona
@@ -107,6 +113,18 @@ export class RegistrationComponent implements OnInit {
       console.log("this.username ", this.usernameAlreadyExist);
     }}
 
+    checkMailExist(form :NgForm):any{ //funziona
+      if(this.getUserFlag){
+      this.email = form.form.value.email;
+        for(let i=0; i<this.users.length;i++){
+
+          if(this.email===this.users[i].email){
+            console.log("this.users[i].email ", this.users[i].email);
+            this.emailAlreadyExist=true;
+          }
+        }
+      }}
+
   //Crea un nuovo utente in base ai dati inseriti in input
   createUser(form : NgForm): void {
     this.usernameExist=true;
@@ -114,13 +132,7 @@ export class RegistrationComponent implements OnInit {
     let emailChecked = this.checkEmail(form);
     //this.username = form.form.value.username;
     this.checkUsername(form);
-     console.log("stampa Utenti2: ",this.users)
-     console.log("this.username ", this.username);
-     console.log("this.users[i].username ", this.username);
-     console.log("username usernameAlreadyExist: ", this.usernameAlreadyExist);
-     console.log("username usernameExist: ", this.usernameExist);
-
-
+    this.checkMailExist(form);
 
   if(this.isChecked){ //se i termini e le condizioni sono spuntate(accettate)
     this.usernameExist=true;
@@ -128,6 +140,7 @@ export class RegistrationComponent implements OnInit {
 
    if(emailChecked){  //se l'email è controllata
 
+    if(this.emailAlreadyExist==false){
     if(this.usernameAlreadyExist==false){
       this.usernameExist=true;
 
@@ -176,6 +189,9 @@ export class RegistrationComponent implements OnInit {
       this.usernameAlreadyExist=false;
       console.log("  this.usernameExist=false",   this.usernameExist);
 
+    }}else{
+      this.emailAlreadyExist=false;
+      console.log("EMAIL esistente");
     }
    }
    else{
