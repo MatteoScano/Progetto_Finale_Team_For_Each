@@ -129,7 +129,7 @@
     Users Details
   </h3>
 
-    <table class="table plus">
+    <table class="table usersDetails">
       <thead class="table-info">
         <tr>
           <th scope="col">User Id</th>
@@ -138,21 +138,24 @@
           <th scope="col">Username</th>
           <th scope="col">Password</th>
           <th scope="col">Email</th>
+          <th scope="col">Delete</th>
         </tr>
       </thead>
 
       <tbody>
         <tr class="pointer" *ngFor="let entry of users">
-          <td><i class="fas fa-user-alt mr-2" aria-label="Left Align"></i> {{ entry.id }}</td>
+          <td><i class="fas fa-user-alt mr-2"></i> {{ entry.id }}</td>
           <td>{{entry.name}}</td>
           <td>{{entry.surname}}</td>
           <td>{{ entry.username }}</td>
           <td>{{ entry.password }}</td>
           <td>{{ entry.email }}</td>
+          <td> <button type="submit" class="btn btn-default " (click)="delete(entry.id); exit()">
+            <span class="far fa-trash-alt"></span>
+           </button></td>
 
-        <button style="font-size: 30px" type="submit" class="btn btn-default " (click)="delete(entry.id); exit()">
-          <span class="fas fa-plus" aria-hidden="true">DELETE</span>
-         </button>
+
+
         </tr>
       </tbody>
     </table>

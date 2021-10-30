@@ -29,11 +29,6 @@ export class AddComponent implements OnInit {
     console.log(form)
     console.log(this.dataEntry);
 
-    if(form.form.value.rated==='yes'){
-      this.dataEntry.rated=true;
-    }else{
-      this.dataEntry.rated=false;
-    };
     if(form.form.value.seen==='yes'){
       this.dataEntry.seen=true;
     }else{

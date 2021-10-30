@@ -10,7 +10,7 @@ export class DoubleFilterPipe implements PipeTransform {
     let myArray = [];
     if(!movies) return;
     for (let i = 0; i < movies.length; i++) {
-      if (movies[i].genre === genre && movies[i].cast === cast) {
+      if (movies[i].genre === genre) {
         myArray.push(movies[i])
       }
     }

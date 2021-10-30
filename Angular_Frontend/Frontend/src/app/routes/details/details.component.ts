@@ -10,7 +10,7 @@ import { MovieData } from 'src/app/models/data.model';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private dataService: DataService, 
+  constructor(private route: ActivatedRoute, private dataService: DataService,
     private router : Router) { }
 
   dataEntry: MovieData;
@@ -25,7 +25,7 @@ export class DetailsComponent implements OnInit {
   fetchEntry(){
     this.dataService.getEntry(this.id).subscribe( (res: any ) => {
       this.dataEntry = res;
-      this.ratedOption= this.dataEntry.rated === true ? 'yes' : 'no';
+      //this.ratedOption= this.dataEntry.rated === true ? 'yes' : 'no';
     })
   }
 

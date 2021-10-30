@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   passwordErrata=false;
 
   userFound: UserDataInterface;
+  decryptCode:string;   //accoglie la password decifrata per fare la verifica di login
 
   ngOnInit(){
   }
@@ -33,7 +34,11 @@ submitButton(){
       (data : any)=> {
         this.userFound = data;
 
-        if(this.passwordInput===this.userFound.password){
+        //this.decryptCode=atob(this.userFound.password); //crypting password - non rimuovere
+        //if(this.passwordInput===this.decryptCode){      //crypting password - non rimuovere
+
+
+          if(this.passwordInput===this.userFound.password){
             sessionStorage.setItem('username',this.usernameInput);
             this.invalidLogin = false;
             this.router.navigate(['/moviesApi']);

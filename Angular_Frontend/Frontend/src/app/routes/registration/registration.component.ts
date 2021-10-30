@@ -130,7 +130,11 @@ export class RegistrationComponent implements OnInit {
     this.usernameExist=true;
     let passMatched = this.checkPassword(form);
     let emailChecked = this.checkEmail(form);
+
+    //form.form.value.password=btoa(form.form.value.password);  //crypta la password inserita e la salva nel DB - non eliminare
+
     //this.username = form.form.value.username;
+
     this.checkUsername(form);
     this.checkMailExist(form);
 
