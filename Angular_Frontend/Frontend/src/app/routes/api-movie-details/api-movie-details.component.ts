@@ -89,6 +89,11 @@ export class ApiMovieDetailsComponent implements OnInit {
     this.movieFilm.movie_id=this.id
     this.movieFilm.user_id=this.user.id
     this.movieFilm.name =this.movieDetailsEntry.title;
+    this.movieFilm.evaluation = this.movieDetailsEntry.vote_average;
+    this.movieFilm.reviews = this.movieDetailsEntry.overview;
+    this.movieFilm.cast = this.movieDetailsEntry.runtime;
+    this.movieFilm.director = this.movieDetailsEntry.release_date;
+    this.movieFilm.rated = this.movieDetailsEntry.poster_path;
 
     if(form.form.value.seen==='my watched movies'){
       this.movieFilm.seen=true;
@@ -177,6 +182,7 @@ export class ApiMovieDetailsComponent implements OnInit {
     this.movieApiService.getMovieById(this.id).subscribe((res: any) => {
       this.movieDetailsEntry = res;
       this.imagePath = "https://image.tmdb.org/t/p/w780" + this.movieDetailsEntry.backdrop_path //Da rimettere original size
+      console.log(this.movieDetailsEntry);
     })
   }
 

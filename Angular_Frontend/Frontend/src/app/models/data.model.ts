@@ -2,10 +2,11 @@ export interface MovieData {
 
     id: number;
     name: string;
-    cast: string;
+    cast: number;
     director: string;
     genre: string;
-    rated: boolean;
+    //rated: boolean;
+    rated: string;
     reviews: string;
     evaluation: number;
     releaseDate: Date;

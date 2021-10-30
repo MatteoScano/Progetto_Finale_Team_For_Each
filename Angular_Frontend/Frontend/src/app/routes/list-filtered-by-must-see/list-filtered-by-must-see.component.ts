@@ -16,7 +16,8 @@ export class ListFilteredByMustSeeComponent implements OnInit {
 
   username: string = sessionStorage.getItem('username');
   userId: number;
-  user: any
+  user: any;
+  basicImageUrl: string = "https://image.tmdb.org/t/p/w92";
 
   constructor(private dataService: DataService, private router: Router, private userService: LoginService) { }
 

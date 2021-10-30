@@ -26,22 +26,25 @@
     <thead class="testa">
       <tr>
        <!--<th scope="col">#</th>-->
+        <th scope="col"></th>
         <th scope="col">Title</th>
-    <!--    <th scope="col">User Id</th> -->
-        <th scope="col">Movie Id</th>
-     <!--   <th scope="col">Seen</th> -->
-       <!-- <th scope="col">Must See</th> -->
-        <th></th>
+        <th scope="col">Vote</th>
+        <th scope="col">Runtime</th>
+        <th scope="col">Release</th>
+        <!--<th scope="col">Overview</th>-->
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       <tr class="pointer" *ngFor="let entry of movies | listFilteredByUserId : userId ; let i = index" (click)="goToDetails(entry.movie_id)">
       <!-- <th scope="row">{{ entry.id }}</th> -->
+        <td class="bold"><img src = {{basicImageUrl}}{{entry.rated}} class="hover-shadow imgClass"></td>
         <td class="bold"> {{ entry.name }}</td>
-     <!--   <td>{{ entry.user_id }}</td> -->
-        <td>{{ entry.movie_id}}</td>
-     <!--   <td>{{ entry.seen}}</td> -->
-     <!--   <td>{{ entry.must_see}}</td> -->
+        <td>{{ entry.evaluation }}</td>
+        <!--<td>{{ entry.movie_id}}</td>-->
+        <td>{{ entry.cast}} minutes</td>
+        <td>{{ entry.director}}</td>
+        <!--<td>{{ entry.reviews}}</td>-->
      <td>
      <button type="submit" class="btn btn-default" (click)="delete(entry.id); exit()">
       <span class="far fa-trash-alt" aria-hidden="true"></span>

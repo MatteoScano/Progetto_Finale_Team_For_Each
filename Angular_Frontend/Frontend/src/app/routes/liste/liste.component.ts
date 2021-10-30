@@ -15,8 +15,9 @@ export class ListeComponent implements OnInit {
 
   username : string = sessionStorage.getItem('username');
   userId : number;
-  user : any
+  user : any;
   casa: number;
+  basicImageUrl: string = "https://image.tmdb.org/t/p/w92"
 
   constructor(private dataService: DataService, private router : Router, private userService: LoginService) { }
 
