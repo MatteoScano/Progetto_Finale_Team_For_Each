@@ -21,6 +21,12 @@
       <div class="elements font" *ngIf="movieDetailsEntry != null">
         <p><b>Release Date: </b> {{ movieDetailsEntry.release_date | date }}</p>
       </div>
+      <div class="elements font" *ngIf="movieDetailsEntry != null">
+        <p><b>Runtime: </b> {{ movieDetailsEntry.runtime }} minutes</p>
+      </div>
+      <div class="elements font" *ngIf="movieDetailsEntry != null">
+        <p><b>Vote: </b> {{ movieDetailsEntry.vote_average }} </p>
+      </div>
       <div class="elements poppins" *ngIf="movieDetailsEntry != null">
         <p>{{ movieDetailsEntry.overview }}</p>
       </div>
