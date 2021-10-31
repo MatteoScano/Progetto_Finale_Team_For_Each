@@ -17,7 +17,6 @@
     </thead>
     <tbody>
       <tr class="pointer" *ngFor="let entry of movies | listFilteredByUserId : userId ; let i = index" (click)="goToDetails(entry.movie_id)">
-      <!-- <th scope="row">{{ entry.id }}</th> -->
         <td class="bold"><img src = {{basicImageUrl}}{{entry.rated}} class="hover-shadow imgClass"></td>
         <td class="bold"> {{ entry.name }}</td>
         <td class="rating">{{ entry.evaluation }}</td>

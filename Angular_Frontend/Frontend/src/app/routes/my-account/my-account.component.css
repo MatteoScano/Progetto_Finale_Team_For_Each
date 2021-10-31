@@ -36,6 +36,9 @@ z-index: 1;
 
 }
 
+.fa-user-cog {
+  opacity: 0.8;
+}
 .top-container {
   display: flex;
   align-items: center;
@@ -203,6 +206,7 @@ opacity: 0.8;
 .opacity:hover{
   opacity: 1;
   transition: 0.3s;
+  color: gold;
 }
 
 
