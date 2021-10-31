@@ -196,6 +196,7 @@ export class RegistrationComponent implements OnInit {
       console.log("  this.usernameExist=false",   this.usernameExist);
 
     }}else{
+      this.termsOk=true;
       this.emailAlreadyExist=false;
       console.log("EMAIL esistente");
     }

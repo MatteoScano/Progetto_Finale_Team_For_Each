@@ -22,7 +22,7 @@
         <!--<div class="wishlist-new pt-2" (click)="goToUserComments()"> <a class="wishlist">My Comments</a> </div>-->
 
         <div class="wishlist-new pt-2" (click)="goToUsersManagement()" *ngIf="isAdmin==true"> <i class="fas fa-user-cog mr-2"></i> <a class="wishlist">Go to Users Management </a> </div>
-
+        <div class="wishlist-new pt-2" (click)="goToCommentsManagement()" *ngIf="isAdmin==true"> <i class="fas fa-user-cog mr-2"></i> <a class="wishlist">Comment Moderation </a> </div>
         <button type="button" class="btn mr-2" (click)="goToDelete()">Delete your Account</button>
 <div class="alert-cntnr">
         <div class="alert alert-danger mt-1" role="alert" *ngIf="deleteAccountYes==true">

@@ -25,7 +25,7 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
   user: any;
   changeDetected: boolean = false;
 
-  constructor(private commentService: CommentsService, private userService: LoginService, 
+  constructor(private commentService: CommentsService, private userService: LoginService,
     private router: Router, private movieService: MoviesApiService) { }
 
   ngOnInit(): void {
@@ -54,11 +54,11 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
       response => {
         this.comments = response;
         console.log("ho ottenuto i commenti:", this.comments);
-        
-        
+
+
         for (let i=0; i<this.comments.length; i++){
           let movieComment : MovieCommentInterface = {
-              title:"title", 
+              title:"title",
               comment:"comment",
               movieId: this.comments[i].movieId,
               commentId: this.comments[i].id
@@ -84,7 +84,7 @@ export class CommentsByUserComponent implements OnInit, AfterContentChecked {
         console.log(err);
       });
   }
-  
+
   goToDetails(id) {
     this.router.navigateByUrl('/movieApiDetails/' + id);
   }

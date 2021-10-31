@@ -71,6 +71,9 @@ export class MyAccountComponent implements OnInit {
   goToUsersManagement(){
     this.router.navigate(['/users']);
   }
+  goToCommentsManagement(){
+    this.router.navigate(['/comments']);
+  }
 
   goToDelete(){
     this.deleteAccountYes=true;

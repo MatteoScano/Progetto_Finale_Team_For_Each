@@ -1,3 +1,5 @@
+import { UserDataInterface } from './../../models/user.model';
+import { LoginService } from 'src/app/services/login/login.service';
 import { Component, OnInit } from '@angular/core';
 import { CommentsService } from 'src/app/services/comments.service';
 import { CommentsInterface } from 'src/app/models/comments.model';
@@ -10,7 +12,13 @@ import { Router } from '@angular/router';
 })
 export class CommentsComponent implements OnInit {
 
-  comments : CommentsInterface;
+   //Prende lo username della sessione, nell'html visualizza la pagina solo se l'utente è amministratore
+   //variabili utente
+   usernameIsAdmin : string = sessionStorage.getItem('username');
+
+   comments : CommentsInterface;
+
+
 
   constructor(private commentService:CommentsService, private router : Router) { }
 
@@ -33,6 +41,19 @@ export class CommentsComponent implements OnInit {
   goToUserComments(){
     let user = sessionStorage.getItem('username');
     this.router.navigate(['comments/user/'+ user]);
+  }
+
+  deleteCommentButton(id) {
+    this.commentService.deleteComment(id)
+      .subscribe(data => {
+      }, (err) => {
+        console.log(err);
+      });
+  }
+
+   //Metodo che aggiorna la pagina
+   reloadPage() {
+    window.location.reload();
   }
 
 }
