@@ -60,11 +60,10 @@ export class MoviesApiComponent implements OnInit {
       console.log("  Dato Test" + this.todaysWeather)
 
       this.orarioAttuale = parseInt(this.data.datetime);
-      console.log(" Stringa intera" + this.orarioAttuale)
 
       // COSTRUTTI CONDIZIONALI SUGGERIMENTI FILM IN BASE AL METEO E ALLìORARIO DELLA GIORNATA:
       //se MATTINA
-    if(this.orarioAttuale > 7 && this.orarioAttuale < 13){
+      if (this.orarioAttuale >= 7 && this.orarioAttuale < 13) {
         if (this.todaysWeather == "Clear") {
           this.getAnimationMovieListOnComponent();
         }
@@ -77,38 +76,30 @@ export class MoviesApiComponent implements OnInit {
         if (this.todaysWeather == "Partially cloudy") {
           this.getScienceFictionListOnComponent();
         }
-        else{
+        else {
           this.getScienceFictionListOnComponent();
         }
-    }
+      }
       //se POMERIGGIO
-    if(this.orarioAttuale > 13 && this.orarioAttuale < 19){
+      if (this.orarioAttuale >= 13 && this.orarioAttuale < 19) {
         if (this.todaysWeather == "Clear") {
-          console.log("Valore mattina: " + this.mattina)
-          console.log("Orario attuale: " + this.orarioAttuale)
           this.getWesternMovieListOnComponent();
         }
         if (this.todaysWeather == "Rain") {
-          console.log("Valore mattina: " + this.mattina)
-          console.log("Orario attuale: " + this.orarioAttuale)
           this.getFamilyMovieListOnComponent();
         }
         if (this.todaysWeather == "Thunderstorm") {
-          console.log("Valore mattina: " + this.mattina)
-          console.log("Orario attuale: " + this.orarioAttuale)
           this.getThrillerMovieListOnComponent();
         }
         if (this.todaysWeather == "Partially cloudy") {
-          console.log("Valore mattina: " + this.mattina)
-          console.log("Orario attuale: " + this.orarioAttuale)
           this.getComedyMovieListOnComponent();
         }
-        else{
+        else {
           this.getWesternMovieListOnComponent();
         }
-    }
+      }
       //se SERA
-    if(this.orarioAttuale > 19 && this.orarioAttuale < 24){
+      if (this.orarioAttuale >= 19 && this.orarioAttuale < 24) {
         if (this.todaysWeather == "Clear") {
           this.getAdventuresMovieListOnComponent();
         }
@@ -116,21 +107,17 @@ export class MoviesApiComponent implements OnInit {
           this.getDramasMovieListOnComponent();
         }
         if (this.todaysWeather == "Thunderstorm") {
-          console.log("Valore mattina: " + this.mattina)
-          console.log("Orario attuale: " + this.orarioAttuale)
           this.getHorrorMovieListOnComponent();
         }
         if (this.todaysWeather == "Partially cloudy") {
-          console.log("Valore mattina: " + this.mattina)
-          console.log("Orario attuale: " + this.orarioAttuale)
           this.getThrillerMovieListOnComponent();
         }
-        else{
+        else {
           this.getDramasMovieListOnComponent();
         }
-    }
-       //se NOTTE
-    if(this.orarioAttuale > 0 && this.orarioAttuale < 7){
+      }
+      //se NOTTE
+      if (this.orarioAttuale >= 0 && this.orarioAttuale < 7) {
         if (this.todaysWeather == "Clear") {
           this.getScienceFictionListOnComponent();
         }
@@ -144,11 +131,11 @@ export class MoviesApiComponent implements OnInit {
         if (this.todaysWeather == "Partially cloudy") {
           this.mattina = true;
           this.getAdventuresMovieListOnComponent();
+        }
+        else {
+          this.getThrillerMovieListOnComponent();
+        }
       }
-      else{
-        this.getThrillerMovieListOnComponent();
-      }
-    }
     },
       error => console.log(error)
     )
@@ -243,39 +230,39 @@ export class MoviesApiComponent implements OnInit {
     )
   }
 
-    //animazione
-    getAnimationMovieListOnComponent() {
-      this.apiService.getAnimationMovieList().subscribe(
-        response => {
-          this.movies = response;
-          this.results = this.movies.results;
-          console.log(this.results)
-        },
-        error => console.log(error)
-      )
-    }
+  //animazione
+  getAnimationMovieListOnComponent() {
+    this.apiService.getAnimationMovieList().subscribe(
+      response => {
+        this.movies = response;
+        this.results = this.movies.results;
+        console.log(this.results)
+      },
+      error => console.log(error)
+    )
+  }
   //triller
-    getThrillerMovieListOnComponent() {
-      this.apiService.getThrillerMovieList().subscribe(
-        response => {
-          this.movies = response;
-          this.results = this.movies.results;
-          console.log(this.results)
-        },
-        error => console.log(error)
-      )
-    }
-    //adventures
-    getAdventuresMovieListOnComponent() {
-      this.apiService.getAdventuresMovieList().subscribe(
-        response => {
-          this.movies = response;
-          this.results = this.movies.results;
-          console.log(this.results)
-        },
-        error => console.log(error)
-      )
-    }
+  getThrillerMovieListOnComponent() {
+    this.apiService.getThrillerMovieList().subscribe(
+      response => {
+        this.movies = response;
+        this.results = this.movies.results;
+        console.log(this.results)
+      },
+      error => console.log(error)
+    )
+  }
+  //adventures
+  getAdventuresMovieListOnComponent() {
+    this.apiService.getAdventuresMovieList().subscribe(
+      response => {
+        this.movies = response;
+        this.results = this.movies.results;
+        console.log(this.results)
+      },
+      error => console.log(error)
+    )
+  }
   //family
   getFamilyMovieListOnComponent() {
     this.apiService.getFamilyMovieList().subscribe(
@@ -309,7 +296,7 @@ export class MoviesApiComponent implements OnInit {
       error => console.log(error)
     )
   }
-//Al click visualizza i dettagli del film
+  //Al click visualizza i dettagli del film
   goToDetails(id) {
     this.router.navigateByUrl('/movieApiDetails/' + id);
   }

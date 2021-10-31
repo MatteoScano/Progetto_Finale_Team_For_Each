@@ -37,7 +37,7 @@ header {
   color: rgb(240, 197, 116);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out;
+  border-color 0.15s ease-in-out;
 }
 
 /* fascia nera di sfondo */
@@ -56,6 +56,7 @@ header {
   flex-direction: column;
   align-items: flex-start;
 
+
 }
 
 /* elementi della lista (-> rapporto logo/menu)*/
@@ -63,6 +64,8 @@ ul {
   width: 100%;
   box-sizing: border-box;
 }
+
+
 
 
 
@@ -76,9 +79,6 @@ ul {
     width: 100%;
     display: block;
     text-align: center;
-
-
-
   }
 
 
@@ -105,14 +105,11 @@ ul {
   #logo {
     margin-left: 35%;
     transition: 0.2s;
-
-
   }
 
   #menuDX{
     padding-top: 40px;
     padding-right: 11%;
     justify-content: space-between;
-
   }
 }

@@ -8,10 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './routes/dashboard/dashboard.component';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
-import { AddComponent } from './routes/add/add.component';
-import { DetailsComponent } from './routes/details/details.component';
 import { FormsModule } from '@angular/forms';
-import { EditComponent } from './routes/edit/edit.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
@@ -21,8 +18,6 @@ import { FilterByGenreComponent } from './routes/filter-by-genre/filter-by-genre
 import { GenrePipePipe } from './pipes/genrePipe/genre-pipe.pipe';
 import { WelcomePageComponent } from './routes/welcome-page/welcome-page.component';
 import { CommentsComponent } from './components/comments/comments.component';
-import { DoubleFilterComponent } from './routes/double-filter/double-filter.component';
-import { DoubleFilterPipe } from './pipes/double-filter/double-filter.pipe';
 import { SortByComponent } from './routes/sort-by/sort-by.component';
 import { LogoutComponent } from './routes/logout/logout.component';
 import { ApiMovieDetailsComponent } from './routes/api-movie-details/api-movie-details.component';
@@ -53,9 +48,6 @@ import { IdToTitlePipe } from './pipes/idToTitle.pipe';
   declarations: [
     AppComponent,
     DashboardComponent,
-    AddComponent,
-    DetailsComponent,
-    EditComponent,
     HeaderComponent,
     FooterComponent,
     LoginComponent,
@@ -66,8 +58,6 @@ import { IdToTitlePipe } from './pipes/idToTitle.pipe';
     MoviesApiComponent,
     LoadingPageComponent,
     CommentsComponent,
-    DoubleFilterComponent,
-    DoubleFilterPipe,
     SortByComponent,
     LogoutComponent,
     ApiMovieDetailsComponent,
@@ -91,7 +81,7 @@ import { IdToTitlePipe } from './pipes/idToTitle.pipe';
     ListFilteredByMustSeePipe,
     HeaderBetaComponent,
     IdToTitlePipe
-   ],
+  ],
 
   imports: [
     BrowserModule,

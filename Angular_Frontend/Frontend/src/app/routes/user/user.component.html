@@ -1,5 +1,5 @@
+<div class="body">
 <div class="container p-5" *ngIf="usernameIsAdmin=='admin'">
-
   <h1 class="text-center margin-top">
     <i class="fas fa-user-cog mr-3"></i> <br>Users Management
   </h1>
@@ -115,9 +115,7 @@
                     <div class="d-flex justify-content-center">
                       <button type="button" name="submit" id="submit" (click)="updateUser(formUpdate,form)" class="btn btn-success btn-block btn-lg gradient-custom-4">Update User</button>
                     </div>
-
                   </form>
-
             </div>
           </div>
         </div>
@@ -138,7 +136,7 @@
           <th scope="col">Username</th>
           <th scope="col">Password</th>
           <th scope="col">Email</th>
-          <th scope="col">Delete</th>
+          <th></th>
         </tr>
       </thead>
 
@@ -152,14 +150,12 @@
           <td>{{ entry.email }}</td>
           <td> <button type="submit" class="btn btn-default " (click)="delete(entry.id); exit()">
             <span class="far fa-trash-alt"></span>
-           </button></td>
-
-
-
+           </button>
+          </td>
         </tr>
       </tbody>
     </table>
-  </div>
+
 
   <!-- SE ENTRA UN UTENTE NON AUTORIZZATO VISUALIZZA QUESTO-->
   <div class="container p-5  font" *ngIf="usernameIsAdmin!='admin'" >
@@ -172,3 +168,6 @@
 
 
   </div>
+
+</div>
+</div>

@@ -281,5 +281,12 @@ input[type=text]:placeholder {
   max-width:150px;
   align-items: center;
   margin-left: 150px;
+  border: none;
+  background-color: white;
 }
 
+.alert-login {
+  background-color: none;
+  font-family: "Poppins", sans-serif;
+  color: rgb(244, 134, 17);
+}

@@ -5,14 +5,11 @@
     <table class="table"  *ngIf="results != null">
       <tbody>
         <tr class="pointer" *ngFor="let entry of results | slice:0:20;" (click)="goToDetails(entry.id)">
-          <div ><img src = {{basicImageUrl}}{{entry.poster_path}} class="hover-shadow imgClass"></div>
-          <p>{{ entry.title }}</p>
-          <p>vote: {{ entry.vote_average }}</p>
-          <p>{{ entry.overview }}</p>
-          <!--
-          <td>{{ entry.original_language }}</td>
-          <td>{{ entry.release_date }}</td>
-          -->
+          <div><img src = {{basicImageUrl}}{{entry.poster_path}} class="hover-shadow imgClass"></div>
+          <div class="info-cntr">
+          <p id="p">{{ entry.title }} </p>
+          <p id="b">{{ entry.vote_average }}</p>
+        </div>
         </tr>
       </tbody>
     </table>

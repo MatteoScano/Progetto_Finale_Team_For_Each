@@ -18,6 +18,7 @@
       <div class="title font" *ngIf="movieDetailsEntry != null">
         <h1>{{ movieDetailsEntry.title }}</h1>
       </div>
+      <div class="elm-cntr">
       <div class="elements font" *ngIf="movieDetailsEntry != null">
         <p><b>Release Date: </b> {{ movieDetailsEntry.release_date | date }}</p>
       </div>
@@ -27,6 +28,7 @@
       <div class="elements font" *ngIf="movieDetailsEntry != null">
         <p><b>Vote: </b> {{ movieDetailsEntry.vote_average }} </p>
       </div>
+    </div>
       <div class="elements poppins" *ngIf="movieDetailsEntry != null">
         <p>{{ movieDetailsEntry.overview }}</p>
       </div>

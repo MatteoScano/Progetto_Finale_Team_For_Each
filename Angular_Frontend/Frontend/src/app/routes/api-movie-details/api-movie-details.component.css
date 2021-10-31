@@ -2,7 +2,14 @@
   font-family: "DK Lemon Yellow Sun";
 }
 */
-
+.elm-cntr {
+  max-width:800px;
+  background-color:#b1afaf28;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-left:1%;
+}
 
 .container1 {
   display: flex;
@@ -119,7 +126,6 @@ font-family:"DK Lemon Yellow Sun";
 
 body {
   background-color: #f8f9fa;
-
 }
 
 .title {
@@ -147,7 +153,6 @@ body {
     transform: scale(1.1);
     border: none;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-
 }
 
 .aligner {
@@ -209,8 +214,8 @@ padding: none;
 
 .innerText {
   font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  color: white;
+  font-weight: 50;
+
 
 
 }
@@ -242,15 +247,15 @@ height: 150px;
   margin-left: 5.5%;
   max-width: 775px;
   background-color: rgba(131, 128, 128, 0.22);
-    border-radius: 3px;
+  border-radius: 3px;
   border: 1px solid rgba(95, 93, 93, 0.22);
 
 }
 
 .mb-2 {
   margin-left: 5.5%;
-margin-top: 20px;
-font-family:"DK Lemon Yellow Sun";
+  margin-top: 20px;
+  font-family:"DK Lemon Yellow Sun";
   font-size: 35px;
   padding-bottom: 10px;
 }
@@ -285,6 +290,7 @@ font-family:"DK Lemon Yellow Sun";
 
 .style-text-area {
   background-color: rgba(109, 95, 95, 0.24);
+  border: none;
 }
 
 .fas{
@@ -316,5 +322,9 @@ font-family:"DK Lemon Yellow Sun";
   .container-AllComments {
     transition: .3s;
     margin-bottom: 20%;
+  }
+
+  .elm-cntr{
+    font-size: 17px;
   }
   }
