@@ -15,9 +15,8 @@ CREATE TABLE `user` (
   `surname` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `user` (`id`, `password`, `username`, `email`, `enabled`, `name`, `surname`) VALUES
-(1, 'admin', 'admin', 'admin@info.com', 1, admin, admin),
-(2, 'password', 'user', 'user@info.com', 1, user, user);
+INSERT INTO `user`(`id`, `password`, `username`, `email`, `enabled`, `name`, `surname`) VALUES ('1','U2FsdGVkX19oBrDI7bY4u5zITdVyulDVN8q3IMweLM8=','admin','admin@info.it','1','admin','admin')
+('2','U2FsdGVkX19oBrDI7bY4u5zITdVyulDVN8q3IMweLM8=','user','user@info.it','1','user','user');
 
 CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,

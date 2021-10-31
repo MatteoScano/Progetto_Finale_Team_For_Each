@@ -1,6 +1,13 @@
 <!-- TITOLI  DASHBOARD -->
 <body>
+  <div class="weather">
+    <app-weather></app-weather>
+  </div>
+
   <div class="container">
+
+
+
     <h1 class="text-center mb-5">MOVIE SUGGESTIONS IN A {{ data.conditions }} DAY</h1>
     <table class="table"  *ngIf="results != null">
       <tbody>

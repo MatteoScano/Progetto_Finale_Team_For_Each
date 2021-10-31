@@ -1,65 +1,28 @@
 
-<div class="container p-5">
-  <h1 class="text-center mb-5">The Net Fish</h1>
+<div class="card p-4">
+    <div class="d-flex">
+              <h6 class="flex-grow-1">{{results.date}}</h6>
+              <h6>{{results.timezone}}</h6>
+    </div>
+        <div class="d-flex flex-column temp mt-3 mb-2">
+              <h3 class="mb-0 font-weight-bold" id="heading"> {{celsius}}°C </h3>
+              <span class="small grey">{{dataConditions.conditions}}</span>
+        </div>
+    <div class="d-flex">
+        <div class="temp-details flex-grow-1">
+              <p class="my-1"> <i class="fas fa-wind mr-1"></i>
+                    <span> {{dataConditions.windspeed}} kmh </span> </p>
+              <p class="my-1"> <i class="fas fa-tint mr-2"></i>
+                    <span> {{dataConditions.humidity}}% </span> </p>
+              <p class="my-1"> <i class="fas fa-sun mr-2"></i>
+                    <span>{{dataConditions.sunrise}} </span> </p>
+              <p class="my-1"> <i class="fas fa-moon mr-1"></i>
+                   <span> {{dataConditions.sunset}} </span> </p>
+        </div>
+                    <!--
+                    <div> <img src="https://i.imgur.com/Qw7npIg.png" width="100px"> </div>
+                    -->
+    </div>
 
-  <div class="text-right">
-    <button
-      type="button"
-      style="font-size: 30px"
-      class="btn btn-default"
-      aria-label="Left Align"
-      [routerLink]="['/add']"
-    >
-      <span class="fas fa-plus" aria-hidden="true"></span>
-    </button>
-
-    <button
-      type="button"
-      style="font-size: 30px"
-      class="btn btn-default"
-      aria-label="Left Align"
-      [routerLink]="['/filterByGenre']"
-    >
-      <span class="fas fa-filter" aria-hidden="true"></span>
-    </button>
-
-    <button
-      type="button"
-      style="font-size: 30px"
-      class="btn btn-default"
-      aria-label="Left Align"
-      [routerLink]="['/doublefilter']"
-    >
-      <span class="fas fa-poll-h" aria-hidden="true"></span>
-    </button>
-
-    <button
-      type="button"
-      style="font-size: 30px"
-      class="btn btn-default"
-      aria-label="Left Align"
-      [routerLink]="['/sortBy']"
-    >
-      <span class="fas fa-sort-numeric-up" aria-hidden="true"></span>
-    </button>
-  </div>
-
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Conditions</th>
-        <th scope="col">Sunset</th>
-        <th scope="col">Sunrise</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="pointer" *ngFor="let entry of weatherArray; let i = index">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{ entry.conditions }}</td>
-        <td>{{ entry.sunset }}</td>
-        <td>{{ entry.sunrise }}</td>
-      </tr>
-    </tbody>
-  </table>
 </div>
+
