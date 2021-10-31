@@ -48,14 +48,12 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsersList();
-    console.log("stampa Utenti:", this.users);
   }
     //Visualizza tutti gli utenti
     getUsersList(){
       this.userService.getUsers("admin","admin").subscribe(
         response => {
           this.users = response;
-          console.log("stampa Utenti: ",this.users)
           this.getUserFlag=true;
         },
         error => console.log(error)
@@ -81,8 +79,7 @@ export class RegistrationComponent implements OnInit {
       }
     else{
       this.passwordCryptata=this.password;
-      this.password=this.securityService.encrypt(this.passwordCryptata);
-      console.log("test crypting: ", this.password);
+      this.password=this.securityService.encrypt(this.passwordCryptata);  //crypting password
       return true
     }
   }
@@ -101,8 +98,6 @@ export class RegistrationComponent implements OnInit {
         return false;
     } // true
   }
-
-
     //Controllo sullo username doppio
   checkUsername(form :NgForm):any{ //funziona
     if(this.getUserFlag){
@@ -110,12 +105,12 @@ export class RegistrationComponent implements OnInit {
       for(let i=0; i<this.users.length;i++){
 
         if(this.username===this.users[i].username){
-          console.log("this.users[i].username ", this.users[i].username);
           this.usernameAlreadyExist=true;
         }
       }
-    }}
-
+    }
+  }
+//controlla se nel db è già presente l'email
     checkMailExist(form :NgForm):any{ //funziona
       if(this.getUserFlag){
       this.email = form.form.value.email;
@@ -126,29 +121,26 @@ export class RegistrationComponent implements OnInit {
             this.emailAlreadyExist=true;
           }
         }
-      }}
+      }
+    }
 
   //Crea un nuovo utente in base ai dati inseriti in input
   createUser(form : NgForm): void {
     this.usernameExist=true;
-    let passMatched = this.checkPassword(form);
-    let emailChecked = this.checkEmail(form);
-
+    let passMatched = this.checkPassword(form); //controllo password metching
+    let emailChecked = this.checkEmail(form);   //controllo email
     form.form.value.password=this.password;
-
-
-    this.checkUsername(form);
-    this.checkMailExist(form);
+    this.checkUsername(form);                   //controlla se username è esistente
+    this.checkMailExist(form);                  //controlla se l'email è già presente
 
   if(this.isChecked){ //se i termini e le condizioni sono spuntate(accettate)
     this.usernameExist=true;
-
 
    if(emailChecked){  //se l'email è controllata
 
     if(this.emailAlreadyExist==false){
     if(this.usernameAlreadyExist==false){
-      this.usernameExist=true;
+        this.usernameExist=true;
 
      if(this.username!= "admin" && this.username!= "Admin"){    //se lo username è controllato
 
@@ -158,8 +150,6 @@ export class RegistrationComponent implements OnInit {
           this.newUser.enabled=1;
           this.registrationService.addUser(this.newUser,"admin","admin").subscribe( results => {
             console.log("Password valida",results);
-            console.log("terms",this.terms);              //test
-            console.log("terms boolean ok",this.termsOk); //test
             },
             error=>{
               console.log(error);
@@ -173,23 +163,19 @@ export class RegistrationComponent implements OnInit {
           this.termsOk=true;
           this.usernameExist=true;
           this.usernameAlreadyExist=false;
-
           console.log("password errata, Riprova");
         }
-
 
     }else{  //username admin
       this.emailOk=true;
       this.termsOk=true;
       this.usernameOk=false;
       this.usernameExist=true;
-
       console.log("lo username non puo contenere il termine 'admin'")
     }
   }
     else{
       this.termsOk=true;
-     // window.alert("User non valido");
       this.usernameExist=false;
       this.emailOk=true;
       this.usernameAlreadyExist=false;
@@ -205,13 +191,10 @@ export class RegistrationComponent implements OnInit {
     this.termsOk=true;
     this.emailOk=false;
     this.usernameExist=true;
-
     console.log("Email Errata, Riprova!");
    }
-
 }else{
     this.termsOk=false;
-
     console.log("Devi accettare i termini e le condizioni");
     }
 }
