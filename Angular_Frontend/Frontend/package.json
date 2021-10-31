@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-free": "^5.15.2",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "bootstrap": "^4.4.0",
+    "crypto-js": "^4.1.1",
     "font-awesome": "^4.7.0",
     "nan": "2.3",
     "rxjs": "~6.5.4",

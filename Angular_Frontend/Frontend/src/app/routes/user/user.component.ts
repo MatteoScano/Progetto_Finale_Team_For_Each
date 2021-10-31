@@ -50,7 +50,6 @@ export class UserComponent implements OnInit {
     this.userService.getUsers("admin","admin").subscribe(
       response => {
         this.users = response;
-        console.log("lista utenti:", this.users)
       },
       error => console.log(error)
     )
@@ -62,8 +61,6 @@ export class UserComponent implements OnInit {
   this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
     (response : any) => {
       this.userFound = response;
-        console.log("L'utente ha i seguenti dati:");  //test
-        console.log(this.userFound);
     });
     this.visualizzaBottoniUsername=true;
   }
@@ -74,8 +71,6 @@ export class UserComponent implements OnInit {
   this.userService.getUsersById(this.userId,"admin","admin").subscribe(
     (response : any) => {
       this.userFoundById = response;
-        console.log("L'utente ha i seguenti dati:");  //test
-        console.log(this.userFoundById);
     });
     this.visualizzaBottoniId=true;
   }
@@ -87,8 +82,6 @@ export class UserComponent implements OnInit {
   this.userService.deleteUser(this.userId,"admin","admin").subscribe(
     (response : any) => {
       this.userFoundById = response;
-        console.log("L'utente ha i seguenti dati:");  //test
-        console.log(this.userFoundById);
         this.router.navigate(['/users']);
     });
   }

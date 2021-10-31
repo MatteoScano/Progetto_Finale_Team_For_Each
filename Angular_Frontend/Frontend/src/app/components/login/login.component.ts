@@ -1,3 +1,4 @@
+import { SecurityService } from './../../services/security/security.service';
 import { UserDataInterface } from './../../models/user.model';
 import { LoginService } from './../../services/login/login.service';
 
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginService : LoginService, private router: Router) { }
+  constructor(private loginService : LoginService, private router: Router, private securityService:SecurityService) { }
 
   //variabili per l'input
   usernameInput: string;
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
 
   userFound: UserDataInterface;
   decryptCode:string;   //accoglie la password decifrata per fare la verifica di login
+  code:string;          //veicolo per accogliere la password cryptata da cryptare
 
   ngOnInit(){
   }
@@ -34,17 +36,18 @@ submitButton(){
       (data : any)=> {
         this.userFound = data;
 
-        //this.decryptCode=atob(this.userFound.password); //crypting password - non rimuovere
-        //if(this.passwordInput===this.decryptCode){      //crypting password - non rimuovere
+        this.code=this.userFound.password;
+        console.log("Code: ", this.code)
+        this.decryptCode=this.securityService.decrypt(this.code);
+        console.log("test Decrypting: ", this.decryptCode);
 
-
-          if(this.passwordInput===this.userFound.password){
+          if(this.passwordInput===this.decryptCode){
             sessionStorage.setItem('username',this.usernameInput);
             this.invalidLogin = false;
             this.router.navigate(['/moviesApi']);
         }
         else{
-            console.log("Autenticazione fallita");  //test
+            console.log("Autenticazione fallita");
             this.passwordErrata=true;
         }
       },
@@ -52,25 +55,4 @@ submitButton(){
     );
   }
 }
-/*
-  submitButton(){
-    if(this.usernameInput != null && this.passwordInput !=null){
-      let found = this.searchInsideArray(this.usernameInput, this.passwordInput);
-      if(found){
-        this.router.navigate(['/dashboard']);
-      }
-    }
-  }
-
-  searchInsideArray(username: string, password: string): boolean{
-    for(let i=0;i<this.users.length;i++){
-      if(username==this.users[i].username && password == this.users[i].password){
-        return true;
-      }
-    }
-    return false;
-  }
-  */
-
-
 }

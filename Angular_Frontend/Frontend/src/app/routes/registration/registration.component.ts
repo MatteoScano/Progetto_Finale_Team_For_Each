@@ -1,3 +1,4 @@
+import { SecurityService } from './../../services/security/security.service';
 import { LoginService } from './../../services/login/login.service';
 import { Router } from '@angular/router';
 import { UserDataInterface } from './../../models/user.model';
@@ -41,7 +42,9 @@ export class RegistrationComponent implements OnInit {
    isChecked=false;
    getUserFlag=false;
 
-  constructor(private registrationService : RegistrationService, private router:Router, private userService: LoginService) { }
+   passwordCryptata:string; //contiente la password inserita dall'utente ma cryptata
+
+  constructor(private registrationService : RegistrationService, private router:Router, private userService: LoginService, private securityService:SecurityService) { }
 
   ngOnInit(): void {
     this.getUsersList();
@@ -77,6 +80,9 @@ export class RegistrationComponent implements OnInit {
       return false
       }
     else{
+      this.passwordCryptata=this.password;
+      this.password=this.securityService.encrypt(this.passwordCryptata);
+      console.log("test crypting: ", this.password);
       return true
     }
   }
@@ -108,9 +114,6 @@ export class RegistrationComponent implements OnInit {
           this.usernameAlreadyExist=true;
         }
       }
-      console.log("stampa Utenti: ",this.users)
-      console.log("this.username ", this.username);
-      console.log("this.username ", this.usernameAlreadyExist);
     }}
 
     checkMailExist(form :NgForm):any{ //funziona
@@ -131,9 +134,8 @@ export class RegistrationComponent implements OnInit {
     let passMatched = this.checkPassword(form);
     let emailChecked = this.checkEmail(form);
 
-    //form.form.value.password=btoa(form.form.value.password);  //crypta la password inserita e la salva nel DB - non eliminare
+    form.form.value.password=this.password;
 
-    //this.username = form.form.value.username;
 
     this.checkUsername(form);
     this.checkMailExist(form);

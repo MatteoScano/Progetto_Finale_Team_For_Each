@@ -27,7 +27,7 @@
       <input type="text" id="username" required [(ngModel)]="usernameInput" class="fadeIn second" name="login" placeholder="Username"/>
       <input type="password" id="password" required [(ngModel)]="passwordInput" class="fadeIn third" name="login" placeholder="Password"/>
 
-      <div class="alert alert-danger mt-1 mb-1 p-2 wrong" role="alert" *ngIf="passwordErrata==true">
+      <div class="alert alert-danger mt-1 mb-1 p-2" id="formFooter" role="alert" *ngIf="passwordErrata==true">
         Wrong Password!
       </div>
 
