@@ -26,14 +26,6 @@
             Search
           </a>
         </li>
-        <!--
-          <li>
-            <a href="#" class="nav-link">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
-              Watchlist
-            </a>
-          </li>
-          -->
           <li>
             <a *ngIf="loginService.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['/my-account']">
               <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
@@ -52,7 +44,6 @@
                 <i class="fas fa-sign-out-alt"></i>
               </a>
             </li>
-
         </ul>
       </div>
     </div>

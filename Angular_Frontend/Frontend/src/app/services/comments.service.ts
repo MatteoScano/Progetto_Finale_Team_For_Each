@@ -7,36 +7,36 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommentsService {
 
-  //spostare la get dell'id dell'user qui?
 
-  private baseURL = 'http://localhost:5000/comments';
+  private baseURL = 'http://localhost:5000/comments'; //variabile con indirizzo principale chiamata per comemnti
 
-  constructor( private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getComments(){
+  // funzioni dirette di GET da .NET
+  getComments() {
     return this.http.get<any>(this.baseURL);
   }
 
-  getComment(id){
+  getComment(id) {
     return this.http.get<any>(this.baseURL + "/" + id);
   }
 
-  getUserComments(id : number){
-    return this.http.get<any>(this.baseURL+"?user-id="+id);
+  getUserComments(id: number) {
+    return this.http.get<any>(this.baseURL + "?user-id=" + id);
   }
-
-  addComment = (userId : number, movieId : number, data: CommentsInterface) => {
+  // Funzione per aggiunta in .NET di user id, movie id e testo commenti
+  addComment = (userId: number, movieId: number, data: CommentsInterface) => {
     return this.http.post<CommentsInterface>(this.baseURL, {
       "userId": userId,
       "movieId": movieId,
       "body": data.body
     });
   }
-
-  deleteComment(id){
+  // Funzione di eliminazione da sistema .NET
+  deleteComment(id) {
     return this.http.delete(this.baseURL + "/" + id);
   }
-
+  // Funzione PUT commenti per l editing di dati di testo in base a relativo user id
   editComment = (data: CommentsInterface) => {
     return this.http.put(this.baseURL + '/' + data.id, {
       "id": data.id,

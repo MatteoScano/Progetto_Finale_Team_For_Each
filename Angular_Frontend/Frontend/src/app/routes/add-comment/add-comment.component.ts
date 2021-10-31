@@ -12,39 +12,39 @@ import { LoginService } from '../../services/login/login.service';
 })
 export class AddCommentComponent implements OnInit {
 
-  constructor(private commentsService: CommentsService, private router: Router, private userService:LoginService) { }
+  constructor(private commentsService: CommentsService, private router: Router, private userService: LoginService) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.getUserIdByUsername();
   }
 
-  dataEntry : CommentsInterface;
-  user : any;
-  userId : number;
-  username : string = sessionStorage.getItem('username');
-  movieId : number = history.state.data;
+  dataEntry: CommentsInterface; // variabile contenente i dati relativi a interfaccia comments [id, userId, movieId, body]
+  user: any;                    // contiene response da GET user
+  userId: number;               // contiene response da GET user
+  username: string = sessionStorage.getItem('username');    // GET  username da user  id
+  movieId: number = history.state.data;
 
-  getUserIdByUsername(){ 
-    this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
-    (response : any) => {
-      this.user = response;
-      this.userId = this.user.id;
-      console.log("L'utente ha il seguente Id:"); 
-      console.log(this.userId);
-    });
+  // richiama lo user in base allo username
+  getUserIdByUsername() {
+    this.userService.getUserByUsername(this.username, "admin", "admin").subscribe(
+      (response: any) => {
+        this.user = response;
+        this.userId = this.user.id;
+        console.log("L'utente ha il seguente Id:");
+        console.log(this.userId);
+      });
   }
-
-  onSubmit(form : NgForm){
-    
+  // funzione di POST che prende dati dal Form (html) per l´utente
+  onSubmit(form: NgForm) {
     this.dataEntry = form.form.value;
     console.log(form)
     console.log(this.dataEntry);
-
     this.commentsService.addComment(this.userId, this.movieId, this.dataEntry).subscribe(
       response => {
         console.log(response);
-        this.router.navigate(["/dashboard"]);},
-      error => 
+        this.router.navigate(["/dashboard"]);
+      },
+      error =>
         alert(error.error.message)
     )
   }

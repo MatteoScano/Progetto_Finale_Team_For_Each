@@ -1,3 +1,4 @@
+<!-- Contiene card con view dati relativi a weather api -->
 
 <div class="card p-4">
     <div class="d-flex">
@@ -7,36 +8,39 @@
         <div class="d-flex flex-column temp mt-3 mb-2">
               <h3 class="mb-0 font-weight-bold" id="heading"> {{celsius}}°C </h3>
               <span class="small grey">{{dataConditions.conditions}}</span>
-
+              <!-- ngIf per display icona relativa a condizioni meteo var conditions -->
+              <!-- Se il cielo é coperto -->
               <div *ngIf="dataConditions.conditions=='Overcast'">
                 <i class="fas fa-cloud fa-2x"></i>
               </div>
-
+              <!-- Se parzialmente nuvoloso -->
               <div *ngIf="dataConditions.conditions=='Partially cloudy'">
                 <i class="fas fa-cloud-sun fa-2x"></i>
               </div>
-
+              <!-- Se parzialmente piove -->
               <div *ngIf="dataConditions.conditions=='Rain'">
                 <i class="fas fa-cloud-rain fa-2x"></i>
               </div>
-
+              <!-- Se sereno -->
               <div *ngIf="dataConditions.conditions=='Clear'">
                 <i class="fas fa-sun fa-2x"></i>
               </div>
-
+              <!-- Se diluvia -->
               <div *ngIf="dataConditions.conditions=='Thunderstorm'">
                 <i class="fas fa-poo-storm fa-2x"></i>
               </div>
-
+              <!-- Se c é temporale -->
               <div *ngIf="dataConditions.conditions=='Heavy Rain'">
                 <i class="fas fa-cloud-showers-heavy fa-2x"></i>
               </div>
-
+              <!-- Se nevica -->
               <div *ngIf="dataConditions.conditions=='Snow'">
                 <i class="fas fa-snowflake fa-2x"></i>
               </div>
 
         </div>
+
+              <!-- visualizza ulteriori dati restanti weather widget -->
     <div class="d-flex">
         <div class="temp-details flex-grow-1">
               <p class="my-1"> <i class="fas fa-wind mr-1"></i>
@@ -47,12 +51,7 @@
                     <span>{{dataConditions.sunrise}} </span> </p>
               <p class="my-1"> <i class="fas fa-moon mr-1"></i>
                    <span> {{dataConditions.sunset}} </span> </p>
-
         </div>
-                    <!--
-                    <div> <img src="https://i.imgur.com/Qw7npIg.png" width="100px"> </div>
-                    -->
     </div>
-
 </div>
 

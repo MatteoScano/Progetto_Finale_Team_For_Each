@@ -33,14 +33,14 @@ export class ApiMovieDetailsComponent implements OnInit {
   // RATINGS
   ratings: MovieRatingsInterface; // ottiene dati in arrivo da getMovieRatingsOnComponent
   result: MovieRatingsArrayInterface[]; // Array Modello Movie-Ratings.model
-  ratingEntry: MovieRatingsArrayInterface;
-  currentRating: number;
-  newRating: MovieRatingsArrayInterface;
+  ratingEntry: MovieRatingsArrayInterface; // prende i dati di un rating entry da parte si user
+  currentRating: number;                  // tiene il valore del rating
+  newRating: MovieRatingsArrayInterface;  // tiene il valore di un nuovo rating
   starRating: MovieRatingsArrayInterface;
   movie_rating_id: number;
   ratingSubmit: MovieRatingsArrayInterface;
-  ratedOptions = ['1', '2', '3', '4', '5'];
-  name = "Angular " + VERSION.major;
+  ratedOptions = ['1', '2', '3', '4', '5'];   // stabilisce i valori disponibili per il rating da 1 a 5 (come il numero di stelle)
+  name = "Angular " + VERSION.major;          // utlie per il fnzionamento delle star
 
   // IMMAGINI
   imagePath: string
@@ -72,10 +72,8 @@ export class ApiMovieDetailsComponent implements OnInit {
   // FUNZIONI
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    //const id = this.route.snapshot.params['id'];
     this.getUserIdByUsername();
     this.getMovieApiDetails();
-    //this.getMovieRatingsOnComponent();
     this.getMovieRating()
     this.getEntries();
     this.getMovies();
@@ -85,19 +83,19 @@ export class ApiMovieDetailsComponent implements OnInit {
   onSeen(form: NgForm) {
     this.movieFilm = form.form.value;
 
-    console.log("form.form.value ",form.form.value);
-    this.movieFilm.movie_id=this.id
-    this.movieFilm.user_id=this.user.id
-    this.movieFilm.name =this.movieDetailsEntry.title;
+    console.log("form.form.value ", form.form.value);
+    this.movieFilm.movie_id = this.id
+    this.movieFilm.user_id = this.user.id
+    this.movieFilm.name = this.movieDetailsEntry.title;
     this.movieFilm.evaluation = this.movieDetailsEntry.vote_average;
     this.movieFilm.reviews = this.movieDetailsEntry.overview;
     this.movieFilm.cast = this.movieDetailsEntry.runtime;
     this.movieFilm.director = this.movieDetailsEntry.release_date;
     this.movieFilm.rated = this.movieDetailsEntry.poster_path;
 
-    if(form.form.value.seen==='my watched movies'){
-      this.movieFilm.seen=true;
-      this.movieFilm.must_see=false
+    if (form.form.value.seen === 'my watched movies') {
+      this.movieFilm.seen = true;
+      this.movieFilm.must_see = false
 
     } else if (form.form.value.seen === 'my Must See movies') {
       this.movieFilm.must_see = true;
@@ -105,50 +103,47 @@ export class ApiMovieDetailsComponent implements OnInit {
     };
 
 
-    for(let i=0; i<this.movies.length; i++ ){
-      if(this.movies[i].movie_id ==this.id){
+    for (let i = 0; i < this.movies.length; i++) {
+      if (this.movies[i].movie_id == this.id) {
         console.log("INIZIA IL FOR");
-        this.flag=true;
-        this.movieFilm.id=this.movies[i].id
-        this.movieFilm.name=this.movies[i].name;
-        console.log("this.movieFilm.id  ",this.movieFilm.id)
+        this.flag = true;
+        this.movieFilm.id = this.movies[i].id
+        this.movieFilm.name = this.movies[i].name;
+        console.log("this.movieFilm.id  ", this.movieFilm.id)
         console.log("FINISCE IL FOR");
 
         break;
 
-      }else{      this.flag=false;
+      } else {
+        this.flag = false;
 
       }
     };
 
     //costrutto che permette di fare la Add o la PUT a seconda se il film è già presente nel BD o meno
-     if(this.flag==true){
-        this.dataService.editEntry(this.movieFilm).subscribe(response => {
+    if (this.flag == true) {
+      this.dataService.editEntry(this.movieFilm).subscribe(response => {
       },
         (err) => {
           console.log("mah");
         }
       )
-         console.log("FINISCE LA EDIT");
+      console.log("FINISCE LA EDIT");
     }
 
-    else
-     {
+    else {
       console.log("INIZIA LA ADD");
 
-         this.dataService.addEntry(this.movieFilm).subscribe(response => {
-        },
-           (err) => {
+      this.dataService.addEntry(this.movieFilm).subscribe(response => {
+      },
+        (err) => {
           console.log("mah2");
         }
-        )
-        this.flag==true;
-        console.log("FINISCE LA ADD");
-   }
+      )
+      this.flag == true;
+      console.log("FINISCE LA ADD");
+    }
   }
-
-
-
 
   onSubmitRating(form: NgForm) {
     form.form.value.movie_id = this.movieDetailsEntry.id,
@@ -169,7 +164,7 @@ export class ApiMovieDetailsComponent implements OnInit {
 
 
 
-
+  // chiama data user da valore username : string
   getUserIdByUsername() {
     this.userService.getUserByUsername(this.username, "admin", "admin").subscribe(
       (response: any) => {
@@ -177,7 +172,7 @@ export class ApiMovieDetailsComponent implements OnInit {
         this.userId = this.user.id;
       });
   }
-
+  // chiama e alloca l ordine corretto degli indirizzi per recupero immagini da api
   getMovieApiDetails() {
     this.movieApiService.getMovieById(this.id).subscribe((res: any) => {
       this.movieDetailsEntry = res;
@@ -186,7 +181,7 @@ export class ApiMovieDetailsComponent implements OnInit {
     })
   }
 
-
+  // funzione protipo di supporto alternativa per le immagini
   getMoviePosters() { //Questa andra messa nella dashboard
     this.pictureService.getMoviePics(this.movieDetailsEntry.backdrop_path).subscribe((res: any) => {
       this.movieDetailsEntry = res;
@@ -196,47 +191,10 @@ export class ApiMovieDetailsComponent implements OnInit {
     )
   }
 
-
+  // allegata a getMoviePosters()
   combinePath(mainUrl: ApiPictureService, backdrop_path: string) {
     return this.mainUrl + this.movieDetailsEntry.backdrop_path;
   }
-
-  //da sostituire con 2waybinding, in modo che dopo aver dato il rating ricompaia tornando alla pagina e sia modificabile
-  /*onSubmit(form: NgForm) {
-    form.form.value.movie_id = this.movieDetailsEntry.id,
-    form.form.value.user_id = this.user.id
-    //form.form.value.currentRating = parseInt(form.form.value.currentRating);
-    form.form.value.movie_rating = parseInt(form.form.value.movie_rating);
-    this.ratingSubmit = form.form.value;
-    console.log("RISULTATI RATING", this.ratingSubmit);
-    this.movieRatingService.addMovieRating(this.ratingSubmit).subscribe(response => {
-
-    },
-      (err) => {
-        //fai qualcosa
-        console.log(err)
-      }
-    )
-  }*/
-
-  /* SERVE SOLO IL RATING DEL FILM DELLA PAGINA, NON TUTTI, MEGLIO USARE LA GETRATINGBYMOVIEID
-  getMovieRatingsOnComponent() {
-    this.movieRatingService.getratings().subscribe(
-      response => {
-        console.log("Ho Ottenuto i ratings");
-        this.ratings = response;
-        //console.log("I ratings ottenuti sono:", response);
-        //console.log("I dati Stringyfied: " + JSON.stringify(this.ratings));
-        this.result = this.ratings.data;
-        console.log("rating di questo film:", this.ratings.data[32].movie_rating);
-      },
-      error => console.log(error)
-    )
-  }*/
-
-  /*nella consolelog della pagina ci sono tutti i rating, devo solo caricarli come fa il fetch di edit e
-  modificarli con submitrating come in edit, se non c'e` gia` un rating, con un if impostarlo a 0 */
-
   getMovieRating() {
     this.movieRatingService.getratingsByMovieId(this.id).subscribe(
       response => {
@@ -246,23 +204,6 @@ export class ApiMovieDetailsComponent implements OnInit {
       error => console.log(error)
     )
   }
-
-  /*
-  submitRating() {
-    console.log("id user:", this.userId);
-    console.log("id movie:", this.id);
-    console.log("rating di questo film:", this.ratingEntry.movie_rating);
-
-    this.movieRatingService.editRating(this.userId, this.id, this.ratingEntry)
-      .subscribe(response => {
-        console.log(response);
-        //this.router.navigate(['/details', this.dataEntry.id])
-      }), err => {
-        console.log(err);
-      }
-    //this.router.navigate(['/details', this.dataEntry.id])
-  }
-*/
 
 
   //-----------------------COMMENTS--------------------------//
@@ -311,18 +252,20 @@ export class ApiMovieDetailsComponent implements OnInit {
   exit() {
     window.location.reload();
   }
-
-  delete(){
-    for(let i=0; i<this.movies.length; i++ ){
-       if(this.movies[i].movie_id ==this.id){
-          this.casa=this.movies[i].id; console.log("ID DEL FILM ", this.casa)}};
-           this.dataService.deleteEntry(this.casa).subscribe(data => {
-              console.log("prova",this.casa); this.router.navigate(['/userList']); },
-              (err) =>
-              {
-                console.log(err);
-              });
-            }
+  // eliminazione da DB di ratings **** var casa scelta stilistica dell`autore****
+  delete() {
+    for (let i = 0; i < this.movies.length; i++) {
+      if (this.movies[i].movie_id == this.id) {
+        this.casa = this.movies[i].id; console.log("ID DEL FILM ", this.casa)
+      }
+    };
+    this.dataService.deleteEntry(this.casa).subscribe(data => {
+      console.log("prova", this.casa); this.router.navigate(['/userList']);
+    },
+      (err) => {
+        console.log(err);
+      });
+  }
 
 
 }
