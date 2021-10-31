@@ -33,6 +33,7 @@ a{
 }
 
 
+
 .far {
   font-size: 20px;
 }
@@ -50,16 +51,17 @@ a{
 
 .btn {
   color:lawngreen;
+
 }
 .table-info, .usersDetails, .table{
-  width: 800px;
+  width: 1000px;
   border: 2px solid greenyellow;
   margin-left: 0;
 
 }
 
 .container {
-  max-width: 65%;
+  max-width: 70%;
   border:2px solid lawngreen;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -69,3 +71,7 @@ a{
   background-color: black;
 }
 
+
+.table-responsive {
+  border: 1px solid red;
+}

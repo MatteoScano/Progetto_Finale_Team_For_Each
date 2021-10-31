@@ -22,10 +22,11 @@
     User Details
   </h5>
 </form>
+
   <table class="table">
-    <thead class="table-secondary">
+    <thead class="">
       <tr>
-        <th scope="col">Delete | Update</th>
+        <th scope="col" id="box-del">Delete | Update</th>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Surname</th>
@@ -36,7 +37,7 @@
     </thead>
     <tbody>
       <tr class="pointer">
-        <td><button type="button" class="btn mr-2" (click)="deleteUserById(form)" (click)="reloadPage()">
+        <td class="col-md-auto"><button type="button" class="btn mr-2" (click)="deleteUserById(form)" (click)="reloadPage()">
           <span class="far fa-trash-alt" *ngIf="visualizzaBottoniUsername==true"></span>
         </button>
             <button type="submit" class="btn" (click)="goToUpdate()">
@@ -53,7 +54,7 @@
     </tbody>
     <tbody>
       <tr class="pointer">
-        <td><button type="button" class="btn mr-2" (click)="deleteUserById(form)" (click)="reloadPage()">
+        <td class="col-md-auto"><button type="button" class="btn mr-2" (click)="deleteUserById(form)" (click)="reloadPage()">
           <span class="far fa-trash-alt" *ngIf="visualizzaBottoniId==true"></span>
         </button>
             <button type="submit" class="btn" (click)="goToUpdate()">
