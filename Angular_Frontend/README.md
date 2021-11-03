@@ -1,6 +1,3 @@
-# TNV-IV-ED-FinalProject
-
-
 1. Install nodejs, mamp and visual code studio
 
 2. Database configuration: open mamp
