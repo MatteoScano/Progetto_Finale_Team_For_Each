@@ -9,9 +9,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer cursor" *ngFor="let entry of movieComments" (click)="goToDetails(entry.movieId)">
-          <td class="bold">{{entry.title}}</td>
-          <td>{{entry.comment}}</td>
+        <tr class="cursor rigaScura" *ngFor="let entry of movieComments">
+          <td class="pointer bold" (click)="goToDetails(entry.movieId)">{{entry.title}}</td>
+          <td class="pointer" (click)="goToDetails(entry.movieId)">{{entry.comment}}</td>
           <div class="media-resizer">
           <td><button class="btn" [routerLink]="['/editComment/'+ entry.commentId]">
             <span class="fas fa-edit ml-4"></span>

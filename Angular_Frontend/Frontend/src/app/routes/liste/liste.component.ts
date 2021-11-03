@@ -57,7 +57,8 @@ export class ListeComponent implements OnInit {
   delete(id){
       this.dataService.deleteEntry(id).subscribe(data => {
               console.log("prova",id);
-              this.router.navigate(['/userList']); },
+              //this.router.navigate(['/userList']);
+            },
               (err) =>
               {
                 console.log(err);
