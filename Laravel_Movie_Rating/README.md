@@ -1,6 +1,6 @@
-    Aprire Visual Studio Code
-    Creare un database con codifica utf8_unicode_ci  e nome movie 
-    Andare nella sezione SQL e lanciare i seguenti comandi: 
+Aprire Visual Studio Code
+Creare un database con codifica utf8_unicode_ci  e nome movie 
+Andare nella sezione SQL e lanciare i seguenti comandi: 
     
     CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
