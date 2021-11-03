@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
 
 export class WeatherSService {
 
-  private baseURL = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Genneruxi%2C%2088%2C%20IT?unitGroup=us"; // URL Statico
+  private baseURL = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/CarloFelice%2C%2088%2C%20IT?unitGroup=us"; // URL Statico
   private apiKey = "9T96JX2DTRZ4M9WVXWYEF7BD5" //Chiave di accesso
   private currentWeather = "&include=current" // Opzione per meteo attuale
 

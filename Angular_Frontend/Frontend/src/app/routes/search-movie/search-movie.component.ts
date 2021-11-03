@@ -9,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-movie.component.css']
 })
 export class SearchMovieComponent implements OnInit {
-  title:string;
+  title: string;
   movies: any;
   results: any[];
+  alertNoMovie = false;
 
   basicImageUrl: string = "https://image.tmdb.org/t/p/w185"
 
@@ -20,9 +21,9 @@ export class SearchMovieComponent implements OnInit {
   ngOnInit(): void {
   }
 
-   //Cerca il titolo inserito tra tutti i film presenti in theMovieDB
-   getMovieListOnComponent(form:NgForm) {
-    this.title=form.form.value.title;
+  //Cerca il titolo inserito tra tutti i film presenti in theMovieDB
+  getMovieListOnComponent(form: NgForm) {
+    this.title = form.form.value.title;
     this.apiService.getMovieByTitle(this.title).subscribe(
       response => {
         //se è andato tutto bene, allora:
@@ -30,7 +31,14 @@ export class SearchMovieComponent implements OnInit {
         console.log("Dati dei film: ", this.movies);
         this.results = this.movies.results;
         console.log("Results: ", this.results)
-        //console.log("I dati stringify: " + JSON.stringify(this.movies))
+        if (this.results.length == 0) {
+          this.alertNoMovie = true;
+        } else {
+          this.alertNoMovie = false;
+        }
+        console.log("alert out", this.alertNoMovie);
+
+
       },
       error => console.log(error)
     )
@@ -38,5 +46,7 @@ export class SearchMovieComponent implements OnInit {
   goToDetails(id) {
     this.router.navigateByUrl('/movieApiDetails/' + id);
   }
+
+
 
 }

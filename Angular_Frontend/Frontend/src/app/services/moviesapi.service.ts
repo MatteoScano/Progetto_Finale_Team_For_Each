@@ -21,7 +21,6 @@ export class MoviesApiService {
     }
 
     /*metodi get movie in base al genere*/
-
     getDramaMovieList(){
       return this.http.get<MovieApiInterface>(this.baseURL+"/4/discover/movie?api_key="+this.apiKey+"&with_genres=18&sort_by=vote_average.desc&vote_count.gte=1000");
     }
