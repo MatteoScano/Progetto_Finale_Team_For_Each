@@ -19,15 +19,15 @@
 
     <button type="submit" class="btn btn-dark mb-4 mt-2" (click)="getUserById(form)">Search</button>
   </div>
-  <h5 class="text-left mb-2">
-    User Details
-  </h5>
-</form>
 
+</form>
+<h5 class="text-left mb-2">
+  User Details
+</h5>
   <table class="table">
     <thead class="">
       <tr>
-        <th scope="col" id="box-del">Delete | Update</th>
+        <th scope="col" id="box-del">Actions</th>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Surname</th>
@@ -36,13 +36,13 @@
         <th scope="col">Email</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="visualizzaBottoniUsername==true">
       <tr class="pointer">
         <td class="col-md-auto"><button type="button" class="btn mr-2" (click)="deleteUserById(form)" (click)="reloadPage()">
-          <span class="far fa-trash-alt" *ngIf="visualizzaBottoniUsername==true"></span>
+          <span class="far fa-trash-alt" ></span>
         </button>
             <button type="submit" class="btn" (click)="goToUpdate()">
-              <span class="fas fa-edit ml-4" *ngIf="visualizzaBottoniUsername==true"></span>
+              <span class="fas fa-edit ml-4"></span>
             </button>
         </td>
         <td>{{userFound.id}}</td>
@@ -53,13 +53,13 @@
         <td>{{userFound.email}}</td>
       </tr>
     </tbody>
-    <tbody>
+    <tbody *ngIf="visualizzaBottoniId==true">
       <tr class="pointer">
         <td class="col-md-auto"><button type="button" class="btn mr-2" (click)="deleteUserById(form)" (click)="reloadPage()">
-          <span class="far fa-trash-alt" *ngIf="visualizzaBottoniId==true"></span>
+          <span class="far fa-trash-alt" ></span>
         </button>
             <button type="submit" class="btn" (click)="goToUpdate()">
-              <span class="fas fa-edit ml-4" *ngIf="visualizzaBottoniId==true" ></span>
+              <span class="fas fa-edit ml-4"></span>
             </button>
         </td>
         <td>{{userFoundById.id}}</td>
@@ -126,7 +126,7 @@
   </div>
 
   <h3 class=" mb-2 mt-3">
-    Users Details
+    Users List
   </h3>
 
     <table class="table usersDetails">

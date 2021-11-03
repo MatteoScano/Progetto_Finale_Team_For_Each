@@ -19,7 +19,7 @@ export class MoviesApiComponent implements OnInit {
   //variabili METEO api
   weatherFatherBis: currentWeatherInterface;
   currentWeatherBis: ConditionsInterface[];
-  data: any
+  data: any;
 
   todaysWeather: string
 
@@ -39,25 +39,21 @@ export class MoviesApiComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovieByCurrentWeather();
-    this.exGetterWeatherData();
-    this.getterWeatherDataOnComponent();
-    //this.getMarvelListOnComponent();           //Prende lista solo dei film marvel
   }
 
   // METEO FUNZIONI
   getMovieByCurrentWeather() {
-    console.log("data conditions prima dello switch" + this.todaysWeather);
 
     this.weatherService.getWeatherData().subscribe((
       response: any) => {
       //se è andato tutto bene, allora:
       this.weatherFatherBis = response;
-      console.log("weatherFatherBis: ", this.weatherFatherBis)
+      console.log("weatherFatherBis: ", this.weatherFatherBis);
       this.data = this.weatherFatherBis.currentConditions;
       console.log("Data: ", this.data);
-      console.log("data conditions" + this.data.conditions);
+
       this.todaysWeather = this.data.conditions;
-      console.log("  Dato Test" + this.todaysWeather)
+      console.log("  Dato Test" + this.todaysWeather);
 
       this.orarioAttuale = parseInt(this.data.datetime);
 

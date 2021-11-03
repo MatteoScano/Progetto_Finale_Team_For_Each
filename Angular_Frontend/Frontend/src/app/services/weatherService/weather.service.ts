@@ -1,3 +1,4 @@
+import { currentWeatherInterface } from './../../models/weather.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
