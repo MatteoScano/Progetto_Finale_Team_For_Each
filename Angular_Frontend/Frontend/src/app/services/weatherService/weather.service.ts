@@ -1,3 +1,4 @@
+import { TimeDataInterface } from './../../models/time.model';
 import { currentWeatherInterface } from './../../models/weather.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -31,7 +32,7 @@ export class WeatherSService {
   }
   //funzione che richiama orario e data attuale
   getCurrentTime() {
-    return this.http.get<any>(this.currentTimeURL + "apiKey=" + this.timeApiKey + this.location);
+    return this.http.get<TimeDataInterface>(this.currentTimeURL + "apiKey=" + this.timeApiKey + this.location);
   }
   //https://api.ipgeolocation.io/timezone?apiKey=API_KEY&tz=America/Los_Angeles
 }

@@ -18,7 +18,7 @@ export class AuthenticationService {
   }
 
   checkLogin() {
-    (this.loginservice.login(this.username, this.password).subscribe(
+    (this.loginservice.login().subscribe(
       data => {
         this.router.navigate([''])
         this.invalidLogin = false

@@ -51,7 +51,7 @@ export class RegistrationComponent implements OnInit {
   }
   //Visualizza tutti gli utenti
   getUsersList() {
-    this.userService.getUsers("admin", "admin").subscribe(
+    this.userService.getUsers().subscribe(
       response => {
         this.users = response;
         this.getUserFlag = true;
@@ -129,26 +129,24 @@ export class RegistrationComponent implements OnInit {
     this.usernameExist = true;
     let passMatched = this.checkPassword(form); //controllo password matching
     let emailChecked = this.checkEmail(form);   //controllo email
-    form.form.value.password = this.password;
+
     this.checkUsername(form);                   //controlla se username è esistente
     this.checkMailExist(form);                  //controlla se l'email è già presente
 
     if (this.isChecked) { //se i termini e le condizioni sono spuntate(accettate)
       this.usernameExist = true;
-
       if (emailChecked) {  //se l'email è controllata
-
         if (this.emailAlreadyExist == false) {
           if (this.usernameAlreadyExist == false) {
-            this.usernameExist = true;
+                this.usernameExist = true;
 
             if (this.username != "admin" && this.username != "Admin") {    //se lo username è controllato
 
               if (passMatched) {  //se le password inserite corrispondono
-
                 this.newUser = form.form.value;
                 this.newUser.enabled = 1;
-                this.registrationService.addUser(this.newUser, "admin", "admin").subscribe(results => {
+                form.form.value.password = this.password;
+                this.registrationService.addUser(this.newUser).subscribe(results => {
                   console.log("Password valida", results);
                 },
                   error => {

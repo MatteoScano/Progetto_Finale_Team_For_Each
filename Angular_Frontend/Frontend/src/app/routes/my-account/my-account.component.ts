@@ -32,22 +32,17 @@ export class MyAccountComponent implements OnInit {
   }
 //prende lo userId con lo username
   getUserIdByUsername(){
-    this.userService.getUserByUsername(this.username,"admin","admin").subscribe(
+    this.userService.getUserByUsername(this.username).subscribe(
     (response : any) => {
       this.user = response;
       this.userId = this.user.id;
-      console.log("L'utente ha il seguente Id:");
-      console.log(this.userId);
-      console.log(", e il seguente Username:");
-      console.log(this.username);
     });
   }
 
    //Cancella l'utente con l'id passato
    deleteUserById(){
     console.log("dato inserito:"+this.userId);
-  this.userService.deleteUser(this.userId,"admin","admin").subscribe(
-
+  this.userService.deleteUser(this.userId).subscribe(
     (response : any) => {
       this.userFoundById = response;
         console.log("L'utente ha i seguenti dati:");  //test
@@ -71,10 +66,11 @@ export class MyAccountComponent implements OnInit {
   goToUsersManagement(){
     this.router.navigate(['/users']);
   }
+   //Rotta alla pagina per la moderazione dei commenti
   goToCommentsManagement(){
     this.router.navigate(['/comments']);
   }
-
+//attiva una flag per visualizzare un alert di sicurezza all'utente
   goToDelete(){
     this.deleteAccountYes=true;
   }

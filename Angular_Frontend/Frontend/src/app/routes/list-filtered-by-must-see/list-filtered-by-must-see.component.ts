@@ -43,7 +43,7 @@ export class ListFilteredByMustSeeComponent implements OnInit {
   }
 
   getUserIdByUsername() {
-    this.userService.getUserByUsername(this.username, "admin", "admin").subscribe(
+    this.userService.getUserByUsername(this.username).subscribe(
       (response: any) => {
         this.user = response;
         console.log(this.user);

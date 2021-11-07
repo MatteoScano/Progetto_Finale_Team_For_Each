@@ -32,14 +32,11 @@ export class LoginComponent implements OnInit {
 submitButton(){
   if(this.usernameInput != null && this.passwordInput !=null){
 
-    this.loginService.getUserByUsername(this.usernameInput,"admin","admin").subscribe(
+    this.loginService.getUserByUsername(this.usernameInput).subscribe(
       (data : any)=> {
         this.userFound = data;
-
         this.code=this.userFound.password;
-        console.log("Code: ", this.code)
         this.decryptCode=this.securityService.decrypt(this.code);
-        console.log("test Decrypting: ", this.decryptCode);
 
           if(this.passwordInput===this.decryptCode){
             sessionStorage.setItem('username',this.usernameInput);

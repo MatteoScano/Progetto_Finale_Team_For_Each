@@ -9,15 +9,17 @@ import { map } from 'rxjs/operators';
 export class LoginService {
 
   private baseURL = 'http://localhost:8080/utenti';
+  private usernameAuth="admin";
+  private passwordAuth="admin";
 
   constructor(private http : HttpClient) { }
 
-  public login(usernameAuth:string, passwordAuth:string){
+  public login(){
     const headers=new HttpHeaders({
-      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});  //btoa= binari to ask
+      Authorization : 'Basic '+ btoa(this.usernameAuth+":"+this.passwordAuth)});  //btoa= binari to ask
     return this.http.get<any>(this.baseURL + "/", {headers, responseType:'text' as 'json'}).pipe(map(
         userData => {
-         sessionStorage.setItem('username',usernameAuth);
+         sessionStorage.setItem('username',this.usernameAuth);
          return userData;
         }
       )
@@ -34,38 +36,38 @@ export class LoginService {
     sessionStorage.removeItem('username')
   }
 //visualizza la lista di tutti gli utenti presenti nel database
-  public getUsers(usernameAuth:string, passwordAuth:string){
+  public getUsers(){
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
-      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
+      Authorization : 'Basic '+ btoa(this.usernameAuth+":"+this.passwordAuth)});
     return this.http.get<Array<UserDataInterface>>(this.baseURL + "/", {headers});
     }
 //Preleva l'utente con l'id passato
-  public getUsersById(id: number, usernameAuth:string, passwordAuth:string){
+  public getUsersById(id: number){
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
-      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
+      Authorization : 'Basic '+ btoa(this.usernameAuth+":"+this.passwordAuth)});
       return this.http.get<UserDataInterface>(this.baseURL + "/" + id, {headers});
     }
 //Preleva l'utente con lo username passato come parametro
-    public getUserByUsername(username : string, usernameAuth:string, passwordAuth:string){
+    public getUserByUsername(username : string){
       const headers = new HttpHeaders({
         'Content-Type':  'application/json',
-        Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
+        Authorization : 'Basic '+ btoa(this.usernameAuth+":"+this.passwordAuth)});
       return this.http.get<UserDataInterface>(this.baseURL + "/username/" + username, {headers});
     }
 //Preleva gli utenti che contendono nello username la stringa passata
-  public getUsersByPartialUsername(partialUsername: string, usernameAuth:string, passwordAuth:string){
+  public getUsersByPartialUsername(partialUsername: string){
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
-      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
+      Authorization : 'Basic '+ btoa(this.usernameAuth+":"+this.passwordAuth)});
     return this.http.get<UserDataInterface>(this.baseURL + "/username/like/" + partialUsername, {headers});
   }
 //Aggiorna tutti i dati dell'utente
-  updateUser =(userId:number, newUser : UserDataInterface, username:string, password:string) => {
+  updateUser =(userId:number, newUser : UserDataInterface) => {
     const headers=new HttpHeaders({
       'Content-Type':  'application/json',
-      Authorization : 'Basic '+ btoa(username+":"+password)});  //btoa= binari to ask
+      Authorization : 'Basic '+ btoa(this.usernameAuth+":"+this.passwordAuth)});  //btoa= binari to ask
     return this.http.put<UserDataInterface>(this.baseURL +"/" +userId, JSON.stringify({
     "name": newUser.name,
     "surname": newUser.surname,
@@ -76,10 +78,10 @@ export class LoginService {
     }),{headers})
   }
 //Elimina l'utente con l'id passato
-  deleteUser(id: number, usernameAuth:string, passwordAuth:string ){
+  deleteUser(id: number){
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
-      Authorization : 'Basic '+ btoa(usernameAuth+":"+passwordAuth)});
+      Authorization : 'Basic '+ btoa(this.usernameAuth+":"+this.passwordAuth)});
     return this.http.delete(this.baseURL + "/"+id, {headers});
   }
 }

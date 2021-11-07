@@ -15,7 +15,7 @@ import { DataService } from '../../services/data.service';
 export class UserComponent implements OnInit {
 
   //Prende lo username della sessione, nell'html visualizza la pagina solo se l'utente è amministratore
-  usernameIsAdmin: string = sessionStorage.getItem('username');
+  usernameIsAdmin = sessionStorage.getItem('username');
 
   users: UserDataInterface[];
   //per il salvataggio di tutti gli utenti
@@ -49,11 +49,16 @@ export class UserComponent implements OnInit {
     window.location.reload();
   }
 
+  isAdmin(){
+
+  }
+
   //Visualizza tutti gli utenti
   getUsersList() {
-    this.userService.getUsers("admin", "admin").subscribe(
+    this.userService.getUsers().subscribe(
       response => {
         this.users = response;
+        console.log("Username utente:",this.usernameIsAdmin);
       },
       error => console.log(error)
     )
@@ -62,7 +67,7 @@ export class UserComponent implements OnInit {
   //Visualizza l'utente con lo username passato
   getUserByUsername(form: NgForm) { //funziona
     this.username = form.form.value.username;
-    this.userService.getUserByUsername(this.username, "admin", "admin").subscribe(
+    this.userService.getUserByUsername(this.username).subscribe(
       (response: any) => {
         this.userFound = response;
       });
@@ -72,7 +77,7 @@ export class UserComponent implements OnInit {
   getUserById(form: NgForm) {  //BETA, ancora non funzionante (da rivedere metodo nel backend-springboot)
     this.userId = form.form.value.userId;
     console.log("dato inserito:" + this.userId);
-    this.userService.getUsersById(this.userId, "admin", "admin").subscribe(
+    this.userService.getUsersById(this.userId).subscribe(
       (response: any) => {
         this.userFoundById = response;
       });
@@ -83,7 +88,7 @@ export class UserComponent implements OnInit {
   deleteUserById(form: NgForm) {
     this.userId = form.form.value.userId;
     console.log("dato inserito:" + this.userId);
-    this.userService.deleteUser(this.userId, "admin", "admin").subscribe(
+    this.userService.deleteUser(this.userId).subscribe(
       (response: any) => {
         this.userFoundById = response;
         this.router.navigate(['/users']);
@@ -118,7 +123,7 @@ export class UserComponent implements OnInit {
       this.userId = formId.form.value.userId;  //NON PASSA L'ID DEL VECCHIO USER
       this.newUser = form.form.value;
       this.newUser.enabled = 1;
-      this.userService.updateUser(this.userId, this.newUser, "admin", "admin").subscribe(results => {
+      this.userService.updateUser(this.userId, this.newUser).subscribe(results => {
         console.log("Password valida", results);
       },
         error => {
@@ -133,7 +138,7 @@ export class UserComponent implements OnInit {
   }
 
   delete(id) {
-    this.userService.deleteUser(id, "admin", "admin").subscribe(data => {
+    this.userService.deleteUser(id).subscribe(data => {
       console.log("prova", id);
       this.router.navigate(['/userList']);
     },

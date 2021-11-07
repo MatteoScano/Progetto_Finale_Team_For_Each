@@ -1,0 +1,43 @@
+<div class="container p-5" *ngIf="movies">
+  <h1 class="text-center mb-5">The Net Fish</h1>
+
+  <div class="text-right">
+    <button type="button" style="font-size: 30px" class="btn btn-default" aria-label="Left Align" >
+      <span class="fas fa-plus" aria-hidden="true"></span>
+    </button>
+
+    <button type="button"  style="font-size: 30px" class="btn btn-default" aria-label="Left Align" >
+      <span class="fas fa-filter" aria-hidden="true"></span>
+    </button>
+
+    <button type="button"  style="font-size: 30px" class="btn btn-default" aria-label="Left Align" >
+      <span class="fas fa-poll-h" aria-hidden="true"></span>
+    </button>
+
+    <button type="button"  style="font-size: 30px" class="btn btn-default" aria-label="Left Align" >
+      <span class="fas fa-sort-numeric-up" aria-hidden="true"></span>
+    </button>
+
+  </div>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Director</th>
+        <th scope="col">Release Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="pointer" *ngFor="let entry of movies; let i = index">
+        <th scope="row">{{ entry.id }}</th>
+        <td>{{ entry.name }}</td>
+        <td>{{ entry.director }}</td>
+        <td>{{ entry.releaseDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

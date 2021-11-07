@@ -166,7 +166,7 @@ export class ApiMovieDetailsComponent implements OnInit {
 
   // chiama data user da valore username : string
   getUserIdByUsername() {
-    this.userService.getUserByUsername(this.username, "admin", "admin").subscribe(
+    this.userService.getUserByUsername(this.username).subscribe(
       (response: any) => {
         this.user = response;
         this.userId = this.user.id;

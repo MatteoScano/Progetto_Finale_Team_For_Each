@@ -9,14 +9,18 @@ import { Injectable } from '@angular/core';
 export class RegistrationService {
 
   private baseURL = 'http://localhost:8080/utenti';
+  //variabili per eseguire l'accesso al database gestito da Springboot
+  private usernameAuth="admin";
+  private passwordAuth="admin";
 
   constructor(private http : HttpClient) { }
 
-  addUser =(newUser : UserDataInterface, username:string, password:string) => {
+  //aggiunge l'utente passato
+  addUser =(newUser : UserDataInterface) => {
 
     const headers=new HttpHeaders({
       'Content-Type':  'application/json',
-      Authorization : 'Basic '+ btoa(username+":"+password)});  //btoa= binari to ask
+      Authorization : 'Basic '+ btoa(this.usernameAuth+":"+this.passwordAuth)});  //btoa= binari to ask
     return this.http.post<UserDataInterface>(this.baseURL +"/", JSON.stringify({
     "name": newUser.name,
     "surname": newUser.surname,

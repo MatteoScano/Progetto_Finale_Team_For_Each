@@ -18,7 +18,7 @@ margin-top: 50px;
   font-weight: bold;
 }
 .footerGiu{
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   margin-top: 400px;
   padding-top: 100px;
 }
@@ -27,6 +27,9 @@ margin-top: 50px;
     vertical-align: middle;
     align-items: center;
     margin-bottom: 150px;
+}
+.font-size-button-back-home{
+  font-size: 30px;
 }
 a{
   color: black;
@@ -55,7 +58,7 @@ a{
   color:lawngreen;
 
 }
-.table-info, .usersDetails, .table{
+.usersDetails, .table{
   width: 1000px;
   border: 2px solid greenyellow;
   margin-left: 0;
@@ -84,3 +87,74 @@ tr:hover{
   color: rgb(0, 0, 0);
 
 }
+
+.test{
+    border-spacing: 0;
+    width: 100%;
+    table-layout:auto;
+  }
+.test.th {
+    text-align: left;
+    padding: 8px;
+  }
+.test.td {
+    text-align: left;
+    padding: 8px;
+  }
+
+
+
+/* Media Query per il No More Tables */
+
+@media only screen and (max-width: 767px) {
+    /* Forza la tabella a non comportarsi come una normale tabella */
+
+  #no-more-tables table,
+  #no-more-tables thead,
+  #no-more-tables tbody,
+  #no-more-tables th,
+  #no-more-tables td,
+  #no-more-tables tr {
+    display: block;
+  }
+
+  /* Nasconde le intestazioni della tabella */
+
+  #no-more-tables thead tr {
+    position: absolute;
+    top:-9999px;
+    left:-9999px;
+  }
+
+  #no-more-tables td {
+    /* Inserisce il comportamento come una riga */
+
+    border: none;
+    margin-top: 5px;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align:left;
+  }
+
+  #no-more-tables td:before {
+    /* Inserisce il comportamento come un'intestazione di tabella */
+
+    position: absolute;
+    /* I valori top/left agiscono come padding */
+
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align:left;
+    font-weight: bold;
+  }
+
+  /* Aggiunge l'etichetta ai dati della tabella */
+
+  #no-more-tables td:before { content: attr(data-title); }
+}
+
+

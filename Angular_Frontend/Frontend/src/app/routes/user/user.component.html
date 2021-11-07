@@ -24,7 +24,8 @@
 <h5 class="text-left mb-2">
   User Details
 </h5>
-  <table class="table">
+<div id="no-more-tables">
+  <table class="table test">
     <thead class="">
       <tr>
         <th scope="col" id="box-del">Actions</th>
@@ -45,12 +46,12 @@
               <span class="fas fa-edit ml-4"></span>
             </button>
         </td>
-        <td>{{userFound.id}}</td>
-        <td>{{userFound.name}}</td>
-        <td>{{userFound.surname}}</td>
-        <td>{{userFound.username}}</td>
-        <td>{{userFound.password}}</td>
-        <td>{{userFound.email}}</td>
+        <td data-title="Id">{{userFound.id}}</td>
+        <td data-title="Nome">{{userFound.name}}</td>
+        <td data-title="Cognome">{{userFound.surname}}</td>
+        <td data-title="Username">{{userFound.username}}</td>
+        <td data-title="Password" style="word-wrap: break-word">{{userFound.password}}</td>
+        <td data-title="Email" style="word-wrap: break-word">{{userFound.email}}</td>
       </tr>
     </tbody>
     <tbody *ngIf="visualizzaBottoniId==true">
@@ -62,16 +63,16 @@
               <span class="fas fa-edit ml-4"></span>
             </button>
         </td>
-        <td>{{userFoundById.id}}</td>
-        <td>{{userFoundById.name}}</td>
-        <td>{{userFoundById.surname}}</td>
-        <td>{{userFoundById.username}}</td>
-        <td>{{userFoundById.password}}</td>
-        <td>{{userFoundById.email}}</td>
+        <td data-title="Id">{{userFoundById.id}}</td>
+        <td data-title="Nome">{{userFoundById.name}}</td>
+        <td data-title="Cognome">{{userFoundById.surname}}</td>
+        <td data-title="Username">{{userFoundById.username}}</td>
+        <td data-title="Password" style="word-wrap: break-word">{{userFoundById.password}}</td>
+        <td data-title="Email" style="word-wrap: break-word">{{userFoundById.email}}</td>
       </tr>
     </tbody>
   </table>
-
+</div>
   <div *ngIf="letsUpdate == true">
     <section class="mb-4 container-update">
       <div class="mask d-flex align-items-center h-100 gradient-custom-3">
@@ -125,11 +126,11 @@
     </section>
   </div>
 
-  <h3 class=" mb-2 mt-3">
+  <h3 class=" mb-3 mt-5">
     Users List
   </h3>
-
-    <table class="table usersDetails">
+<div id="no-more-tables">
+    <table class="usersDetails test">
       <thead class="table-info">
         <tr>
           <th scope="col">User Id</th>
@@ -144,32 +145,32 @@
 
       <tbody>
         <tr class="pointer" *ngFor="let entry of users">
-          <td><i class="fas fa-user-alt mr-2"></i> {{ entry.id }}</td>
-          <td>{{entry.name}}</td>
-          <td>{{entry.surname}}</td>
-          <td>{{ entry.username }}</td>
-          <td>{{ entry.password }}</td>
-          <td>{{ entry.email }}</td>
-          <td> <button type="submit" class="btn btn-default " (click)="delete(entry.id); exit()">
+          <td data-title="Id"><i class="fas fa-user-alt mr-2"></i> {{ entry.id }}</td>
+          <td data-title="Nome">{{entry.name}}</td>
+          <td data-title="Cognome">{{entry.surname}}</td>
+          <td data-title="Username">{{ entry.username }}</td>
+          <td data-title="Password" style="word-wrap: break-word">{{ entry.password }}</td>
+          <td data-title="Email"  style="word-wrap: break-word">{{ entry.email }}</td>
+          <td data-title=""> <button type="submit" class="btn btn-default " (click)="delete(entry.id); exit()">
             <span class="far fa-trash-alt"></span>
            </button>
           </td>
         </tr>
       </tbody>
     </table>
-
-
-  <!-- SE ENTRA UN UTENTE NON AUTORIZZATO VISUALIZZA QUESTO-->
-  <div class="container p-5  font" *ngIf="usernameIsAdmin!='admin'" >
-
-    <h1 class="text-center mt-5 footerGiu margin-top">
-      you don't have permissions!
-    </h1>
-    <a [routerLink]="['/moviesApi']">
-    <p class="font back-home">BACK TO HOME</p></a>
-
-
   </div>
-
 </div>
+</div>
+
+
+ <!-- SE ENTRA UN UTENTE NON AUTORIZZATO VISUALIZZA QUESTO-->
+ <div class="p-5 back-home" *ngIf="usernameIsAdmin!='admin'" >
+
+  <h1 class="no-permission font mt-5 footerGiu margin-top">
+    <i class="fas fa-exclamation-triangle mr-3"></i>you don't have permissions!
+  </h1>
+  <a [routerLink]="['/moviesApi']">
+  <p class="font back-home font-size-button-back-home">BACK TO HOME</p></a>
+
+
 </div>

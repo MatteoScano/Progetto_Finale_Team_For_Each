@@ -26,7 +26,7 @@ export class AddCommentComponent implements OnInit {
 
   // richiama lo user in base allo username
   getUserIdByUsername() {
-    this.userService.getUserByUsername(this.username, "admin", "admin").subscribe(
+    this.userService.getUserByUsername(this.username).subscribe(
       (response: any) => {
         this.user = response;
         this.userId = this.user.id;
